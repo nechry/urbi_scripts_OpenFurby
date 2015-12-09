@@ -4,7 +4,7 @@ http://www.facebook.com/openfurby
 
 *  Author: Jan Kedzierski
 *  Date: 06.12.2015
-*  Ver: 1.0 (Furby special edition)
+*  Ver: 1.0.1 (Furby special edition)
 */
 
 
@@ -99,16 +99,16 @@ do(Global) {
 		
       
     // sensors notifications
-    sensor1.&value.notifyAccess( closure()  {sensor1.value = DynF.GetPresentPosition(_Furby_IDs[4]);});
-    sensor1.&touch.notifyAccess( closure()  {sensor1.touch = DynF.GetMoving(_Furby_IDs[4]);});
-    sensor2.&value.notifyAccess( closure()  {sensor2.value = DynF.GetPresentPosition(_Furby_IDs[5]);});
-    sensor2.&touch.notifyAccess( closure()  {sensor2.touch = DynF.GetMoving(_Furby_IDs[5]);});
-    sensor3.&value.notifyAccess( closure()  {sensor3.value = DynF.GetPresentPosition(_Furby_IDs[6]);});
-    sensor3.&touch.notifyAccess( closure()  {sensor3.touch = DynF.GetMoving(_Furby_IDs[6]);});
-    sensor4.&value.notifyAccess( closure()  {sensor4.value = DynF.GetPresentPosition(_Furby_IDs[7]);});
-    sensor4.&touch.notifyAccess( closure()  {sensor4.touch = DynF.GetMoving(_Furby_IDs[7]);});
-    sensor5.&value.notifyAccess( closure()  {sensor5.value = DynF.GetPresentPosition(_Furby_IDs[8]);});
-    sensor5.&touch.notifyAccess( closure()  {sensor5.touch = DynF.GetMoving(_Furby_IDs[8]);});
+    sensor1.&value.notifyAccess( closure()  {sensor1.value = DynF.GetPresentPosition(_Furby_IDs[3]);});
+    sensor1.&touch.notifyAccess( closure()  {sensor1.touch = DynF.GetMoving(_Furby_IDs[3]);});
+    sensor2.&value.notifyAccess( closure()  {sensor2.value = DynF.GetPresentPosition(_Furby_IDs[4]);});
+    sensor2.&touch.notifyAccess( closure()  {sensor2.touch = DynF.GetMoving(_Furby_IDs[4]);});
+    sensor3.&value.notifyAccess( closure()  {sensor3.value = DynF.GetPresentPosition(_Furby_IDs[5]);});
+    sensor3.&touch.notifyAccess( closure()  {sensor3.touch = DynF.GetMoving(_Furby_IDs[5]);});
+    sensor4.&value.notifyAccess( closure()  {sensor4.value = DynF.GetPresentPosition(_Furby_IDs[6]);});
+    sensor4.&touch.notifyAccess( closure()  {sensor4.touch = DynF.GetMoving(_Furby_IDs[6]);});
+    sensor5.&value.notifyAccess( closure()  {sensor5.value = DynF.GetPresentPosition(_Furby_IDs[7]);});
+    sensor5.&touch.notifyAccess( closure()  {sensor5.touch = DynF.GetMoving(_Furby_IDs[7]);});
       
     // tail and mouth
     sensor6.&tail.notifyAccess( closure()  {sensor6.tail = DynF.GetPresentSpeed(_Furby_IDs[2]);});
@@ -184,16 +184,16 @@ do(Global) {
       // 	SENSORS 
       //============================================================
       robot.body.addComponent(Localizer.new("sensor"));
-      sensor1.getSlot("value").copy(robot.body.sensor[up],"val")|;
-      sensor1.getSlot("touch").copy(robot.body.sensor[up],"touch")|;
-      sensor2.getSlot("value").copy(robot.body.sensor[left],"val")|;
-      sensor2.getSlot("touch").copy(robot.body.sensor[left],"touch")|;
+      sensor1.getSlot("value").copy(robot.body.sensor[front],"val")|;
+      sensor1.getSlot("touch").copy(robot.body.sensor[front],"touch")|;
+      sensor2.getSlot("value").copy(robot.body.sensor[up],"val")|;
+      sensor2.getSlot("touch").copy(robot.body.sensor[up],"touch")|;
       sensor3.getSlot("value").copy(robot.body.sensor[back],"val")|;
       sensor3.getSlot("touch").copy(robot.body.sensor[back],"touch")|;
       sensor4.getSlot("value").copy(robot.body.sensor[right],"val")|;
       sensor4.getSlot("touch").copy(robot.body.sensor[right],"touch")|;
-      sensor5.getSlot("value").copy(robot.body.sensor[down],"val")|;
-      sensor5.getSlot("touch").copy(robot.body.sensor[down],"touch")|;
+      sensor5.getSlot("value").copy(robot.body.sensor[left],"val")|;
+      sensor5.getSlot("touch").copy(robot.body.sensor[left],"touch")|;
       //
       robot.body.addComponent("tail");
       robot.body.addComponent("mouth");
@@ -202,20 +202,20 @@ do(Global) {
 
       do (robot.body) 
       {       
-	sensor[up].val->rangemax = 2000;
-	sensor[up].val->rangemin = 0;
-	if ((sensor[up].val = DynF.GetPresentPosition(_Furby_IDs[3]))==9999) { echo("ERROR: Can NOT read FURBY component ID " + _Furby_IDs[3].asString + " value!"); return false; };    
-	sensor[up].touch->rangemax = 1;
-	sensor[up].touch->rangemin = 0;
-	if ((sensor[up].touch = DynF.GetMoving(_Furby_IDs[3]))==9999) { echo("ERROR: Can NOT read FURBY component ID " + _Furby_IDs[3].asString + " value!"); return false; };
+	sensor[front].val->rangemax = 2000;
+	sensor[front].val->rangemin = 0;
+	if ((sensor[front].val = DynF.GetPresentPosition(_Furby_IDs[3]))==9999) { echo("ERROR: Can NOT read FURBY component ID " + _Furby_IDs[3].asString + " value!"); return false; };    
+	sensor[front].touch->rangemax = 1;
+	sensor[front].touch->rangemin = 0;
+	if ((sensor[front].touch = DynF.GetMoving(_Furby_IDs[3]))==9999) { echo("ERROR: Can NOT read FURBY component ID " + _Furby_IDs[3].asString + " value!"); return false; };
 	////////////
 	//
-	sensor[left].val->rangemax = 2000;
-	sensor[left].val->rangemin = 0;
-	if ((sensor[left].val = DynF.GetPresentPosition(_Furby_IDs[4]))==9999) { echo("ERROR: Can NOT read FURBY component ID " + _Furby_IDs[4].asString + " value!"); return false; };    
-	sensor[left].touch->rangemax = 1;
-	sensor[left].touch->rangemin = 0;
-	if ((sensor[left].touch = DynF.GetMoving(_Furby_IDs[4]))==9999) { echo("ERROR: Can NOT read FURBY component ID " + _Furby_IDs[4].asString + " value!"); return false; };
+	sensor[up].val->rangemax = 2000;
+	sensor[up].val->rangemin = 0;
+	if ((sensor[up].val = DynF.GetPresentPosition(_Furby_IDs[4]))==9999) { echo("ERROR: Can NOT read FURBY component ID " + _Furby_IDs[4].asString + " value!"); return false; };    
+	sensor[up].touch->rangemax = 1;
+	sensor[up].touch->rangemin = 0;
+	if ((sensor[up].touch = DynF.GetMoving(_Furby_IDs[4]))==9999) { echo("ERROR: Can NOT read FURBY component ID " + _Furby_IDs[4].asString + " value!"); return false; };
 	////////////
 	//
 	sensor[back].val->rangemax = 2000;
@@ -234,12 +234,12 @@ do(Global) {
 	if ((sensor[right].touch = DynF.GetMoving(_Furby_IDs[6]))==9999) { echo("ERROR: Can NOT read FURBY component ID " + _Furby_IDs[6].asString + " value!"); return false; };
 	////////////
 	//
-	sensor[down].val->rangemax = 2000;
-	sensor[down].val->rangemin = 0;
-	if ((sensor[down].val = DynF.GetPresentPosition(_Furby_IDs[7]))==9999) { echo("ERROR: Can NOT read FURBY component ID " + _Furby_IDs[7].asString + " value!"); return false; };    
-	sensor[down].touch->rangemax = 1;
-	sensor[down].touch->rangemin = 0;
-	if ((sensor[down].touch = DynF.GetMoving(_Furby_IDs[7]))==9999) { echo("ERROR: Can NOT read FURBY component ID " + _Furby_IDs[7].asString + " value!"); return false; };
+	sensor[left].val->rangemax = 2000;
+	sensor[left].val->rangemin = 0;
+	if ((sensor[left].val = DynF.GetPresentPosition(_Furby_IDs[7]))==9999) { echo("ERROR: Can NOT read FURBY component ID " + _Furby_IDs[7].asString + " value!"); return false; };    
+	sensor[left].touch->rangemax = 1;
+	sensor[left].touch->rangemin = 0;
+	if ((sensor[left].touch = DynF.GetMoving(_Furby_IDs[7]))==9999) { echo("ERROR: Can NOT read FURBY component ID " + _Furby_IDs[7].asString + " value!"); return false; };
 	////////////
 	//
 	tail.val->rangemax = 65000;
@@ -259,7 +259,7 @@ do(Global) {
       function MoveSpeed(pos, speed) 		{call.local_Furby_MoveS(pos, speed);		};	
     };
     
-    do (robot.body) { 
+    do (robot.body) { 
       function MoveNeutral(time) 		{call.local_Furby_MoveNeutral(time,true);	};
       function MoveForward(time) 		{call.local_Furby_MoveForward(time,true);	};
       function MoveBack(time) 			{call.local_Furby_MoveBack(time,true);	};
@@ -267,11 +267,11 @@ do(Global) {
       function MoveCloseEye2(time) 		{call.local_Furby_MoveCloseEye2(time,true);	};
       function Speak(time,speed) 		{call.local_Furby_Speak(time,speed,true);	};
       function ActSleep(speed) 			{call.local_Furby_ActSleep(speed);	}; 
-      function ActAlive(speed) 			{call.local_Furby_ActAlive(speed);	}; 
+      function ActAlive(speed) 			{call.local_Furby_ActAlive(speed);	}; 
     };
  
     
-    echo("OK: Furby structure created.");
+    echo("OK: FURBY structure created.");
     return true;
   }|{};
 
@@ -312,7 +312,7 @@ do(Global) {
   var h_tagg_act=Tag.new;
   var h_tagg_func=Tag.new;
  
-  //
+  //
   function local_Furby_MoveNeutral(time,lock) {
     if (lock) h_tagg_act.freeze;
     robot.body.position.Move(0,time);
@@ -323,10 +323,10 @@ do(Global) {
     if (lock) h_tagg_act.freeze;
     robot.body.position.Move(1200,time);
     if (lock) h_tagg_act.unfreeze;
-  }|{};
-  
-
-  
+  }|{};
+  
+
+  
   function local_Furby_MoveForward(time,lock) {
     if (lock) h_tagg_act.freeze;
     robot.body.position.Move(500,time);
@@ -337,25 +337,25 @@ do(Global) {
     if (lock) h_tagg_act.freeze;
     robot.body.position.Move(600,time);
     if (lock) h_tagg_act.unfreeze;
-  }|{};
+  }|{};
  
   function local_Furby_MoveCloseEye2(time,lock) {
     if (lock) h_tagg_act.freeze;
     robot.body.position.Move(1350,time);
     if (lock) h_tagg_act.unfreeze;
   }|{};
-
+
   function local_Furby_Speak(time,speed,lock) {
-    if (lock) h_tagg_act.freeze;
+    if (lock) h_tagg_act.freeze;
     _T:loop {
       robot.body.position.MoveSpeed(-100,speed);
-      robot.body.position.MoveSpeed(200,speed);
-    },
-    sleep(time);
+      robot.body.position.MoveSpeed(200,speed);
+    },
+    sleep(time);
     _T.stop;
     if (lock) h_tagg_act.unfreeze;
   }|{};
-  
+  
         
   function local_Furby_ActAlive(speed) { 
     
