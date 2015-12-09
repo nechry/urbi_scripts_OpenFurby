@@ -5,7 +5,38 @@
 //  Ver: 1.0 (Furby special edition)
 //
 //////////////////////////////////////////////////
-//
+//
+
+/*
+
+  //First release of oFURBY API:
+  // move body
+robot.body.position.val;
+  // using smooth trajectory generator
+robot.body.position.Move(position, time);
+  // using speed trajectory generator
+robot.body.position.MoveSpeed(position, speed);
+
+  // on/off displays (0 - off, 1 - on)
+robot.body.eye.enable.val;
+  // set eye graphics (1....65536)
+robot.body.eye.image.val;
+  // set eye invert (negative)
+robot.body.eye.invert.val; (0 - normal, 1 - invert
+  // set eye scroll (0 - none, 1 - up, 2 - down)
+robot.body.eye.scroll.val;
+
+  // get analog value of touch sensor (0..2000)
+robot.body.sensor[up|left|back|right|down].val;
+  // get digital value of touch sensor (0 or 1)
+robot.body.sensor[up|left|back|right|front].touch;
+  // get value of tail sensor 
+robot.body.tail.val;
+  // get value of mouth sensor 
+robot.body.mouth.val;
+
+*/
+
   // move to the position 100 in 3sec
 robot.body.position.Move(100,3s);
 
