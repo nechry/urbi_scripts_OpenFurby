@@ -1,0 +1,80 @@
+<!DOCTYPE ulablayout>
+<ulablayout version="1.2" file-version="1.0">
+ <model-index row="0" column="0" depth="0">
+  <content><![CDATA[kinect_FPS.ula]]></content>
+  <model-index row="0" column="0" depth="1">
+   <model-index row="0" column="0" depth="2">
+    <content><![CDATA[untitled19]]></content>
+   </model-index>
+   <model-index row="0" column="1" depth="2"/>
+   <model-index row="0" column="2" depth="2">
+    <content><![CDATA[Kinect.fps]]></content>
+   </model-index>
+   <model-index row="0" column="3" depth="2">
+    <content><![CDATA[Float]]></content>
+   </model-index>
+   <model-index row="0" column="4" depth="2">
+    <content><![CDATA[169x145+22+27]]></content>
+   </model-index>
+   <model-index row="0" column="5" depth="2">
+    <content><![CDATA[#6e6462ff]]></content>
+   </model-index>
+   <model-index row="0" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="0" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Joystick axis" type="int">-1</var>
+    <var name="Joystick update period (ms)" type="int">0</var>
+    <var name="Use joystick" type="bool">false</var>
+    <var name="decimals" type="int">0</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="0" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+  </model-index>
+  <model-index row="0" column="1" depth="1"/>
+  <model-index row="0" column="2" depth="1"/>
+  <model-index row="0" column="3" depth="1"/>
+  <model-index row="0" column="4" depth="1"/>
+  <model-index row="0" column="5" depth="1"/>
+  <model-index row="0" column="6" depth="1"/>
+  <model-index row="0" column="7" depth="1"/>
+  <model-index row="0" column="8" depth="1"/>
+  <model-index row="1" column="0" depth="1"/>
+  <model-index row="1" column="1" depth="1">
+   <content><![CDATA[
+<map>
+    <var name="Author" type="QString">Unknown</var>
+    <var name="Background" type="QColor">#6e6462ff</var>
+    <var name="CoScript" type="QString"></var>
+    <var name="DecoScript" type="QString"></var>
+    <var name="Foreground" type="QColor">#e9e7e7ff</var>
+    <var name="GridColor" type="QColor">#000000ff</var>
+    <var name="GridSize" type="int">0</var>
+    <var name="LayoutColor" type="QColor">#000000ff</var>
+    <var name="LayoutGeom" type="QRectF">200x200+0+0</var>
+    <var name="LayoutImage" type="QImage"></var>
+    <var name="LayoutImageMode" type="qt_ext::background::ImageMode">None</var>
+</map>]]></content>
+  </model-index>
+  <model-index row="1" column="2" depth="1"/>
+  <model-index row="1" column="3" depth="1"/>
+  <model-index row="1" column="4" depth="1"/>
+  <model-index row="1" column="5" depth="1"/>
+  <model-index row="1" column="6" depth="1"/>
+  <model-index row="1" column="7" depth="1"/>
+  <model-index row="1" column="8" depth="1"/>
+ </model-index>
+ <model-index row="0" column="1" depth="0"/>
+ <model-index row="0" column="2" depth="0"/>
+ <model-index row="0" column="3" depth="0"/>
+ <model-index row="0" column="4" depth="0"/>
+ <model-index row="0" column="5" depth="0"/>
+ <model-index row="0" column="6" depth="0"/>
+ <model-index row="0" column="7" depth="0"/>
+ <model-index row="0" column="8" depth="0"/>
+</ulablayout>

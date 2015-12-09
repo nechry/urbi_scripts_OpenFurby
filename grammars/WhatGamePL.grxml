@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<grammar version="1.0" xml:lang="pl-PL" root="rootGameRule" tag-format="semantics/1.0-literals" xmlns="http://www.w3.org/2001/06/grammar">
+	<rule id="rootGameRule">
+		<one-of>
+			<item><ruleref uri="#Check"/></item>
+			<item><ruleref uri="#Learn"/></item>
+			<item><ruleref uri="#Back"/></item>
+			<item><ruleref uri="#Repeat"/></item>
+		</one-of>
+	</rule>
+  
+    <rule id="Check" scope="private">
+        <tag>CHECK</tag>
+        <one-of>
+          <item>w</item>
+          <item></item>
+        </one-of>
+        <one-of>
+          <item>zgadywanie</item>
+          <item>odgadywanie</item>
+          <item>zgadywanie</item>
+          <item>odgadywanie</item>
+          <item>zgadujemy</item>
+        </one-of>
+        <one-of>
+          <item>kolory</item>
+          <item>kolorów</item>
+          <item></item>
+        </one-of>
+    </rule>
+	 
+
+    <rule id="Learn" scope="private">
+        <tag>LEARN</tag>
+        <one-of>
+          <item>w</item>
+          <item></item>
+        </one-of>
+        <one-of>
+          <item>uczenie</item>
+          <item>nauka</item>
+          <item>trenowanie</item>
+          <item>naukę</item>
+          <item>uczymy</item>
+        </one-of>
+        <one-of>
+          <item>się</item>
+          <item></item>
+        </one-of>
+        <one-of>
+          <item>kolory</item>
+          <item>kolorów</item>
+          <item></item>
+        </one-of>
+    </rule>
+	
+    <rule id="Back" scope="private">
+		<tag>BACK</tag>
+		<one-of>
+			<item>wróć</item>	
+			<item>źle</item>
+			<item>nic</item>
+			<item>żaden</item>
+			<item>na żaden</item>
+			<item>żadną</item>
+			<item>w żadną</item>
+			<item>w nic</item>
+			<item>nie chcę grać</item>
+		</one-of>
+    </rule>
+	
+    <rule id="Repeat" scope="private">
+        <tag>REPEAT</tag>
+        <one-of>
+          <item>jeszcze raz</item>
+          <item>jeszcze raz proszę</item>
+          <item>co powiedziałeś</item>
+          <item>o co pytasz</item>
+          <item>słucham</item>
+          <item>powtórz</item>
+          <item>powtórz proszę</item>
+        </one-of>
+    </rule>
+	  
+</grammar>

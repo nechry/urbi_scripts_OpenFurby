@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<grammar version="1.0" xml:lang="pl-PL" root="rootTimeRule" tag-format="semantics/1.0" xmlns="http://www.w3.org/2001/06/grammar">
+  <rule id="rootTimeRule">
+    <one-of>
+      <item>
+	    <one-of>
+			<item>o</item>
+			<item></item>
+		</one-of>
+		<ruleref uri="#numbers_0to23"/>
+		<ruleref uri="#numbers_0to59"/>
+		<tag>out = rules.numbers_0to23 + rules.numbers_0to59;</tag>
+	  </item>
+      <item>
+		<ruleref uri="#Back"/><tag>out = rules.Back;</tag>
+	  </item>
+      <item>
+		<ruleref uri="#Repeat"/><tag>out = rules.Repeat;</tag>
+	  </item>
+    </one-of>
+  </rule>
+  
+	<rule id="numbers_0to23">
+		<one-of>
+		  <item>północy<tag>out = "0:"</tag></item>
+		  <item>pierwsza<tag>out = "1:"</tag></item>
+		  <item>druga<tag>out = "2:"</tag></item>
+		  <item>trzecia<tag>out = "3:"</tag></item>
+		  <item>czwarta<tag>out = "4:"</tag></item>
+		  <item>piąta<tag>out = "5:"</tag></item>
+		  <item>szósta<tag>out = "6:"</tag></item>
+		  <item>siódma<tag>out = "7:"</tag></item>
+		  <item>ósma<tag>out = "8:"</tag></item>
+		  <item>dziewiąta<tag>out = "9:"</tag></item>
+		  <item>dziesiąta<tag>out = "10:"</tag></item>
+		  <item>jedenasta<tag>out = "11:"</tag></item>
+		  <item>dwónasta<tag>out = "12:"</tag></item>
+		  <item>trzynasta<tag>out = "13:"</tag></item>
+		  <item>czternasta<tag>out = "14:"</tag></item>
+		  <item>piętnasta<tag>out = "15:"</tag></item>
+		  <item>szesnasta<tag>out = "16:"</tag></item>
+		  <item>siedemnasta<tag>out = "17:"</tag></item>
+		  <item>osiemnasta<tag>out = "18:"</tag></item>
+		  <item>dziewiętnasta<tag>out = "19:"</tag></item>
+		  <item>dwudziesta<tag>out = "20:"</tag></item>
+		  <item>dwudziesta pierwsza<tag>out = "21:"</tag></item>
+		  <item>dwudziesta druga<tag>out = "22:"</tag></item>
+		  <item>dwudziesta trzecia<tag>out = "23:"</tag></item>
+		  <item>północ<tag>out = "0:"</tag></item>
+		  <item>pierwszej<tag>out = "1:"</tag></item>
+		  <item>drugiej<tag>out = "2:"</tag></item>
+		  <item>trzeciej<tag>out = "3:"</tag></item>
+		  <item>czwartej<tag>out = "4:"</tag></item>
+		  <item>piątej<tag>out = "5:"</tag></item>
+		  <item>szóstej<tag>out = "6:"</tag></item>
+		  <item>siódmej<tag>out = "7:"</tag></item>
+		  <item>ósmej<tag>out = "8:"</tag></item>
+		  <item>dziewiątej<tag>out = "9:"</tag></item>
+		  <item>dziesiątej<tag>out = "10:"</tag></item>
+		  <item>jedenastej<tag>out = "11:"</tag></item>
+		  <item>dwónastej<tag>out = "12:"</tag></item>
+		  <item>trzynastej<tag>out = "13:"</tag></item>
+		  <item>czternastej<tag>out = "14:"</tag></item>
+		  <item>piętnastej<tag>out = "15:"</tag></item>
+		  <item>szesnastej<tag>out = "16:"</tag></item>
+		  <item>siedemnastej<tag>out = "17:"</tag></item>
+		  <item>osiemnastej<tag>out = "18:"</tag></item>
+		  <item>dziewiętnastej<tag>out = "19:"</tag></item>
+		  <item>dwudziestej<tag>out = "20:"</tag></item>
+		  <item>dwudziestej pierwszej<tag>out = "21:"</tag></item>
+		  <item>dwudziestej drugiej<tag>out = "22:"</tag></item>
+		  <item>dwudziestej trzeciej<tag>out = "23:"</tag></item>
+		 </one-of>
+	</rule>
+	  
+	<rule id="numbers_0to59">
+		<one-of>
+		  <item><tag>out = "00"</tag></item>
+		  <item>zero<tag>out = "00"</tag></item>
+		  <item>godzinie<tag>out = "00"</tag></item>
+		  <item>jeden<tag>out = "01"</tag></item>
+		  <item>dwa<tag>out = "02"</tag></item>
+		  <item>trzy<tag>out = "03"</tag></item>
+		  <item>cztery<tag>out = "04"</tag></item>
+		  <item>pięć<tag>out = "05"</tag></item>
+		  <item>sześć<tag>out = "06"</tag></item>
+		  <item>siedem<tag>out = "07"</tag></item>
+		  <item>osiem<tag>out = "08"</tag></item>
+		  <item>dziewięć<tag>out = "09"</tag></item>
+		  <item>dziesięć<tag>out = "10"</tag></item>
+		  <item>jedenaście<tag>out = "11"</tag></item>
+		  <item>dwanaście<tag>out = "12"</tag></item>
+		  <item>trzynaście<tag>out = "13"</tag></item>
+		  <item>czternaście<tag>out = "14"</tag></item>
+		  <item>piętnaście<tag>out = "15"</tag></item>
+		  <item>szesnaście<tag>out = "16"</tag></item>
+		  <item>siedemnaście<tag>out = "17"</tag></item>
+		  <item>osiemnaście<tag>out = "18"</tag></item>
+		  <item>dziewiętnaście<tag>out = "19"</tag></item>
+		  <item>dwadzieścia<tag>out = "20"</tag></item>
+		  <item>dwadzieścia jeden<tag>out = "21"</tag></item>
+		  <item>dwadzieścia dwa<tag>out = "22"</tag></item>
+		  <item>dwadzieścia trzy<tag>out = "23"</tag></item>
+		  <item>dwadzieścia cztery<tag>out = "24"</tag></item>
+		  <item>dwadzieścia pięć<tag>out = "25"</tag></item>
+		  <item>dwadzieścia sześć<tag>out = "26"</tag></item>
+		  <item>dwadzieścia siedem<tag>out = "27"</tag></item>
+		  <item>dwadzieścia osiem<tag>out = "28"</tag></item>
+		  <item>dwadzieścia dziewięć<tag>out = "29"</tag></item>
+		  <item>trzydzieści<tag>out = "30"</tag></item>
+		  <item>trzydzieści jeden<tag>out = "31"</tag></item>
+		  <item>trzydzieści dwa<tag>out = "32"</tag></item>
+		  <item>trzydzieści trzy<tag>out = "33"</tag></item>
+		  <item>trzydzieści cztery<tag>out = "34"</tag></item>
+		  <item>trzydzieści pięć<tag>out = "35"</tag></item>
+		  <item>trzydzieści sześć<tag>out = "36"</tag></item>
+		  <item>trzydzieści siedem<tag>out = "37"</tag></item>
+		  <item>trzydzieści osiem<tag>out = "38"</tag></item>
+		  <item>trzydzieści dziewięć<tag>out = "39"</tag></item>
+		  <item>czterdzieści<tag>out = "40"</tag></item>
+		  <item>czterdzieści jeden<tag>out = "41"</tag></item>
+		  <item>czterdzieści dwa<tag>out = "42"</tag></item>
+		  <item>czterdzieści trzy<tag>out = "43"</tag></item>
+		  <item>czterdzieści cztery<tag>out = "44"</tag></item>
+		  <item>czterdzieści pięć<tag>out = "45"</tag></item>
+		  <item>czterdzieści sześć<tag>out = "46"</tag></item>
+		  <item>czterdzieści siedem<tag>out = "47"</tag></item>
+		  <item>czterdzieści osiem<tag>out = "48"</tag></item>
+		  <item>czterdzieści dziewięć<tag>out = "49"</tag></item>
+		  <item>pięćdziesiąt<tag>out = "50"</tag></item>
+		  <item>pięćdziesiąt jeden<tag>out = "51"</tag></item>
+		  <item>pięćdziesiąt dwa<tag>out = "52"</tag></item>
+		  <item>pięćdziesiąt trzy<tag>out = "53"</tag></item>
+		  <item>pięćdziesiąt cztery<tag>out = "54"</tag></item>
+		  <item>pięćdziesiąt pięć<tag>out = "55"</tag></item>
+		  <item>pięćdziesiąt sześć<tag>out = "56"</tag></item>
+		  <item>pięćdziesiąt siedem<tag>out = "57"</tag></item>
+		  <item>pięćdziesiąt osiem<tag>out = "58"</tag></item>
+		  <item>pięćdziesiąt dziewięć<tag>out = "59"</tag></item>
+		 </one-of>
+	</rule>
+
+	<rule id="Back">
+		<tag>out = "BACK"</tag>
+		<one-of>
+			<item>wróć</item>	
+			<item>źle</item>
+			<item>o żadnej</item>
+			<item>nie budź mnie</item>
+			<item>nie chcę ustawiać budzika</item>
+			<item>nie ustawiaj budzika</item>
+		</one-of>
+	</rule>
+ 
+	
+    <rule id="Repeat" scope="private">
+        <tag>out = "REPEAT"</tag>
+        <one-of>
+          <item>jeszcze raz</item>
+          <item>jeszcze raz proszę</item>
+          <item>co powiedziałeś</item>
+          <item>o co pytasz</item>
+          <item>o której</item>
+          <item>słucham</item>
+          <item>powtórz</item>
+          <item>powtórz proszę</item>
+        </one-of>
+    </rule>
+	
+</grammar>

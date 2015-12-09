@@ -1,0 +1,62 @@
+//////////////////////////////////////////////////
+//
+// Examples pack
+// ver 1.0
+// date: 16.09.2015
+//
+//////////////////////////////////////////////////
+//
+
+// back to the _CONFIG_.u file and add network to the robot structure.
+// var _RobotStructure =["Audio","Video","Emys","Network"];
+
+
+
+// Ex. 4.1 - weather
+
+// check the weather
+robot.network.weather.Get();
+// display info about weather
+echo(robot.network.weather.condition.text);
+echo(robot.network.weather.condition.temperature);
+
+
+// Ex. 4.2 - news
+
+// get latest BBC UK news
+robot.network.news.Get("http://feeds.bbci.co.uk/news/uk/rss.xml");
+// display first news
+robot.network.news.title[0];
+robot.network.news.description[0];
+
+
+// Ex. 4.3 - email
+
+// prepare message
+robot.network.mail["robot"].send.From("I Robot");
+robot.network.mail["robot"].send.To(["jan.kedzierski@pwr.edu.pl"]);
+robot.network.mail["robot"].send.Cc([]);
+robot.network.mail["robot"].send.Bcc([]);
+robot.network.mail["robot"].send.Subject("Hi! It's me.");
+robot.network.mail["robot"].send.Content("I am a funny robot!<br /><strong><em>I Robot</em></strong>");
+
+// send a message
+robot.network.mail["robot"].Send();
+
+// Ex. 4.4 - facebook
+
+//get all things that robot might see on his own wall
+robot.network.facebook["robot"].post.GetHome();
+//print the user full name who posted first post
+robot.network.facebook["robot"].post.fromName;
+//print the content of first message
+robot.network.facebook["robot"].post.message;
+
+// post sth.
+robot.network.facebook["robot"].post.PutPost("That's my first post!");
+
+
+// see more examples on the docu page
+// http://lirec.iiar.pwr.edu.pl/~flashdocu
+// Audio API:
+// http://lirec.iiar.pwr.edu.pl/~flashdocu/index.php/software/robot-api-structure/network

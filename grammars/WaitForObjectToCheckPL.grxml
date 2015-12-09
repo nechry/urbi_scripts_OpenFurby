@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<grammar version="1.0" xml:lang="pl-PL" root="rootObjectToCheckRule" tag-format="semantics/1.0-literals" xmlns="http://www.w3.org/2001/06/grammar">
+	<rule id="rootObjectToCheckRule">
+		<one-of>
+			<item><ruleref uri="#Hand"/></item>
+			<item><ruleref uri="#Torso"/></item>
+			<item><ruleref uri="#Stop"/></item>
+			<item><ruleref uri="#Next"/></item>
+			<item><ruleref uri="#Color"/></item>
+		</one-of>
+	</rule>
+  
+    <rule id="Hand" scope="private">
+        <tag>HAND</tag>
+        <one-of>
+			<item>EMYS</item>
+			<item></item>
+        </one-of>
+        <one-of>
+			<item>popatrz</item>
+			<item>patrz</item>
+			<item>spójrz</item>
+			<item>zerknij</item>
+        </one-of>
+        <one-of>
+			<item>tutaj</item>
+			<item>na to</item>
+			<item>tu</item>
+        </one-of>
+        <one-of>
+			<item>proszę</item>
+			<item></item>
+        </one-of>
+    </rule>
+	
+ 	
+    <rule id="Torso" scope="private">
+        <tag>TORSO</tag>
+        <one-of>
+			<item>EMYS</item>
+			<item></item>
+        </one-of>
+        <one-of>
+			<item>popatrz</item>
+			<item>patrz</item>
+			<item>spójrz</item>
+			<item>zerknij</item>
+        </one-of>
+        <one-of>
+			<item>na moje ubranie</item>
+			<item>na moją koszulę</item>
+			<item>na moją koszulkę</item>
+			<item>na moją sweter</item>
+			<item>na mnie</item>
+			<item>na moją bluzę</item>
+			<item>na moją kurtkę</item>
+			<item>na mój płaszcz</item>
+			<item>na mój brzuch</item>
+			<item>na mój ti szert</item>
+			<item>na mój żakiet</item>
+        </one-of>
+        <one-of>
+			<item>proszę</item>
+			<item></item>
+        </one-of>
+    </rule>	 
+	
+    <rule id="Stop" scope="private">
+        <tag>STOP</tag>
+        <one-of>
+			<item>EMYS</item>
+			<item></item>
+        </one-of>
+        <one-of>
+			<item>okej już</item>
+			<item>okej</item>
+			<item></item>
+        </one-of>
+        <one-of>
+			<item>wystarczy</item>
+			<item>dość</item>
+			<item>starczy</item>
+			<item>skończ</item>
+			<item>kończymy</item>
+			<item>skończmy</item>
+        </one-of>
+        <one-of>
+			<item>tego</item>
+			<item>tą grę</item>
+			<item>już</item>
+			<item></item>
+        </one-of>
+    </rule>	
+	
+	
+    <rule id="Next" scope="private">
+        <tag>NEXT</tag>
+        <one-of>
+			<item>EMYS</item>
+			<item></item>
+        </one-of>
+        <one-of>
+			<item>okej</item>
+			<item></item>
+        </one-of>
+        <one-of>
+			<item>zagrajmy w następną</item>
+			<item>zagrajmy w kolejną</item>
+			<item>zmieńmy grę</item>
+        </one-of>
+        <one-of>
+			<item>grę</item>
+			<item></item>
+        </one-of>
+    </rule>	
+	
+    <rule id="Color" scope="private">
+        <tag>COLOR</tag>
+        <one-of>
+			<item>EMYS</item>
+			<item>a</item>
+			<item></item>
+        </one-of>
+        <one-of>
+			<item>co to za</item>
+			<item>znasz ten</item>
+			<item>znasz to</item>
+			<item>to</item>
+			<item>ten</item>
+			<item>jaki to</item>
+			<item>jakiego to jest</item>
+        </one-of>
+        <one-of>
+			<item>kolor</item>
+			<item>koloru</item>
+			<item>znasz</item>
+			<item></item>
+        </one-of>
+    </rule>		
+	
+</grammar>

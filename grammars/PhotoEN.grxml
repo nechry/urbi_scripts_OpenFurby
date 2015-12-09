@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<grammar version="1.0" xml:lang="en-US" root="rootRule" tag-format="semantics/1.0-literals" xmlns="http://www.w3.org/2001/06/grammar">
+	<rule id="rootRule">
+		<one-of>
+			<item><ruleref uri="#Mail"/></item>
+			<item><ruleref uri="#Facebook"/></item>
+			<item><ruleref uri="#Back"/></item>
+			<item><ruleref uri="#Repeat"/></item>
+		</one-of>
+	</rule>
+  
+    <rule id="Mail" scope="private">
+        <tag>MAIL</tag>
+        <one-of>
+          <item>send it</item>
+          <item>send an e-mail</item>
+          <item>send mail</item>
+          <item>send a message</item>
+        </one-of>
+    </rule>
+	 
+
+    <rule id="Facebook" scope="private">
+        <tag>FB</tag>
+        <one-of>
+          <item>publish on facebook</item>
+          <item>get this on facebook</item>
+          <item>put it on my wall</item>
+          <item>put it on facebook</item>
+          <item>put this on my wall</item>
+        </one-of>
+    </rule>
+	
+
+    <rule id="Back" scope="private">
+        <tag>BACK</tag>
+        <one-of>
+          <item>nothing</item>
+          <item>don't do anything</item>
+          <item>delete that</item>
+          <item>delete this photo</item>
+        </one-of>
+    </rule>
+	
+    <rule id="Repeat" scope="private">
+        <tag>REPEAT</tag>
+        <one-of>
+          <item>again</item>
+          <item>again please</item>
+          <item>what did you say</item>
+          <item>what are you asking</item>
+          <item>could you repeat that</item>
+          <item>repeat that please</item>
+          <item>could you repeat that please</item>
+        </one-of>
+    </rule>
+	  
+</grammar>

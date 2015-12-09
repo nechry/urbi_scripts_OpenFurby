@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<grammar version="1.0" xml:lang="en-US" root="rootRule" tag-format="semantics/1.0-literals" xmlns="http://www.w3.org/2001/06/grammar">
+
+	<rule id="rootRule">
+		<one-of>
+			<item><ruleref uri="#Yes"/></item>
+			<item><ruleref uri="#No"/></item>
+			<item><ruleref uri="#Repeat"/></item>
+		</one-of>
+	</rule>
+
+
+    <rule id="Yes" scope="private">
+        <tag>YES</tag>
+        <one-of>
+          <item>yes</item>
+          <item></item>
+        </one-of>
+        <one-of>
+          <item>that's</item>
+          <item>that is</item>
+          <item></item>
+        </one-of>
+        <one-of>
+          <item></item>
+          <item>you are right</item>
+          <item>ok</item>
+          <item>right</item>
+          <item>of course</item>
+          <item>fine</item>
+          <item>correct</item>
+        </one-of>
+    </rule>
+
+		
+    <rule id="No" scope="private">
+        <tag>NO</tag>
+        <one-of>
+          <item>no</item>
+          <item></item>
+          <item>unfortunately</item>
+          <item>not</item>
+        </one-of>
+        <one-of>
+          <item>your're</item>
+          <item></item>
+          <item>you are</item>
+        </one-of>
+        <one-of>
+          <item></item>
+          <item>wrong</item>
+          <item>not right</item>
+          <item>thank you</item>
+          <item>thanks</item>
+          <item>at all</item>
+          <item>stop</item>
+          <item>stop it</item>
+          <item>enough</item>
+        </one-of>
+    </rule>
+	
+    <rule id="Repeat" scope="private">
+        <tag>REPEAT</tag>
+        <one-of>
+          <item>again</item>
+          <item>again please</item>
+          <item>what did you say</item>
+          <item>what are you asking</item>
+          <item>could you repeat that</item>
+          <item>repeat that please</item>
+          <item>could you repeat that please</item>
+        </one-of>
+    </rule>
+	
+	
+</grammar>

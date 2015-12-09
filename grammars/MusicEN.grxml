@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<grammar version="1.0" xml:lang="en-US" root="rootRule" tag-format="semantics/1.0-literals" xmlns="http://www.w3.org/2001/06/grammar"> 
+   <rule id="rootRule" scope="public">
+    <one-of>
+		<item><ruleref uri="#Music"/></item>
+		<item><ruleref uri="#Back"/></item>
+		<item><ruleref uri="#Repeat"/></item>
+	</one-of>
+   </rule>
+   
+   <rule id="Music" scope="private">
+		<one-of>
+			<item>please</item>
+			<item>play</item>
+			<item>turn on</item>
+			<item></item>
+		</one-of>  
+		<one-of>
+			<item>music</item>
+			<item></item>
+		</one-of> 
+		<ruleref uri="#kindMusic"/>
+		<one-of>
+			<item>please</item>
+			<item></item>
+		</one-of>
+   </rule>
+   
+   <rule id="Back" scope="private">
+			<tag>BACK</tag>
+			<one-of>
+				<item>back</item>	
+				<item>wrong</item>
+				<item>none</item>
+				<item>i don't want to listen to music</item>
+				<item>nothing</item>
+				<item>don't turn anything on</item>
+			</one-of>
+   </rule>
+   
+   <rule id="kindMusic" scope="private">
+      <one-of>
+         <item>flamenco<tag>FLAMENCO</tag></item>
+         <item>club<tag>CLUB</tag></item>
+         <item>classical<tag>CLASSIC</tag></item>
+         <item>kids<tag>BABY</tag></item>
+         <item>chillout<tag>CHILLOUT</tag></item>
+         <item>rock<tag>ROCK</tag></item>
+         <item>reggae<tag>REGGAE</tag></item>
+         <item>dubstep<tag>DUBSTEP</tag></item>
+         <item>relaxation<tag>RELAX</tag></item>
+      </one-of>
+   </rule>
+   
+    <rule id="Repeat" scope="private">
+        <tag>REPEAT</tag>
+        <one-of>
+          <item>again</item>
+          <item>again please</item>
+          <item>what did you say</item>
+          <item>what are you asking</item>
+          <item>could you repeat that</item>
+          <item>repeat that please</item>
+          <item>could you repeat that please</item>
+        </one-of>
+    </rule>
+</grammar>

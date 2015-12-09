@@ -1,0 +1,368 @@
+/*
+*  Audio system structure
+*
+*
+*  Author: Jan Kedzierski
+*  Date: 25.08.2015
+*  Ver: 7.3.5
+*/ 
+
+// add audo componnent for all audio devices (Player, speech, Recognition...)
+
+
+do(Global) {
+
+  var a_Audio = Tag.new;
+    
+  function LoadAudio{
+
+    echo(" ");
+    echo("INFO: Loading Audio...");
+    try{
+    
+      robot.addComponent("audio");
+      
+    ///////////////////////////////////////////
+    //
+    // T e x t T o o l   1
+    //
+    ///////////////////////////////////////////
+      if (_En_UTextToolAudio) {
+	echo("INFO: UTextTool 1 loading...");
+	if (!hasSlot(_UObjN_UTextTool)) loadModule(_uObjectsDir+_UObjN_UTextTool);
+	var Global.TextTool1=UTextTool.new();
+	TextTool1.encodingMode="translit";
+	echo("OK: UTextTool 1 loaded.");		
+      };
+      
+      
+    ///////////////////////////////////////////
+    // M P 3    C O N V E R T E R
+    //
+      if (_En_UMP3) {
+	echo("INFO: MP3 Converter loading...");
+	if (!hasSlot(_UObjN_UMP3)) loadModule(_uObjectsDir+_UObjN_UMP3);
+	var Global.Mp3=UMP3.new();
+
+	Global.Mp3.addProto(Interface);    
+	robot.audio.addDevice("converter", Global.Mp3);
+
+	echo("OK: MP3 Converter added.");
+      };
+  
+    ///////////////////////////////////////////
+    // P L A Y E R
+    //
+      if (_En_UPlayer) {
+	echo("INFO: Player loading...");
+	if (!hasSlot(_UObjN_UPlayer)) loadModule(_uObjectsDir+_UObjN_UPlayer);
+	var Global.Player=UPlayer.new();
+	
+	if (_Player_module=="UPlayer"){
+	  Global.Player.addProto(Interface);    
+	  robot.audio.addDevice("player", Global.Player);
+	};
+      
+	echo("OK: Player added.");
+      };
+   
+    ///////////////////////////////////////////
+    // P L A Y E R   N E X T
+    //  
+      if (_En_UPlayerNext) {
+	echo("INFO: PlayerNext 1 (simple player) loading...");
+	if (!hasSlot(_UObjN_UPlayerNext)) loadModule(_uObjectsDir+_UObjN_UPlayerNext);
+	var Global.PlayerNext1=UPlayerNext.new();
+
+	if (_Player_module=="UPlayerNext"){
+	  Global.PlayerNext1.addProto(Interface);    
+	  robot.audio.addDevice("player", Global.PlayerNext1);
+	  robot.audio.player.masterVolume=_PlayerNext_MasterVolume;
+	  robot.audio.player.volume=_PlayerNext_PlayerVolume;
+	  
+	};
+	
+	echo("OK: PlayerNext 1 (simple player) added.");
+
+	if (_Record_module=="UPlayerNext"){	
+	  echo("INFO: PlayerNext 2 (recorder) loading...");
+	  var Global.PlayerNext2 = UPlayerNext.new();
+	  robot.audio.addComponent("recorder");
+	  
+	  PlayerNext2.getSlot("inputDevices").copy(robot.audio.recorder,"inputDevices");
+	  
+	  do(robot.audio.recorder)
+	  {
+	      function SetLevel(input,level) 		{ call.PlayerNext2.SetRecordLevel(input,level); };
+	      function GetLevel(input) 	    		{ call.PlayerNext2.GetRecordLevel(input); };
+	      function Start(input_device,filename) 	{ call.PlayerNext2.StartRecord(input_device,filename); };
+	      function Stop() 				{ call.PlayerNext2.StopRecord(); };
+	  };
+	  
+	  var inputs_tmp = robot.audio.recorder.inputDevices;
+	  
+	  robot.audio.recorder.SetLevel(0, _PlayerNext_MicRecordLevel);
+	  for (var i=0;i<inputs_tmp.size;i++){
+	    if (inputs_tmp[i] == "Microphone Array (Kinect for Windows USB Audio)") robot.audio.recorder.SetLevel(i, _PlayerNext_KinectRecordLevel);
+	  };
+	  echo("OK: PlayerNext 2 (recorder) added.");
+	};
+	
+	echo("INFO: PlayerNext 3 (music player) loading...");
+	var Global.PlayerNext3=UPlayerNext.new();
+	Global.PlayerNext3.addProto(Interface);   
+
+	robot.audio.addDevice("musicPlayer", Global.PlayerNext3);
+	robot.audio.musicPlayer.volume=_PlayerNext_MusicPlayerVolume;
+	robot.audio.musicPlayer.bpmEnable = true;
+      
+	echo("OK: PlayerNext 3 (music player) added.");
+      };
+   
+    ///////////////////////////////////////////
+    // S P E E C H
+    //
+      if (_En_USpeech) {
+	echo("INFO: Speech loading...");
+	if ((_Speech_module== "USpeech_SAPI")&&(!hasSlot(_UObjN_USpeech_SAPI))) loadModule(_uObjectsDir+_UObjN_USpeech_SAPI);
+	if ((_Speech_module== "USpeech_MSP")&&(!hasSlot(_UObjN_USpeech_MSP))) loadModule(_uObjectsDir+_UObjN_USpeech_MSP);
+	var Global.Speech=USpeech.new();
+	    
+	Global.Speech.addProto(Interface);    
+	robot.audio.addDevice("speech", Global.Speech);
+	
+	robot.audio.speech.voiceNo = _Speech_param[0];
+	robot.audio.speech.volume = _Speech_volume;
+ 
+	do(robot.audio.speech)
+	{
+	      function Say(text,voice) { call.AudioSay(text,voice); };
+	      function availableVoices() { call.Speech.AvailableVoices(); };
+	};
+	
+	echo("OK: Speech added.");
+      };
+    
+    ///////////////////////////////////////////
+    // K I N E C T
+    //      
+      if (_En_UKinectAudio) {
+	echo("INFO: Kinect loading...");
+	if (!hasSlot(_UObjN_UKinect)) loadModule(_uObjectsDir+_UObjN_UKinect);
+	///////////////////////////
+	var tmp_recog = false;
+	//////////////////////////
+	if (_Recog_module=="UKinect") tmp_recog = true;
+	if (!hasSlot("Kinect")) {
+	
+	  var Global.Kinect = UKinect.new();
+	  Kinect.speechRecognizer = _Recog_param;
+	  
+	  if (!Kinect.Open(0,false,false,false,false,false,true,tmp_recog)) 
+	  {
+	    echo("ERROR: Can not connect to Kinect device!");
+	    return false;
+	  };
+	  Global.Kinect.addProto(Interface); 
+	} else {
+	  //
+	  Kinect.Close();
+	  Kinect.speechRecognizer = _Recog_param;
+	  //
+	  var tmp_color = Kinect.colorEnabled;
+	  var tmp_depth = Kinect.depthEnabled;
+	  var tmp_skeleton = Kinect.skeletonEnabled;
+	  var tmp_face = Kinect.faceEnabled;
+	  var tmp_interaction = Kinect.interEnabled;
+	  //
+	  var tmp_depthVisualization = Kinect.depthVisualization;
+	  var tmp_depthVisualizationOnColor = Kinect.depthVisualizationOnColor;
+	  var tmp_skeletonVisualization = Kinect.skeletonVisualization;
+	  var tmp_skeletonVisualizationOnColor = Kinect.skeletonVisualizationOnColor;
+	  var tmp_skeletonTrackingMode = Kinect.skeletonTrackingMode;
+	  var tmp_skeletonChooserMode = Kinect.skeletonChooserMode;
+	  var tmp_faceVisualization = Kinect.faceVisualization;
+	  var tmp_faceVisualizationOnColor = Kinect.faceVisualizationOnColor;
+	  var tmp_faceTrackingPause = Kinect.faceTrackingPause;
+	  var tmp_interVisualization = Kinect.interVisualization;
+	  var tmp_interVisualizationOnColor = Kinect.interVisualizationOnColor;
+	  //
+	  if (!Kinect.Open(0,tmp_color,tmp_depth,tmp_skeleton,tmp_face,tmp_interaction,true,tmp_recog))
+	  {
+	    echo("ERROR: Can not connect to Kinect device!");
+	    return false;
+	  };
+	  Kinect.depthVisualization = tmp_depthVisualization; 
+	  Kinect.depthVisualizationOnColor = tmp_depthVisualizationOnColor; 
+	  Kinect.skeletonVisualization = tmp_skeletonVisualization; 
+	  Kinect.skeletonVisualizationOnColor = tmp_skeletonVisualizationOnColor; 
+	  Kinect.skeletonTrackingMode = tmp_skeletonTrackingMode; 
+	  Kinect.skeletonChooserMode = tmp_skeletonChooserMode; 
+	  Kinect.faceVisualization = tmp_faceVisualization; 
+	  Kinect.faceVisualizationOnColor = tmp_faceVisualizationOnColor;
+	  Kinect.faceTrackingPause = tmp_faceTrackingPause; 
+	  Kinect.interVisualization = tmp_interVisualization; 
+	  Kinect.interVisualizationOnColor = tmp_interVisualizationOnColor; 
+	};
+	  
+	robot.audio.addDevice("kinect", Global.Kinect);	
+	  
+	robot.audio.addComponent("detector");
+	Kinect.getSlot("audioBeamAngle").copy(robot.audio.detector,"beamAngle");
+	Kinect.getSlot("audioSourceAngle").copy(robot.audio.detector,"sourceAngle");
+	Kinect.getSlot("audioSourceConfidence").copy(robot.audio.detector,"sourceConfidence");
+
+	if (_Record_module=="UKinect") {	
+	  robot.audio.addComponent("recorder");
+	  do(robot.audio.recorder)
+	  {
+	      function Start(input_device,filename) { call.Kinect.audioRecordStart(filename); };
+	      function Stop() { call.Kinect.audioRecordStop(); };
+	  };
+	};
+	
+	if (_Recog_module=="UKinect") {
+	  robot.audio.addComponent("recognition");
+	  
+	  Kinect.getSlot("speechPause").copy(robot.audio.recognition,"pause");
+	  Kinect.getSlot("speechResult").copy(robot.audio.recognition,"result");
+	  Kinect.getSlot("speechResultTag").copy(robot.audio.recognition,"resultTag");
+	  Kinect.getSlot("speechIsListening").copy(robot.audio.recognition,"isListening");
+	  Kinect.getSlot("speechAvailableRecognizers").copy(robot.audio.recognition,"availableRecognizers");
+	  
+	  do(robot.audio.recognition)
+	  {
+	      function AddPhrase(rule,phrase) { call.Kinect.speechAddPhrase(rule,phrase); };
+	      function ResetGrammar() { call.Kinect.speechResetGrammar(); };
+	      function LoadGrammar(filename) { call.Kinect.speechLoadGrammar(filename); };
+	      function SetGrammar(phrases_list,lang) { call.AudioSetGrammarPhrasesList(phrases_list,lang); };
+	  };
+	  
+	  echo("OK: Recognition (Kinect) added.");
+	};
+	echo("OK: Kinect added.");
+	
+      };
+      
+    ///////////////////////////////////////////
+    // R E C O G 
+    //
+      if (((_Recog_module=="URecog_MSP")||(_Recog_module=="URecog_SAPI"))&&(_En_URecog)) {
+	echo("INFO: Recognition loading...");
+	
+	if ((_Recog_module=="URecog_SAPI")&&(!hasSlot(_UObjN_URecog_SAPI))) loadModule(_uObjectsDir+_UObjN_URecog_SAPI);
+	if ((_Recog_module=="URecog_MSP")&&(!hasSlot(_UObjN_URecog_MSP))) loadModule(_uObjectsDir+_UObjN_URecog_MSP);
+	
+	var Global.Recog=URecog.new("InProc",_Recog_param,_Recog_input);
+	Global.Recog.addProto(Interface); 
+	
+	robot.audio.addComponent("recognition");
+	
+	Recog.getSlot("pause").copy(robot.audio.recognition,"pause");
+	Recog.getSlot("result").copy(robot.audio.recognition,"result");
+	Recog.getSlot("resultTag").copy(robot.audio.recognition,"resultTag");
+	Recog.getSlot("isListening").copy(robot.audio.recognition,"isListening");
+	
+	do(robot.audio.recognition)
+	{
+	    function AddPhrase(rule,phrase) { call.Recog.AddPhrase(rule,phrase); };
+	    function ResetGrammar() { call.Recog.ResetGrammar(); };
+	    function LoadGrammar(filename) { call.Recog.LoadGrammar(filename); };
+	    function SetGrammar(phrases_list,lang) { call.AudioSetGrammarPhrasesList(phrases_list,lang); };
+	    function availableRecognizers() { call.Recog.AvailableRecognizers(); };
+	    function availableInputs() { call.Recog.AvailableInputs(); };
+	};
+	
+	echo("OK: Recognition added.");
+      };
+	
+      /////////////////////////////////////////////////////////////////////////
+     
+      do (robot.audio) { 
+	function Run {call.AudioRun();};
+	function Stop {call.AudioStop();};
+	function Resume {call.AudioResume();};
+	function Pause {call.AudioPause();};
+      };
+    
+      echo("OK: Audio loaded.");
+      echo(" ");
+      return true;
+    }catch(var e){
+      echo("ERROR: %s" % e.message);
+      return false;
+    };
+  }|{};
+  
+  function AudioSay(text,voice){
+    if (voice>(_Speech_param.size-1)) 
+    {
+      echo("ERROR: Wrong voice index!");
+      return;
+    };
+     robot.audio.speech.voiceNo = _Speech_param[voice];
+     //robot.audio.speech.voiceNo = _Speech_param[voice][0];
+     //var tmp = robot.audio.speech.volume;
+     //robot.audio.speech.volume = (tmp * _Speech_param[voice][1]).round;
+     robot.audio.speech.Speak(text);
+     //robot.audio.speech.volume = tmp;
+  };
+  
+    
+  function AudioSetGrammarPhrasesList(phrases_list,lang){
+    TextTool1.CreateSimpleGrxml(phrases_list,lang,"saved/tmp_grammar.grxml");
+    robot.audio.recognition.ResetGrammar;
+    robot.audio.recognition.LoadGrammar("saved/tmp_grammar.grxml");
+  };
+    
+  function AudioRun(){
+    a_Audio.stop;
+    a_Audio:{
+      if (((_Recog_module=="URecog_MSP")||(_Recog_module=="URecog_SAPI"))&&(_En_URecog)){
+	loop { 
+	  sleep(20ms);	
+	  Recog.Poll(false);
+	},
+	echo("AUDIO: Recognition (MSP) sterted successful."); 
+      },
+      if (_En_UKinectAudio){
+	loop {
+	  sleep(20ms);	
+	  Kinect.PollAudio(false);
+	},
+	echo("AUDIO: Kinect audio sterted successful."); 
+      },
+    },
+    robot.log.Set("AUDIO RUN",[]);
+  }|{};
+    
+  function AudioStop(){
+    a_Audio.unfreeze|a_Audio.stop;
+    if (robot.audio.hasLocalSlot("player")) robot.audio.player.Stop;
+    if (robot.audio.hasLocalSlot("recorder")) robot.audio.recorder.Stop;
+    if (robot.audio.hasLocalSlot("musicPlayer")) robot.audio.musicPlayer.Stop;
+    echo("AUDIO: All audio modules stoped successful."); 
+    robot.log.Set("AUDIO STOP",[]);
+  }|{}; 
+  
+  function AudioPause(){
+    a_Audio.freeze;
+    //if (robot.audio.hasLocalSlot("player")) robot.audio.player.Pause;
+    //if (robot.audio.hasLocalSlot("recorder")) robot.audio.recorder.Pause;
+    //if (robot.audio.hasLocalSlot("musicPlayer")) robot.audio.musicPlayer.Pause;
+    //if (robot.audio.hasLocalSlot("recognition")) robot.audio.recognition.Pause(true);
+    echo("AUDIO: All audio modules paused successful."); 
+    robot.log.Set("AUDIO PAUSE",[]);
+  }|{}; 
+  
+  function AudioResume(){
+    a_Audio.unfreeze;
+    //if (robot.audio.hasLocalSlot("player")) robot.audio.player.Start;
+    //if (robot.audio.hasLocalSlot("recorder")) robot.audio.recorder.Start;
+    //if (robot.audio.hasLocalSlot("musicPlayer")) robot.audio.musicPlayer.Start;
+    //if (robot.audio.hasLocalSlot("recognition")) robot.audio.recognition.Pause(true);
+    echo("AUDIO: All audio modules resumed successful."); 
+    robot.log.Set("AUDIO RESUME",[]);
+  }|{}; 
+
+};

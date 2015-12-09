@@ -1,0 +1,49 @@
+/*
+* Initialize Remote
+*
+*
+*  Author: Jan Kedzierski
+*  Date: 07.04.2015
+*  Ver: 3.0
+*/
+
+do(Global) {
+  
+  echo("INFO: Loading REMOTE... ");
+
+  function LoadRemote{	
+      try{
+	//////////////////////
+	//
+	if (_En_UJoystick) {
+	  echo("INFO: Loading Joystick... ");
+	  if (!hasSlot(_UObjN_UJoystick)) loadModule(_uObjectsDir+_UObjN_UJoystick);
+	  var Global.joystick=UJoystick.new(0);
+	  load(_uFilesDir+"/remoteFiles/"+_Joystick_ActionFile);
+	  
+	  echo("OK: Joystick added.");
+	};
+	//////////////////////
+	//
+	//////////////////////
+	if (_En_UKeyboard) {
+	  echo("INFO: Loading Keyboard... ");
+	  
+	  if (!hasSlot(_UObjN_UKeyboard)) loadModule(_uObjectsDir+_UObjN_UKeyboard);
+	  var Global.Keyboard=UKeyboard.new();
+	  load(_uFilesDir+"/remoteFiles/"+_Keyboard_ActionFile);
+	  
+	  echo("OK: Keyboard added.");
+	};
+	//////////////////////
+	//
+      }catch(var e){
+	echo("ERROR: %s" % e.message);
+	return false;
+      };
+      echo("OK: REMOTE added.");
+      return true;
+  };
+  
+};
+

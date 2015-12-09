@@ -1,0 +1,908 @@
+<!DOCTYPE ulablayout>
+<ulablayout version="1.2" file-version="1.0">
+ <model-index row="0" column="0" depth="0">
+  <content><![CDATA[WASABI_scopes.ula]]></content>
+  <model-index row="0" column="0" depth="1">
+   <model-index row="0" column="0" depth="2">
+    <content><![CDATA[untitled8]]></content>
+   </model-index>
+   <model-index row="0" column="1" depth="2"/>
+   <model-index row="0" column="2" depth="2">
+    <content><![CDATA[Wasabi.P, Wasabi.A]]></content>
+   </model-index>
+   <model-index row="0" column="3" depth="2">
+    <content><![CDATA[Pad]]></content>
+   </model-index>
+   <model-index row="0" column="4" depth="2">
+    <content><![CDATA[400x429+14+9]]></content>
+   </model-index>
+   <model-index row="0" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="0" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="0" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Auto_Center" type="bool">false</var>
+    <var name="Invert X Axis" type="bool">false</var>
+    <var name="Invert Y Axis" type="bool">false</var>
+    <var name="Rotation_45Â°" type="bool">false</var>
+    <var name="Update Frequency (ms)" type="int">0</var>
+    <var name="Use Joystick" type="bool">false</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="0" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="1" column="0" depth="2">
+    <content><![CDATA[untitled10]]></content>
+   </model-index>
+   <model-index row="1" column="1" depth="2"/>
+   <model-index row="1" column="2" depth="2">
+    <content><![CDATA[Wasabi.D]]></content>
+   </model-index>
+   <model-index row="1" column="3" depth="2">
+    <content><![CDATA[Float]]></content>
+   </model-index>
+   <model-index row="1" column="4" depth="2">
+    <content><![CDATA[398x69+12+432]]></content>
+   </model-index>
+   <model-index row="1" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="1" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="1" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Joystick axis" type="int">-1</var>
+    <var name="Joystick update period (ms)" type="int">0</var>
+    <var name="Use joystick" type="bool">false</var>
+    <var name="decimals" type="int">0</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="1" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="2" column="0" depth="2">
+    <content><![CDATA[P - pleasure]]></content>
+   </model-index>
+   <model-index row="2" column="1" depth="2"/>
+   <model-index row="2" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="2" column="3" depth="2">
+    <content><![CDATA[Label]]></content>
+   </model-index>
+   <model-index row="2" column="4" depth="2">
+    <content><![CDATA[-1x-1+410+239]]></content>
+   </model-index>
+   <model-index row="2" column="5" depth="2">
+    <content><![CDATA[#6e6462ff]]></content>
+   </model-index>
+   <model-index row="2" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="2" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="2" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="3" column="0" depth="2">
+    <content><![CDATA[A - arousal]]></content>
+   </model-index>
+   <model-index row="3" column="1" depth="2"/>
+   <model-index row="3" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="3" column="3" depth="2">
+    <content><![CDATA[Label]]></content>
+   </model-index>
+   <model-index row="3" column="4" depth="2">
+    <content><![CDATA[-1x-1+180+41]]></content>
+   </model-index>
+   <model-index row="3" column="5" depth="2">
+    <content><![CDATA[#6e6462ff]]></content>
+   </model-index>
+   <model-index row="3" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="3" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="3" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="4" column="0" depth="2">
+    <content><![CDATA[D - dominance]]></content>
+   </model-index>
+   <model-index row="4" column="1" depth="2"/>
+   <model-index row="4" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="4" column="3" depth="2">
+    <content><![CDATA[Label]]></content>
+   </model-index>
+   <model-index row="4" column="4" depth="2">
+    <content><![CDATA[-1x-1+173+434]]></content>
+   </model-index>
+   <model-index row="4" column="5" depth="2">
+    <content><![CDATA[#6e6462ff]]></content>
+   </model-index>
+   <model-index row="4" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="4" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="4" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="5" column="0" depth="2">
+    <content><![CDATA[untitled14]]></content>
+   </model-index>
+   <model-index row="5" column="1" depth="2"/>
+   <model-index row="5" column="2" depth="2">
+    <content><![CDATA[Wasabi.X, Wasabi.Y]]></content>
+   </model-index>
+   <model-index row="5" column="3" depth="2">
+    <content><![CDATA[Pad]]></content>
+   </model-index>
+   <model-index row="5" column="4" depth="2">
+    <content><![CDATA[399x430+511+9]]></content>
+   </model-index>
+   <model-index row="5" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="5" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="5" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Auto_Center" type="bool">false</var>
+    <var name="Invert X Axis" type="bool">false</var>
+    <var name="Invert Y Axis" type="bool">false</var>
+    <var name="Rotation_45Â°" type="bool">false</var>
+    <var name="Update Frequency (ms)" type="int">0</var>
+    <var name="Use Joystick" type="bool">false</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="5" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="6" column="0" depth="2">
+    <content><![CDATA[untitled16]]></content>
+   </model-index>
+   <model-index row="6" column="1" depth="2"/>
+   <model-index row="6" column="2" depth="2">
+    <content><![CDATA[Wasabi.Z]]></content>
+   </model-index>
+   <model-index row="6" column="3" depth="2">
+    <content><![CDATA[Float]]></content>
+   </model-index>
+   <model-index row="6" column="4" depth="2">
+    <content><![CDATA[400x72+513+430]]></content>
+   </model-index>
+   <model-index row="6" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="6" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="6" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Joystick axis" type="int">-1</var>
+    <var name="Joystick update period (ms)" type="int">0</var>
+    <var name="Use joystick" type="bool">false</var>
+    <var name="decimals" type="int">0</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="6" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="7" column="0" depth="2">
+    <content><![CDATA[Y - mood]]></content>
+   </model-index>
+   <model-index row="7" column="1" depth="2"/>
+   <model-index row="7" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="7" column="3" depth="2">
+    <content><![CDATA[Label]]></content>
+   </model-index>
+   <model-index row="7" column="4" depth="2">
+    <content><![CDATA[-1x-1+680+40]]></content>
+   </model-index>
+   <model-index row="7" column="5" depth="2">
+    <content><![CDATA[#6e6462ff]]></content>
+   </model-index>
+   <model-index row="7" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="7" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="7" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="8" column="0" depth="2">
+    <content><![CDATA[X - emotion]]></content>
+   </model-index>
+   <model-index row="8" column="1" depth="2"/>
+   <model-index row="8" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="8" column="3" depth="2">
+    <content><![CDATA[Label]]></content>
+   </model-index>
+   <model-index row="8" column="4" depth="2">
+    <content><![CDATA[-1x-1+910+244]]></content>
+   </model-index>
+   <model-index row="8" column="5" depth="2">
+    <content><![CDATA[#6e6462ff]]></content>
+   </model-index>
+   <model-index row="8" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="8" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="8" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="9" column="0" depth="2">
+    <content><![CDATA[Z - boredom]]></content>
+   </model-index>
+   <model-index row="9" column="1" depth="2"/>
+   <model-index row="9" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="9" column="3" depth="2">
+    <content><![CDATA[Label]]></content>
+   </model-index>
+   <model-index row="9" column="4" depth="2">
+    <content><![CDATA[-1x-1+675+433]]></content>
+   </model-index>
+   <model-index row="9" column="5" depth="2">
+    <content><![CDATA[#6e6462ff]]></content>
+   </model-index>
+   <model-index row="9" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="9" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="9" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="10" column="0" depth="2">
+    <content><![CDATA[- 50]]></content>
+   </model-index>
+   <model-index row="10" column="1" depth="2"/>
+   <model-index row="10" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="10" column="3" depth="2">
+    <content><![CDATA[Button]]></content>
+   </model-index>
+   <model-index row="10" column="4" depth="2">
+    <content><![CDATA[127x47+546+558]]></content>
+   </model-index>
+   <model-index row="10" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="10" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="10" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Joystick Button Bound" type="int">-1</var>
+    <var name="Key Bound" type="QKeySequence"></var>
+    <var name="ReClick Behavior" type="glab::GLabStringChoice*">0</var>
+    <var name="Toggle Mode" type="bool">false</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="10" column="8" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="OnPush" type="QString">// OnPush script.</var>
+    <var name="OnRelease" type="QString">// OnRelease script.
+
+Wasabi.Impulse(-50);</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="11" column="0" depth="2">
+    <content><![CDATA[+50]]></content>
+   </model-index>
+   <model-index row="11" column="1" depth="2"/>
+   <model-index row="11" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="11" column="3" depth="2">
+    <content><![CDATA[Button]]></content>
+   </model-index>
+   <model-index row="11" column="4" depth="2">
+    <content><![CDATA[-1x-1+574+526]]></content>
+   </model-index>
+   <model-index row="11" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="11" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="11" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Joystick Button Bound" type="int">-1</var>
+    <var name="Key Bound" type="QKeySequence"></var>
+    <var name="ReClick Behavior" type="glab::GLabStringChoice*">0</var>
+    <var name="Toggle Mode" type="bool">false</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="11" column="8" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="OnPush" type="QString">// OnPush script.</var>
+    <var name="OnRelease" type="QString">// OnRelease script.
+
+Wasabi.Impulse(50);</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="12" column="0" depth="2">
+    <content><![CDATA[untitled32]]></content>
+   </model-index>
+   <model-index row="12" column="1" depth="2"/>
+   <model-index row="12" column="2" depth="2">
+    <content><![CDATA[Wasabi.emotion]]></content>
+   </model-index>
+   <model-index row="12" column="3" depth="2">
+    <content><![CDATA[String]]></content>
+   </model-index>
+   <model-index row="12" column="4" depth="2">
+    <content><![CDATA[-1x-1+22+525]]></content>
+   </model-index>
+   <model-index row="12" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="12" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="12" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="12" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="13" column="0" depth="2">
+    <content><![CDATA[untitled34]]></content>
+   </model-index>
+   <model-index row="13" column="1" depth="2"/>
+   <model-index row="13" column="2" depth="2">
+    <content><![CDATA[Wasabi.emotionProb.asString]]></content>
+   </model-index>
+   <model-index row="13" column="3" depth="2">
+    <content><![CDATA[String]]></content>
+   </model-index>
+   <model-index row="13" column="4" depth="2">
+    <content><![CDATA[-1x-1+20+571]]></content>
+   </model-index>
+   <model-index row="13" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="13" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="13" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="13" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="14" column="0" depth="2">
+    <content><![CDATA[Activate Hope]]></content>
+   </model-index>
+   <model-index row="14" column="1" depth="2"/>
+   <model-index row="14" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="14" column="3" depth="2">
+    <content><![CDATA[Button]]></content>
+   </model-index>
+   <model-index row="14" column="4" depth="2">
+    <content><![CDATA[128x46+758+514]]></content>
+   </model-index>
+   <model-index row="14" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="14" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="14" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Joystick Button Bound" type="int">-1</var>
+    <var name="Key Bound" type="QKeySequence"></var>
+    <var name="ReClick Behavior" type="glab::GLabStringChoice*">0</var>
+    <var name="Toggle Mode" type="bool">false</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="14" column="8" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="OnPush" type="QString">// OnPush script.</var>
+    <var name="OnRelease" type="QString">// OnRelease script.
+
+Wasabi.ActivateHope();</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="15" column="0" depth="2">
+    <content><![CDATA[Activate Relief]]></content>
+   </model-index>
+   <model-index row="15" column="1" depth="2"/>
+   <model-index row="15" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="15" column="3" depth="2">
+    <content><![CDATA[Button]]></content>
+   </model-index>
+   <model-index row="15" column="4" depth="2">
+    <content><![CDATA[-1x-1+759+545]]></content>
+   </model-index>
+   <model-index row="15" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="15" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="15" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Joystick Button Bound" type="int">-1</var>
+    <var name="Key Bound" type="QKeySequence"></var>
+    <var name="ReClick Behavior" type="glab::GLabStringChoice*">0</var>
+    <var name="Toggle Mode" type="bool">false</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="15" column="8" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="OnPush" type="QString">// OnPush script.</var>
+    <var name="OnRelease" type="QString">// OnRelease script.
+
+Wasabi.ActivateRelief();</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="16" column="0" depth="2">
+    <content><![CDATA[Activate Fears-Confmed]]></content>
+   </model-index>
+   <model-index row="16" column="1" depth="2"/>
+   <model-index row="16" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="16" column="3" depth="2">
+    <content><![CDATA[Button]]></content>
+   </model-index>
+   <model-index row="16" column="4" depth="2">
+    <content><![CDATA[-1x-1+760+576]]></content>
+   </model-index>
+   <model-index row="16" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="16" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="16" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Joystick Button Bound" type="int">-1</var>
+    <var name="Key Bound" type="QKeySequence"></var>
+    <var name="ReClick Behavior" type="glab::GLabStringChoice*">0</var>
+    <var name="Toggle Mode" type="bool">false</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="16" column="8" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="OnPush" type="QString">// OnPush script.</var>
+    <var name="OnRelease" type="QString">// OnRelease script.
+
+Wasabi.ActivateFearsConf();</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="17" column="0" depth="2">
+    <content><![CDATA[Reset]]></content>
+   </model-index>
+   <model-index row="17" column="1" depth="2"/>
+   <model-index row="17" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="17" column="3" depth="2">
+    <content><![CDATA[Button]]></content>
+   </model-index>
+   <model-index row="17" column="4" depth="2">
+    <content><![CDATA[-1x-1+303+546]]></content>
+   </model-index>
+   <model-index row="17" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="17" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="17" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Joystick Button Bound" type="int">-1</var>
+    <var name="Key Bound" type="QKeySequence"></var>
+    <var name="ReClick Behavior" type="glab::GLabStringChoice*">0</var>
+    <var name="Toggle Mode" type="bool">false</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="17" column="8" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="OnPush" type="QString">// OnPush script.</var>
+    <var name="OnRelease" type="QString">// OnRelease script.
+
+
+
+Wasabi.Reset();</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="18" column="0" depth="2">
+    <content><![CDATA[+70]]></content>
+   </model-index>
+   <model-index row="18" column="1" depth="2"/>
+   <model-index row="18" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="18" column="3" depth="2">
+    <content><![CDATA[Button]]></content>
+   </model-index>
+   <model-index row="18" column="4" depth="2">
+    <content><![CDATA[-1x-1+626+526]]></content>
+   </model-index>
+   <model-index row="18" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="18" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="18" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Joystick Button Bound" type="int">-1</var>
+    <var name="Key Bound" type="QKeySequence"></var>
+    <var name="ReClick Behavior" type="glab::GLabStringChoice*">0</var>
+    <var name="Toggle Mode" type="bool">false</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="18" column="8" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="OnPush" type="QString">// OnPush script.</var>
+    <var name="OnRelease" type="QString">// OnRelease script.
+Wasabi.Impulse(70);</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="19" column="0" depth="2">
+    <content><![CDATA[- 70]]></content>
+   </model-index>
+   <model-index row="19" column="1" depth="2"/>
+   <model-index row="19" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="19" column="3" depth="2">
+    <content><![CDATA[Button]]></content>
+   </model-index>
+   <model-index row="19" column="4" depth="2">
+    <content><![CDATA[-1x-1+627+558]]></content>
+   </model-index>
+   <model-index row="19" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="19" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="19" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Joystick Button Bound" type="int">-1</var>
+    <var name="Key Bound" type="QKeySequence"></var>
+    <var name="ReClick Behavior" type="glab::GLabStringChoice*">0</var>
+    <var name="Toggle Mode" type="bool">false</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="19" column="8" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="OnPush" type="QString">// OnPush script.</var>
+    <var name="OnRelease" type="QString">// OnRelease script.
+Wasabi.Impulse(70);</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="20" column="0" depth="2">
+    <content><![CDATA[- 10]]></content>
+   </model-index>
+   <model-index row="20" column="1" depth="2"/>
+   <model-index row="20" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="20" column="3" depth="2">
+    <content><![CDATA[Button]]></content>
+   </model-index>
+   <model-index row="20" column="4" depth="2">
+    <content><![CDATA[-1x-1+469+558]]></content>
+   </model-index>
+   <model-index row="20" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="20" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="20" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Joystick Button Bound" type="int">-1</var>
+    <var name="Key Bound" type="QKeySequence"></var>
+    <var name="ReClick Behavior" type="glab::GLabStringChoice*">0</var>
+    <var name="Toggle Mode" type="bool">false</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="20" column="8" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="OnPush" type="QString">// OnPush script.</var>
+    <var name="OnRelease" type="QString">// OnRelease script.
+Wasabi.Impulse(-10);</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="21" column="0" depth="2">
+    <content><![CDATA[+10]]></content>
+   </model-index>
+   <model-index row="21" column="1" depth="2"/>
+   <model-index row="21" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="21" column="3" depth="2">
+    <content><![CDATA[Button]]></content>
+   </model-index>
+   <model-index row="21" column="4" depth="2">
+    <content><![CDATA[69x46+469+526]]></content>
+   </model-index>
+   <model-index row="21" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="21" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="21" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Joystick Button Bound" type="int">-1</var>
+    <var name="Key Bound" type="QKeySequence"></var>
+    <var name="ReClick Behavior" type="glab::GLabStringChoice*">0</var>
+    <var name="Toggle Mode" type="bool">false</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="21" column="8" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="OnPush" type="QString">// OnPush script.</var>
+    <var name="OnRelease" type="QString">// OnRelease script.
+Wasabi.Impulse(10);</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="22" column="0" depth="2">
+    <content><![CDATA[+100]]></content>
+   </model-index>
+   <model-index row="22" column="1" depth="2"/>
+   <model-index row="22" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="22" column="3" depth="2">
+    <content><![CDATA[Button]]></content>
+   </model-index>
+   <model-index row="22" column="4" depth="2">
+    <content><![CDATA[-1x-1+678+526]]></content>
+   </model-index>
+   <model-index row="22" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="22" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="22" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Joystick Button Bound" type="int">-1</var>
+    <var name="Key Bound" type="QKeySequence"></var>
+    <var name="ReClick Behavior" type="glab::GLabStringChoice*">0</var>
+    <var name="Toggle Mode" type="bool">false</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="22" column="8" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="OnPush" type="QString">// OnPush script.</var>
+    <var name="OnRelease" type="QString">// OnRelease script.
+Wasabi.Impulse(100);</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="23" column="0" depth="2">
+    <content><![CDATA[- 100]]></content>
+   </model-index>
+   <model-index row="23" column="1" depth="2"/>
+   <model-index row="23" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="23" column="3" depth="2">
+    <content><![CDATA[Button]]></content>
+   </model-index>
+   <model-index row="23" column="4" depth="2">
+    <content><![CDATA[-1x-1+679+558]]></content>
+   </model-index>
+   <model-index row="23" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="23" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="23" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Joystick Button Bound" type="int">-1</var>
+    <var name="Key Bound" type="QKeySequence"></var>
+    <var name="ReClick Behavior" type="glab::GLabStringChoice*">0</var>
+    <var name="Toggle Mode" type="bool">false</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="23" column="8" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="OnPush" type="QString">// OnPush script.</var>
+    <var name="OnRelease" type="QString">// OnRelease script.
+Wasabi.Impulse(-100);</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="24" column="0" depth="2">
+    <content><![CDATA[+20]]></content>
+   </model-index>
+   <model-index row="24" column="1" depth="2"/>
+   <model-index row="24" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="24" column="3" depth="2">
+    <content><![CDATA[Button]]></content>
+   </model-index>
+   <model-index row="24" column="4" depth="2">
+    <content><![CDATA[-1x-1+522+526]]></content>
+   </model-index>
+   <model-index row="24" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="24" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="24" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Joystick Button Bound" type="int">-1</var>
+    <var name="Key Bound" type="QKeySequence"></var>
+    <var name="ReClick Behavior" type="glab::GLabStringChoice*">0</var>
+    <var name="Toggle Mode" type="bool">false</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="24" column="8" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="OnPush" type="QString">// OnPush script.</var>
+    <var name="OnRelease" type="QString">// OnRelease script.
+Wasabi.Impulse(20);</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="25" column="0" depth="2">
+    <content><![CDATA[- 20]]></content>
+   </model-index>
+   <model-index row="25" column="1" depth="2"/>
+   <model-index row="25" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="25" column="3" depth="2">
+    <content><![CDATA[Button]]></content>
+   </model-index>
+   <model-index row="25" column="4" depth="2">
+    <content><![CDATA[-1x-1+523+558]]></content>
+   </model-index>
+   <model-index row="25" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="25" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="25" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Joystick Button Bound" type="int">-1</var>
+    <var name="Key Bound" type="QKeySequence"></var>
+    <var name="ReClick Behavior" type="glab::GLabStringChoice*">0</var>
+    <var name="Toggle Mode" type="bool">false</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="25" column="8" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="OnPush" type="QString">// OnPush script.</var>
+    <var name="OnRelease" type="QString">// OnRelease script.
+Wasabi.Impulse(-20);</var>
+</map>]]></content>
+   </model-index>
+  </model-index>
+  <model-index row="0" column="1" depth="1"/>
+  <model-index row="0" column="2" depth="1"/>
+  <model-index row="0" column="3" depth="1"/>
+  <model-index row="0" column="4" depth="1"/>
+  <model-index row="0" column="5" depth="1"/>
+  <model-index row="0" column="6" depth="1"/>
+  <model-index row="0" column="7" depth="1"/>
+  <model-index row="0" column="8" depth="1"/>
+  <model-index row="1" column="0" depth="1"/>
+  <model-index row="1" column="1" depth="1">
+   <content><![CDATA[
+<map>
+    <var name="Author" type="QString">Unknown</var>
+    <var name="Background" type="QColor">#6e6462ff</var>
+    <var name="CoScript" type="QString"></var>
+    <var name="DecoScript" type="QString"></var>
+    <var name="Foreground" type="QColor">#e9e7e7ff</var>
+    <var name="GridColor" type="QColor">#000000ff</var>
+    <var name="GridSize" type="int">0</var>
+    <var name="LayoutColor" type="QColor">#000000ff</var>
+    <var name="LayoutGeom" type="QRectF">1000x650+0+0</var>
+    <var name="LayoutImage" type="QImage"></var>
+    <var name="LayoutImageMode" type="qt_ext::background::ImageMode">None</var>
+</map>]]></content>
+  </model-index>
+  <model-index row="1" column="2" depth="1"/>
+  <model-index row="1" column="3" depth="1"/>
+  <model-index row="1" column="4" depth="1"/>
+  <model-index row="1" column="5" depth="1"/>
+  <model-index row="1" column="6" depth="1"/>
+  <model-index row="1" column="7" depth="1"/>
+  <model-index row="1" column="8" depth="1"/>
+ </model-index>
+ <model-index row="0" column="1" depth="0"/>
+ <model-index row="0" column="2" depth="0"/>
+ <model-index row="0" column="3" depth="0"/>
+ <model-index row="0" column="4" depth="0"/>
+ <model-index row="0" column="5" depth="0"/>
+ <model-index row="0" column="6" depth="0"/>
+ <model-index row="0" column="7" depth="0"/>
+ <model-index row="0" column="8" depth="0"/>
+</ulablayout>

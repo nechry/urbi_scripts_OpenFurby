@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<grammar version="1.0" xml:lang="pl-PL" root="rootNewsRule" tag-format="semantics/1.0-literals" xmlns="http://www.w3.org/2001/06/grammar"> 
+    <rule id="rootNewsRule" scope="public">
+		<one-of>
+			<item><ruleref uri="#News"/></item>
+			<item><ruleref uri="#Back"/></item>
+			<item><ruleref uri="#Repeat"/></item>
+		</one-of>
+    </rule>
+   
+    <rule id="News" scope="private">
+			<one-of>
+				 <item>proszę</item>
+				 <item>przeczytaj</item>
+				 <item>sprawdź</item>
+				 <item></item>
+			</one-of>  
+			<one-of>
+				 <item>wiadomości</item>
+				 <item>news-y</item>
+				 <item></item>
+			</one-of>
+			<ruleref uri="#kindNews"/>
+			<one-of>
+				 <item>proszę</item>
+				 <item></item>
+			</one-of>
+    </rule>
+   
+    <rule id="Back" scope="private">
+			<tag>BACK</tag>
+			<one-of>
+				<item>wróć</item>	
+				<item>źle</item>
+				<item>nic</item>
+				<item>żaden</item>
+				<item>na żaden</item>
+				<item>nie chcę usłyszeć żadnych wiadomości</item>
+				<item>nie chcę słuchać wiadomości</item>
+				<item>nie chcę usłyszeć żadnych news-ów</item>
+				<item>nie chcę słuchać news-ów</item>
+			</one-of>
+    </rule>
+   
+    <rule id="kindNews" scope="private">
+      <one-of>
+         <item>ogólne<tag>ALL</tag></item>
+         <item>krajowe<tag>COUNTRY</tag></item>
+         <item>z kraju<tag>COUNTRY</tag></item>
+         <item>światowe<tag>WORLD</tag></item>
+         <item>ze świata<tag>WORLD</tag></item>
+         <item>sportowe<tag>SPORT</tag></item>
+         <item>o nauce<tag>SCIENCE</tag></item>
+         <item>naukowe<tag>SCIENCE</tag></item>
+         <item>nauka<tag>SCIENCE</tag></item>
+         <item>o nowych technologiach<tag>NEW_TECH</tag></item>
+         <item>technologiczne<tag>NEW_TECH</tag></item>
+         <item>filmowe<tag>MOVIE</tag></item>
+         <item>plotkarskie<tag>RUMORS</tag></item>
+         <item>plotki<tag>RUMORS</tag></item>
+         <item>ciekawostki<tag>CURIOSITIES</tag></item>
+         <item>telewizyjne<tag>TV</tag></item>
+         <item>motoryzacyjne<tag>AUTOMOTIVE</tag></item>
+         <item>z wrocławia<tag>LOCAL</tag></item>
+         <item>lokalne<tag>LOCAL</tag></item>
+      </one-of>
+    </rule>
+   
+	
+    <rule id="Repeat" scope="private">
+        <tag>REPEAT</tag>
+        <one-of>
+          <item>jeszcze raz</item>
+          <item>jeszcze raz proszę</item>
+          <item>co powiedziałeś</item>
+          <item>o co pytasz</item>
+          <item>słucham</item>
+          <item>powtórz</item>
+          <item>powtórz proszę</item>
+        </one-of>
+    </rule>
+	
+</grammar>

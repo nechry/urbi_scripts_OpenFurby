@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<grammar version="1.0" xml:lang="en-US" root="rootRule" tag-format="semantics/1.0-literals" xmlns="http://www.w3.org/2001/06/grammar">
+	<rule id="rootRule">
+		<one-of>
+			<item><ruleref uri="#Color"/></item>
+		</one-of>
+	</rule>
+ 
+    <rule id="Color" scope="private">
+        <one-of>
+			<item>this color is</item>
+			<item>that color is</item>
+			<item>this is</item>
+			<item>that's</item>
+        </one-of>
+        <one-of>
+			<item>bright</item>
+			<item>dark</item>
+			<item></item>
+        </one-of>
+        <item><ruleref uri="#ColorList"/></item>
+        <one-of>
+			<item>color</item>
+			<item></item>
+        </one-of>
+    </rule>	
+	
+	
+	<rule id="ColorList" scope="private">
+        <one-of>
+			<item>white<tag>COLOR WHITE</tag></item>
+			<item>gray<tag>COLOR GREY</tag></item>
+			<item>black<tag>COLOR BLACK</tag></item>
+			<item>red<tag>COLOR RED</tag></item>
+			<item>yellow<tag>COLOR YELLOW</tag></item>
+			<item>green<tag>COLOR GREEN</tag></item>
+			<item>blues<tag>COLOR BLUE</tag></item>
+			<item>violet<tag>COLOR VIOLET</tag></item>
+			<item>orange<tag>COLOR ORANGE</tag></item>
+			<item>brown<tag>COLOR BROWN</tag></item>
+			<item>pink<tag>COLOR PINK</tag></item>
+			<item>navy blue<tag>COLOR NAVYBLUE</tag></item>
+			<item>purple<tag>COLOR PURPLE</tag></item>
+			<item>ecru<tag>COLOR ECRU</tag></item>
+			<item>salmon<tag>COLOR SALMON</tag></item>
+			<item>flesh-coloured<tag>COLOR FLESH</tag></item>
+			<item>azure<tag>COLOR AZURE</tag></item>
+			<item>olive<tag>COLOR OLIVE</tag></item>
+			<item>celadon<tag>COLOR AQUAMARINE</tag></item>
+			<item>turquoise<tag>COLOR TURQUOISE</tag></item>
+			<item>graphite<tag>COLOR GRAPHITE</tag></item>
+        </one-of>
+    </rule>	
+	
+</grammar>

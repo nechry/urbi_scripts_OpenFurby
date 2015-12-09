@@ -1,0 +1,29 @@
+//////////////////////////////////////////////////
+//
+// Examples pack
+//  Date: 06.12.2015
+//  Ver: 1.0 (Furby special edition)
+//
+//////////////////////////////////////////////////
+//
+  // move to the position 100 in 3sec
+robot.body.position.Move(100,3s);
+
+  // change eye graphics and enable scrolling
+robot.body.position.Move(100,3s);
+robot.body.eye.image.val=102;
+robot.body.eye.scroll.val=2;
+
+  // simple behaviors
+robot.body.MoveNeutral(2);
+
+robot.body.MoveBack(2);
+robot.body.MoveForward(2);
+
+robot.body.MoveCloseEye(1);
+robot.body.MoveCloseEye2(1);
+
+robot.body.Speak(10,200);
+
+robot.body.ActAlive(200),
+robot.body.ActSleep(200),

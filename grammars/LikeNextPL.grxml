@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<grammar version="1.0" xml:lang="pl-PL" root="rootFBRule" tag-format="semantics/1.0-literals" xmlns="http://www.w3.org/2001/06/grammar">
+	<rule id="rootFBRule">
+		<one-of>
+			<item><ruleref uri="#Next"/></item>
+			<item><ruleref uri="#Like"/></item>
+			<item><ruleref uri="#Back"/></item>
+			<item><ruleref uri="#Repeat"/></item>
+		</one-of>
+	</rule> 
+
+
+
+    <rule id="Next" scope="private">
+        <tag>NEXT</tag>
+        <one-of>
+          <item></item>
+          <item>proszę</item>
+        </one-of>
+        <one-of>
+          <item>dalej</item>
+          <item>dawaj dalej</item>
+          <item>czytaj dalej</item>
+        </one-of>
+        <one-of>
+          <item></item>
+          <item>proszę</item>
+        </one-of>
+    </rule>
+	  
+	  
+    <rule id="Like" scope="private">
+        <tag>LIKE</tag>
+        <one-of>
+          <item></item>
+          <item>proszę</item>
+        </one-of>
+        <one-of>
+          <item>polub</item>
+          <item>polub to</item>
+          <item>polub posta</item>
+          <item>polub tego posta</item>
+          <item>zalajkuj</item>
+          <item>zalajkuj to</item>
+          <item>zalajkuj posta</item>
+          <item>zalajkuj tego posta</item>
+        </one-of>
+        <one-of>
+          <item></item>
+          <item>proszę</item>
+        </one-of>
+    </rule>
+	  
+	  
+    <rule id="Back" scope="private">
+        <tag>BACK</tag>
+        <one-of>
+          <item>ok</item>
+          <item></item>
+        </one-of>
+        <one-of>
+          <item>nie</item>
+          <item>nie dziękuję</item>
+          <item>daj spokój</item>
+          <item>kończ</item>
+          <item>skończ</item>
+          <item>wystarczy</item>
+        </one-of>
+        <one-of>
+          <item>już</item>
+          <item></item>
+        </one-of>
+    </rule>
+	  
+	
+    <rule id="Repeat" scope="private">
+        <tag>REPEAT</tag>
+        <one-of>
+          <item>jeszcze raz</item>
+          <item>jeszcze raz proszę</item>
+          <item>co powiedziałeś</item>
+          <item>o co pytasz</item>
+          <item>słucham</item>
+          <item>powtórz</item>
+          <item>powtórz proszę</item>
+        </one-of>
+    </rule>
+
+</grammar>

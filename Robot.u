@@ -1,0 +1,52 @@
+/*
+* Simple robot body abstraction definition.
+*
+*
+*  Author: Jan Kedzierski
+*  Date: 06.12.2015
+*  Ver: 1.0 (Furby special edition)
+*/	
+
+
+
+load("urbi/component.u")|;
+load("urbi/naming-standard.u")|;
+
+do(Global) {
+
+  
+  function LoadRobot(){
+    echo("INFO: Creating overal robot structure...");
+
+    /////////////////////////////
+    // ROBOT
+    var Global.robot = Component.new("robot");
+
+    class identity: Interface.Identity
+    {
+      var robotType = "Open FURBY";
+      var name = "MyRobot";
+      var model = "MKI";
+      var serial = "001";
+    };
+    robot.addProto(identity);
+
+    // add body component
+    robot.addComponent("body");
+    
+    UVar.new(Global,"robot_ready");
+    Global.getSlot("robot_ready").copy(robot,"ready");
+    robot.ready=false;
+    
+
+  
+    
+    echo("OK: Robot created.");
+    echo(" ");
+    return true;
+  }|{};
+
+  
+};
+
+

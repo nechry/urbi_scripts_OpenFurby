@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<grammar version="1.0" xml:lang="pl-PL" root="rootColorQuestionRule" tag-format="semantics/1.0-literals" xmlns="http://www.w3.org/2001/06/grammar">
+	<rule id="rootColorQuestionRule">
+		<one-of>
+			<item><ruleref uri="#Color"/></item>
+		</one-of>
+	</rule>
+ 
+    <rule id="Color" scope="private">
+        <tag>COLOR</tag>
+        <one-of>
+			<item>EMYS</item>
+			<item>a</item>
+			<item></item>
+        </one-of>
+        <one-of>
+			<item>co to za</item>
+			<item>znasz ten</item>
+			<item>znasz to</item>
+			<item>to</item>
+			<item>ten</item>
+			<item>jaki to</item>
+			<item>jakiego to jest</item>
+        </one-of>
+        <one-of>
+			<item>kolor</item>
+			<item>koloru</item>
+			<item>znasz</item>
+			<item></item>
+        </one-of>
+    </rule>	
+	
+</grammar>

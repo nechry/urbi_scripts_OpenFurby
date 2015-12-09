@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<grammar version="1.0" xml:lang="pl-PL" root="rootMusicRule" tag-format="semantics/1.0-literals" xmlns="http://www.w3.org/2001/06/grammar"> 
+   <rule id="rootMusicRule" scope="public">
+    <one-of>
+		<item><ruleref uri="#Music"/></item>
+		<item><ruleref uri="#Back"/></item>
+		<item><ruleref uri="#Repeat"/></item>
+	</one-of>
+   </rule>
+   
+   <rule id="Music" scope="private">
+		<one-of>
+			<item>proszę</item>
+			<item>zagraj</item>
+			<item>puść</item>
+			<item></item>
+		</one-of>  
+		<one-of>
+			<item>muzykę</item>
+			<item></item>
+		</one-of> 
+		<ruleref uri="#kindMusic"/>
+		<one-of>
+			<item>proszę</item>
+			<item></item>
+		</one-of>
+   </rule>
+   
+   <rule id="Back" scope="private">
+			<tag>BACK</tag>
+			<one-of>
+				<item>wróć</item>	
+				<item>źle</item>
+				<item>żaden</item>
+				<item>nie chcę słuchać muzyki</item>
+				<item>nic</item>
+				<item>na nic</item>
+				<item>nic nie włączaj</item>
+			</one-of>
+   </rule>
+   
+   <rule id="kindMusic" scope="private">
+      <one-of>
+         <item>eremef efem<tag>RMFFM</tag></item>
+         <item>flamenko<tag>FLAMENCO</tag></item>
+         <item>klubową<tag>CLUB</tag></item>
+         <item>klubowa<tag>CLUB</tag></item>
+         <item>klasyczną<tag>CLASSIC</tag></item>
+         <item>klasyczna<tag>CLASSIC</tag></item>
+         <item>dla dzieci<tag>BABY</tag></item>
+         <item>chillout<tag>CHILLOUT</tag></item>
+         <item>rokową<tag>ROCK</tag></item>
+         <item>rokowa<tag>ROCK</tag></item>
+         <item>reggae<tag>REGGAE</tag></item>
+         <item>dubstep<tag>DUBSTEP</tag></item>
+         <item>relaksującą<tag>RELAX</tag></item>
+         <item>relaksująca<tag>RELAX</tag></item>
+         <item>do pracy<tag>WORK</tag></item>
+         <item>w pracy<tag>WORK</tag></item>
+      </one-of>
+   </rule>
+   
+    <rule id="Repeat" scope="private">
+        <tag>REPEAT</tag>
+        <one-of>
+          <item>jeszcze raz</item>
+          <item>jeszcze raz proszę</item>
+          <item>co powiedziałeś</item>
+          <item>o co pytasz</item>
+          <item>słucham</item>
+          <item>powtórz</item>
+          <item>powtórz proszę</item>
+        </one-of>
+    </rule>
+</grammar>

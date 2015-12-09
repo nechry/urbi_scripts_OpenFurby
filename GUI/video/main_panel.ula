@@ -1,0 +1,888 @@
+<!DOCTYPE ulablayout>
+<ulablayout version="1.2" file-version="1.0">
+ <model-index row="0" column="0" depth="0">
+  <content><![CDATA[main_panel.ula]]></content>
+  <model-index row="0" column="0" depth="1">
+   <model-index row="0" column="0" depth="2">
+    <content><![CDATA[untitled4]]></content>
+   </model-index>
+   <model-index row="0" column="1" depth="2"/>
+   <model-index row="0" column="2" depth="2">
+    <content><![CDATA[Kinect.skeletonImage]]></content>
+   </model-index>
+   <model-index row="0" column="3" depth="2">
+    <content><![CDATA[Image]]></content>
+   </model-index>
+   <model-index row="0" column="4" depth="2">
+    <content><![CDATA[258x228+12+33]]></content>
+   </model-index>
+   <model-index row="0" column="5" depth="2">
+    <content><![CDATA[#6e6462ff]]></content>
+   </model-index>
+   <model-index row="0" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="0" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="0" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="1" column="0" depth="2">
+    <content><![CDATA[untitled6]]></content>
+   </model-index>
+   <model-index row="1" column="1" depth="2"/>
+   <model-index row="1" column="2" depth="2">
+    <content><![CDATA[ImageTool4.image]]></content>
+   </model-index>
+   <model-index row="1" column="3" depth="2">
+    <content><![CDATA[Image]]></content>
+   </model-index>
+   <model-index row="1" column="4" depth="2">
+    <content><![CDATA[260x235+275+30]]></content>
+   </model-index>
+   <model-index row="1" column="5" depth="2">
+    <content><![CDATA[#6e6462ff]]></content>
+   </model-index>
+   <model-index row="1" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="1" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="1" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="2" column="0" depth="2">
+    <content><![CDATA[untitled8]]></content>
+   </model-index>
+   <model-index row="2" column="1" depth="2"/>
+   <model-index row="2" column="2" depth="2">
+    <content><![CDATA[ImageTool3.image]]></content>
+   </model-index>
+   <model-index row="2" column="3" depth="2">
+    <content><![CDATA[Image]]></content>
+   </model-index>
+   <model-index row="2" column="4" depth="2">
+    <content><![CDATA[260x239+278+319]]></content>
+   </model-index>
+   <model-index row="2" column="5" depth="2">
+    <content><![CDATA[#6e6462ff]]></content>
+   </model-index>
+   <model-index row="2" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="2" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="2" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="3" column="0" depth="2">
+    <content><![CDATA[untitled9]]></content>
+   </model-index>
+   <model-index row="3" column="1" depth="2"/>
+   <model-index row="3" column="2" depth="2">
+    <content><![CDATA[ImageTool5.image]]></content>
+   </model-index>
+   <model-index row="3" column="3" depth="2">
+    <content><![CDATA[Image]]></content>
+   </model-index>
+   <model-index row="3" column="4" depth="2">
+    <content><![CDATA[260x230+544+319]]></content>
+   </model-index>
+   <model-index row="3" column="5" depth="2">
+    <content><![CDATA[#6e6462ff]]></content>
+   </model-index>
+   <model-index row="3" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="3" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="3" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="4" column="0" depth="2">
+    <content><![CDATA[untitled18]]></content>
+   </model-index>
+   <model-index row="4" column="1" depth="2"/>
+   <model-index row="4" column="2" depth="2">
+    <content><![CDATA[Kinect.faceImage]]></content>
+   </model-index>
+   <model-index row="4" column="3" depth="2">
+    <content><![CDATA[Image]]></content>
+   </model-index>
+   <model-index row="4" column="4" depth="2">
+    <content><![CDATA[230x210+828+109]]></content>
+   </model-index>
+   <model-index row="4" column="5" depth="2">
+    <content><![CDATA[#6e6462ff]]></content>
+   </model-index>
+   <model-index row="4" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="4" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="4" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="5" column="0" depth="2">
+    <content><![CDATA[untitled22]]></content>
+   </model-index>
+   <model-index row="5" column="1" depth="2"/>
+   <model-index row="5" column="2" depth="2">
+    <content><![CDATA[robot.video.humanDetector.head.oriented]]></content>
+   </model-index>
+   <model-index row="5" column="3" depth="2">
+    <content><![CDATA[Bool]]></content>
+   </model-index>
+   <model-index row="5" column="4" depth="2">
+    <content><![CDATA[160x59+796+495]]></content>
+   </model-index>
+   <model-index row="5" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="5" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="5" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="5" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="6" column="0" depth="2">
+    <content><![CDATA[head oriented?]]></content>
+   </model-index>
+   <model-index row="6" column="1" depth="2"/>
+   <model-index row="6" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="6" column="3" depth="2">
+    <content><![CDATA[Label]]></content>
+   </model-index>
+   <model-index row="6" column="4" depth="2">
+    <content><![CDATA[137x32+812+467]]></content>
+   </model-index>
+   <model-index row="6" column="5" depth="2">
+    <content><![CDATA[#555500ff]]></content>
+   </model-index>
+   <model-index row="6" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="6" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="6" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="7" column="0" depth="2">
+    <content><![CDATA[Left Hand Color Detector]]></content>
+   </model-index>
+   <model-index row="7" column="1" depth="2"/>
+   <model-index row="7" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="7" column="3" depth="2">
+    <content><![CDATA[Label]]></content>
+   </model-index>
+   <model-index row="7" column="4" depth="2">
+    <content><![CDATA[259x32+279+319]]></content>
+   </model-index>
+   <model-index row="7" column="5" depth="2">
+    <content><![CDATA[#550000ff]]></content>
+   </model-index>
+   <model-index row="7" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="7" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="7" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="8" column="0" depth="2">
+    <content><![CDATA[Face Detector (from Kinect)]]></content>
+   </model-index>
+   <model-index row="8" column="1" depth="2"/>
+   <model-index row="8" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="8" column="3" depth="2">
+    <content><![CDATA[Label]]></content>
+   </model-index>
+   <model-index row="8" column="4" depth="2">
+    <content><![CDATA[232x32+826+30]]></content>
+   </model-index>
+   <model-index row="8" column="5" depth="2">
+    <content><![CDATA[#005500ff]]></content>
+   </model-index>
+   <model-index row="8" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="8" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="8" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="9" column="0" depth="2">
+    <content><![CDATA[Torso Detector]]></content>
+   </model-index>
+   <model-index row="9" column="1" depth="2"/>
+   <model-index row="9" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="9" column="3" depth="2">
+    <content><![CDATA[Label]]></content>
+   </model-index>
+   <model-index row="9" column="4" depth="2">
+    <content><![CDATA[255x34+275+29]]></content>
+   </model-index>
+   <model-index row="9" column="5" depth="2">
+    <content><![CDATA[#550000ff]]></content>
+   </model-index>
+   <model-index row="9" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="9" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="9" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="10" column="0" depth="2">
+    <content><![CDATA[Head Detector]]></content>
+   </model-index>
+   <model-index row="10" column="1" depth="2"/>
+   <model-index row="10" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="10" column="3" depth="2">
+    <content><![CDATA[Label]]></content>
+   </model-index>
+   <model-index row="10" column="4" depth="2">
+    <content><![CDATA[261x32+545+319]]></content>
+   </model-index>
+   <model-index row="10" column="5" depth="2">
+    <content><![CDATA[#550000ff]]></content>
+   </model-index>
+   <model-index row="10" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="10" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="10" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="11" column="0" depth="2">
+    <content><![CDATA[untitled30]]></content>
+   </model-index>
+   <model-index row="11" column="1" depth="2"/>
+   <model-index row="11" column="2" depth="2">
+    <content><![CDATA[robot.video.humanDetector.visible]]></content>
+   </model-index>
+   <model-index row="11" column="3" depth="2">
+    <content><![CDATA[Bool]]></content>
+   </model-index>
+   <model-index row="11" column="4" depth="2">
+    <content><![CDATA[160x59+69+256]]></content>
+   </model-index>
+   <model-index row="11" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="11" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="11" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="11" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="12" column="0" depth="2">
+    <content><![CDATA[untitled33]]></content>
+   </model-index>
+   <model-index row="12" column="1" depth="2"/>
+   <model-index row="12" column="2" depth="2">
+    <content><![CDATA[robot.video.humanDetector.torso.visible]]></content>
+   </model-index>
+   <model-index row="12" column="3" depth="2">
+    <content><![CDATA[Bool]]></content>
+   </model-index>
+   <model-index row="12" column="4" depth="2">
+    <content><![CDATA[160x59+335+259]]></content>
+   </model-index>
+   <model-index row="12" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="12" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="12" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="12" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="13" column="0" depth="2">
+    <content><![CDATA[untitled34]]></content>
+   </model-index>
+   <model-index row="13" column="1" depth="2"/>
+   <model-index row="13" column="2" depth="2">
+    <content><![CDATA[robot.video.humanDetector.head.visible]]></content>
+   </model-index>
+   <model-index row="13" column="3" depth="2">
+    <content><![CDATA[Bool]]></content>
+   </model-index>
+   <model-index row="13" column="4" depth="2">
+    <content><![CDATA[160x59+795+416]]></content>
+   </model-index>
+   <model-index row="13" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="13" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="13" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="13" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="14" column="0" depth="2">
+    <content><![CDATA[untitled35]]></content>
+   </model-index>
+   <model-index row="14" column="1" depth="2"/>
+   <model-index row="14" column="2" depth="2">
+    <content><![CDATA[Kinect.faceIsTracking]]></content>
+   </model-index>
+   <model-index row="14" column="3" depth="2">
+    <content><![CDATA[Bool]]></content>
+   </model-index>
+   <model-index row="14" column="4" depth="2">
+    <content><![CDATA[160x59+873+311]]></content>
+   </model-index>
+   <model-index row="14" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="14" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="14" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="14" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="15" column="0" depth="2">
+    <content><![CDATA[FPS]]></content>
+   </model-index>
+   <model-index row="15" column="1" depth="2"/>
+   <model-index row="15" column="2" depth="2">
+    <content><![CDATA[Kinect.fps]]></content>
+   </model-index>
+   <model-index row="15" column="3" depth="2">
+    <content><![CDATA[ProgressBar]]></content>
+   </model-index>
+   <model-index row="15" column="4" depth="2">
+    <content><![CDATA[1285x68+3+526]]></content>
+   </model-index>
+   <model-index row="15" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="15" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="15" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Percent" type="bool">true</var>
+    <var name="Vertical" type="bool">false</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="15" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="16" column="0" depth="2">
+    <content><![CDATA[untitled37]]></content>
+   </model-index>
+   <model-index row="16" column="1" depth="2"/>
+   <model-index row="16" column="2" depth="2">
+    <content><![CDATA[Kinect.faceVisualization]]></content>
+   </model-index>
+   <model-index row="16" column="3" depth="2">
+    <content><![CDATA[Bool]]></content>
+   </model-index>
+   <model-index row="16" column="4" depth="2">
+    <content><![CDATA[161x59+902+103]]></content>
+   </model-index>
+   <model-index row="16" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="16" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="16" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="16" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="17" column="0" depth="2">
+    <content><![CDATA[untitled53]]></content>
+   </model-index>
+   <model-index row="17" column="1" depth="2"/>
+   <model-index row="17" column="2" depth="2">
+    <content><![CDATA[Kinect.faceTrackingPause]]></content>
+   </model-index>
+   <model-index row="17" column="3" depth="2">
+    <content><![CDATA[Bool]]></content>
+   </model-index>
+   <model-index row="17" column="4" depth="2">
+    <content><![CDATA[238x59+828+56]]></content>
+   </model-index>
+   <model-index row="17" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="17" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="17" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="17" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="18" column="0" depth="2">
+    <content><![CDATA[untitled52]]></content>
+   </model-index>
+   <model-index row="18" column="1" depth="2"/>
+   <model-index row="18" column="2" depth="2">
+    <content><![CDATA[Kinect.interImage]]></content>
+   </model-index>
+   <model-index row="18" column="3" depth="2">
+    <content><![CDATA[Image]]></content>
+   </model-index>
+   <model-index row="18" column="4" depth="2">
+    <content><![CDATA[277x230+541+29]]></content>
+   </model-index>
+   <model-index row="18" column="5" depth="2">
+    <content><![CDATA[#6e6462ff]]></content>
+   </model-index>
+   <model-index row="18" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="18" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="18" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="19" column="0" depth="2">
+    <content><![CDATA[Interaction]]></content>
+   </model-index>
+   <model-index row="19" column="1" depth="2"/>
+   <model-index row="19" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="19" column="3" depth="2">
+    <content><![CDATA[Label]]></content>
+   </model-index>
+   <model-index row="19" column="4" depth="2">
+    <content><![CDATA[276x33+541+29]]></content>
+   </model-index>
+   <model-index row="19" column="5" depth="2">
+    <content><![CDATA[#550000ff]]></content>
+   </model-index>
+   <model-index row="19" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="19" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="19" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="20" column="0" depth="2">
+    <content><![CDATA[untitled54]]></content>
+   </model-index>
+   <model-index row="20" column="1" depth="2"/>
+   <model-index row="20" column="2" depth="2">
+    <content><![CDATA[Kinect.interVisualization]]></content>
+   </model-index>
+   <model-index row="20" column="3" depth="2">
+    <content><![CDATA[Bool]]></content>
+   </model-index>
+   <model-index row="20" column="4" depth="2">
+    <content><![CDATA[-1x-1+671+20]]></content>
+   </model-index>
+   <model-index row="20" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="20" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="20" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="20" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="21" column="0" depth="2">
+    <content><![CDATA[Human Detector]]></content>
+   </model-index>
+   <model-index row="21" column="1" depth="2"/>
+   <model-index row="21" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="21" column="3" depth="2">
+    <content><![CDATA[Label]]></content>
+   </model-index>
+   <model-index row="21" column="4" depth="2">
+    <content><![CDATA[259x34+10+29]]></content>
+   </model-index>
+   <model-index row="21" column="5" depth="2">
+    <content><![CDATA[#550000ff]]></content>
+   </model-index>
+   <model-index row="21" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="21" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="21" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="22" column="0" depth="2">
+    <content><![CDATA[untitled59]]></content>
+   </model-index>
+   <model-index row="22" column="1" depth="2"/>
+   <model-index row="22" column="2" depth="2">
+    <content><![CDATA[ImageTool2.image]]></content>
+   </model-index>
+   <model-index row="22" column="3" depth="2">
+    <content><![CDATA[Image]]></content>
+   </model-index>
+   <model-index row="22" column="4" depth="2">
+    <content><![CDATA[260x230+11+320]]></content>
+   </model-index>
+   <model-index row="22" column="5" depth="2">
+    <content><![CDATA[#6e6462ff]]></content>
+   </model-index>
+   <model-index row="22" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="22" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="22" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="23" column="0" depth="2">
+    <content><![CDATA[untitled61]]></content>
+   </model-index>
+   <model-index row="23" column="1" depth="2"/>
+   <model-index row="23" column="2" depth="2">
+    <content><![CDATA[MoveDetector.image]]></content>
+   </model-index>
+   <model-index row="23" column="3" depth="2">
+    <content><![CDATA[Image]]></content>
+   </model-index>
+   <model-index row="23" column="4" depth="2">
+    <content><![CDATA[230x210+1064+109]]></content>
+   </model-index>
+   <model-index row="23" column="5" depth="2">
+    <content><![CDATA[#6e6462ff]]></content>
+   </model-index>
+   <model-index row="23" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="23" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="23" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="24" column="0" depth="2">
+    <content><![CDATA[Move Detector]]></content>
+   </model-index>
+   <model-index row="24" column="1" depth="2"/>
+   <model-index row="24" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="24" column="3" depth="2">
+    <content><![CDATA[Label]]></content>
+   </model-index>
+   <model-index row="24" column="4" depth="2">
+    <content><![CDATA[220x31+1066+31]]></content>
+   </model-index>
+   <model-index row="24" column="5" depth="2">
+    <content><![CDATA[#005500ff]]></content>
+   </model-index>
+   <model-index row="24" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="24" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="24" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="25" column="0" depth="2">
+    <content><![CDATA[untitled63]]></content>
+   </model-index>
+   <model-index row="25" column="1" depth="2"/>
+   <model-index row="25" column="2" depth="2">
+    <content><![CDATA[MoveDetector.visible]]></content>
+   </model-index>
+   <model-index row="25" column="3" depth="2">
+    <content><![CDATA[Bool]]></content>
+   </model-index>
+   <model-index row="25" column="4" depth="2">
+    <content><![CDATA[-1x-1+1113+313]]></content>
+   </model-index>
+   <model-index row="25" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="25" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="25" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="25" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="26" column="0" depth="2">
+    <content><![CDATA[Right Hand Color Detector]]></content>
+   </model-index>
+   <model-index row="26" column="1" depth="2"/>
+   <model-index row="26" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="26" column="3" depth="2">
+    <content><![CDATA[Label]]></content>
+   </model-index>
+   <model-index row="26" column="4" depth="2">
+    <content><![CDATA[260x31+11+319]]></content>
+   </model-index>
+   <model-index row="26" column="5" depth="2">
+    <content><![CDATA[#550000ff]]></content>
+   </model-index>
+   <model-index row="26" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="26" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="26" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="27" column="0" depth="2">
+    <content><![CDATA[untitled65]]></content>
+   </model-index>
+   <model-index row="27" column="1" depth="2"/>
+   <model-index row="27" column="2" depth="2">
+    <content><![CDATA[Kinect.skeletonVisualization]]></content>
+   </model-index>
+   <model-index row="27" column="3" depth="2">
+    <content><![CDATA[Bool]]></content>
+   </model-index>
+   <model-index row="27" column="4" depth="2">
+    <content><![CDATA[-1x-1+45+52]]></content>
+   </model-index>
+   <model-index row="27" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="27" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="27" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="27" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="28" column="0" depth="2">
+    <content><![CDATA[Head detected]]></content>
+   </model-index>
+   <model-index row="28" column="1" depth="2"/>
+   <model-index row="28" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="28" column="3" depth="2">
+    <content><![CDATA[Label]]></content>
+   </model-index>
+   <model-index row="28" column="4" depth="2">
+    <content><![CDATA[136x31+812+393]]></content>
+   </model-index>
+   <model-index row="28" column="5" depth="2">
+    <content><![CDATA[#555500ff]]></content>
+   </model-index>
+   <model-index row="28" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="28" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="28" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="29" column="0" depth="2">
+    <content><![CDATA[untitled67]]></content>
+   </model-index>
+   <model-index row="29" column="1" depth="2"/>
+   <model-index row="29" column="2" depth="2">
+    <content><![CDATA[MoveDetector.enable]]></content>
+   </model-index>
+   <model-index row="29" column="3" depth="2">
+    <content><![CDATA[Bool]]></content>
+   </model-index>
+   <model-index row="29" column="4" depth="2">
+    <content><![CDATA[-1x-1+1101+57]]></content>
+   </model-index>
+   <model-index row="29" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="29" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="29" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="29" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="30" column="0" depth="2">
+    <content><![CDATA[untitled68]]></content>
+   </model-index>
+   <model-index row="30" column="1" depth="2"/>
+   <model-index row="30" column="2" depth="2">
+    <content><![CDATA[robot.video.humanDetector.enable]]></content>
+   </model-index>
+   <model-index row="30" column="3" depth="2">
+    <content><![CDATA[Bool]]></content>
+   </model-index>
+   <model-index row="30" column="4" depth="2">
+    <content><![CDATA[-1x-1+8+16]]></content>
+   </model-index>
+   <model-index row="30" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="30" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="30" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="30" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+  </model-index>
+  <model-index row="0" column="1" depth="1"/>
+  <model-index row="0" column="2" depth="1"/>
+  <model-index row="0" column="3" depth="1"/>
+  <model-index row="0" column="4" depth="1"/>
+  <model-index row="0" column="5" depth="1"/>
+  <model-index row="0" column="6" depth="1"/>
+  <model-index row="0" column="7" depth="1"/>
+  <model-index row="0" column="8" depth="1"/>
+  <model-index row="1" column="0" depth="1"/>
+  <model-index row="1" column="1" depth="1">
+   <content><![CDATA[
+<map>
+    <var name="Author" type="QString">Unknown</var>
+    <var name="Background" type="QColor">#6e6462ff</var>
+    <var name="CoScript" type="QString"></var>
+    <var name="DecoScript" type="QString"></var>
+    <var name="Foreground" type="QColor">#e9e7e7ff</var>
+    <var name="GridColor" type="QColor">#000000ff</var>
+    <var name="GridSize" type="int">0</var>
+    <var name="LayoutColor" type="QColor">#000000ff</var>
+    <var name="LayoutGeom" type="QRectF">1300x600+0+0</var>
+    <var name="LayoutImage" type="QImage"></var>
+    <var name="LayoutImageMode" type="qt_ext::background::ImageMode">None</var>
+</map>]]></content>
+  </model-index>
+  <model-index row="1" column="2" depth="1"/>
+  <model-index row="1" column="3" depth="1"/>
+  <model-index row="1" column="4" depth="1"/>
+  <model-index row="1" column="5" depth="1"/>
+  <model-index row="1" column="6" depth="1"/>
+  <model-index row="1" column="7" depth="1"/>
+  <model-index row="1" column="8" depth="1"/>
+ </model-index>
+ <model-index row="0" column="1" depth="0"/>
+ <model-index row="0" column="2" depth="0"/>
+ <model-index row="0" column="3" depth="0"/>
+ <model-index row="0" column="4" depth="0"/>
+ <model-index row="0" column="5" depth="0"/>
+ <model-index row="0" column="6" depth="0"/>
+ <model-index row="0" column="7" depth="0"/>
+ <model-index row="0" column="8" depth="0"/>
+</ulablayout>

@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<grammar version="1.0" xml:lang="en-US" root="rootRule" tag-format="semantics/1.0-literals" xmlns="http://www.w3.org/2001/06/grammar">
+	<rule id="rootRule">
+		<one-of>
+			<item><ruleref uri="#Check"/></item>
+			<item><ruleref uri="#Learn"/></item>
+			<item><ruleref uri="#Back"/></item>
+			<item><ruleref uri="#Repeat"/></item>
+		</one-of>
+	</rule>
+  
+    <rule id="Check" scope="private">
+        <tag>CHECK</tag>
+        <one-of>
+          <item>play</item>
+          <item></item>
+        </one-of>
+        <one-of>
+          <item>guessing</item>
+          <item>color guessing</item>
+          <item>let's guess</item>
+          <item>guess</item>
+        </one-of>
+        <one-of>
+          <item>color</item>
+          <item>colors</item>
+          <item></item>
+        </one-of>
+    </rule>
+	 
+
+    <rule id="Learn" scope="private">
+        <tag>LEARN</tag>
+        <one-of>
+          <item>play</item>
+          <item></item>
+        </one-of>
+        <one-of>
+          <item>learning</item>
+          <item>learn</item>
+          <item>teach</item>
+          <item>teaching</item>
+        </one-of>
+        <one-of>
+          <item>color</item>
+          <item>colors</item>
+          <item></item>
+        </one-of>
+    </rule>
+	
+    <rule id="Back" scope="private">
+		<tag>BACK</tag>
+		<one-of>
+			<item>back</item>	
+			<item>wrong</item>
+			<item>nothing</item>
+			<item>none</item>
+			<item>no</item>
+			<item>I don't want to play</item>
+			<item>stop</item>
+		</one-of>
+    </rule>
+	
+    <rule id="Repeat" scope="private">
+        <tag>REPEAT</tag>
+        <one-of>
+          <item>again</item>
+          <item>again please</item>
+          <item>what did you say</item>
+          <item>what are you asking</item>
+          <item>could you repeat that</item>
+          <item>repeat that please</item>
+          <item>could you repeat that please</item>
+        </one-of>
+    </rule>
+	  
+</grammar>

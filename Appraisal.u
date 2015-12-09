@@ -1,0 +1,237 @@
+/*
+*  Initialize emotional appraisal system
+*
+*
+*  Author: Jan Kedzierski
+*  Date: 17.04.2015
+*  Ver: 1.3
+*/
+
+// add appraisal modules
+
+do(Global) 
+{
+
+  function LoadAppraisal{
+
+    echo(" ");
+    echo("INFO: Loading Appraisal...");
+    try{
+    
+      robot.addComponent("appraisal");
+     
+      if (_En_UWordNet) 
+      {
+	echo("INFO: UWordNet...");
+
+	if (!hasSlot(_UObjN_UWordNet)) loadModule(_uObjectsDir+_UObjN_UWordNet);
+	var Global.WordNet = UWordNet.new();
+	
+	echo("OK: UWordNet added.");
+      }; 
+    
+      if (_En_UAnew) 
+      {
+	echo("INFO: UAnew...");
+	
+	robot.appraisal.addComponent("anew");
+
+	if (!hasSlot(_UObjN_UAnew)) loadModule(_uObjectsDir+_UObjN_UAnew);
+	var Global.Anew = UAnew.new("ANEW_base15k.csv");
+	//Global.Anew.addProto(Interface);    
+	//robot.appraisal.addDevice("anew", Global.Anew);
+
+	UVar.new(Global,"_anewPleasure");
+	UVar.new(Global,"_anewArousal");
+	UVar.new(Global,"_anewDominance");
+	UVar.new(Global,"_anewCount");
+	Global.getSlot("_anewPleasure").copy(robot.appraisal.anew,"pleasure");
+	Global.getSlot("_anewArousal").copy(robot.appraisal.anew,"arousal");
+	Global.getSlot("_anewDominance").copy(robot.appraisal.anew,"dominance");
+	Global.getSlot("_anewCount").copy(robot.appraisal.anew,"count");
+	
+	
+	echo("OK: UAnew added.");
+      };    
+	
+      if (_En_USentiWordNet) 
+      {
+	echo("INFO: USentiWordNet loading...");
+	
+	robot.appraisal.addComponent("sentiwordnet");
+
+	if (!hasSlot(_UObjN_USentiWordNet)) loadModule(_uObjectsDir+_UObjN_USentiWordNet);
+	var Global.SentiWordNet = USentiWordNet.new("SentiWordNet.db");
+	//Global.SentiWordNet.addProto(Interface);    
+	//robot.appraisal.addDevice("sentiwordnet", Global.SentiWordNet);
+	
+	
+	UVar.new(Global,"_sentiPositive");
+	UVar.new(Global,"_sentiNegative");
+	UVar.new(Global,"_sentiObjective");
+	UVar.new(Global,"_sentiCount");
+	UVar.new(Global,"_sentiEmot");
+	Global.getSlot("_sentiPositive").copy(robot.appraisal.sentiwordnet,"positive");
+	Global.getSlot("_sentiNegative").copy(robot.appraisal.sentiwordnet,"negative");
+	Global.getSlot("_sentiObjective").copy(robot.appraisal.sentiwordnet,"objective");
+	Global.getSlot("_sentiCount").copy(robot.appraisal.sentiwordnet,"count");
+	Global.getSlot("_sentiEmot").copy(robot.appraisal.sentiwordnet,"emote");
+
+	echo("OK: USentiWordNet added.");
+      };
+      
+        
+      do(robot.appraisal) { 
+	function Evaluate(text)	{call.AppEvaluate(text);};
+      };
+      
+      echo("OK: Appraisal loaded.");
+      echo(" ");
+      return true;
+    }catch(var e){
+      echo("ERROR: %s" % e.message);
+      return false;
+    };
+  }|{};
+
+  function AppEvaluate(text){
+    var tmp_weight;
+    var weight_sum=0;
+
+    try {    
+      if (_En_UAnew) 
+      {
+	weight_sum=0;
+	robot.appraisal.anew.pleasure = 0;
+	robot.appraisal.anew.arousal = 0;
+	robot.appraisal.anew.dominance = 0;
+	  
+	var text_t = Anew.ClearText(text);
+	var text_p = [];
+	var text_a = [];
+	var text_d = [];
+	
+	for (var i=0;i<text_t.size;i++)
+	{
+	  if (Anew.SetWord(text_t[i])) {
+	    text_p << Anew.pleasure;
+	    text_a << Anew.arousal;
+	    text_d << Anew.dominance;
+	    //echo(text_t[i]);
+	    //echo(Anew.pleasure);
+	    //echo(Anew.arousal);
+	    //echo(Anew.dominance);
+	  } else {
+	    if (_En_UWordNet)
+	    {
+	      WordNet.GetResults(text_t[i],0);
+	      if (WordNet.basicForms.size>0)
+	      {
+		if (Anew.SetWord(WordNet.basicForms[0])) {
+		  text_p << Anew.pleasure;
+		  text_a << Anew.arousal;
+		  text_d << Anew.dominance;
+	    	  //echo(WordNet.basicForms[0]);
+		  //echo(Anew.pleasure);
+	  	  //echo(Anew.arousal);
+	  	  //echo(Anew.dominance);
+		};
+	      };
+	    };
+	  };
+	};
+	      
+	var tmp_c = text_p.size;
+	
+	if (tmp_c>0)
+	{
+	  for (var i=0;i<tmp_c;i++)
+	  {
+	    tmp_weight=sqrt(text_p[i]*text_p[i]+text_a[i]*text_a[i]+text_d[i]*text_d[i])|
+	    weight_sum = weight_sum + tmp_weight|
+	    robot.appraisal.anew.pleasure = robot.appraisal.anew.pleasure + text_p[i]|// * tmp_weight;
+	    robot.appraisal.anew.arousal = robot.appraisal.anew.arousal + text_a[i]|// * tmp_weight;
+	    robot.appraisal.anew.dominance = robot.appraisal.anew.dominance + text_d[i]|// * tmp_weight;
+	  }|
+	  robot.appraisal.anew.pleasure = robot.appraisal.anew.pleasure/tmp_c|
+	  robot.appraisal.anew.arousal = robot.appraisal.anew.arousal/tmp_c|
+	  robot.appraisal.anew.dominance = robot.appraisal.anew.dominance/tmp_c;//weight_sum;
+	}|
+      
+	robot.appraisal.anew.count = tmp_c;
+      
+      };
+  
+      if (_En_USentiWordNet) 
+      {
+	weight_sum=0;
+	robot.appraisal.sentiwordnet.positive = 0;
+	robot.appraisal.sentiwordnet.negative = 0;
+	robot.appraisal.sentiwordnet.objective = 0;
+	robot.appraisal.sentiwordnet.emote = 0;
+      
+	var text_t = SentiWordNet.ClearText(text);
+	var text_p = [];
+	var text_n = [];
+	var text_o = [];
+	
+	for (var i=0;i<text_t.size;i++)
+	{
+	  if (SentiWordNet.SetWord(text_t[i])) {
+	    for (var j=0;j<SentiWordNet.positive.size;j++)
+	    {
+	      text_p << SentiWordNet.positive[j];
+	      text_n << SentiWordNet.negative[j];
+	      text_o << SentiWordNet.objective[j];
+	    };
+	  } else {
+	    if (_En_UWordNet)
+	    {
+	      WordNet.GetResults(text_t[i],0);
+	      if (WordNet.basicForms.size>0)
+	      {
+		if (SentiWordNet.SetWord(WordNet.basicForms[0])) {
+		  for (var j=0;j<SentiWordNet.positive.size;j++)
+		  {
+		    text_p << SentiWordNet.positive[j];
+		    text_n << SentiWordNet.negative[j];
+		    text_o << SentiWordNet.objective[j];
+		  };
+		};
+	      };
+	    };
+	  };
+	};
+	
+	var tmp_c = text_p.size;
+	
+	if (tmp_c>0)
+	{
+	  for (var i=0;i<tmp_c;i++)
+	  {
+	   // tmp_weight=sqrt(text_p[i]*text_p[i]+text_n[i]*text_n[i]+text_o[i]*text_o[i]);
+	   // weight_sum = weight_sum + tmp_weight;
+	    
+	    robot.appraisal.sentiwordnet.positive  = robot.appraisal.sentiwordnet.positive  + text_p[i];// * tmp_weight;
+	    robot.appraisal.sentiwordnet.negative  = robot.appraisal.sentiwordnet.negative  + text_n[i];// * tmp_weight;
+	    robot.appraisal.sentiwordnet.objective = robot.appraisal.sentiwordnet.objective + text_o[i];// * tmp_weight;tmp_weight;
+	  }|
+	  robot.appraisal.sentiwordnet.positive  = robot.appraisal.sentiwordnet.positive  /  tmp_c|
+	  robot.appraisal.sentiwordnet.negative  = robot.appraisal.sentiwordnet.negative  /  tmp_c|
+	  robot.appraisal.sentiwordnet.objective = robot.appraisal.sentiwordnet.objective /  tmp_c|
+	  robot.appraisal.sentiwordnet.emote = (robot.appraisal.sentiwordnet.positive - robot.appraisal.sentiwordnet.negative)/robot.appraisal.sentiwordnet.objective;
+	}|
+      
+	robot.appraisal.sentiwordnet.count = tmp_c; 
+
+      };
+  
+      return true;
+    }catch(var e){
+      echo("ERROR: %s" % e.message);
+      return false;
+    };
+  }|{};
+ 
+
+};

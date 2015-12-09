@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<grammar version="1.0" xml:lang="en-US" root="rootRule" tag-format="semantics/1.0-literals" xmlns="http://www.w3.org/2001/06/grammar">
+	<rule id="rootRule">
+		<one-of>
+			<item><ruleref uri="#Color"/></item>
+		</one-of>
+	</rule>
+ 
+    <rule id="Color" scope="private">
+        <tag>COLOR</tag>
+        <one-of>
+			<item>EMYS</item>
+			<item>and</item>
+			<item></item>
+        </one-of>
+        <one-of>
+			<item>what is this</item>
+			<item>do you know what is this</item>
+			<item>do you know what this</item>
+			<item>do you know what</item>
+			<item>this</item>
+			<item>that</item>
+			<item>what</item>
+			<item>what is this</item>
+        </one-of>
+        <one-of>
+			<item>color</item>
+			<item>know</item>
+			<item></item>
+        </one-of>
+        <one-of>
+			<item>is this</item>
+			<item>this is</item>
+			<item>is</item>
+			<item></item>
+        </one-of>
+
+    </rule>	
+	
+</grammar>

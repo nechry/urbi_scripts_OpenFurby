@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<grammar version="1.0" xml:lang="en-US" root="rootRule" tag-format="semantics/1.0-literals" xmlns="http://www.w3.org/2001/06/grammar">
+	<rule id="rootRule">
+		<one-of>
+			<item><ruleref uri="#Next"/></item>
+			<item><ruleref uri="#Like"/></item>
+			<item><ruleref uri="#Back"/></item>
+			<item><ruleref uri="#Repeat"/></item>
+		</one-of>
+	</rule> 
+
+
+
+    <rule id="Next" scope="private">
+        <tag>NEXT</tag>
+        <one-of>
+          <item></item>
+          <item>please</item>
+        </one-of>
+        <one-of>
+          <item>next</item>
+          <item>go on</item>
+          <item>read on</item>
+          <item>read next</item>
+        </one-of>
+        <one-of>
+          <item></item>
+          <item>please</item>
+        </one-of>
+    </rule>
+	  
+	  
+    <rule id="Like" scope="private">
+        <tag>LIKE</tag>
+        <one-of>
+          <item></item>
+          <item>please</item>
+        </one-of>
+        <one-of>
+          <item>like</item>
+          <item>like it</item>
+          <item>like this</item>
+          <item>like this post</item>
+          <item>like post</item>
+          <item>i like this</item>
+          <item>i like this post</item>
+        </one-of>
+        <one-of>
+          <item></item>
+          <item>please</item>
+        </one-of>
+    </rule>
+	  
+	  
+    <rule id="Back" scope="private">
+        <tag>BACK</tag>
+        <one-of>
+          <item>ok</item>
+          <item></item>
+        </one-of>
+        <one-of>
+          <item>no</item>
+          <item>no thanks</item>
+          <item>cut it out</item>
+          <item>that's enough</item>
+          <item>stop</item>
+          <item>enough</item>
+        </one-of>
+    </rule>
+	  
+	
+    <rule id="Repeat" scope="private">
+        <tag>REPEAT</tag>
+        <one-of>
+          <item>again</item>
+          <item>repeat that</item>
+          <item>repeat please</item>
+          <item>what did you say</item>
+          <item>what</item>
+          <item>say that again</item>
+          <item>could you repeat that</item>
+        </one-of>
+    </rule>
+
+</grammar>

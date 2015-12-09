@@ -1,0 +1,984 @@
+/*
+* Vision system structure 
+*
+* 
+*  Author: Jan Kedzierski
+*  Date: 28.10.2015
+*  Ver: 11.3.2
+*/ 
+
+// add audo componnent for all video devices (camera, kinect, detectors...)
+
+
+do(Global) {
+
+  var a_Video= Tag.new;
+	
+  function LoadVideo(){
+
+    echo(" ");
+    echo("INFO: Loading Video...");  
+    
+    try{ 
+	robot.addComponent("video");
+      
+  ////////////////////////////////////////////////////////////////////////////////////////////  
+       if (_En_UImageTool) { 
+        echo("INFO: Loading image tool 1...");  
+	if (!hasSlot(_UObjN_UImageTool)) loadModule(_uObjectsDir+_UObjN_UImageTool);
+
+	var Global.ImageTool1=UImageTool.new();  
+	ImageTool1.createImage(640,480,0,0,0);	
+	ImageTool1.updateImage;
+	Global.ImageTool1.addProto(Interface);  
+	
+	echo("OK: Image tool 1 loaded."); 
+  /////////////////////////////////////////////////////////////////////////////////////////////
+        echo("INFO: Loading image tool 2...");  
+	var Global.ImageTool2=UImageTool.new();  
+	ImageTool2.createImage(10,10,0,0,0); 
+	ImageTool2.updateImage; 
+	Global.ImageTool2.addProto(Interface); 
+	
+	echo("OK: Image tool 2 loaded."); 
+  /////////////////////////////////////////////////////////////////////////////////////////////
+        echo("INFO: Loading image tool 3...");  
+	var Global.ImageTool3=UImageTool.new();   
+	ImageTool3.createImage(10,10,0,0,0); 
+	ImageTool3.updateImage; 
+	Global.ImageTool3.addProto(Interface);
+	
+	echo("OK: Image tool 3 loaded."); 
+  /////////////////////////////////////////////////////////////////////////////////////////////
+        echo("INFO: Loading image tool 4...");  
+	var Global.ImageTool4=UImageTool.new();  
+	ImageTool4.createImage(10,10,0,0,0); 
+	ImageTool4.updateImage; 
+	Global.ImageTool4.addProto(Interface); 
+	
+	echo("OK: Image tool 4 loaded."); 
+  /////////////////////////////////////////////////////////////////////////////////////////////
+        echo("INFO: Loading image tool 5...");  
+	var Global.ImageTool5=UImageTool.new();
+	Global.ImageTool5.addProto(Interface); 
+	ImageTool5.createImage(10,10,0,0,0);  
+	ImageTool5.updateImage; 
+	
+	echo("OK: Image tool 5 loaded."); 
+  /////////////////////////////////////////////////////////////////////////////////////////////
+        echo("INFO: Loading Image tool 6 (photo)...");  
+	var Global.ImageTool6=UImageTool.new();  
+	ImageTool6.createImage(10,10,0,0,0); 
+	ImageTool6.updateImage;
+	Global.ImageTool6.addProto(Interface); 
+	
+	
+	robot.video.addComponent("photo");
+
+	do (robot.video.photo) { 
+	  function Take(source)	{call.PhotoTake(source);};
+	  function Save(path)	{call.PhotoSave(path);};
+	};
+	
+
+	echo("OK: Image tool 6 (photo) loaded."); 
+      }; 
+  /////////////////////////////////////////////////////////////////////////////////////////////
+      if (_En_UImageDisplay) { 
+        echo("INFO: Loading image display...");  
+	if (!hasSlot(_UObjN_UImageDisplay)) loadModule(_uObjectsDir+_UObjN_UImageDisplay);
+	if (!hasSlot("_se")) var Global._se;
+	_se=robot.video.addComponent(Localizer.new("display"));
+	
+	if (_ImageDisplayWindows.size>0) {
+	  var Global.ImageDisplay1 = UImageDisplay.new(_ImageDisplayWindows[0]);
+	  Global.ImageDisplay1.addProto(Interface); 
+	  do(robot.video.display[0])
+	  {
+	    function show(image) 		{ call.ImageDisplay1.show(image); };
+	  };
+	};
+	if (_ImageDisplayWindows.size>1) {
+	  var Global.ImageDisplay2 = UImageDisplay.new(_ImageDisplayWindows[1]);
+	  Global.ImageDisplay2.addProto(Interface); 
+	  do(robot.video.display[1])
+	  {
+	    function show(image) 		{ call.ImageDisplay2.show(image); };
+	  };
+	};
+	if (_ImageDisplayWindows.size>2) {
+	  var Global.ImageDisplay3 = UImageDisplay.new(_ImageDisplayWindows[2]);
+	  Global.ImageDisplay3.addProto(Interface); 
+	  do(robot.video.display[2])
+	  {
+	    function show(image) 		{ call.ImageDisplay3.show(image); };
+	  };
+	};
+	if (_ImageDisplayWindows.size>3) {
+	  var Global.ImageDisplay4 = UImageDisplay.new(_ImageDisplayWindows[3]);
+	  Global.ImageDisplay4.addProto(Interface); 
+	  do(robot.video.display[3])
+	  {
+	    function show(image) 		{ call.ImageDisplay4.show(image); };
+	  };
+	};
+      };
+  /////////////////////////////////////////////////////////////////////////////////////////////
+      if (_En_UCamera) {
+	echo("INFO: Loading camera..."); 
+	if (!hasSlot(_UObjN_UCamera)) loadModule(_uObjectsDir+_UObjN_UCamera);
+	var Global.Camera=UCamera.new(_Camera_index);
+	Camera.setCaptureProperty(3,640); 
+	Camera.setCaptureProperty(4,480);
+	Camera.fps=30;
+	Camera.imgFlip=_Camera_flip;
+	Camera.getImage();
+	
+	
+	Global.Camera.addProto(Interface);    
+	robot.video.addDevice("camera", Global.Camera);
+	
+	echo("OK: Camera loaded.");
+      };  
+          
+  /////////////////////////////////////////////////////////////////////////////////////////////    
+      if (_En_UKinectVideo) { 
+        echo("INFO: Loading KINECT...");  
+	if (!hasSlot(_UObjN_UKinect)) loadModule(_uObjectsDir+_UObjN_UKinect);
+	
+	var tmp_audio = false;
+	var tmp_speech = false;
+	
+	if (!hasSlot("Kinect")) {
+	  var Global.Kinect = UKinect.new();
+	  Global.Kinect.addProto(Interface); 
+	} else {
+	  tmp_audio = Kinect.audioEnabled;
+	  tmp_speech = Kinect.speechEnabled;
+	  Kinect.Close();
+	};
+	Kinect.speechRecognizer = _Recog_param;
+	if (!Kinect.Open(0, true, true, true, _Kinect_FaceTrackingEnable, _Kinect_InteractionEnable, tmp_audio, tmp_speech))
+	{
+	  echo("ERROR: Can not connect to Kinect device!");
+	  return false;
+	};
+	
+	if (!_En_UImageTool) {
+	  echo("ERROR: UImageTool must be enabled when using UKinect!");
+	  return false;
+	};
+	
+	Kinect.depthNearMode = _Kinect_DepthNearMode;
+	Kinect.depthVisualization = false;
+	//
+	Kinect.skeletonVisualization = false;
+	Kinect.skeletonTrackingMode = _Kinect_SkeletonTrackingMode;
+	Kinect.skeletonChooserMode = _Kinect_SkeletonChooserMode;
+	//
+	Kinect.faceVisualization = false;
+	//
+	Kinect.interVisualization = false;
+	//
+	Kinect.tilt = _Kinect_Offset[4]; 
+	Kinect.fps->rangemin=0;
+	Kinect.fps->rangemax=30;
+	   
+	robot.video.addDevice("kinect", Global.Kinect);	
+	 
+	///////////////////////////
+	// HUMAN DETECTOR
+
+	robot.video.addComponent("humanDetector");
+	UVar.new(Global.Kinect,"enable1");
+	UVar.new(Global.Kinect,"position1");
+	UVar.new(Global.Kinect,"position11");
+	UVar.new(Global.Kinect,"visible1");
+	UVar.new(Global.Kinect,"user1");
+	UVar.new(Global.Kinect,"orientation1");
+	
+	Global.Kinect.getSlot("enable1").copy(robot.video.humanDetector,"enable");
+	Global.Kinect.getSlot("position1").copy(robot.video.humanDetector,"position");
+	Global.Kinect.getSlot("position11").copy(robot.video.humanDetector,"positionOnImage");
+	Global.Kinect.getSlot("visible1").copy(robot.video.humanDetector,"visible");
+	Global.Kinect.getSlot("user1").copy(robot.video.humanDetector,"user");	
+	Global.Kinect.getSlot("orientation1").copy(robot.video.humanDetector,"orientation");	
+	Global.Kinect.getSlot("skeletonImage").copy(robot.video.humanDetector,"image");	
+	Global.Kinect.getSlot("skeletonTrackingMode").copy(robot.video.humanDetector,"trackingMode");
+	Global.Kinect.getSlot("skeletonChooserMode").copy(robot.video.humanDetector,"chooserMode");
+	
+	Global.Kinect.getSlot("faceTrackingPause").copy(robot.video.humanDetector,"faceTrackingPause");
+	
+	UVar.new(Global,"isHandAboveNeck1");
+	UVar.new(Global,"isHandUp1");
+	Global.&isHandAboveNeck1.notifyAccess( closure() {isHandAboveNeck1=IsHandAboveNeck(); });
+	Global.&isHandUp1.notifyAccess( closure() {isHandUp1=IsHandUp(); });
+	Global.getSlot("isHandAboveNeck1").copy(robot.video.humanDetector,"isHandAboveNeck");	
+	Global.getSlot("isHandUp1").copy(robot.video.humanDetector,"isHandUp");
+		
+	robot.video.humanDetector.faceTrackingPause=true;
+	robot.video.humanDetector.enable = false;
+	robot.video.humanDetector.visible = false;
+	robot.video.humanDetector.position = [];
+	robot.video.humanDetector.positionOnImage = [];
+	robot.video.humanDetector.orientation = [];
+	robot.video.humanDetector.user = -1;		
+
+	////////////////////////
+	// RIGHT HAND
+
+	robot.video.humanDetector.addComponent(Localizer.new("hand"));
+	robot.video.humanDetector.hand[right].addComponent("color");
+
+	UVar.new(Global.Kinect,"visible2");
+	UVar.new(Global.Kinect,"position2");
+	UVar.new(Global.Kinect,"position22");
+	UVar.new(Global.Kinect,"orientation2");
+	UVar.new(Global.Kinect,"window2");
+	UVar.new(Global.Kinect,"blur2");
+	
+	Global.Kinect.getSlot("visible2").copy(robot.video.humanDetector.hand[right],"visible");
+	Global.Kinect.getSlot("position2").copy(robot.video.humanDetector.hand[right],"position");
+	Global.Kinect.getSlot("position22").copy(robot.video.humanDetector.hand[right],"positionOnImage");
+	Global.Kinect.getSlot("orientation2").copy(robot.video.humanDetector.hand[right],"orientation");	
+
+	Global.Kinect.getSlot("window2").copy(robot.video.humanDetector.hand[right].color,"window");
+	Global.Kinect.getSlot("blur2").copy(robot.video.humanDetector.hand[right].color,"blur");
+	
+	UVar.new(Global.Kinect,"value2");
+	Kinect.&value2.notifyAccess( closure() {GetRightHandColor();});
+	Global.Kinect.getSlot("value2").copy(robot.video.humanDetector.hand[right].color,"value");	
+	  
+	ImageTool2.getSlot("image").copy(robot.video.humanDetector.hand[right].color,"image");
+	
+	robot.video.humanDetector.hand[right].addComponent("interaction");
+	Global.Kinect.getSlot("interRightTracked").copy(robot.video.humanDetector.hand[right].interaction,"tracked");
+	Global.Kinect.getSlot("interRightActive").copy(robot.video.humanDetector.hand[right].interaction,"active");
+	Global.Kinect.getSlot("interRightInteractive").copy(robot.video.humanDetector.hand[right].interaction,"interactive");
+	Global.Kinect.getSlot("interRightPressed").copy(robot.video.humanDetector.hand[right].interaction,"pressed");
+	Global.Kinect.getSlot("interRightPress").copy(robot.video.humanDetector.hand[right].interaction,"press");
+	Global.Kinect.getSlot("interRightEvent").copy(robot.video.humanDetector.hand[right].interaction,"event");
+	Global.Kinect.getSlot("interRightX").copy(robot.video.humanDetector.hand[right].interaction,"x");
+	Global.Kinect.getSlot("interRightY").copy(robot.video.humanDetector.hand[right].interaction,"y");
+	Global.Kinect.getSlot("interRightRawX").copy(robot.video.humanDetector.hand[right].interaction,"rawX");
+	Global.Kinect.getSlot("interRightRawY").copy(robot.video.humanDetector.hand[right].interaction,"rawY");
+	Global.Kinect.getSlot("interRightRawZ").copy(robot.video.humanDetector.hand[right].interaction,"rawZ");
+	
+	robot.video.humanDetector.hand[right].visible=false;
+	robot.video.humanDetector.hand[right].position = [];
+	robot.video.humanDetector.hand[right].positionOnImage = [];
+	robot.video.humanDetector.hand[right].orientation = [];
+	robot.video.humanDetector.hand[right].color.window=20;
+	robot.video.humanDetector.hand[right].color.blur=11;
+	robot.video.humanDetector.hand[right].color.value = [];
+	
+
+	////////////////////////
+	// LEFT HAND COLOR
+
+	robot.video.humanDetector.hand[left].addComponent("color");
+
+	UVar.new(Global.Kinect,"visible3");
+	UVar.new(Global.Kinect,"position3");
+	UVar.new(Global.Kinect,"position33");
+	UVar.new(Global.Kinect,"orientation3");
+	UVar.new(Global.Kinect,"window3");
+	UVar.new(Global.Kinect,"blur3");
+	
+	Global.Kinect.getSlot("visible3").copy(robot.video.humanDetector.hand[left],"visible");
+	Global.Kinect.getSlot("position3").copy(robot.video.humanDetector.hand[left],"position");
+	Global.Kinect.getSlot("position33").copy(robot.video.humanDetector.hand[left],"positionOnImage");
+	Global.Kinect.getSlot("orientation3").copy(robot.video.humanDetector.hand[left],"orientation");		
+	Global.Kinect.getSlot("window3").copy(robot.video.humanDetector.hand[left].color,"window");
+	Global.Kinect.getSlot("blur3").copy(robot.video.humanDetector.hand[left].color,"blur");
+		
+	UVar.new(Global.Kinect,"value3");
+	Kinect.&value3.notifyAccess( closure() {GetLeftHandColor();});
+	Global.Kinect.getSlot("value3").copy(robot.video.humanDetector.hand[left].color,"value");
+	  
+	ImageTool3.getSlot("image").copy(robot.video.humanDetector.hand[left].color,"image");
+	
+	robot.video.humanDetector.hand[left].addComponent("interaction");
+	Global.Kinect.getSlot("interLeftTracked").copy(robot.video.humanDetector.hand[left].interaction,"tracked");
+	Global.Kinect.getSlot("interLeftActive").copy(robot.video.humanDetector.hand[left].interaction,"active");
+	Global.Kinect.getSlot("interLeftInteractive").copy(robot.video.humanDetector.hand[left].interaction,"interactive");
+	Global.Kinect.getSlot("interLeftPressed").copy(robot.video.humanDetector.hand[left].interaction,"pressed");
+	Global.Kinect.getSlot("interLeftPress").copy(robot.video.humanDetector.hand[left].interaction,"press");
+	Global.Kinect.getSlot("interLeftEvent").copy(robot.video.humanDetector.hand[left].interaction,"event");
+	Global.Kinect.getSlot("interLeftX").copy(robot.video.humanDetector.hand[left].interaction,"x");
+	Global.Kinect.getSlot("interLeftY").copy(robot.video.humanDetector.hand[left].interaction,"y");
+	Global.Kinect.getSlot("interLeftRawX").copy(robot.video.humanDetector.hand[left].interaction,"rawX");
+	Global.Kinect.getSlot("interLeftRawY").copy(robot.video.humanDetector.hand[left].interaction,"rawY");
+	Global.Kinect.getSlot("interLeftRawZ").copy(robot.video.humanDetector.hand[left].interaction,"rawZ");
+	
+	robot.video.humanDetector.hand[left].visible=false;
+	robot.video.humanDetector.hand[left].position = [];
+	robot.video.humanDetector.hand[left].positionOnImage = [];
+	robot.video.humanDetector.hand[left].orientation = [];
+	robot.video.humanDetector.hand[left].color.window=20;
+	robot.video.humanDetector.hand[left].color.blur=11;
+	robot.video.humanDetector.hand[left].color.value = [];
+	
+
+		
+	////////////////////////
+	// TORSO
+	
+	robot.video.humanDetector.addComponent("torso");
+	robot.video.humanDetector.torso.addComponent("color");
+
+	UVar.new(Global.Kinect,"visible4");
+	UVar.new(Global.Kinect,"position4");
+	UVar.new(Global.Kinect,"position44");
+	UVar.new(Global.Kinect,"orientation4");
+	UVar.new(Global.Kinect,"window4");
+	UVar.new(Global.Kinect,"blur4");
+	
+	Global.Kinect.getSlot("visible4").copy(robot.video.humanDetector.torso,"visible");
+	Global.Kinect.getSlot("position4").copy(robot.video.humanDetector.torso,"position");
+	Global.Kinect.getSlot("position44").copy(robot.video.humanDetector.torso,"positionOnImage");	
+	Global.Kinect.getSlot("orientation4").copy(robot.video.humanDetector.torso,"orientation");	
+	Global.Kinect.getSlot("window4").copy(robot.video.humanDetector.torso.color,"window");
+	Global.Kinect.getSlot("blur4").copy(robot.video.humanDetector.torso.color,"blur");
+		
+	UVar.new(Global.Kinect,"value4");
+	Kinect.&value4.notifyAccess( closure() {GetTorsoColor();});
+	Global.Kinect.getSlot("value4").copy(robot.video.humanDetector.torso.color,"value");
+	
+	ImageTool4.getSlot("image").copy(robot.video.humanDetector.torso.color,"image");
+	
+	robot.video.humanDetector.torso.visible=false;
+	robot.video.humanDetector.torso.position = [];
+	robot.video.humanDetector.torso.positionOnImage = [];
+	robot.video.humanDetector.torso.orientation = [];
+	robot.video.humanDetector.torso.color.window=20;
+	robot.video.humanDetector.torso.color.blur=11;
+	robot.video.humanDetector.torso.color.value = [];
+	
+	
+	////////////////////////
+	// HEAD
+	
+	robot.video.humanDetector.addComponent("head");
+	
+	UVar.new(Global.Kinect,"scale5");
+	UVar.new(Global.Kinect,"visible5");
+	UVar.new(Global.Kinect,"position5");
+	UVar.new(Global.Kinect,"position55");
+	UVar.new(Global.Kinect,"orientation5");
+	UVar.new(Global.Kinect,"oriented5");
+	Global.Kinect.getSlot("position5").copy(robot.video.humanDetector.head,"position");
+	Global.Kinect.getSlot("position55").copy(robot.video.humanDetector.head,"positionOnImage");
+	Global.Kinect.getSlot("visible5").copy(robot.video.humanDetector.head,"visible");
+	Global.Kinect.getSlot("scale5").copy(robot.video.humanDetector.head,"scale");
+	Global.Kinect.getSlot("orientation5").copy(robot.video.humanDetector.head,"orientation");	
+	Global.Kinect.getSlot("oriented5").copy(robot.video.humanDetector.head,"oriented");	
+	
+		
+	//UVar.new(Global.Kinect,"image5");
+	ImageTool5.&image.notifyAccess( closure() {GetHead();});	
+	ImageTool5.getSlot("image").copy(robot.video.humanDetector.head,"image");
+	
+	Global.Kinect.getSlot("faceIsTracking").copy(robot.video.humanDetector.head,"faceIsTracking");
+	
+	do (robot.video.humanDetector.head) { 
+	  function facePoints()	{call.Kinect.facePointsOnImage();};
+	  function faceAU()	{call.Kinect.faceAU();};
+	  function faceSU()	{call.Kinect.faceSU();};
+	};
+	
+	
+	robot.video.humanDetector.head.visible=false;
+	robot.video.humanDetector.head.oriented=false;
+	robot.video.humanDetector.head.scale=40;
+	robot.video.humanDetector.head.position = [];
+	robot.video.humanDetector.head.positionOnImage = [];
+	robot.video.humanDetector.head.orientation = [];
+	
+	
+	echo("OK: KINECT SDK loaded."); 
+      }; 
+    
+  /////////////////////////////////////////////////////////////////////////////////////////////
+      if (_En_UObjectDetector) {
+	echo("INFO: Loading object detector..."); 
+	if (!_En_UImageTool){
+	  echo("ERROR: When using UObjectDetector, UImageTool must be enabled!");
+	  return false;
+	};
+	if (!hasSlot(_UObjN_UObjectDetector)) loadModule(_uObjectsDir+_UObjN_UObjectDetector);
+	var Global.ObjectDetector=UObjectDetector.new(ImageTool1.&image);
+	ObjectDetector.multi=_ObjectDetector_multi;
+	ObjectDetector.mode=0;
+	ObjectDetector.scale=2;
+	//ObjectDetector.cascade=_uFilesDir+"cascades/lbpcascade_frontalface.xml";
+	ObjectDetector.cascade=_uFilesDir+"cascades/haarcascade_frontalface_alt2.xml";
+	
+	UVar.new(Global.ObjectDetector,"enable");
+	Global.ObjectDetector.enable=false;
+	UVar.new(Global.ObjectDetector,"source");
+	Global.ObjectDetector.source=_ObjectDetector_source;
+	
+	Global.ObjectDetector.addProto(Interface);    
+	robot.video.addDevice("objectDetector", Global.ObjectDetector);
+	robot.video.objectDetector.SetImage(ImageTool1.image);
+	
+	echo("OK: Object Detector loaded.");
+	
+      };
+  /////////////////////////////////////////////////////////////////////////////////////////////  
+      if (_En_UColorDetector) {   
+	echo("INFO: Loading color detector 1(red)..."); 
+	if (!_En_UImageTool){
+	  echo("ERROR: When using UColorDetector, UImageTool must be enabled!");
+	  return false;
+	};
+	if (!hasSlot(_UObjN_UColorDetection)) loadModule(_uObjectsDir+_UObjN_UColorDetection);   
+	var Global.Color1Detector=UColorDetection.new(ImageTool1.&image);
+	Color1Detector.mode=0;
+	Color1Detector.scale=2;
+	Color1Detector.SetColor(_Color1Detector_color[0],_Color1Detector_color[1],_Color1Detector_color[2],_Color1Detector_color[3],_Color1Detector_color[4],_Color1Detector_color[5]);
+	//Color1Detector.SetColor(220,255,160,255,140,255);	
+	
+	UVar.new(Global.Color1Detector,"enable");
+	Global.Color1Detector.enable=false;
+	UVar.new(Global.Color1Detector,"source");
+	Global.Color1Detector.source=_Color1Detector_source;
+	
+	Global.Color1Detector.addProto(Interface);    
+	robot.video.addDevice("color1Detector", Global.Color1Detector);
+	robot.video.color1Detector.SetImage(ImageTool1.image);
+	
+	echo("OK: Color detector 1 loaded.");  
+  /////////////////////////////////////////////////////////////////////////////////////////////       
+	echo("INFO: Loading color detector 2(green)..."); 
+	var Global.Color2Detector=UColorDetection.new(ImageTool1.&image);
+	Color2Detector.mode=0;
+	Color2Detector.scale=2; 
+	Color2Detector.SetColor(_Color2Detector_color[0],_Color2Detector_color[1],_Color2Detector_color[2],_Color2Detector_color[3],_Color2Detector_color[4],_Color2Detector_color[5]);
+	
+	UVar.new(Global.Color2Detector,"enable");
+	Global.Color2Detector.enable=false;
+	UVar.new(Global.Color2Detector,"source");
+	Global.Color2Detector.source=_Color2Detector_source;
+	
+	Global.Color2Detector.addProto(Interface);    
+	robot.video.addDevice("color2Detector", Global.Color2Detector);
+	robot.video.color2Detector.SetImage(ImageTool1.image);
+	
+	echo("OK: Color detector 2 loaded.");  
+  /////////////////////////////////////////////////////////////////////////////////////////////	
+	echo("INFO: Loading color detector 3(blue)..."); 
+	var Global.Color3Detector=UColorDetection.new(ImageTool1.&image);
+	Color3Detector.mode=0;
+	Color3Detector.scale=2;
+	Color3Detector.SetColor(_Color3Detector_color[0],_Color3Detector_color[1],_Color3Detector_color[2],_Color3Detector_color[3],_Color3Detector_color[4],_Color3Detector_color[5]);
+		
+	UVar.new(Global.Color3Detector,"enable");
+	Global.Color3Detector.enable=false;
+	UVar.new(Global.Color3Detector,"source");
+	Global.Color3Detector.source=_Color3Detector_source;
+	
+	Global.Color3Detector.addProto(Interface);    
+	robot.video.addDevice("color3Detector", Global.Color3Detector);
+	robot.video.color3Detector.SetImage(ImageTool1.image);
+	
+	echo("OK: Color detector 3 loaded.");  
+  /////////////////////////////////////////////////////////////////////////////////////////////
+	echo("INFO: Loading color detector 4(yellow)..."); 
+	var Global.Color4Detector=UColorDetection.new(ImageTool1.&image);
+	Color4Detector.mode=0;
+	Color4Detector.scale=2;
+	Color4Detector.SetColor(_Color4Detector_color[0],_Color4Detector_color[1],_Color4Detector_color[2],_Color4Detector_color[3],_Color4Detector_color[4],_Color4Detector_color[5]);
+	//Color4Detector.SetColor(30,38,240,255,180,255);
+
+	UVar.new(Global.Color4Detector,"enable");
+	Global.Color4Detector.enable=false;
+	UVar.new(Global.Color4Detector,"source");
+	Global.Color4Detector.source=_Color4Detector_source;
+	
+	Global.Color4Detector.addProto(Interface);    
+	robot.video.addDevice("color4Detector", Global.Color4Detector);
+	robot.video.color4Detector.SetImage(ImageTool1.image);
+	
+	echo("OK: Color detector 4 loaded.");  
+ 
+      };
+  /////////////////////////////////////////////////////////////////////////////////////////////
+      if (_En_UMoveDetector) { 
+        echo("INFO: Loading move detector..."); 
+	if (!_En_UImageTool){
+	  echo("ERROR: When using UMoveDetector, UImageTool must be enabled!");
+	  return false;
+	};
+	if (!hasSlot(_UObjN_UMoveDetection)) loadModule(_uObjectsDir+_UObjN_UMoveDetection);
+	var Global.MoveDetector=UMoveDetection.new(ImageTool1.&image);
+	MoveDetector.scale=2;
+	MoveDetector.frameBuffer=_MoveDetector_frameBuffer;
+	MoveDetector.duration=_MoveDetector_duration;
+	MoveDetector.smooth=_MoveDetector_smooth;
+		
+	UVar.new(Global.MoveDetector,"enable");
+	Global.MoveDetector.enable=false;
+	UVar.new(Global.MoveDetector,"source");
+	Global.MoveDetector.source=_MoveDetector_source;;
+	
+	Global.MoveDetector.addProto(Interface);    
+	robot.video.addDevice("moveDetector", Global.MoveDetector);
+	robot.video.moveDetector.SetImage(ImageTool1.image);
+	
+	echo("OK: Move detector loaded.");  
+      };
+  /////////////////////////////////////////////////////////////////////////////////////////////
+      if (_En_UFacet) { 
+        echo("INFO: Loading FacET detector...");  
+	if (!_En_UImageTool){
+	  echo("ERROR: When using UFacetDetector, UImageTool must be enabled!");
+	  return false;
+	};
+	if (!hasSlot(_UObjN_UFacet)) loadModule(_uObjectsDir+_UObjN_UFacet);
+	var Global.FacetDetector=UFacet.new(ImageTool1.&image);
+	FacetDetector.scale=1;
+			
+	UVar.new(Global.FacetDetector,"enable");
+	Global.FacetDetector.enable=false;
+	UVar.new(Global.FacetDetector,"source");
+	Global.FacetDetector.source=_FacetDetector_source;;
+	
+	Global.FacetDetector.addProto(Interface);    
+	robot.video.addDevice("facetDetector", Global.FacetDetector);
+	robot.video.facetDetector.SetImage(ImageTool1.image);
+	
+	echo("OK: FacET loaded."); 
+      }; 
+ 
+      do (robot.video) { 
+	function Run {call.VideoRun();};
+	function Stop {call.VideoStop();};
+	function Resume {call.VideoResume();};
+	function Pause {call.VideoPause();};
+	function Reset {call.VideoReset();};
+      };
+  
+    }catch(var e){
+      echo("ERROR: %s" % e.message);
+      return false;
+    };
+    
+    echo("OK: Video loaded."); 
+    echo(" ");
+ 
+    return true;
+  }|{};
+
+
+  function VideoRun(){
+  ////////////////////////////////////////////////////////////////////////////////////////////////////////  
+    a_Video.unfreeze| a_Video.stop;
+    a_Video:{
+      if (_En_UKinectVideo){
+	loop { 
+	  Kinect.PollVideo(true);
+	  ////////////////////////////////////////////
+	  //  OBJECT, COLOR, FACET MOVE DETECTORS
+	  //
+	  {
+	    if ((_En_UObjectDetector)&&(robot.video.objectDetector.source=="kinect"))
+	      if (robot.video.objectDetector.enable) robot.video.objectDetector.SetImage(Kinect.colorImage) else robot.video.objectDetector.visible = false,
+	    if ((_En_UColorDetector)&&(robot.video.color1Detector.source=="kinect")) 
+	      if (robot.video.color1Detector.enable) robot.video.color1Detector.SetImage(Kinect.colorImage) else robot.video.color1Detector.visible = false,
+	    if ((_En_UColorDetector)&&(robot.video.color2Detector.source=="kinect")) 
+	      if (robot.video.color2Detector.enable) robot.video.color2Detector.SetImage(Kinect.colorImage) else robot.video.color2Detector.visible = false,
+	    if ((_En_UColorDetector)&&(robot.video.color3Detector.source=="kinect")) 
+	      if (robot.video.color3Detector.enable) robot.video.color3Detector.SetImage(Kinect.colorImage) else robot.video.color3Detector.visible = false,
+	    if ((_En_UColorDetector)&&(robot.video.color4Detector.source=="kinect")) 
+	      if (robot.video.color4Detector.enable) robot.video.color4Detector.SetImage(Kinect.colorImage) else robot.video.color4Detector.visible = false,
+	    if ((_En_UMoveDetector)&&(robot.video.moveDetector.source=="kinect"))  
+	      if (robot.video.moveDetector.enable) robot.video.moveDetector.SetImage(Kinect.colorImage) else robot.video.moveDetector.visible = false,
+	    if ((_En_UFacet)&&(robot.video.facetDetector.source=="kinect"))  	   
+	      if (robot.video.facetDetector.enable) robot.video.facetDetector.SetImage(Kinect.colorImage) else robot.video.facetDetector.visible = false,
+	  },
+	  ////////////////////////////////////////////
+	  //  HUMAN
+	  //
+	  if (robot.video.humanDetector.enable) 
+	  {
+	    if (Kinect.skeletonTrackedIDs.size>0) 
+	    {
+	      robot.video.humanDetector.user = Kinect.skeletonTrackedIDs[0]|
+	      robot.video.humanDetector.position = Kinect.skeletonPosition(robot.video.humanDetector.user)|  
+	      robot.video.humanDetector.positionOnImage = Kinect.skeletonPositionOnImage(robot.video.humanDetector.user)| 
+	      var tmp_Yaw = (sin((robot.video.humanDetector.position[0]+_Kinect_Offset[0])/robot.video.humanDetector.position[2]+_Kinect_Offset[2]))*180/pi + _Kinect_Offset[3]|
+	      var tmp_Pitch = (sin((robot.video.humanDetector.position[1]+_Kinect_Offset[1])/robot.video.humanDetector.position[2]+_Kinect_Offset[2]))*180/pi + _Kinect_Offset[4]|
+	      robot.video.humanDetector.orientation = [tmp_Yaw,tmp_Pitch]|
+	      robot.video.humanDetector.visible=true;  
+	    } else {
+	      if (Kinect.faceIsTracking){		
+		robot.video.humanDetector.visible=true; 
+	      } else {	
+		robot.video.humanDetector.visible=false;
+		robot.video.humanDetector.position = [ ]|
+		robot.video.humanDetector.positionOnImage = [ ]|
+		robot.video.humanDetector.hand[right].orientation = [ ];
+	      };
+	    };
+	    ////////////////////////////////////////////
+	    //  RIGHT HAND 
+	    //
+	
+	      robot.video.humanDetector.hand[right].positionOnImage = Kinect.skeletonJointPositionOnImage(robot.video.humanDetector.user,11)|
+	      robot.video.humanDetector.hand[right].position = Kinect.skeletonJointPosition(robot.video.humanDetector.user,11)|
+	      
+	      if (robot.video.humanDetector.hand[right].position.size>0) 
+	      {
+		var tmp_Yaw = (sin((robot.video.humanDetector.hand[right].position[0]+_Kinect_Offset[0])/robot.video.humanDetector.hand[right].position[2]+_Kinect_Offset[2]))*180/pi + _Kinect_Offset[3]|
+		var tmp_Pitch = (sin((robot.video.humanDetector.hand[right].position[1]+_Kinect_Offset[1])/robot.video.humanDetector.hand[right].position[2]+_Kinect_Offset[2]))*180/pi + _Kinect_Offset[4]|
+		robot.video.humanDetector.hand[right].orientation = [tmp_Yaw,tmp_Pitch]|
+		robot.video.humanDetector.hand[right].visible=true;
+	      } else {
+		  robot.video.humanDetector.hand[right].visible=false|
+		  robot.video.humanDetector.hand[right].position = [ ]|
+		  robot.video.humanDetector.hand[right].positionOnImage = [ ]|
+		  robot.video.humanDetector.hand[right].orientation = [ ];
+	      };
+
+	    ////////////////////////////////////////////
+	    //  LEFT HAND 
+	    //
+
+	      robot.video.humanDetector.hand[left].positionOnImage = Kinect.skeletonJointPositionOnImage(robot.video.humanDetector.user,7)|
+	      robot.video.humanDetector.hand[left].position = Kinect.skeletonJointPosition(robot.video.humanDetector.user,7)|
+	      
+	      if (robot.video.humanDetector.hand[left].position.size>0) 
+	      {
+		var tmp_Yaw = (sin((robot.video.humanDetector.hand[left].position[0]+_Kinect_Offset[0])/robot.video.humanDetector.hand[left].position[2]+_Kinect_Offset[2]))*180/pi + _Kinect_Offset[3]|
+		var tmp_Pitch = (sin((robot.video.humanDetector.hand[left].position[1]+_Kinect_Offset[1])/robot.video.humanDetector.hand[left].position[2]+_Kinect_Offset[2]))*180/pi + _Kinect_Offset[4]|
+		robot.video.humanDetector.hand[left].orientation = [tmp_Yaw,tmp_Pitch]|
+		robot.video.humanDetector.hand[left].visible=true;
+	      } else {
+		robot.video.humanDetector.hand[left].visible=false|
+		robot.video.humanDetector.hand[left].position = [ ]|
+		robot.video.humanDetector.hand[left].positionOnImage = [ ]|
+		robot.video.humanDetector.hand[left].orientation = [ ];
+	      };
+	  
+	    ////////////////////////////////////////////
+	    // TORSO 
+	    //
+	
+	      robot.video.humanDetector.torso.positionOnImage = robot.video.humanDetector.positionOnImage|
+	      robot.video.humanDetector.torso.position = robot.video.humanDetector.position|
+	      
+	      if (robot.video.humanDetector.torso.position.size>0) 
+	      {
+		robot.video.humanDetector.torso.orientation = robot.video.humanDetector.orientation|
+		robot.video.humanDetector.torso.visible=true;
+	      } else {
+		robot.video.humanDetector.torso.visible=false|
+		robot.video.humanDetector.torso.position = [ ]|
+		robot.video.humanDetector.torso.positionOnImage = [ ]|
+		robot.video.humanDetector.torso.orientation = [ ];
+	      };
+	
+	    ////////////////////////////////////////////
+	    // HEAD
+	    //
+	    
+	     if (Kinect.faceIsTracking) {
+		robot.video.humanDetector.head.positionOnImage = Kinect.facePositionOnImage()|
+		robot.video.humanDetector.head.position = Kinect.facePosition()|
+		if (robot.video.humanDetector.head.position.size==6){
+		  var human_Yaw = (sin((robot.video.humanDetector.head.position[0]+_Kinect_Offset[0])/robot.video.humanDetector.head.position[2]+_Kinect_Offset[2]))*180/pi + _Kinect_Offset[3]|
+		  var human_Pitch = (sin((robot.video.humanDetector.head.position[1]+_Kinect_Offset[1])/robot.video.humanDetector.head.position[2]+_Kinect_Offset[2]))*180/pi + _Kinect_Offset[4]|
+		  robot.video.humanDetector.head.orientation = [human_Yaw,human_Pitch]|
+		  var head_Yaw = robot.video.humanDetector.head.position[4]-_Kinect_Offset[3]|
+		  var head_Pitch = (robot.video.humanDetector.head.position[3]-_Kinect_Offset[4])|
+		  if ((abs(human_Yaw-head_Yaw)<20)&&(abs(human_Pitch+head_Pitch)<15)) {
+		    robot.video.humanDetector.head.oriented = true;
+		  } else {
+		    robot.video.humanDetector.head.oriented = false;
+		  }|
+		  robot.video.humanDetector.head.visible = true;
+		} else {
+		  robot.video.humanDetector.head.visible = false|
+		  robot.video.humanDetector.head.oriented = false;
+		};
+	      } else {
+		// position
+		robot.video.humanDetector.head.oriented = false|
+		var head_pos= Kinect.skeletonJointPosition(robot.video.humanDetector.user,3)|
+		var head_posIm  = Kinect.skeletonJointPositionOnImage(robot.video.humanDetector.user,3)|
+		var shoul_pos = Kinect.skeletonJointPosition(robot.video.humanDetector.user,2)|
+		var shoul_posIm  = Kinect.skeletonJointPositionOnImage(robot.video.humanDetector.user,2)|
+		if ((head_pos.size>0)&&(shoul_pos.size>0)) {
+		  robot.video.humanDetector.head.position = [head_pos[0],head_pos[1]+(shoul_pos[1]-head_pos[1])*0.3,head_pos[2]]|  
+		  var tmp_Yaw = (sin((robot.video.humanDetector.head.position[0]+_Kinect_Offset[0])/robot.video.humanDetector.head.position[2]+_Kinect_Offset[2]))*180/pi + _Kinect_Offset[3]|
+		  var tmp_Pitch = (sin((robot.video.humanDetector.head.position[1]+_Kinect_Offset[1])/robot.video.humanDetector.head.position[2]+_Kinect_Offset[2]))*180/pi + _Kinect_Offset[4]|
+		  robot.video.humanDetector.head.orientation = [tmp_Yaw,tmp_Pitch]|
+		  robot.video.humanDetector.head.visible=true;
+		} else {
+		  robot.video.humanDetector.head.visible=false|
+		  robot.video.humanDetector.head.orientation = [ ]|
+		  robot.video.humanDetector.head.position = [ ];
+		}|
+		// position on image
+		if ((head_posIm.size>0)&&(shoul_posIm.size>0)) {
+		  robot.video.humanDetector.head.positionOnImage = [head_posIm[0],head_posIm[1]+(shoul_posIm[1]-head_posIm[1])*1/3,head_posIm[2]];
+		} else {
+		  robot.video.humanDetector.head.positionOnImage = [ ];
+		};  
+	      }; 
+	  } else {
+	    robot.video.humanDetector.visible = false|
+	    robot.video.humanDetector.head.visible = false|
+	    robot.video.humanDetector.torso.visible = false|
+	    robot.video.humanDetector.hand[left].visible = false|
+	    robot.video.humanDetector.hand[right].visible = false;
+	  },
+	  
+	  ////////////////////////////////////////////
+	  // MOVE
+	  //
+	  /*
+	  if ((robot.video.moveDetector.enable)&&(robot.video.moveDetector.visible))
+	  {
+	    var tmp_Yaw   = robot.video.moveDetector.x*robot.video.moveDetector.scale/11 + _Kinect_Offset[3] |
+	    var tmp_Pitch = robot.video.moveDetector.y*robot.video.moveDetector.scale/11 + _Kinect_Offset[4] |
+	    robot.video.moveDetector.orientation = [tmp_Yaw,tmp_Pitch];
+	  };
+	  */
+	    
+	}, // end kinect loop
+	echo("VIDEO: Kinect video sterted successful."); 
+      }, // end kinect section
+  ////////////////////////////////////////////////////////////////////////////////////////////////////////    
+      if (_En_UCamera){ 
+	loop { 
+	  Camera.getImage();
+	  {
+	    if ((_En_UObjectDetector)&&(robot.video.objectDetector.source=="camera"))
+	      if (robot.video.objectDetector.enable) robot.video.objectDetector.SetImage(Camera.image) else robot.video.objectDetector.visible = false,
+	    if ((_En_UColorDetector)&&(robot.video.color1Detector.source=="camera")) 
+	      if (robot.video.color1Detector.enable) robot.video.color1Detector.SetImage(Camera.image) else robot.video.color1Detector.visible = false,
+	    if ((_En_UColorDetector)&&(robot.video.color2Detector.source=="camera")) 
+	      if (robot.video.color2Detector.enable) robot.video.color2Detector.SetImage(Camera.image) else robot.video.color2Detector.visible = false,
+	    if ((_En_UColorDetector)&&(robot.video.color3Detector.source=="camera")) 
+	      if (robot.video.color3Detector.enable) robot.video.color3Detector.SetImage(Camera.image) else robot.video.color3Detector.visible = false,
+	    if ((_En_UColorDetector)&&(robot.video.color4Detector.source=="camera")) 
+	      if (robot.video.color4Detector.enable) robot.video.color4Detector.SetImage(Camera.image) else robot.video.color4Detector.visible = false,
+	    if ((_En_UMoveDetector)&&(robot.video.moveDetector.source=="camera"))  
+	      if (robot.video.moveDetector.enable) robot.video.moveDetector.SetImage(Camera.image) else robot.video.moveDetector.visible = false,
+	    if ((_En_UFacet)&&(robot.video.facetDetector.source=="camera"))  	   
+	      if (robot.video.facetDetector.enable) robot.video.facetDetector.SetImage(Camera.image) else robot.video.moveDetector.visible = false,
+	  },
+	}, // end camera loop
+	echo("VIDEO: Camera sterted successful."); 
+      }, // end camera section
+    }, // end video tag
+    robot.log.Set("VIDEO RUN",[]);
+  }|{};
+  
+  
+  function IsHandAboveNeck()
+  {
+    var Rhand = Kinect.skeletonJointPosition(robot.video.humanDetector.user,11)|	
+    var Lhand = Kinect.skeletonJointPosition(robot.video.humanDetector.user,7)|
+    var Neck =  Kinect.skeletonJointPosition(robot.video.humanDetector.user,2);
+    if ((Neck.size==3)&&(Rhand.size==3)&&(Lhand.size==3)&&(Lhand[1]>Neck[1])&&(Rhand[1]>Neck[1])) return 3;
+    if ((Neck.size==3)&&(Rhand.size==3)&&(Rhand[1]>Neck[1])) return 1;
+    if ((Neck.size==3)&&(Lhand.size==3)&&(Lhand[1]>Neck[1])) return 2;
+    return 0; 
+  };
+  
+  function IsHandUp()
+  {
+    var Rhand = Kinect.skeletonJointPosition(robot.video.humanDetector.user,11)|	
+    var Lhand = Kinect.skeletonJointPosition(robot.video.humanDetector.user,7)|
+    var Head =  Kinect.skeletonJointPosition(robot.video.humanDetector.user,3);
+    if ((Head.size==3)&&(Rhand.size==3)&&(Lhand.size==3)&&(Lhand[1]>Head[1])&&(Rhand[1]>Head[1])) return 3;
+    if ((Head.size==3)&&(Rhand.size==3)&&(Rhand[1]>Head[1])) return 1;
+    if ((Head.size==3)&&(Lhand.size==3)&&(Lhand[1]>Head[1])) return 2;
+    return 0; 
+  };
+  
+  function GetRightHandColor()
+  {
+    if (robot.video.humanDetector.hand[right].visible) 
+    {
+      var window = robot.video.humanDetector.hand[right].color.window|
+      var pointCor = robot.video.humanDetector.hand[right].positionOnImage|
+      ImageTool2.setImage(Kinect.colorImage);
+      if (pointCor.size>0) 
+      {
+	var x1=pointCor[0]-window;
+	var y1=pointCor[1]-window;
+	if (x1>(640-window-1)) x1=640-window-1;
+	if (y1>(480-window-1)) y1=480-window-1;
+	if (x1<0) x1=0;
+	if (y1<0) y1=0;
+	ImageTool2.imgROI(x1,y1,window,window);
+	ImageTool2.imgMedianBlur(11);
+	var pointVal = ImageTool2.getPixelValue(window/2,window/2);
+	robot.video.humanDetector.hand[right].color.value = pointVal; 
+	ImageTool2.putCircle(window/2,window/2,window/4,pointVal[0],pointVal[1],pointVal[2],-1);
+	ImageTool2.putCircle(window/2,window/2,window/4-1,0,0,0,1);
+	ImageTool2.putCircle(window/2,window/2,window/4,255,255,255,1);
+	ImageTool2.updateImage;
+      } else {
+	robot.video.humanDetector.hand[right].color.value = [ ];
+	ImageTool2.createImage(window,window,0,0,0);
+	ImageTool2.putLine(0,0,window-1,window-1,200,0,0,1);
+	ImageTool2.putLine(0,window-1,window-1,0,200,0,0,1);
+	ImageTool2.updateImage;
+      };
+    };    
+  };
+	    
+  function GetLeftHandColor()
+  {
+    if (robot.video.humanDetector.hand[left].visible) 
+    {
+      var window = robot.video.humanDetector.hand[left].color.window|
+      var pointCor = robot.video.humanDetector.hand[left].positionOnImage|
+      ImageTool3.setImage(Kinect.colorImage);
+      if (pointCor.size>0) 
+      {
+	var x1=pointCor[0]-window;
+	var y1=pointCor[1]-window;
+	if (x1>(640-window-1)) x1=640-window-1;
+	if (y1>(480-window-1)) y1=480-window-1;
+	if (x1<0) x1=0;
+	if (y1<0) y1=0;
+	ImageTool3.imgROI(x1,y1,window,window);
+	ImageTool3.imgMedianBlur(11);
+	var pointVal = ImageTool3.getPixelValue(window/2,window/2);
+	robot.video.humanDetector.hand[left].color.value = pointVal;
+	ImageTool3.putCircle(window/2,window/2,window/4,pointVal[0],pointVal[1],pointVal[2],-1);
+	ImageTool3.putCircle(window/2,window/2,window/4-1,0,0,0,1);
+	ImageTool3.putCircle(window/2,window/2,window/4,255,255,255,1);
+	ImageTool3.updateImage;
+      } else {
+	robot.video.humanDetector.hand[left].color.value = [ ];
+	ImageTool3.createImage(window,window,0,0,0);
+	ImageTool3.putLine(0,0,window-1,window-1,200,0,0,1);
+	ImageTool3.putLine(0,window-1,window-1,0,200,0,0,1);
+	ImageTool3.updateImage;
+      };
+    };    
+  };	    
+
+	    
+  function GetTorsoColor()
+  {
+    if (robot.video.humanDetector.torso.visible) 
+    {
+      var window = robot.video.humanDetector.torso.color.window|
+      var pointCor = robot.video.humanDetector.torso.positionOnImage|
+      ImageTool4.setImage(Kinect.colorImage);
+      if (pointCor.size>0) 
+      {
+	var x1=pointCor[0]-window;
+	var y1=pointCor[1]-window;
+	if (x1>(640-window-1)) x1=640-window-1;
+	if (y1>(480-window-1)) y1=480-window-1;
+	if (x1<0) x1=0;
+	if (y1<0) y1=0;
+	ImageTool4.imgROI(x1,y1,window,window);
+	ImageTool4.imgMedianBlur(11);
+	var pointVal = ImageTool4.getPixelValue(window/2,window/2);
+	robot.video.humanDetector.torso.color.value = pointVal;
+	ImageTool4.putCircle(window/2,window/2,window/4,pointVal[0],pointVal[1],pointVal[2],-1);
+	ImageTool4.putCircle(window/2,window/2,window/4-1,0,0,0,1);
+	ImageTool4.putCircle(window/2,window/2,window/4,255,255,255,1);
+	ImageTool4.updateImage;
+      } else {
+	robot.video.humanDetector.torso.color.value = [ ];
+	ImageTool4.createImage(window,window,0,0,0);
+	ImageTool4.putLine(0,0,window-1,window-1,200,0,0,1);
+	ImageTool4.putLine(0,window-1,window-1,0,200,0,0,1);
+	ImageTool4.updateImage;
+      };
+    };    
+  };
+	    
+	    
+  function GetHead()
+  {
+    if (robot.video.humanDetector.head.visible) 
+    {
+      var posCor = robot.video.humanDetector.head.position|
+      var pointCor = robot.video.humanDetector.head.positionOnImage|
+      ImageTool5.setImage(Kinect.colorImage);
+      if ((pointCor.size>0)&&(posCor.size>0)) 
+      {
+	var z=0;
+	if (pointCor[2]>0) z = (robot.video.humanDetector.head.scale)/(posCor[2]);
+	if (z<1)  z=1;
+	if (z>240)  z=240; //z*2=240*2=480
+	var x1=pointCor[0]-z;
+	var y1=pointCor[1]-z;
+	if (x1>(640-z*2-1)) x1=640-z*2-1;
+	if (y1>(480-z*2-1)) y1=480-z*2-1;
+	if (x1<0) x1=0;
+	if (y1<0) y1=0;
+	ImageTool5.imgROI(x1,y1,z*2,z*2);
+	ImageTool5.updateImage;
+      } else {
+	ImageTool5.createImage(80,80,0,0,0);
+	ImageTool5.putLine(0,0,79,79,200,0,0,3);
+	ImageTool5.putLine(0,79,79,0,200,0,0,3);
+	ImageTool5.updateImage;
+      };
+    };    
+  };
+  
+  function PhotoTake(source){
+    if (source=="kinect") ImageTool6.setImage(robot.video.kinect.colorImage);
+    if (source=="camera") ImageTool6.setImage(robot.video.camera.image);
+    ImageTool6.imgRotateFlip(3);
+    ImageTool6.updateImage();
+  }|{}; 
+  
+  function PhotoSave(path){
+    ImageTool6.saveImage(path);
+  }|{};
+  
+  function VideoStop(){
+    a_Video.unfreeze| a_Video.stop;
+    echo("VIDEO: All video modules stoped successful."); 
+    robot.log.Set("VIDEO STOP",[]);
+  }|{}; 
+  
+  function VideoPause(){
+    a_Video.freeze;
+    echo("VIDEO: All video modules paused successful."); 
+    robot.log.Set("VIDEO PAUSE",[]);
+  }|{}; 
+  
+  function VideoResume(){
+    a_Video.unfreeze;
+    echo("VIDEO: All video modules resumed successful."); 
+    robot.log.Set("VIDEO RESUME",[]);
+  }|{}; 
+  
+  function VideoReset(){
+	if (robot.video.hasLocalSlot("objectDetector1")) 
+	  robot.video.objectDetector1.enable=false;
+	if (robot.video.hasLocalSlot("color1Detector"))  {
+	  robot.video.color1Detector.enable=false;
+	  robot.video.color2Detector.enable=false;
+	  robot.video.color3Detector.enable=false;
+	  robot.video.color4Detector.enable=false;
+	};
+	if (robot.video.hasLocalSlot("facetDetector")) 	
+	  robot.video.facetDetector.enable=false;
+	if (robot.video.hasLocalSlot("moveDetector")) 	
+	  robot.video.moveDetector.enable=false;
+	if (robot.video.hasLocalSlot("kinect")) {
+	  robot.video.humanDetector.enable=false;
+	  robot.video.humanDetector.faceTrackingPause=true;
+	};
+    robot.log.Set("VIDEO RESET",[]);
+  }|{}; 
+
+};

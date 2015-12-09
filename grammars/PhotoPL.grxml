@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<grammar version="1.0" xml:lang="pl-PL" root="rootPhotoRule" tag-format="semantics/1.0-literals" xmlns="http://www.w3.org/2001/06/grammar">
+	<rule id="rootPhotoRule">
+		<one-of>
+			<item><ruleref uri="#Mail"/></item>
+			<item><ruleref uri="#Facebook"/></item>
+			<item><ruleref uri="#Back"/></item>
+			<item><ruleref uri="#Repeat"/></item>
+		</one-of>
+	</rule>
+  
+    <rule id="Mail" scope="private">
+        <tag>MAIL</tag>
+        <one-of>
+          <item>wyślij je</item>
+          <item>wyślij email</item>
+          <item>wyślij mejla</item>
+          <item>wyślij mejlem</item>
+          <item>wyślij wiadomość</item>
+        </one-of>
+    </rule>
+	 
+
+    <rule id="Facebook" scope="private">
+        <tag>FB</tag>
+        <one-of>
+          <item>opublikuj na fejsbuku</item>
+          <item>opublikuj na fejsie</item>
+          <item>wrzuć na łola</item>
+          <item>wrzuć na fejsbuka</item>
+          <item>wrzuć na fejsa</item>
+        </one-of>
+    </rule>
+	
+
+    <rule id="Back" scope="private">
+        <tag>BACK</tag>
+        <one-of>
+          <item>nic</item>
+          <item>nic nie rób</item>
+          <item>skasuj to</item>
+          <item>skasuj to zdjęcie</item>
+        </one-of>
+    </rule>
+	
+    <rule id="Repeat" scope="private">
+        <tag>REPEAT</tag>
+        <one-of>
+          <item>jeszcze raz</item>
+          <item>jeszcze raz proszę</item>
+          <item>co powiedziałeś</item>
+          <item>o co pytasz</item>
+          <item>słucham</item>
+          <item>powtórz</item>
+          <item>powtórz proszę</item>
+        </one-of>
+    </rule>
+	  
+</grammar>

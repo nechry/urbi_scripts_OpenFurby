@@ -1,0 +1,194 @@
+/*
+*  Author: Jan Kedzierski
+*  Date: 06.12.2015
+*  Ver: 1.0 (Furby special edition)
+*/
+
+ 
+function ROBOT() {
+  echo("***********************************************************");
+  echo("   WROCLAW UNIVERSITY OF TECHNOLOGY, POLAND"); 
+  echo("   Department of Fundamental Cybernetics and Robotics"); 
+  echo("***********************************************************");
+  echo("   "); 
+  echo("   All scripts were implemented for WRUT robots use."); 
+  echo("   Contain initialization functions of robots, their");
+  echo("   basic behaviors and functionality."); 
+  echo("   You are working with " + System.Platform.kind + " platform."); 
+  echo("***********************************************************");
+  echo("   "); 
+ 
+  echo("***********************************************************"); 
+  echo("LOADING ROBOT...");
+  echo("   ");
+  ////////////////////////////////////////////////////////
+  //
+  //	R O B O T   S T R U C T U R E
+  //
+  ////////////////////////////////////////////////////////
+  // Define robot abstraction
+  load(_uFilesDir+"Robot.u"); 
+  if (!LoadRobot()) return; 
+  
+  ////////////////////////////////////////////////////////
+  //
+  //	A U D I O  
+  //
+  ////////////////////////////////////////////////////////
+  if (_RobotStructure.has("Audio")) { 
+    load(_uFilesDir+"Audio.u");
+    if (!LoadAudio()) return;
+  };
+  
+  ////////////////////////////////////////////////////////
+  //
+  //	V I D E O   
+  //
+  ////////////////////////////////////////////////////////  
+  if (_RobotStructure.has("Video"))  {
+    load(_uFilesDir+"Video.u");
+    if (!LoadVideo()) return;
+  };
+  
+  ////////////////////////////////////////////////////////
+  //
+  // 	(ML) M A S C H I N E   L E A R N I N G   
+  //
+  ////////////////////////////////////////////////////////   
+   if (_RobotStructure.has("ML"))  {
+    load(_uFilesDir+"ML.u");
+    if (!LoadML()) return;
+  };
+  
+  ////////////////////////////////////////////////////////
+  //
+  // 	 A P P R A I S A L    
+  //
+  ////////////////////////////////////////////////////////
+  if (_RobotStructure.has("Appraisal"))
+  {
+    // Define Appraisal abstraction
+    load(_uFilesDir+"Appraisal.u");
+    if (!LoadAppraisal()) return;
+  };
+  
+  ////////////////////////////////////////////////////////
+  //
+  // 	 E M O T I O N S
+  //
+  ////////////////////////////////////////////////////////
+  if (_RobotStructure.has("Emotions"))
+  {
+    // Define Appraisal abstraction
+    load(_uFilesDir+"Emotions.u");
+    if (!LoadEmotions()) return;
+  };
+  
+
+
+  ////////////////////////////////////////////////////////
+  //
+  //	F U R B Y
+  //
+  //////////////////////////////////////////////////////// 
+  
+  if (_RobotStructure.has("Furby"))
+  {
+    // Define Furby abstraction
+    load(_uFilesDir+"Furby.u");
+    if (!LoadFurby()) return;
+  };
+
+  
+  ////////////////////////////////////////////////////////
+  //
+  // 	 N E T W O R K     
+  //
+  ////////////////////////////////////////////////////////
+  if (_RobotStructure.has("Network"))
+  {
+    // Define Network abstraction
+    load(_uFilesDir+"Network.u");
+    if (!LoadNetwork()) return;
+  };
+  
+  ////////////////////////////////////////////////////////
+  //
+  //	M O B I L E   C O N F I G U R A T I O N
+  //
+  ////////////////////////////////////////////////////////
+  if (_RobotStructure.has("Platform"))
+  {
+    if (_En_UAria)
+    {
+      load(_uFilesDir+"Platform.u");
+      if (!LoadARIA()) return;
+    };
+  }; 
+
+  ////////////////////////////////////////////////////////
+  //
+  //	R E M O T E
+  //
+  ////////////////////////////////////////////////////////
+  if (_RobotStructure.has("Remote"))
+  {
+    load(_uFilesDir+"Remote.u");
+    if (!LoadRemote()) return;
+  };
+ 
+  ////////////////////////////////////////////////////////
+  //
+  //	 C O M P E T E N C Y   M A N A G E R   F I L E S
+  //
+  //////////////////////////////////////////////////////// 
+  if (_CompetencyManagerFiles.size>0)
+  {   
+    // Load user files
+    for(var file_:_CompetencyManagerFiles) load(_uFilesDir+"competencyManager/"+file_);
+  };
+
+  
+  echo("   ");
+  echo("ROBOT READY :-)");
+  echo("***********************************************************");
+  robot.ready=true;
+  return;
+}|{};
+
+/////////////////////////////////////////////////////
+//
+//	Run robot creator
+//
+/////////////////////////////////////////////////////
+
+ROBOT();
+
+/////////////////////////////////////////////////////
+//
+//	Run functiuons running in background
+//
+/////////////////////////////////////////////////////
+
+if (robot.ready)
+{
+  /////////////////////////////////////////////////////
+  //
+  //	Run other services
+  //
+  /////////////////////////////////////////////////////
+
+  if((_RobotStructure.has("Network"))&&(_En_UGCalendar)) every(3000s) Global.GCalendar1.RefreshAccess(),
+  
+  if((_RobotStructure.has("Remote"))&&(_En_UKeyboard)) Keyboard.StartCapturing(),
+
+  /////////////////////////////////////////////////////
+  //
+  //	Load FSM
+  //
+  /////////////////////////////////////////////////////
+
+  if (_FSMFile!="") load(_uFilesDir+"FSM/"+_FSMFile);
+  
+
+},

@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<grammar version="1.0" xml:lang="pl-PL" root="rootBasicRule" tag-format="semantics/1.0-literals" xmlns="http://www.w3.org/2001/06/grammar">
+  <rule id="rootBasicRule">
+    <one-of>
+      <item>
+        <tag>HELLO</tag>
+        <one-of>
+          <item>cześć EMYS</item>
+          <item>witaj EMYS</item>
+          <item>siema EMYS</item>
+          <item>EMYS wstawaj</item>
+          <item>EMYS obudź się</item>
+        </one-of>
+      </item>
+      <item>
+        <tag>TIME</tag>
+        <one-of>
+          <item>EMYS która jest godzina</item>
+          <item>EMYS która jest</item>
+          <item>EMYS podaj godzinę</item>
+          <item>EMYS podaj czas</item>
+        </one-of>
+      </item>
+      <item>
+        <tag>DATE</tag>
+        <one-of>
+          <item>EMYS który dziś jest</item>
+          <item>EMYS podaj datę</item>
+        </one-of>
+      </item>
+	  <item>
+        <tag>DEACTIVATE</tag>
+        <one-of>
+          <item> EMYS idź spać </item>
+          <item> EMYS dezaktywuj się </item>
+          <item> EMYS zdrzemnij się nieco </item>
+          <item> EMYS zdrzemnij się </item>
+        </one-of>
+        <one-of>
+          <item> proszę </item>
+          <item> </item>
+        </one-of>
+      </item>
+	  <item>
+        <tag>RADIO</tag>
+        <one-of>
+          <item> EMYS puść jakąś muzykę</item>
+          <item> EMYS włącz radio </item>
+          <item> EMYS puść radio </item>
+          <item> EMYS włącz muzykę </item>
+          <item> EMYS zapodaj nutę </item>
+        </one-of>
+        <one-of>
+          <item> proszę </item>
+          <item> </item>
+        </one-of>
+      </item>
+	  <item>
+        <tag>WEATHER</tag>
+        <one-of>
+          <item> EMYS jaka jest pogoda </item>
+          <item> EMYS sprawdź pogodę proszę </item>
+          <item> EMYS sprawdź pogodę </item>
+          <item> EMYS zimno jest </item>
+          <item> EMYS zimno jest na dworze</item>
+          <item> EMYS zimno jest na zewnątrz</item>
+          <item> EMYS jak jest na dworze </item>
+          <item> EMYS jak jest na zewnątrz </item>
+        </one-of>
+      </item>
+	  <item>
+        <tag>ALARM</tag>
+        <one-of>
+          <item> EMYS ustaw budzik </item>
+          <item> EMYS włącz budzik </item>
+          <item> EMYS ustaw alarm </item>
+          <item> EMYS włącz alarm </item>
+          <item> EMYS obudź mnie jutro </item>
+        </one-of>
+        <one-of>
+          <item> proszę </item>
+          <item> </item>
+        </one-of>
+      </item>
+	  <item>
+        <tag>NEWS</tag>
+        <one-of>
+          <item> EMYS przeczytaj mi news-y </item>
+          <item> EMYS przeczytaj mi wiadomości </item>
+          <item> EMYS sprawdź wiadomości </item>
+          <item> EMYS sprawdź news-y </item>
+        </one-of>
+        <one-of>
+          <item> proszę </item>
+          <item> </item>
+        </one-of>
+      </item>
+	  <item>
+        <tag>TV</tag>
+        <one-of>
+          <item> EMYS sprawdź program telewizyjny </item>
+          <item> EMYS przeczytaj mi program telewizyjny </item>
+          <item> EMYS co dzisiaj w telewizji </item>
+          <item> EMYS co dzisiaj leci w telewizji </item>
+        </one-of>
+        <one-of>
+          <item> proszę </item>
+          <item> </item>
+        </one-of>
+      </item>
+	  <item>
+        <tag>CALENDAR</tag>
+        <one-of>
+          <item> EMYS sprawdź mój kalendarz </item>
+          <item> EMYS sprawdź kalendarz </item>
+          <item> EMYS co mam na dziś zaplanowane </item>
+          <item> EMYS co mam dziś zaplanowane </item>
+          <item> EMYS co mam na dziś </item>
+        </one-of>
+        <one-of>
+          <item> proszę </item>
+          <item> </item>
+        </one-of>
+      </item>
+	  <item>
+        <tag>CHECK_MAIL</tag>
+        <one-of>
+          <item> EMYS sprawdź moją pocztę </item>
+          <item> EMYS sprawdź moją skrzynkę pocztową </item>
+          <item> EMYS sprawdź pocztę </item>
+          <item> EMYS sprawdź skrzynkę pocztową </item>
+          <item> EMYS sprawdź mejla </item>
+        </one-of>
+        <one-of>
+          <item> proszę </item>
+          <item> </item>
+        </one-of>
+      </item>
+	  <item>
+        <tag>SEND_MAIL</tag>
+        <one-of>
+          <item> EMYS wyślij wiadomość </item>
+          <item> EMYS wyślij email </item>
+          <item> EMYS wyślij mejla </item>
+        </one-of>
+        <one-of>
+          <item> proszę </item>
+          <item> </item>
+        </one-of>
+      </item>	  
+	  <item>
+        <tag>FACEBOOK</tag>
+        <one-of>
+          <item> EMYS sprawdź mój profil </item>
+          <item> EMYS sprawdź mój profil na fejsbuku </item>
+          <item> EMYS sprawdź fajsbuka </item>
+          <item> EMYS sprawdź mojego fejsbuka </item>
+        </one-of>
+        <one-of>
+          <item> proszę </item>
+          <item> </item>
+        </one-of>
+      </item>
+	  <item>
+        <tag>PHOTO</tag>
+        <one-of>
+          <item> EMYS zrób zdjęcie </item>
+          <item> EMYS zrób focię </item>
+          <item> EMYS zdjęcie </item>
+        </one-of>
+        <one-of>
+          <item> proszę </item>
+          <item> </item>
+        </one-of>
+      </item>
+	  <item>
+        <tag>EMOTIONS</tag>
+        <one-of>
+          <item> EMYS pokaż emocje </item>
+          <item> EMYS pokaż swoje emocje </item>
+          <item> EMYS pokaż jak wyrażasz emocje </item>
+          <item> EMYS pokaż jak wyrażasz swoje emocje </item>
+        </one-of>
+        <one-of>
+          <item> proszę </item>
+          <item> </item>
+        </one-of>
+      </item>
+	  <item>
+        <tag>INTRODUCE</tag>
+        <one-of>
+          <item> EMYS przedstaw się </item>
+          <item> EMYS kim jesteś </item>
+          <item> EMYS opowiedz o sobie </item>
+          <item> EMYS co potrafisz </item>
+        </one-of>
+        <one-of>
+          <item> proszę </item>
+          <item> </item>
+        </one-of>
+      </item>
+	  <item>
+        <tag>PLAY</tag>
+        <one-of>
+          <item> EMYS zagrajmy </item>
+          <item> EMYS pouczmy się kolorów </item>
+          <item> EMYS pozgadujmy kolory </item>
+          <item> EMYS pograjmy w kolory </item>
+          <item> EMYS zagrajmy w kolory </item>
+          <item> EMYS pobawmy się </item>
+          <item> EMYS pobawmy się w kolory</item>
+        </one-of>
+        <one-of>
+          <item> proszę </item>
+          <item> </item>
+        </one-of>
+      </item>
+    </one-of>
+  </rule>
+</grammar>

@@ -1,0 +1,78 @@
+//////////////////////////////////////////////////
+//
+// Examples pack
+// ver 1.0
+// date: 16.09.2015
+//
+//////////////////////////////////////////////////
+//
+
+
+
+
+// Ex. 3.1 - play sound
+
+// play a song
+robot.audio.musicPlayer.Play(_uFilesDir + "music/song1.mp3"),
+sleep(3s);
+
+// change volume
+robot.audio.musicPlayer.volume=100;
+
+// stop playing
+robot.audio.musicPlayer.Stop;
+
+
+
+
+
+// Ex. 3.2 - speech synthesis
+//
+// Go to the _CONFIG_.u file and turn on USpeech module 
+// choose available voices
+// var _Speech_param		= [0, 1, 2, 3, 4, 5]; 
+// and restart URBI.
+
+robot.audio.speech.Speak("Welcome. My name is EMYS.");
+
+// change parameters
+robot.audio.speech.voiceNo = 4;
+robot.audio.speech.volume  = 100;
+robot.audio.speech.Speak("Welcome. My name is EMYS.");
+
+// set sad ;) voice
+robot.audio.speech.pitch = 8;
+robot.audio.speech.rate = -4;
+robot.audio.speech.Speak("Welcome. My name is EMYS.");
+
+
+
+// Ex. 3.3 - speech recognition
+//
+// Go to the _CONFIG_.u file and turn on URecog module 
+// var _En_URecog	 	= true;
+// choose version SAPI or MSP,
+// var _Recog_module		= "URecog_MSP";	
+// set recognition language
+// var _Recog_param		= 0;
+// set EMYS mic input
+// var _Recog_input		= 0;
+// and restart URBI.
+
+// run audio system in background
+t:robot.audio.Run,
+// load grammar
+robot.audio.recognition.LoadGrammar(_uFilesDir + "grammars/BasicEN.grxml");
+
+at (robot.audio.recognition.result != ""){
+  echo(robot.audio.recognition.result);
+  robot.audio.recognition.result = "";
+},
+
+
+
+
+// see more examples on the docu page
+// http://lirec.iiar.pwr.edu.pl/~flashdocu
+// Audio API:
+// http://lirec.iiar.pwr.edu.pl/~flashdocu/index.php/software/robot-api-structure/audio

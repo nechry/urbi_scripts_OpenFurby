@@ -1,0 +1,119 @@
+/*
+*  Initialize learning system
+*
+*
+*  Author: Jan Kedzierski
+*  Date: 16.04.2015
+*  Ver:  5.2
+*/
+
+// add machine learning componnent for learning algorithms
+
+
+do(Global) 
+{
+
+  function LoadML{
+
+    echo("INFO: Loading ML ...");
+    
+    robot.addComponent("ml");	
+    robot.ml.addComponent("faceLearning");
+
+    try{
+      if (_En_UKNearestML) 
+      {
+	echo("INFO: UKNearest 1 loading...");
+
+	if (!hasSlot(_UObjN_UKNearest)) loadModule(_uObjectsDir+_UObjN_UKNearest);
+	var Global.KNearest1=UKNearest.new(5);
+	
+	//Global.KNearest1.addProto(Interface);    
+	//robot.ml.addDevice("knearest1", Global.KNearest1);
+	
+	robot.ml.addComponent("colorLearning");
+	
+	do(robot.ml.colorLearning) { 
+	  function Learn(colorValue, colorName) 	{call.b_mlLearnColor(colorValue, colorName);};
+	  function Check(colorValue)			{call.b_mlCheckColor(colorValue);};
+	  function ChcekLevel()				{call.KNearest1.getSampleCount();};
+	  function Save(fileName)			{call.KNearest1.saveData(fileName);};
+	  function Load(fileName)			{call.KNearest1.loadData(fileName);};
+	};
+      
+	echo("OK: UKNearest 1 added.");
+      };    
+	
+      if (_En_UEigenfaces) 
+      {
+	echo("INFO: UEigenfaces 1 loading...");
+
+	if (!hasSlot(_UObjN_UEigenfaces)) loadModule(_uObjectsDir+_UObjN_UEigenfaces);
+	var Global.Eigenfaces1 = UEigenfaces.new();
+	
+	//Global.Eigenfaces1.addProto(Interface);    
+	//robot.ml.addDevice("eigenfaces1", Global.Eigenfaces1);
+	
+	Global.Eigenfaces1.getSlot("threshold").copy(robot.ml.faceLearning,"threshold");
+	
+        do(robot.ml.faceLearning) { 
+	  function Learn(face, name) 			{call.b_mlLearnFace(face, name);};
+	  function Check(face)				{call.b_mlCheckFace(face);};
+	  function UpdateDatabase(value)		{call.Eigenfaces1.updateDatabase(value);};  
+	  function Save(fileName)			{call.Eigenfaces1.saveData(fileName);};
+	  function Load(fileName)			{call.Eigenfaces1.loadData(fileName);};
+	};
+	
+	echo("OK: UEigenfaces 1 added.");
+      };
+      
+      
+      
+      do(robot.ml) { 
+	function Save(fileName,first,second)		{call.b_mlSave(fileName,first,second);};
+	function Load(fileName,first,second)		{call.b_mlLoad(fileName,first,second);};
+      };
+      
+      echo("OK: ML loaded.");
+      echo(" ");
+      return true;
+    }catch(var e){
+      echo("ERROR: %s" % e.message);
+      return false;
+    };
+  }|{};
+
+  function b_mlLearnColor(colorValue, colorName){
+    if (colorValue.size==3)
+      return KNearest1.train(colorValue,colorName)
+    else
+      return false;
+  };
+ 
+  function b_mlCheckColor(colorValue){
+    if (colorValue.size==3)
+      return KNearest1.find(colorValue,5)
+    else
+      return "failed";
+  }; 
+  
+  function b_mlLearnFace(face, name){
+    return Eigenfaces1.train(face, name); 
+  };
+  
+  function b_mlCheckFace(face){
+    return Eigenfaces1.find(face);
+  };
+  
+  function b_mlSave(fileName,first,second){
+    if ((_En_UEigenfaces)&&(first))  	Eigenfaces1.saveData(fileName+"_Eigenfaces.xml");
+    if ((_En_UKNearestML)&&(second))   	KNearest1.saveData(fileName+"_KNearest.xml");
+  };
+
+  
+  function b_mlLoad(fileName,first,second){
+    if ((_En_UEigenfaces)&&(first)) 	Eigenfaces1.loadData(fileName+"_Eigenfaces.xml");
+    if ((_En_UKNearestML)&&(second))   	KNearest1.loadData(fileName+"_KNearest.xml");
+  };
+  
+};

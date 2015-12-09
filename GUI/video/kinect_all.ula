@@ -1,0 +1,4369 @@
+<!DOCTYPE ulablayout>
+<ulablayout version="1.2" file-version="1.0">
+ <model-index row="0" column="0" depth="0">
+  <content><![CDATA[kinect_all.ula]]></content>
+  <model-index row="0" column="0" depth="1">
+   <model-index row="0" column="0" depth="2">
+    <content><![CDATA[untitled4]]></content>
+   </model-index>
+   <model-index row="0" column="1" depth="2"/>
+   <model-index row="0" column="2" depth="2">
+    <content><![CDATA[Kinect.colorImage]]></content>
+   </model-index>
+   <model-index row="0" column="3" depth="2">
+    <content><![CDATA[Image]]></content>
+   </model-index>
+   <model-index row="0" column="4" depth="2">
+    <content><![CDATA[344x244+21+39]]></content>
+   </model-index>
+   <model-index row="0" column="5" depth="2">
+    <content><![CDATA[#6e6462ff]]></content>
+   </model-index>
+   <model-index row="0" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="0" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="0" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="1" column="0" depth="2">
+    <content><![CDATA[untitled6]]></content>
+   </model-index>
+   <model-index row="1" column="1" depth="2"/>
+   <model-index row="1" column="2" depth="2">
+    <content><![CDATA[Kinect.depthImage]]></content>
+   </model-index>
+   <model-index row="1" column="3" depth="2">
+    <content><![CDATA[Image]]></content>
+   </model-index>
+   <model-index row="1" column="4" depth="2">
+    <content><![CDATA[354x243+382+41]]></content>
+   </model-index>
+   <model-index row="1" column="5" depth="2">
+    <content><![CDATA[#6e6462ff]]></content>
+   </model-index>
+   <model-index row="1" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="1" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="1" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="2" column="0" depth="2">
+    <content><![CDATA[untitled7]]></content>
+   </model-index>
+   <model-index row="2" column="1" depth="2"/>
+   <model-index row="2" column="2" depth="2">
+    <content><![CDATA[Kinect.colorBrightness]]></content>
+   </model-index>
+   <model-index row="2" column="3" depth="2">
+    <content><![CDATA[Float]]></content>
+   </model-index>
+   <model-index row="2" column="4" depth="2">
+    <content><![CDATA[174x69+26+311]]></content>
+   </model-index>
+   <model-index row="2" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="2" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="2" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Joystick axis" type="int">-1</var>
+    <var name="Joystick update period (ms)" type="int">0</var>
+    <var name="Use joystick" type="bool">false</var>
+    <var name="decimals" type="int">2</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="2" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="3" column="0" depth="2">
+    <content><![CDATA[untitled16]]></content>
+   </model-index>
+   <model-index row="3" column="1" depth="2"/>
+   <model-index row="3" column="2" depth="2">
+    <content><![CDATA[Kinect.colorContrast]]></content>
+   </model-index>
+   <model-index row="3" column="3" depth="2">
+    <content><![CDATA[Float]]></content>
+   </model-index>
+   <model-index row="3" column="4" depth="2">
+    <content><![CDATA[169x69+194+314]]></content>
+   </model-index>
+   <model-index row="3" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="3" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="3" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Joystick axis" type="int">-1</var>
+    <var name="Joystick update period (ms)" type="int">0</var>
+    <var name="Use joystick" type="bool">false</var>
+    <var name="decimals" type="int">2</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="3" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="4" column="0" depth="2">
+    <content><![CDATA[untitled17]]></content>
+   </model-index>
+   <model-index row="4" column="1" depth="2"/>
+   <model-index row="4" column="2" depth="2">
+    <content><![CDATA[Kinect.skeletonImage]]></content>
+   </model-index>
+   <model-index row="4" column="3" depth="2">
+    <content><![CDATA[Image]]></content>
+   </model-index>
+   <model-index row="4" column="4" depth="2">
+    <content><![CDATA[346x241+746+41]]></content>
+   </model-index>
+   <model-index row="4" column="5" depth="2">
+    <content><![CDATA[#6e6462ff]]></content>
+   </model-index>
+   <model-index row="4" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="4" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="4" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="5" column="0" depth="2">
+    <content><![CDATA[untitled22]]></content>
+   </model-index>
+   <model-index row="5" column="1" depth="2"/>
+   <model-index row="5" column="2" depth="2">
+    <content><![CDATA[Kinect.audioBeamAngle]]></content>
+   </model-index>
+   <model-index row="5" column="3" depth="2">
+    <content><![CDATA[Float]]></content>
+   </model-index>
+   <model-index row="5" column="4" depth="2">
+    <content><![CDATA[169x72+921+563]]></content>
+   </model-index>
+   <model-index row="5" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="5" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="5" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Joystick axis" type="int">-1</var>
+    <var name="Joystick update period (ms)" type="int">0</var>
+    <var name="Use joystick" type="bool">false</var>
+    <var name="decimals" type="int">0</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="5" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="6" column="0" depth="2">
+    <content><![CDATA[untitled23]]></content>
+   </model-index>
+   <model-index row="6" column="1" depth="2"/>
+   <model-index row="6" column="2" depth="2">
+    <content><![CDATA[Kinect.audioSourceAngle]]></content>
+   </model-index>
+   <model-index row="6" column="3" depth="2">
+    <content><![CDATA[Float]]></content>
+   </model-index>
+   <model-index row="6" column="4" depth="2">
+    <content><![CDATA[169x69+922+655]]></content>
+   </model-index>
+   <model-index row="6" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="6" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="6" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Joystick axis" type="int">-1</var>
+    <var name="Joystick update period (ms)" type="int">0</var>
+    <var name="Use joystick" type="bool">false</var>
+    <var name="decimals" type="int">0</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="6" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="7" column="0" depth="2">
+    <content><![CDATA[untitled24]]></content>
+   </model-index>
+   <model-index row="7" column="1" depth="2"/>
+   <model-index row="7" column="2" depth="2">
+    <content><![CDATA[Kinect.fps]]></content>
+   </model-index>
+   <model-index row="7" column="3" depth="2">
+    <content><![CDATA[Float]]></content>
+   </model-index>
+   <model-index row="7" column="4" depth="2">
+    <content><![CDATA[270x69+440+564]]></content>
+   </model-index>
+   <model-index row="7" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="7" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="7" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Joystick axis" type="int">-1</var>
+    <var name="Joystick update period (ms)" type="int">0</var>
+    <var name="Use joystick" type="bool">false</var>
+    <var name="decimals" type="int">0</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="7" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="8" column="0" depth="2">
+    <content><![CDATA[untitled27]]></content>
+   </model-index>
+   <model-index row="8" column="1" depth="2"/>
+   <model-index row="8" column="2" depth="2">
+    <content><![CDATA[Kinect.faceIsTracking]]></content>
+   </model-index>
+   <model-index row="8" column="3" depth="2">
+    <content><![CDATA[Bool]]></content>
+   </model-index>
+   <model-index row="8" column="4" depth="2">
+    <content><![CDATA[-1x-1+1318+398]]></content>
+   </model-index>
+   <model-index row="8" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="8" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="8" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="8" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="9" column="0" depth="2">
+    <content><![CDATA[untitled30]]></content>
+   </model-index>
+   <model-index row="9" column="1" depth="2"/>
+   <model-index row="9" column="2" depth="2">
+    <content><![CDATA[Kinect.speechResult]]></content>
+   </model-index>
+   <model-index row="9" column="3" depth="2">
+    <content><![CDATA[String]]></content>
+   </model-index>
+   <model-index row="9" column="4" depth="2">
+    <content><![CDATA[223x44+1245+574]]></content>
+   </model-index>
+   <model-index row="9" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="9" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="9" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="9" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="10" column="0" depth="2">
+    <content><![CDATA[untitled32]]></content>
+   </model-index>
+   <model-index row="10" column="1" depth="2"/>
+   <model-index row="10" column="2" depth="2">
+    <content><![CDATA[Kinect.speechResultTag]]></content>
+   </model-index>
+   <model-index row="10" column="3" depth="2">
+    <content><![CDATA[String]]></content>
+   </model-index>
+   <model-index row="10" column="4" depth="2">
+    <content><![CDATA[226x44+1242+661]]></content>
+   </model-index>
+   <model-index row="10" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="10" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="10" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="10" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="11" column="0" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="11" column="1" depth="2"/>
+   <model-index row="11" column="2" depth="2">
+    <content><![CDATA[Kinect.audioSourceConfidence]]></content>
+   </model-index>
+   <model-index row="11" column="3" depth="2">
+    <content><![CDATA[ProgressBar]]></content>
+   </model-index>
+   <model-index row="11" column="4" depth="2">
+    <content><![CDATA[174x68+912+755]]></content>
+   </model-index>
+   <model-index row="11" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="11" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="11" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Percent" type="bool">true</var>
+    <var name="Vertical" type="bool">false</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="11" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="12" column="0" depth="2">
+    <content><![CDATA[untitled34]]></content>
+   </model-index>
+   <model-index row="12" column="1" depth="2"/>
+   <model-index row="12" column="2" depth="2">
+    <content><![CDATA[Kinect.interID]]></content>
+   </model-index>
+   <model-index row="12" column="3" depth="2">
+    <content><![CDATA[Float]]></content>
+   </model-index>
+   <model-index row="12" column="4" depth="2">
+    <content><![CDATA[277x69+1509+321]]></content>
+   </model-index>
+   <model-index row="12" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="12" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="12" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Joystick axis" type="int">-1</var>
+    <var name="Joystick update period (ms)" type="int">0</var>
+    <var name="Use joystick" type="bool">false</var>
+    <var name="decimals" type="int">0</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="12" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="13" column="0" depth="2">
+    <content><![CDATA[untitled35]]></content>
+   </model-index>
+   <model-index row="13" column="1" depth="2"/>
+   <model-index row="13" column="2" depth="2">
+    <content><![CDATA[Kinect.interRightTracked]]></content>
+   </model-index>
+   <model-index row="13" column="3" depth="2">
+    <content><![CDATA[Float]]></content>
+   </model-index>
+   <model-index row="13" column="4" depth="2">
+    <content><![CDATA[169x69+1639+436]]></content>
+   </model-index>
+   <model-index row="13" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="13" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="13" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Joystick axis" type="int">-1</var>
+    <var name="Joystick update period (ms)" type="int">0</var>
+    <var name="Use joystick" type="bool">false</var>
+    <var name="decimals" type="int">0</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="13" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="14" column="0" depth="2">
+    <content><![CDATA[untitled36]]></content>
+   </model-index>
+   <model-index row="14" column="1" depth="2"/>
+   <model-index row="14" column="2" depth="2">
+    <content><![CDATA[Kinect.interRightInteractive]]></content>
+   </model-index>
+   <model-index row="14" column="3" depth="2">
+    <content><![CDATA[Float]]></content>
+   </model-index>
+   <model-index row="14" column="4" depth="2">
+    <content><![CDATA[169x69+1640+485]]></content>
+   </model-index>
+   <model-index row="14" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="14" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="14" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Joystick axis" type="int">-1</var>
+    <var name="Joystick update period (ms)" type="int">0</var>
+    <var name="Use joystick" type="bool">false</var>
+    <var name="decimals" type="int">0</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="14" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="15" column="0" depth="2">
+    <content><![CDATA[untitled37]]></content>
+   </model-index>
+   <model-index row="15" column="1" depth="2"/>
+   <model-index row="15" column="2" depth="2">
+    <content><![CDATA[Kinect.interRightX]]></content>
+   </model-index>
+   <model-index row="15" column="3" depth="2">
+    <content><![CDATA[Float]]></content>
+   </model-index>
+   <model-index row="15" column="4" depth="2">
+    <content><![CDATA[169x69+1628+700]]></content>
+   </model-index>
+   <model-index row="15" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="15" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="15" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Joystick axis" type="int">-1</var>
+    <var name="Joystick update period (ms)" type="int">0</var>
+    <var name="Use joystick" type="bool">false</var>
+    <var name="decimals" type="int">2</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="15" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="16" column="0" depth="2">
+    <content><![CDATA[untitled38]]></content>
+   </model-index>
+   <model-index row="16" column="1" depth="2"/>
+   <model-index row="16" column="2" depth="2">
+    <content><![CDATA[Kinect.interRightY]]></content>
+   </model-index>
+   <model-index row="16" column="3" depth="2">
+    <content><![CDATA[Float]]></content>
+   </model-index>
+   <model-index row="16" column="4" depth="2">
+    <content><![CDATA[169x69+1627+725]]></content>
+   </model-index>
+   <model-index row="16" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="16" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="16" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Joystick axis" type="int">-1</var>
+    <var name="Joystick update period (ms)" type="int">0</var>
+    <var name="Use joystick" type="bool">false</var>
+    <var name="decimals" type="int">2</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="16" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="17" column="0" depth="2">
+    <content><![CDATA[untitled44]]></content>
+   </model-index>
+   <model-index row="17" column="1" depth="2"/>
+   <model-index row="17" column="2" depth="2">
+    <content><![CDATA[Kinect.time]]></content>
+   </model-index>
+   <model-index row="17" column="3" depth="2">
+    <content><![CDATA[Float]]></content>
+   </model-index>
+   <model-index row="17" column="4" depth="2">
+    <content><![CDATA[269x69+446+648]]></content>
+   </model-index>
+   <model-index row="17" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="17" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="17" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Joystick axis" type="int">-1</var>
+    <var name="Joystick update period (ms)" type="int">0</var>
+    <var name="Use joystick" type="bool">false</var>
+    <var name="decimals" type="int">0</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="17" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="18" column="0" depth="2">
+    <content><![CDATA[untitled46]]></content>
+   </model-index>
+   <model-index row="18" column="1" depth="2"/>
+   <model-index row="18" column="2" depth="2">
+    <content><![CDATA[Kinect.faceImage]]></content>
+   </model-index>
+   <model-index row="18" column="3" depth="2">
+    <content><![CDATA[Image]]></content>
+   </model-index>
+   <model-index row="18" column="4" depth="2">
+    <content><![CDATA[358x239+1106+41]]></content>
+   </model-index>
+   <model-index row="18" column="5" depth="2">
+    <content><![CDATA[#6e6462ff]]></content>
+   </model-index>
+   <model-index row="18" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="18" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="18" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="19" column="0" depth="2">
+    <content><![CDATA[Brightness]]></content>
+   </model-index>
+   <model-index row="19" column="1" depth="2"/>
+   <model-index row="19" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="19" column="3" depth="2">
+    <content><![CDATA[Label]]></content>
+   </model-index>
+   <model-index row="19" column="4" depth="2">
+    <content><![CDATA[170x31+26+286]]></content>
+   </model-index>
+   <model-index row="19" column="5" depth="2">
+    <content><![CDATA[#6e6462ff]]></content>
+   </model-index>
+   <model-index row="19" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="19" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="19" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="20" column="0" depth="2">
+    <content><![CDATA[Contrast]]></content>
+   </model-index>
+   <model-index row="20" column="1" depth="2"/>
+   <model-index row="20" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="20" column="3" depth="2">
+    <content><![CDATA[Label]]></content>
+   </model-index>
+   <model-index row="20" column="4" depth="2">
+    <content><![CDATA[162x31+202+286]]></content>
+   </model-index>
+   <model-index row="20" column="5" depth="2">
+    <content><![CDATA[#6e6462ff]]></content>
+   </model-index>
+   <model-index row="20" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="20" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="20" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="21" column="0" depth="2">
+    <content><![CDATA[untitled52]]></content>
+   </model-index>
+   <model-index row="21" column="1" depth="2"/>
+   <model-index row="21" column="2" depth="2">
+    <content><![CDATA[Kinect.colorAutoExposure]]></content>
+   </model-index>
+   <model-index row="21" column="3" depth="2">
+    <content><![CDATA[Bool]]></content>
+   </model-index>
+   <model-index row="21" column="4" depth="2">
+    <content><![CDATA[177x59+29+405]]></content>
+   </model-index>
+   <model-index row="21" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="21" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="21" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="21" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="22" column="0" depth="2">
+    <content><![CDATA[AutoExposure]]></content>
+   </model-index>
+   <model-index row="22" column="1" depth="2"/>
+   <model-index row="22" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="22" column="3" depth="2">
+    <content><![CDATA[Label]]></content>
+   </model-index>
+   <model-index row="22" column="4" depth="2">
+    <content><![CDATA[174x31+29+379]]></content>
+   </model-index>
+   <model-index row="22" column="5" depth="2">
+    <content><![CDATA[#6e6462ff]]></content>
+   </model-index>
+   <model-index row="22" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="22" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="22" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="23" column="0" depth="2">
+    <content><![CDATA[ExposureTime]]></content>
+   </model-index>
+   <model-index row="23" column="1" depth="2"/>
+   <model-index row="23" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="23" column="3" depth="2">
+    <content><![CDATA[Label]]></content>
+   </model-index>
+   <model-index row="23" column="4" depth="2">
+    <content><![CDATA[174x31+31+461]]></content>
+   </model-index>
+   <model-index row="23" column="5" depth="2">
+    <content><![CDATA[#6e6462ff]]></content>
+   </model-index>
+   <model-index row="23" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="23" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="23" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="24" column="0" depth="2">
+    <content><![CDATA[untitled55]]></content>
+   </model-index>
+   <model-index row="24" column="1" depth="2"/>
+   <model-index row="24" column="2" depth="2">
+    <content><![CDATA[Kinect.colorExposureTime]]></content>
+   </model-index>
+   <model-index row="24" column="3" depth="2">
+    <content><![CDATA[Float]]></content>
+   </model-index>
+   <model-index row="24" column="4" depth="2">
+    <content><![CDATA[176x69+29+487]]></content>
+   </model-index>
+   <model-index row="24" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="24" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="24" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Joystick axis" type="int">-1</var>
+    <var name="Joystick update period (ms)" type="int">0</var>
+    <var name="Use joystick" type="bool">false</var>
+    <var name="decimals" type="int">2</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="24" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="25" column="0" depth="2">
+    <content><![CDATA[Gain]]></content>
+   </model-index>
+   <model-index row="25" column="1" depth="2"/>
+   <model-index row="25" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="25" column="3" depth="2">
+    <content><![CDATA[Label]]></content>
+   </model-index>
+   <model-index row="25" column="4" depth="2">
+    <content><![CDATA[153x31+213+377]]></content>
+   </model-index>
+   <model-index row="25" column="5" depth="2">
+    <content><![CDATA[#6e6462ff]]></content>
+   </model-index>
+   <model-index row="25" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="25" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="25" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="26" column="0" depth="2">
+    <content><![CDATA[untitled57]]></content>
+   </model-index>
+   <model-index row="26" column="1" depth="2"/>
+   <model-index row="26" column="2" depth="2">
+    <content><![CDATA[Kinect.colorGain]]></content>
+   </model-index>
+   <model-index row="26" column="3" depth="2">
+    <content><![CDATA[Float]]></content>
+   </model-index>
+   <model-index row="26" column="4" depth="2">
+    <content><![CDATA[169x69+209+406]]></content>
+   </model-index>
+   <model-index row="26" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="26" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="26" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Joystick axis" type="int">-1</var>
+    <var name="Joystick update period (ms)" type="int">0</var>
+    <var name="Use joystick" type="bool">false</var>
+    <var name="decimals" type="int">2</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="26" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="27" column="0" depth="2">
+    <content><![CDATA[untitled58]]></content>
+   </model-index>
+   <model-index row="27" column="1" depth="2"/>
+   <model-index row="27" column="2" depth="2">
+    <content><![CDATA[Kinect.colorAutoWhiteBalance]]></content>
+   </model-index>
+   <model-index row="27" column="3" depth="2">
+    <content><![CDATA[Bool]]></content>
+   </model-index>
+   <model-index row="27" column="4" depth="2">
+    <content><![CDATA[169x59+33+572]]></content>
+   </model-index>
+   <model-index row="27" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="27" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="27" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="27" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="28" column="0" depth="2">
+    <content><![CDATA[AutoWhiteBalance]]></content>
+   </model-index>
+   <model-index row="28" column="1" depth="2"/>
+   <model-index row="28" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="28" column="3" depth="2">
+    <content><![CDATA[Label]]></content>
+   </model-index>
+   <model-index row="28" column="4" depth="2">
+    <content><![CDATA[167x31+33+548]]></content>
+   </model-index>
+   <model-index row="28" column="5" depth="2">
+    <content><![CDATA[#6e6462ff]]></content>
+   </model-index>
+   <model-index row="28" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="28" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="28" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="29" column="0" depth="2">
+    <content><![CDATA[untitled60]]></content>
+   </model-index>
+   <model-index row="29" column="1" depth="2"/>
+   <model-index row="29" column="2" depth="2">
+    <content><![CDATA[Kinect.colorWhiteBalance]]></content>
+   </model-index>
+   <model-index row="29" column="3" depth="2">
+    <content><![CDATA[Float]]></content>
+   </model-index>
+   <model-index row="29" column="4" depth="2">
+    <content><![CDATA[170x69+34+653]]></content>
+   </model-index>
+   <model-index row="29" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="29" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="29" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Joystick axis" type="int">-1</var>
+    <var name="Joystick update period (ms)" type="int">0</var>
+    <var name="Use joystick" type="bool">false</var>
+    <var name="decimals" type="int">2</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="29" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="30" column="0" depth="2">
+    <content><![CDATA[WhiteBalance]]></content>
+   </model-index>
+   <model-index row="30" column="1" depth="2"/>
+   <model-index row="30" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="30" column="3" depth="2">
+    <content><![CDATA[Label]]></content>
+   </model-index>
+   <model-index row="30" column="4" depth="2">
+    <content><![CDATA[163x31+34+629]]></content>
+   </model-index>
+   <model-index row="30" column="5" depth="2">
+    <content><![CDATA[#6e6462ff]]></content>
+   </model-index>
+   <model-index row="30" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="30" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="30" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="31" column="0" depth="2">
+    <content><![CDATA[Hue]]></content>
+   </model-index>
+   <model-index row="31" column="1" depth="2"/>
+   <model-index row="31" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="31" column="3" depth="2">
+    <content><![CDATA[Label]]></content>
+   </model-index>
+   <model-index row="31" column="4" depth="2">
+    <content><![CDATA[171x31+208+549]]></content>
+   </model-index>
+   <model-index row="31" column="5" depth="2">
+    <content><![CDATA[#6e6462ff]]></content>
+   </model-index>
+   <model-index row="31" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="31" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="31" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="32" column="0" depth="2">
+    <content><![CDATA[untitled63]]></content>
+   </model-index>
+   <model-index row="32" column="1" depth="2"/>
+   <model-index row="32" column="2" depth="2">
+    <content><![CDATA[Kinect.colorHue]]></content>
+   </model-index>
+   <model-index row="32" column="3" depth="2">
+    <content><![CDATA[Float]]></content>
+   </model-index>
+   <model-index row="32" column="4" depth="2">
+    <content><![CDATA[169x69+209+572]]></content>
+   </model-index>
+   <model-index row="32" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="32" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="32" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Joystick axis" type="int">-1</var>
+    <var name="Joystick update period (ms)" type="int">0</var>
+    <var name="Use joystick" type="bool">false</var>
+    <var name="decimals" type="int">2</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="32" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="33" column="0" depth="2">
+    <content><![CDATA[untitled64]]></content>
+   </model-index>
+   <model-index row="33" column="1" depth="2"/>
+   <model-index row="33" column="2" depth="2">
+    <content><![CDATA[Kinect.colorSaturation]]></content>
+   </model-index>
+   <model-index row="33" column="3" depth="2">
+    <content><![CDATA[Float]]></content>
+   </model-index>
+   <model-index row="33" column="4" depth="2">
+    <content><![CDATA[169x69+34+746]]></content>
+   </model-index>
+   <model-index row="33" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="33" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="33" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Joystick axis" type="int">-1</var>
+    <var name="Joystick update period (ms)" type="int">0</var>
+    <var name="Use joystick" type="bool">false</var>
+    <var name="decimals" type="int">2</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="33" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="34" column="0" depth="2">
+    <content><![CDATA[Saturation]]></content>
+   </model-index>
+   <model-index row="34" column="1" depth="2"/>
+   <model-index row="34" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="34" column="3" depth="2">
+    <content><![CDATA[Label]]></content>
+   </model-index>
+   <model-index row="34" column="4" depth="2">
+    <content><![CDATA[163x31+35+722]]></content>
+   </model-index>
+   <model-index row="34" column="5" depth="2">
+    <content><![CDATA[#6e6462ff]]></content>
+   </model-index>
+   <model-index row="34" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="34" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="34" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="35" column="0" depth="2">
+    <content><![CDATA[Gamma]]></content>
+   </model-index>
+   <model-index row="35" column="1" depth="2"/>
+   <model-index row="35" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="35" column="3" depth="2">
+    <content><![CDATA[Label]]></content>
+   </model-index>
+   <model-index row="35" column="4" depth="2">
+    <content><![CDATA[169x31+208+632]]></content>
+   </model-index>
+   <model-index row="35" column="5" depth="2">
+    <content><![CDATA[#6e6462ff]]></content>
+   </model-index>
+   <model-index row="35" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="35" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="35" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="36" column="0" depth="2">
+    <content><![CDATA[untitled67]]></content>
+   </model-index>
+   <model-index row="36" column="1" depth="2"/>
+   <model-index row="36" column="2" depth="2">
+    <content><![CDATA[Kinect.colorGamma]]></content>
+   </model-index>
+   <model-index row="36" column="3" depth="2">
+    <content><![CDATA[Float]]></content>
+   </model-index>
+   <model-index row="36" column="4" depth="2">
+    <content><![CDATA[169x69+207+659]]></content>
+   </model-index>
+   <model-index row="36" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="36" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="36" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Joystick axis" type="int">-1</var>
+    <var name="Joystick update period (ms)" type="int">0</var>
+    <var name="Use joystick" type="bool">false</var>
+    <var name="decimals" type="int">2</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="36" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="37" column="0" depth="2">
+    <content><![CDATA[Sharpness]]></content>
+   </model-index>
+   <model-index row="37" column="1" depth="2"/>
+   <model-index row="37" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="37" column="3" depth="2">
+    <content><![CDATA[Label]]></content>
+   </model-index>
+   <model-index row="37" column="4" depth="2">
+    <content><![CDATA[163x31+37+814]]></content>
+   </model-index>
+   <model-index row="37" column="5" depth="2">
+    <content><![CDATA[#6e6462ff]]></content>
+   </model-index>
+   <model-index row="37" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="37" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="37" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="38" column="0" depth="2">
+    <content><![CDATA[untitled69]]></content>
+   </model-index>
+   <model-index row="38" column="1" depth="2"/>
+   <model-index row="38" column="2" depth="2">
+    <content><![CDATA[Kinect.colorSharpness]]></content>
+   </model-index>
+   <model-index row="38" column="3" depth="2">
+    <content><![CDATA[Float]]></content>
+   </model-index>
+   <model-index row="38" column="4" depth="2">
+    <content><![CDATA[169x69+36+843]]></content>
+   </model-index>
+   <model-index row="38" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="38" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="38" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Joystick axis" type="int">-1</var>
+    <var name="Joystick update period (ms)" type="int">0</var>
+    <var name="Use joystick" type="bool">false</var>
+    <var name="decimals" type="int">2</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="38" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="39" column="0" depth="2">
+    <content><![CDATA[RESET SETTINGS]]></content>
+   </model-index>
+   <model-index row="39" column="1" depth="2"/>
+   <model-index row="39" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="39" column="3" depth="2">
+    <content><![CDATA[Button]]></content>
+   </model-index>
+   <model-index row="39" column="4" depth="2">
+    <content><![CDATA[166x46+39+901]]></content>
+   </model-index>
+   <model-index row="39" column="5" depth="2">
+    <content><![CDATA[#6e6462ff]]></content>
+   </model-index>
+   <model-index row="39" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="39" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Joystick Button Bound" type="int">-1</var>
+    <var name="Key Bound" type="QKeySequence"></var>
+    <var name="ReClick Behavior" type="glab::GLabStringChoice*">0</var>
+    <var name="Toggle Mode" type="bool">false</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="39" column="8" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="OnPush" type="QString">// OnPush script.</var>
+    <var name="OnRelease" type="QString">// OnRelease script.
+
+Kinect.colorResetSettings();</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="40" column="0" depth="2">
+    <content><![CDATA[untitled71]]></content>
+   </model-index>
+   <model-index row="40" column="1" depth="2"/>
+   <model-index row="40" column="2" depth="2">
+    <content><![CDATA[Kinect.depthNearMode]]></content>
+   </model-index>
+   <model-index row="40" column="3" depth="2">
+    <content><![CDATA[Bool]]></content>
+   </model-index>
+   <model-index row="40" column="4" depth="2">
+    <content><![CDATA[160x59+388+311]]></content>
+   </model-index>
+   <model-index row="40" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="40" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="40" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="40" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="41" column="0" depth="2">
+    <content><![CDATA[NearMode]]></content>
+   </model-index>
+   <model-index row="41" column="1" depth="2"/>
+   <model-index row="41" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="41" column="3" depth="2">
+    <content><![CDATA[Label]]></content>
+   </model-index>
+   <model-index row="41" column="4" depth="2">
+    <content><![CDATA[154x31+387+288]]></content>
+   </model-index>
+   <model-index row="41" column="5" depth="2">
+    <content><![CDATA[#6e6462ff]]></content>
+   </model-index>
+   <model-index row="41" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="41" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="41" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="42" column="0" depth="2">
+    <content><![CDATA[EmitterOff]]></content>
+   </model-index>
+   <model-index row="42" column="1" depth="2"/>
+   <model-index row="42" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="42" column="3" depth="2">
+    <content><![CDATA[Label]]></content>
+   </model-index>
+   <model-index row="42" column="4" depth="2">
+    <content><![CDATA[179x31+553+288]]></content>
+   </model-index>
+   <model-index row="42" column="5" depth="2">
+    <content><![CDATA[#6e6462ff]]></content>
+   </model-index>
+   <model-index row="42" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="42" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="42" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="43" column="0" depth="2">
+    <content><![CDATA[untitled74]]></content>
+   </model-index>
+   <model-index row="43" column="1" depth="2"/>
+   <model-index row="43" column="2" depth="2">
+    <content><![CDATA[Kinect.depthEmitterOff]]></content>
+   </model-index>
+   <model-index row="43" column="3" depth="2">
+    <content><![CDATA[Bool]]></content>
+   </model-index>
+   <model-index row="43" column="4" depth="2">
+    <content><![CDATA[178x59+554+310]]></content>
+   </model-index>
+   <model-index row="43" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="43" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="43" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="43" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="44" column="0" depth="2">
+    <content><![CDATA[640x480]]></content>
+   </model-index>
+   <model-index row="44" column="1" depth="2"/>
+   <model-index row="44" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="44" column="3" depth="2">
+    <content><![CDATA[Button]]></content>
+   </model-index>
+   <model-index row="44" column="4" depth="2">
+    <content><![CDATA[-1x-1+32+949]]></content>
+   </model-index>
+   <model-index row="44" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="44" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="44" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Joystick Button Bound" type="int">-1</var>
+    <var name="Key Bound" type="QKeySequence"></var>
+    <var name="ReClick Behavior" type="glab::GLabStringChoice*">0</var>
+    <var name="Toggle Mode" type="bool">false</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="44" column="8" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="OnPush" type="QString">// OnPush script.</var>
+    <var name="OnRelease" type="QString">// OnRelease script.
+
+Kinect.colorResolution=2;</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="45" column="0" depth="2">
+    <content><![CDATA[1024x960]]></content>
+   </model-index>
+   <model-index row="45" column="1" depth="2"/>
+   <model-index row="45" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="45" column="3" depth="2">
+    <content><![CDATA[Button]]></content>
+   </model-index>
+   <model-index row="45" column="4" depth="2">
+    <content><![CDATA[-1x-1+111+949]]></content>
+   </model-index>
+   <model-index row="45" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="45" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="45" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Joystick Button Bound" type="int">-1</var>
+    <var name="Key Bound" type="QKeySequence"></var>
+    <var name="ReClick Behavior" type="glab::GLabStringChoice*">0</var>
+    <var name="Toggle Mode" type="bool">false</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="45" column="8" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="OnPush" type="QString">// OnPush script.</var>
+    <var name="OnRelease" type="QString">// OnRelease script.
+
+
+
+Kinect.colorResolution=3;</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="46" column="0" depth="2">
+    <content><![CDATA[OFF]]></content>
+   </model-index>
+   <model-index row="46" column="1" depth="2"/>
+   <model-index row="46" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="46" column="3" depth="2">
+    <content><![CDATA[Button]]></content>
+   </model-index>
+   <model-index row="46" column="4" depth="2">
+    <content><![CDATA[65x55+202+758]]></content>
+   </model-index>
+   <model-index row="46" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="46" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="46" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Joystick Button Bound" type="int">-1</var>
+    <var name="Key Bound" type="QKeySequence"></var>
+    <var name="ReClick Behavior" type="glab::GLabStringChoice*">0</var>
+    <var name="Toggle Mode" type="bool">false</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="46" column="8" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="OnPush" type="QString">// OnPush script.</var>
+    <var name="OnRelease" type="QString">// OnRelease script.
+
+Kinect.colorPowerLineFrequency = 0;</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="47" column="0" depth="2">
+    <content><![CDATA[PowerLineFrequency]]></content>
+   </model-index>
+   <model-index row="47" column="1" depth="2"/>
+   <model-index row="47" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="47" column="3" depth="2">
+    <content><![CDATA[Label]]></content>
+   </model-index>
+   <model-index row="47" column="4" depth="2">
+    <content><![CDATA[171x32+208+723]]></content>
+   </model-index>
+   <model-index row="47" column="5" depth="2">
+    <content><![CDATA[#6e6462ff]]></content>
+   </model-index>
+   <model-index row="47" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="47" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="47" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="48" column="0" depth="2">
+    <content><![CDATA[50Hz]]></content>
+   </model-index>
+   <model-index row="48" column="1" depth="2"/>
+   <model-index row="48" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="48" column="3" depth="2">
+    <content><![CDATA[Button]]></content>
+   </model-index>
+   <model-index row="48" column="4" depth="2">
+    <content><![CDATA[73x50+253+761]]></content>
+   </model-index>
+   <model-index row="48" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="48" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="48" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Joystick Button Bound" type="int">-1</var>
+    <var name="Key Bound" type="QKeySequence"></var>
+    <var name="ReClick Behavior" type="glab::GLabStringChoice*">0</var>
+    <var name="Toggle Mode" type="bool">false</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="48" column="8" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="OnPush" type="QString">// OnPush script.</var>
+    <var name="OnRelease" type="QString">// OnRelease script.
+
+Kinect.colorPowerLineFrequency = 1;</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="49" column="0" depth="2">
+    <content><![CDATA[60Hz]]></content>
+   </model-index>
+   <model-index row="49" column="1" depth="2"/>
+   <model-index row="49" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="49" column="3" depth="2">
+    <content><![CDATA[Button]]></content>
+   </model-index>
+   <model-index row="49" column="4" depth="2">
+    <content><![CDATA[73x50+311+761]]></content>
+   </model-index>
+   <model-index row="49" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="49" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="49" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Joystick Button Bound" type="int">-1</var>
+    <var name="Key Bound" type="QKeySequence"></var>
+    <var name="ReClick Behavior" type="glab::GLabStringChoice*">0</var>
+    <var name="Toggle Mode" type="bool">false</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="49" column="8" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="OnPush" type="QString">// OnPush script.</var>
+    <var name="OnRelease" type="QString">// OnRelease script.
+
+Kinect.colorPowerLineFrequency = 2;</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="50" column="0" depth="2">
+    <content><![CDATA[BacklightCompensationMode]]></content>
+   </model-index>
+   <model-index row="50" column="1" depth="2"/>
+   <model-index row="50" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="50" column="3" depth="2">
+    <content><![CDATA[Label]]></content>
+   </model-index>
+   <model-index row="50" column="4" depth="2">
+    <content><![CDATA[161x31+214+814]]></content>
+   </model-index>
+   <model-index row="50" column="5" depth="2">
+    <content><![CDATA[#6e6462ff]]></content>
+   </model-index>
+   <model-index row="50" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="50" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="50" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="51" column="0" depth="2">
+    <content><![CDATA[AVERAGE_BRIGHTNESS]]></content>
+   </model-index>
+   <model-index row="51" column="1" depth="2"/>
+   <model-index row="51" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="51" column="3" depth="2">
+    <content><![CDATA[Button]]></content>
+   </model-index>
+   <model-index row="51" column="4" depth="2">
+    <content><![CDATA[-1x-1+207+843]]></content>
+   </model-index>
+   <model-index row="51" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="51" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="51" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Joystick Button Bound" type="int">-1</var>
+    <var name="Key Bound" type="QKeySequence"></var>
+    <var name="ReClick Behavior" type="glab::GLabStringChoice*">0</var>
+    <var name="Toggle Mode" type="bool">false</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="51" column="8" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="OnPush" type="QString">// OnPush script.</var>
+    <var name="OnRelease" type="QString">// OnRelease script.
+
+Kinect.colorBacklightCompensationMode = 0;</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="52" column="0" depth="2">
+    <content><![CDATA[CENTER_PRIORITY]]></content>
+   </model-index>
+   <model-index row="52" column="1" depth="2"/>
+   <model-index row="52" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="52" column="3" depth="2">
+    <content><![CDATA[Button]]></content>
+   </model-index>
+   <model-index row="52" column="4" depth="2">
+    <content><![CDATA[153x46+204+876]]></content>
+   </model-index>
+   <model-index row="52" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="52" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="52" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Joystick Button Bound" type="int">-1</var>
+    <var name="Key Bound" type="QKeySequence"></var>
+    <var name="ReClick Behavior" type="glab::GLabStringChoice*">0</var>
+    <var name="Toggle Mode" type="bool">false</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="52" column="8" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="OnPush" type="QString">// OnPush script.</var>
+    <var name="OnRelease" type="QString">// OnRelease script.
+
+Kinect.colorBacklightCompensationMode = 1;</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="53" column="0" depth="2">
+    <content><![CDATA[LOWLIGHTS_PRIORITY]]></content>
+   </model-index>
+   <model-index row="53" column="1" depth="2"/>
+   <model-index row="53" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="53" column="3" depth="2">
+    <content><![CDATA[Button]]></content>
+   </model-index>
+   <model-index row="53" column="4" depth="2">
+    <content><![CDATA[-1x-1+206+908]]></content>
+   </model-index>
+   <model-index row="53" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="53" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="53" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Joystick Button Bound" type="int">-1</var>
+    <var name="Key Bound" type="QKeySequence"></var>
+    <var name="ReClick Behavior" type="glab::GLabStringChoice*">0</var>
+    <var name="Toggle Mode" type="bool">false</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="53" column="8" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="OnPush" type="QString">// OnPush script.</var>
+    <var name="OnRelease" type="QString">// OnRelease script.
+
+Kinect.colorBacklightCompensationMode = 2;</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="54" column="0" depth="2">
+    <content><![CDATA[CENTER_ONLY]]></content>
+   </model-index>
+   <model-index row="54" column="1" depth="2"/>
+   <model-index row="54" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="54" column="3" depth="2">
+    <content><![CDATA[Button]]></content>
+   </model-index>
+   <model-index row="54" column="4" depth="2">
+    <content><![CDATA[-1x-1+205+940]]></content>
+   </model-index>
+   <model-index row="54" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="54" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="54" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Joystick Button Bound" type="int">-1</var>
+    <var name="Key Bound" type="QKeySequence"></var>
+    <var name="ReClick Behavior" type="glab::GLabStringChoice*">0</var>
+    <var name="Toggle Mode" type="bool">false</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="54" column="8" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="OnPush" type="QString">// OnPush script.</var>
+    <var name="OnRelease" type="QString">// OnRelease script.
+
+Kinect.colorBacklightCompensationMode = 4;</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="55" column="0" depth="2">
+    <content><![CDATA[80x60]]></content>
+   </model-index>
+   <model-index row="55" column="1" depth="2"/>
+   <model-index row="55" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="55" column="3" depth="2">
+    <content><![CDATA[Button]]></content>
+   </model-index>
+   <model-index row="55" column="4" depth="2">
+    <content><![CDATA[-1x-1+386+376]]></content>
+   </model-index>
+   <model-index row="55" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="55" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="55" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Joystick Button Bound" type="int">-1</var>
+    <var name="Key Bound" type="QKeySequence"></var>
+    <var name="ReClick Behavior" type="glab::GLabStringChoice*">0</var>
+    <var name="Toggle Mode" type="bool">false</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="55" column="8" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="OnPush" type="QString">// OnPush script.</var>
+    <var name="OnRelease" type="QString">// OnRelease script.
+
+Kinect.depthResolution=0;</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="56" column="0" depth="2">
+    <content><![CDATA[320x240]]></content>
+   </model-index>
+   <model-index row="56" column="1" depth="2"/>
+   <model-index row="56" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="56" column="3" depth="2">
+    <content><![CDATA[Button]]></content>
+   </model-index>
+   <model-index row="56" column="4" depth="2">
+    <content><![CDATA[-1x-1+453+376]]></content>
+   </model-index>
+   <model-index row="56" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="56" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="56" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Joystick Button Bound" type="int">-1</var>
+    <var name="Key Bound" type="QKeySequence"></var>
+    <var name="ReClick Behavior" type="glab::GLabStringChoice*">0</var>
+    <var name="Toggle Mode" type="bool">false</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="56" column="8" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="OnPush" type="QString">// OnPush script.</var>
+    <var name="OnRelease" type="QString">// OnRelease script.
+
+Kinect.depthResolution=1;</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="57" column="0" depth="2">
+    <content><![CDATA[640x480]]></content>
+   </model-index>
+   <model-index row="57" column="1" depth="2"/>
+   <model-index row="57" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="57" column="3" depth="2">
+    <content><![CDATA[Button]]></content>
+   </model-index>
+   <model-index row="57" column="4" depth="2">
+    <content><![CDATA[-1x-1+533+377]]></content>
+   </model-index>
+   <model-index row="57" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="57" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="57" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Joystick Button Bound" type="int">-1</var>
+    <var name="Key Bound" type="QKeySequence"></var>
+    <var name="ReClick Behavior" type="glab::GLabStringChoice*">0</var>
+    <var name="Toggle Mode" type="bool">false</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="57" column="8" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="OnPush" type="QString">// OnPush script.</var>
+    <var name="OnRelease" type="QString">// OnRelease script.
+
+Kinect.depthResolution=2;</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="58" column="0" depth="2">
+    <content><![CDATA[On color image?]]></content>
+   </model-index>
+   <model-index row="58" column="1" depth="2"/>
+   <model-index row="58" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="58" column="3" depth="2">
+    <content><![CDATA[Label]]></content>
+   </model-index>
+   <model-index row="58" column="4" depth="2">
+    <content><![CDATA[153x31+748+286]]></content>
+   </model-index>
+   <model-index row="58" column="5" depth="2">
+    <content><![CDATA[#6e6462ff]]></content>
+   </model-index>
+   <model-index row="58" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="58" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="58" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="59" column="0" depth="2">
+    <content><![CDATA[untitled92]]></content>
+   </model-index>
+   <model-index row="59" column="1" depth="2"/>
+   <model-index row="59" column="2" depth="2">
+    <content><![CDATA[Kinect.skeletonVisualizationOnColor]]></content>
+   </model-index>
+   <model-index row="59" column="3" depth="2">
+    <content><![CDATA[Bool]]></content>
+   </model-index>
+   <model-index row="59" column="4" depth="2">
+    <content><![CDATA[160x59+742+311]]></content>
+   </model-index>
+   <model-index row="59" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="59" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="59" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="59" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="60" column="0" depth="2">
+    <content><![CDATA[Full body]]></content>
+   </model-index>
+   <model-index row="60" column="1" depth="2"/>
+   <model-index row="60" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="60" column="3" depth="2">
+    <content><![CDATA[Button]]></content>
+   </model-index>
+   <model-index row="60" column="4" depth="2">
+    <content><![CDATA[-1x-1+906+316]]></content>
+   </model-index>
+   <model-index row="60" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="60" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="60" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Joystick Button Bound" type="int">-1</var>
+    <var name="Key Bound" type="QKeySequence"></var>
+    <var name="ReClick Behavior" type="glab::GLabStringChoice*">0</var>
+    <var name="Toggle Mode" type="bool">false</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="60" column="8" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="OnPush" type="QString">// OnPush script.</var>
+    <var name="OnRelease" type="QString">// OnRelease script.
+
+Kinect.skeletonTrackingMode = 0;</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="61" column="0" depth="2">
+    <content><![CDATA[TrackingMode]]></content>
+   </model-index>
+   <model-index row="61" column="1" depth="2"/>
+   <model-index row="61" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="61" column="3" depth="2">
+    <content><![CDATA[Label]]></content>
+   </model-index>
+   <model-index row="61" column="4" depth="2">
+    <content><![CDATA[179x31+912+286]]></content>
+   </model-index>
+   <model-index row="61" column="5" depth="2">
+    <content><![CDATA[#6e6462ff]]></content>
+   </model-index>
+   <model-index row="61" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="61" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="61" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="62" column="0" depth="2">
+    <content><![CDATA[Upper body]]></content>
+   </model-index>
+   <model-index row="62" column="1" depth="2"/>
+   <model-index row="62" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="62" column="3" depth="2">
+    <content><![CDATA[Button]]></content>
+   </model-index>
+   <model-index row="62" column="4" depth="2">
+    <content><![CDATA[-1x-1+987+316]]></content>
+   </model-index>
+   <model-index row="62" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="62" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="62" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Joystick Button Bound" type="int">-1</var>
+    <var name="Key Bound" type="QKeySequence"></var>
+    <var name="ReClick Behavior" type="glab::GLabStringChoice*">0</var>
+    <var name="Toggle Mode" type="bool">false</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="62" column="8" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="OnPush" type="QString">// OnPush script.</var>
+    <var name="OnRelease" type="QString">// OnRelease script.
+
+Kinect.skeletonTrackingMode = 1;</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="63" column="0" depth="2">
+    <content><![CDATA[ChooserMode]]></content>
+   </model-index>
+   <model-index row="63" column="1" depth="2"/>
+   <model-index row="63" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="63" column="3" depth="2">
+    <content><![CDATA[Label]]></content>
+   </model-index>
+   <model-index row="63" column="4" depth="2">
+    <content><![CDATA[347x31+751+367]]></content>
+   </model-index>
+   <model-index row="63" column="5" depth="2">
+    <content><![CDATA[#6e6462ff]]></content>
+   </model-index>
+   <model-index row="63" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="63" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="63" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="64" column="0" depth="2">
+    <content><![CDATA[Default]]></content>
+   </model-index>
+   <model-index row="64" column="1" depth="2"/>
+   <model-index row="64" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="64" column="3" depth="2">
+    <content><![CDATA[Button]]></content>
+   </model-index>
+   <model-index row="64" column="4" depth="2">
+    <content><![CDATA[165x46+713+410]]></content>
+   </model-index>
+   <model-index row="64" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="64" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="64" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Joystick Button Bound" type="int">-1</var>
+    <var name="Key Bound" type="QKeySequence"></var>
+    <var name="ReClick Behavior" type="glab::GLabStringChoice*">0</var>
+    <var name="Toggle Mode" type="bool">false</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="64" column="8" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="OnPush" type="QString">// OnPush script.</var>
+    <var name="OnRelease" type="QString">// OnRelease script.
+
+Kinect.skeletonChooserMode = 0;</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="65" column="0" depth="2">
+    <content><![CDATA[Closest1]]></content>
+   </model-index>
+   <model-index row="65" column="1" depth="2"/>
+   <model-index row="65" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="65" column="3" depth="2">
+    <content><![CDATA[Button]]></content>
+   </model-index>
+   <model-index row="65" column="4" depth="2">
+    <content><![CDATA[-1x-1+824+394]]></content>
+   </model-index>
+   <model-index row="65" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="65" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="65" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Joystick Button Bound" type="int">-1</var>
+    <var name="Key Bound" type="QKeySequence"></var>
+    <var name="ReClick Behavior" type="glab::GLabStringChoice*">0</var>
+    <var name="Toggle Mode" type="bool">false</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="65" column="8" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="OnPush" type="QString">// OnPush script.</var>
+    <var name="OnRelease" type="QString">// OnRelease script.
+
+Kinect.skeletonChooserMode =1 ;</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="66" column="0" depth="2">
+    <content><![CDATA[Closest2]]></content>
+   </model-index>
+   <model-index row="66" column="1" depth="2"/>
+   <model-index row="66" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="66" column="3" depth="2">
+    <content><![CDATA[Button]]></content>
+   </model-index>
+   <model-index row="66" column="4" depth="2">
+    <content><![CDATA[-1x-1+824+424]]></content>
+   </model-index>
+   <model-index row="66" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="66" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="66" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Joystick Button Bound" type="int">-1</var>
+    <var name="Key Bound" type="QKeySequence"></var>
+    <var name="ReClick Behavior" type="glab::GLabStringChoice*">0</var>
+    <var name="Toggle Mode" type="bool">false</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="66" column="8" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="OnPush" type="QString">// OnPush script.</var>
+    <var name="OnRelease" type="QString">// OnRelease script.
+
+Kinect.skeletonChooserMode =2;</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="67" column="0" depth="2">
+    <content><![CDATA[Sticky1]]></content>
+   </model-index>
+   <model-index row="67" column="1" depth="2"/>
+   <model-index row="67" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="67" column="3" depth="2">
+    <content><![CDATA[Button]]></content>
+   </model-index>
+   <model-index row="67" column="4" depth="2">
+    <content><![CDATA[-1x-1+903+394]]></content>
+   </model-index>
+   <model-index row="67" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="67" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="67" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Joystick Button Bound" type="int">-1</var>
+    <var name="Key Bound" type="QKeySequence"></var>
+    <var name="ReClick Behavior" type="glab::GLabStringChoice*">0</var>
+    <var name="Toggle Mode" type="bool">false</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="67" column="8" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="OnPush" type="QString">// OnPush script.</var>
+    <var name="OnRelease" type="QString">// OnRelease script.
+
+Kinect.skeletonChooserMode =3;</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="68" column="0" depth="2">
+    <content><![CDATA[Sticky2]]></content>
+   </model-index>
+   <model-index row="68" column="1" depth="2"/>
+   <model-index row="68" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="68" column="3" depth="2">
+    <content><![CDATA[Button]]></content>
+   </model-index>
+   <model-index row="68" column="4" depth="2">
+    <content><![CDATA[-1x-1+903+424]]></content>
+   </model-index>
+   <model-index row="68" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="68" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="68" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Joystick Button Bound" type="int">-1</var>
+    <var name="Key Bound" type="QKeySequence"></var>
+    <var name="ReClick Behavior" type="glab::GLabStringChoice*">0</var>
+    <var name="Toggle Mode" type="bool">false</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="68" column="8" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="OnPush" type="QString">// OnPush script.</var>
+    <var name="OnRelease" type="QString">// OnRelease script.
+
+Kinect.skeletonChooserMode =4;</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="69" column="0" depth="2">
+    <content><![CDATA[MostActive1]]></content>
+   </model-index>
+   <model-index row="69" column="1" depth="2"/>
+   <model-index row="69" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="69" column="3" depth="2">
+    <content><![CDATA[Button]]></content>
+   </model-index>
+   <model-index row="69" column="4" depth="2">
+    <content><![CDATA[-1x-1+975+394]]></content>
+   </model-index>
+   <model-index row="69" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="69" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="69" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Joystick Button Bound" type="int">-1</var>
+    <var name="Key Bound" type="QKeySequence"></var>
+    <var name="ReClick Behavior" type="glab::GLabStringChoice*">0</var>
+    <var name="Toggle Mode" type="bool">false</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="69" column="8" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="OnPush" type="QString">// OnPush script.</var>
+    <var name="OnRelease" type="QString">// OnRelease script.
+
+Kinect.skeletonChooserMode =5;</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="70" column="0" depth="2">
+    <content><![CDATA[MostActive2]]></content>
+   </model-index>
+   <model-index row="70" column="1" depth="2"/>
+   <model-index row="70" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="70" column="3" depth="2">
+    <content><![CDATA[Button]]></content>
+   </model-index>
+   <model-index row="70" column="4" depth="2">
+    <content><![CDATA[-1x-1+975+424]]></content>
+   </model-index>
+   <model-index row="70" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="70" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="70" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Joystick Button Bound" type="int">-1</var>
+    <var name="Key Bound" type="QKeySequence"></var>
+    <var name="ReClick Behavior" type="glab::GLabStringChoice*">0</var>
+    <var name="Toggle Mode" type="bool">false</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="70" column="8" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="OnPush" type="QString">// OnPush script.</var>
+    <var name="OnRelease" type="QString">// OnRelease script.
+
+Kinect.skeletonChooserMode =6;</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="71" column="0" depth="2">
+    <content><![CDATA[TrackingPause]]></content>
+   </model-index>
+   <model-index row="71" column="1" depth="2"/>
+   <model-index row="71" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="71" column="3" depth="2">
+    <content><![CDATA[Label]]></content>
+   </model-index>
+   <model-index row="71" column="4" depth="2">
+    <content><![CDATA[194x31+1107+286]]></content>
+   </model-index>
+   <model-index row="71" column="5" depth="2">
+    <content><![CDATA[#6e6462ff]]></content>
+   </model-index>
+   <model-index row="71" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="71" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="71" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="72" column="0" depth="2">
+    <content><![CDATA[untitled105]]></content>
+   </model-index>
+   <model-index row="72" column="1" depth="2"/>
+   <model-index row="72" column="2" depth="2">
+    <content><![CDATA[Kinect.faceTrackingPause]]></content>
+   </model-index>
+   <model-index row="72" column="3" depth="2">
+    <content><![CDATA[Bool]]></content>
+   </model-index>
+   <model-index row="72" column="4" depth="2">
+    <content><![CDATA[160x59+1107+313]]></content>
+   </model-index>
+   <model-index row="72" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="72" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="72" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="72" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="73" column="0" depth="2">
+    <content><![CDATA[On color Image?]]></content>
+   </model-index>
+   <model-index row="73" column="1" depth="2"/>
+   <model-index row="73" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="73" column="3" depth="2">
+    <content><![CDATA[Label]]></content>
+   </model-index>
+   <model-index row="73" column="4" depth="2">
+    <content><![CDATA[158x31+1308+287]]></content>
+   </model-index>
+   <model-index row="73" column="5" depth="2">
+    <content><![CDATA[#6e6462ff]]></content>
+   </model-index>
+   <model-index row="73" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="73" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="73" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="74" column="0" depth="2">
+    <content><![CDATA[untitled107]]></content>
+   </model-index>
+   <model-index row="74" column="1" depth="2"/>
+   <model-index row="74" column="2" depth="2">
+    <content><![CDATA[Kinect.faceVisualizationOnColor]]></content>
+   </model-index>
+   <model-index row="74" column="3" depth="2">
+    <content><![CDATA[Bool]]></content>
+   </model-index>
+   <model-index row="74" column="4" depth="2">
+    <content><![CDATA[160x59+1308+312]]></content>
+   </model-index>
+   <model-index row="74" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="74" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="74" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="74" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="75" column="0" depth="2">
+    <content><![CDATA[untitled108]]></content>
+   </model-index>
+   <model-index row="75" column="1" depth="2"/>
+   <model-index row="75" column="2" depth="2">
+    <content><![CDATA[Kinect.faceVisualizationMode]]></content>
+   </model-index>
+   <model-index row="75" column="3" depth="2">
+    <content><![CDATA[Bool]]></content>
+   </model-index>
+   <model-index row="75" column="4" depth="2">
+    <content><![CDATA[-1x-1+1113+395]]></content>
+   </model-index>
+   <model-index row="75" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="75" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="75" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="75" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="76" column="0" depth="2">
+    <content><![CDATA[VisualizeMode]]></content>
+   </model-index>
+   <model-index row="76" column="1" depth="2"/>
+   <model-index row="76" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="76" column="3" depth="2">
+    <content><![CDATA[Label]]></content>
+   </model-index>
+   <model-index row="76" column="4" depth="2">
+    <content><![CDATA[186x31+1112+368]]></content>
+   </model-index>
+   <model-index row="76" column="5" depth="2">
+    <content><![CDATA[#6e6462ff]]></content>
+   </model-index>
+   <model-index row="76" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="76" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="76" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="77" column="0" depth="2">
+    <content><![CDATA[Is tracking ?]]></content>
+   </model-index>
+   <model-index row="77" column="1" depth="2"/>
+   <model-index row="77" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="77" column="3" depth="2">
+    <content><![CDATA[Label]]></content>
+   </model-index>
+   <model-index row="77" column="4" depth="2">
+    <content><![CDATA[162x31+1309+367]]></content>
+   </model-index>
+   <model-index row="77" column="5" depth="2">
+    <content><![CDATA[#6e6462ff]]></content>
+   </model-index>
+   <model-index row="77" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="77" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="77" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="78" column="0" depth="2">
+    <content><![CDATA[COLOR]]></content>
+   </model-index>
+   <model-index row="78" column="1" depth="2"/>
+   <model-index row="78" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="78" column="3" depth="2">
+    <content><![CDATA[Label]]></content>
+   </model-index>
+   <model-index row="78" column="4" depth="2">
+    <content><![CDATA[349x48+17+16]]></content>
+   </model-index>
+   <model-index row="78" column="5" depth="2">
+    <content><![CDATA[#aa0000ff]]></content>
+   </model-index>
+   <model-index row="78" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="78" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="78" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="79" column="0" depth="2">
+    <content><![CDATA[DEPTH]]></content>
+   </model-index>
+   <model-index row="79" column="1" depth="2"/>
+   <model-index row="79" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="79" column="3" depth="2">
+    <content><![CDATA[Label]]></content>
+   </model-index>
+   <model-index row="79" column="4" depth="2">
+    <content><![CDATA[355x46+381+16]]></content>
+   </model-index>
+   <model-index row="79" column="5" depth="2">
+    <content><![CDATA[#aa0000ff]]></content>
+   </model-index>
+   <model-index row="79" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="79" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="79" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="80" column="0" depth="2">
+    <content><![CDATA[SKELETON]]></content>
+   </model-index>
+   <model-index row="80" column="1" depth="2"/>
+   <model-index row="80" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="80" column="3" depth="2">
+    <content><![CDATA[Label]]></content>
+   </model-index>
+   <model-index row="80" column="4" depth="2">
+    <content><![CDATA[346x48+745+15]]></content>
+   </model-index>
+   <model-index row="80" column="5" depth="2">
+    <content><![CDATA[#aa0000ff]]></content>
+   </model-index>
+   <model-index row="80" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="80" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="80" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="81" column="0" depth="2">
+    <content><![CDATA[FACE]]></content>
+   </model-index>
+   <model-index row="81" column="1" depth="2"/>
+   <model-index row="81" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="81" column="3" depth="2">
+    <content><![CDATA[Label]]></content>
+   </model-index>
+   <model-index row="81" column="4" depth="2">
+    <content><![CDATA[360x49+1103+15]]></content>
+   </model-index>
+   <model-index row="81" column="5" depth="2">
+    <content><![CDATA[#aa0000ff]]></content>
+   </model-index>
+   <model-index row="81" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="81" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="81" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="82" column="0" depth="2">
+    <content><![CDATA[ID]]></content>
+   </model-index>
+   <model-index row="82" column="1" depth="2"/>
+   <model-index row="82" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="82" column="3" depth="2">
+    <content><![CDATA[Label]]></content>
+   </model-index>
+   <model-index row="82" column="4" depth="2">
+    <content><![CDATA[311x31+1485+286]]></content>
+   </model-index>
+   <model-index row="82" column="5" depth="2">
+    <content><![CDATA[#6e6462ff]]></content>
+   </model-index>
+   <model-index row="82" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="82" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="82" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="83" column="0" depth="2">
+    <content><![CDATA[LEFT]]></content>
+   </model-index>
+   <model-index row="83" column="1" depth="2"/>
+   <model-index row="83" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="83" column="3" depth="2">
+    <content><![CDATA[Label]]></content>
+   </model-index>
+   <model-index row="83" column="4" depth="2">
+    <content><![CDATA[147x31+1481+385]]></content>
+   </model-index>
+   <model-index row="83" column="5" depth="2">
+    <content><![CDATA[#6e6462ff]]></content>
+   </model-index>
+   <model-index row="83" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="83" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="83" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="84" column="0" depth="2">
+    <content><![CDATA[RIGHT]]></content>
+   </model-index>
+   <model-index row="84" column="1" depth="2"/>
+   <model-index row="84" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="84" column="3" depth="2">
+    <content><![CDATA[Label]]></content>
+   </model-index>
+   <model-index row="84" column="4" depth="2">
+    <content><![CDATA[154x31+1635+381]]></content>
+   </model-index>
+   <model-index row="84" column="5" depth="2">
+    <content><![CDATA[#6e6462ff]]></content>
+   </model-index>
+   <model-index row="84" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="84" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="84" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="85" column="0" depth="2">
+    <content><![CDATA[STATE (active, press,...)]]></content>
+   </model-index>
+   <model-index row="85" column="1" depth="2"/>
+   <model-index row="85" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="85" column="3" depth="2">
+    <content><![CDATA[Label]]></content>
+   </model-index>
+   <model-index row="85" column="4" depth="2">
+    <content><![CDATA[306x31+1484+418]]></content>
+   </model-index>
+   <model-index row="85" column="5" depth="2">
+    <content><![CDATA[#6e6462ff]]></content>
+   </model-index>
+   <model-index row="85" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="85" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="85" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="86" column="0" depth="2">
+    <content><![CDATA[untitled121]]></content>
+   </model-index>
+   <model-index row="86" column="1" depth="2"/>
+   <model-index row="86" column="2" depth="2">
+    <content><![CDATA[Kinect.interLeftTracked]]></content>
+   </model-index>
+   <model-index row="86" column="3" depth="2">
+    <content><![CDATA[Float]]></content>
+   </model-index>
+   <model-index row="86" column="4" depth="2">
+    <content><![CDATA[169x69+1484+439]]></content>
+   </model-index>
+   <model-index row="86" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="86" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="86" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Joystick axis" type="int">-1</var>
+    <var name="Joystick update period (ms)" type="int">0</var>
+    <var name="Use joystick" type="bool">false</var>
+    <var name="decimals" type="int">0</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="86" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="87" column="0" depth="2">
+    <content><![CDATA[EVENT (grip or relase)]]></content>
+   </model-index>
+   <model-index row="87" column="1" depth="2"/>
+   <model-index row="87" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="87" column="3" depth="2">
+    <content><![CDATA[Label]]></content>
+   </model-index>
+   <model-index row="87" column="4" depth="2">
+    <content><![CDATA[303x31+1489+574]]></content>
+   </model-index>
+   <model-index row="87" column="5" depth="2">
+    <content><![CDATA[#6e6462ff]]></content>
+   </model-index>
+   <model-index row="87" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="87" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="87" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="88" column="0" depth="2">
+    <content><![CDATA[untitled123]]></content>
+   </model-index>
+   <model-index row="88" column="1" depth="2"/>
+   <model-index row="88" column="2" depth="2">
+    <content><![CDATA[Kinect.interLeftActive]]></content>
+   </model-index>
+   <model-index row="88" column="3" depth="2">
+    <content><![CDATA[Float]]></content>
+   </model-index>
+   <model-index row="88" column="4" depth="2">
+    <content><![CDATA[169x69+1486+460]]></content>
+   </model-index>
+   <model-index row="88" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="88" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="88" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Joystick axis" type="int">-1</var>
+    <var name="Joystick update period (ms)" type="int">0</var>
+    <var name="Use joystick" type="bool">false</var>
+    <var name="decimals" type="int">0</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="88" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="89" column="0" depth="2">
+    <content><![CDATA[Position (X,Y) on user interface]]></content>
+   </model-index>
+   <model-index row="89" column="1" depth="2"/>
+   <model-index row="89" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="89" column="3" depth="2">
+    <content><![CDATA[Label]]></content>
+   </model-index>
+   <model-index row="89" column="4" depth="2">
+    <content><![CDATA[277x31+1494+682]]></content>
+   </model-index>
+   <model-index row="89" column="5" depth="2">
+    <content><![CDATA[#6e6462ff]]></content>
+   </model-index>
+   <model-index row="89" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="89" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="89" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="90" column="0" depth="2">
+    <content><![CDATA[untitled125]]></content>
+   </model-index>
+   <model-index row="90" column="1" depth="2"/>
+   <model-index row="90" column="2" depth="2">
+    <content><![CDATA[Kinect.interLeftX]]></content>
+   </model-index>
+   <model-index row="90" column="3" depth="2">
+    <content><![CDATA[Float]]></content>
+   </model-index>
+   <model-index row="90" column="4" depth="2">
+    <content><![CDATA[169x69+1483+700]]></content>
+   </model-index>
+   <model-index row="90" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="90" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="90" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Joystick axis" type="int">-1</var>
+    <var name="Joystick update period (ms)" type="int">0</var>
+    <var name="Use joystick" type="bool">false</var>
+    <var name="decimals" type="int">2</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="90" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="91" column="0" depth="2">
+    <content><![CDATA[untitled126]]></content>
+   </model-index>
+   <model-index row="91" column="1" depth="2"/>
+   <model-index row="91" column="2" depth="2">
+    <content><![CDATA[Kinect.interLeftY]]></content>
+   </model-index>
+   <model-index row="91" column="3" depth="2">
+    <content><![CDATA[Float]]></content>
+   </model-index>
+   <model-index row="91" column="4" depth="2">
+    <content><![CDATA[169x69+1483+726]]></content>
+   </model-index>
+   <model-index row="91" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="91" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="91" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Joystick axis" type="int">-1</var>
+    <var name="Joystick update period (ms)" type="int">0</var>
+    <var name="Use joystick" type="bool">false</var>
+    <var name="decimals" type="int">2</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="91" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="92" column="0" depth="2">
+    <content><![CDATA[Position RAW (X,Y,Z)]]></content>
+   </model-index>
+   <model-index row="92" column="1" depth="2"/>
+   <model-index row="92" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="92" column="3" depth="2">
+    <content><![CDATA[Label]]></content>
+   </model-index>
+   <model-index row="92" column="4" depth="2">
+    <content><![CDATA[282x31+1492+795]]></content>
+   </model-index>
+   <model-index row="92" column="5" depth="2">
+    <content><![CDATA[#6e6462ff]]></content>
+   </model-index>
+   <model-index row="92" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="92" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="92" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="93" column="0" depth="2">
+    <content><![CDATA[untitled128]]></content>
+   </model-index>
+   <model-index row="93" column="1" depth="2"/>
+   <model-index row="93" column="2" depth="2">
+    <content><![CDATA[Kinect.interLeftRawX]]></content>
+   </model-index>
+   <model-index row="93" column="3" depth="2">
+    <content><![CDATA[Float]]></content>
+   </model-index>
+   <model-index row="93" column="4" depth="2">
+    <content><![CDATA[169x69+1483+807]]></content>
+   </model-index>
+   <model-index row="93" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="93" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="93" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Joystick axis" type="int">-1</var>
+    <var name="Joystick update period (ms)" type="int">0</var>
+    <var name="Use joystick" type="bool">false</var>
+    <var name="decimals" type="int">2</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="93" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="94" column="0" depth="2">
+    <content><![CDATA[untitled129]]></content>
+   </model-index>
+   <model-index row="94" column="1" depth="2"/>
+   <model-index row="94" column="2" depth="2">
+    <content><![CDATA[Kinect.interLeftRawY]]></content>
+   </model-index>
+   <model-index row="94" column="3" depth="2">
+    <content><![CDATA[Float]]></content>
+   </model-index>
+   <model-index row="94" column="4" depth="2">
+    <content><![CDATA[169x69+1482+832]]></content>
+   </model-index>
+   <model-index row="94" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="94" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="94" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Joystick axis" type="int">-1</var>
+    <var name="Joystick update period (ms)" type="int">0</var>
+    <var name="Use joystick" type="bool">false</var>
+    <var name="decimals" type="int">2</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="94" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="95" column="0" depth="2">
+    <content><![CDATA[untitled130]]></content>
+   </model-index>
+   <model-index row="95" column="1" depth="2"/>
+   <model-index row="95" column="2" depth="2">
+    <content><![CDATA[Kinect.interLeftRawZ]]></content>
+   </model-index>
+   <model-index row="95" column="3" depth="2">
+    <content><![CDATA[Float]]></content>
+   </model-index>
+   <model-index row="95" column="4" depth="2">
+    <content><![CDATA[169x69+1481+855]]></content>
+   </model-index>
+   <model-index row="95" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="95" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="95" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Joystick axis" type="int">-1</var>
+    <var name="Joystick update period (ms)" type="int">0</var>
+    <var name="Use joystick" type="bool">false</var>
+    <var name="decimals" type="int">2</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="95" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="96" column="0" depth="2">
+    <content><![CDATA[untitled131]]></content>
+   </model-index>
+   <model-index row="96" column="1" depth="2"/>
+   <model-index row="96" column="2" depth="2">
+    <content><![CDATA[Kinect.interRightRawX]]></content>
+   </model-index>
+   <model-index row="96" column="3" depth="2">
+    <content><![CDATA[Float]]></content>
+   </model-index>
+   <model-index row="96" column="4" depth="2">
+    <content><![CDATA[169x69+1630+807]]></content>
+   </model-index>
+   <model-index row="96" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="96" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="96" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Joystick axis" type="int">-1</var>
+    <var name="Joystick update period (ms)" type="int">0</var>
+    <var name="Use joystick" type="bool">false</var>
+    <var name="decimals" type="int">2</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="96" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="97" column="0" depth="2">
+    <content><![CDATA[untitled132]]></content>
+   </model-index>
+   <model-index row="97" column="1" depth="2"/>
+   <model-index row="97" column="2" depth="2">
+    <content><![CDATA[Kinect.interRightRawY]]></content>
+   </model-index>
+   <model-index row="97" column="3" depth="2">
+    <content><![CDATA[Float]]></content>
+   </model-index>
+   <model-index row="97" column="4" depth="2">
+    <content><![CDATA[169x69+1629+831]]></content>
+   </model-index>
+   <model-index row="97" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="97" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="97" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Joystick axis" type="int">-1</var>
+    <var name="Joystick update period (ms)" type="int">0</var>
+    <var name="Use joystick" type="bool">false</var>
+    <var name="decimals" type="int">2</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="97" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="98" column="0" depth="2">
+    <content><![CDATA[untitled133]]></content>
+   </model-index>
+   <model-index row="98" column="1" depth="2"/>
+   <model-index row="98" column="2" depth="2">
+    <content><![CDATA[Kinect.interRightRawZ]]></content>
+   </model-index>
+   <model-index row="98" column="3" depth="2">
+    <content><![CDATA[Float]]></content>
+   </model-index>
+   <model-index row="98" column="4" depth="2">
+    <content><![CDATA[169x69+1630+856]]></content>
+   </model-index>
+   <model-index row="98" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="98" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="98" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Joystick axis" type="int">-1</var>
+    <var name="Joystick update period (ms)" type="int">0</var>
+    <var name="Use joystick" type="bool">false</var>
+    <var name="decimals" type="int">2</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="98" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="99" column="0" depth="2">
+    <content><![CDATA[AUDIO]]></content>
+   </model-index>
+   <model-index row="99" column="1" depth="2"/>
+   <model-index row="99" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="99" column="3" depth="2">
+    <content><![CDATA[Label]]></content>
+   </model-index>
+   <model-index row="99" column="4" depth="2">
+    <content><![CDATA[331x35+753+494]]></content>
+   </model-index>
+   <model-index row="99" column="5" depth="2">
+    <content><![CDATA[#aa0000ff]]></content>
+   </model-index>
+   <model-index row="99" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="99" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="99" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="100" column="0" depth="2">
+    <content><![CDATA[BeamAngle]]></content>
+   </model-index>
+   <model-index row="100" column="1" depth="2"/>
+   <model-index row="100" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="100" column="3" depth="2">
+    <content><![CDATA[Label]]></content>
+   </model-index>
+   <model-index row="100" column="4" depth="2">
+    <content><![CDATA[163x31+915+537]]></content>
+   </model-index>
+   <model-index row="100" column="5" depth="2">
+    <content><![CDATA[#6e6462ff]]></content>
+   </model-index>
+   <model-index row="100" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="100" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="100" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="101" column="0" depth="2">
+    <content><![CDATA[SourceAngle]]></content>
+   </model-index>
+   <model-index row="101" column="1" depth="2"/>
+   <model-index row="101" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="101" column="3" depth="2">
+    <content><![CDATA[Label]]></content>
+   </model-index>
+   <model-index row="101" column="4" depth="2">
+    <content><![CDATA[159x31+919+626]]></content>
+   </model-index>
+   <model-index row="101" column="5" depth="2">
+    <content><![CDATA[#6e6462ff]]></content>
+   </model-index>
+   <model-index row="101" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="101" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="101" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="102" column="0" depth="2">
+    <content><![CDATA[SourceConfidence]]></content>
+   </model-index>
+   <model-index row="102" column="1" depth="2"/>
+   <model-index row="102" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="102" column="3" depth="2">
+    <content><![CDATA[Label]]></content>
+   </model-index>
+   <model-index row="102" column="4" depth="2">
+    <content><![CDATA[159x31+920+716]]></content>
+   </model-index>
+   <model-index row="102" column="5" depth="2">
+    <content><![CDATA[#6e6462ff]]></content>
+   </model-index>
+   <model-index row="102" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="102" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="102" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="103" column="0" depth="2">
+    <content><![CDATA[EchoCancellation]]></content>
+   </model-index>
+   <model-index row="103" column="1" depth="2"/>
+   <model-index row="103" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="103" column="3" depth="2">
+    <content><![CDATA[Label]]></content>
+   </model-index>
+   <model-index row="103" column="4" depth="2">
+    <content><![CDATA[152x31+767+823]]></content>
+   </model-index>
+   <model-index row="103" column="5" depth="2">
+    <content><![CDATA[#6e6462ff]]></content>
+   </model-index>
+   <model-index row="103" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="103" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="103" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="104" column="0" depth="2">
+    <content><![CDATA[untitled140]]></content>
+   </model-index>
+   <model-index row="104" column="1" depth="2"/>
+   <model-index row="104" column="2" depth="2">
+    <content><![CDATA[Kinect.audioEchoCancellation]]></content>
+   </model-index>
+   <model-index row="104" column="3" depth="2">
+    <content><![CDATA[Bool]]></content>
+   </model-index>
+   <model-index row="104" column="4" depth="2">
+    <content><![CDATA[-1x-1+762+850]]></content>
+   </model-index>
+   <model-index row="104" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="104" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="104" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="104" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="105" column="0" depth="2">
+    <content><![CDATA[EchoSuppresion]]></content>
+   </model-index>
+   <model-index row="105" column="1" depth="2"/>
+   <model-index row="105" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="105" column="3" depth="2">
+    <content><![CDATA[Label]]></content>
+   </model-index>
+   <model-index row="105" column="4" depth="2">
+    <content><![CDATA[158x31+924+824]]></content>
+   </model-index>
+   <model-index row="105" column="5" depth="2">
+    <content><![CDATA[#6e6462ff]]></content>
+   </model-index>
+   <model-index row="105" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="105" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="105" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="106" column="0" depth="2">
+    <content><![CDATA[untitled142]]></content>
+   </model-index>
+   <model-index row="106" column="1" depth="2"/>
+   <model-index row="106" column="2" depth="2">
+    <content><![CDATA[Kinect.audioEchoSuppresion]]></content>
+   </model-index>
+   <model-index row="106" column="3" depth="2">
+    <content><![CDATA[Bool]]></content>
+   </model-index>
+   <model-index row="106" column="4" depth="2">
+    <content><![CDATA[-1x-1+928+849]]></content>
+   </model-index>
+   <model-index row="106" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="106" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="106" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="106" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="107" column="0" depth="2">
+    <content><![CDATA[NoiseSuppresion]]></content>
+   </model-index>
+   <model-index row="107" column="1" depth="2"/>
+   <model-index row="107" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="107" column="3" depth="2">
+    <content><![CDATA[Label]]></content>
+   </model-index>
+   <model-index row="107" column="4" depth="2">
+    <content><![CDATA[149x31+767+906]]></content>
+   </model-index>
+   <model-index row="107" column="5" depth="2">
+    <content><![CDATA[#6e6462ff]]></content>
+   </model-index>
+   <model-index row="107" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="107" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="107" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="108" column="0" depth="2">
+    <content><![CDATA[untitled144]]></content>
+   </model-index>
+   <model-index row="108" column="1" depth="2"/>
+   <model-index row="108" column="2" depth="2">
+    <content><![CDATA[Kinect.audioNoiseSuppresion]]></content>
+   </model-index>
+   <model-index row="108" column="3" depth="2">
+    <content><![CDATA[Bool]]></content>
+   </model-index>
+   <model-index row="108" column="4" depth="2">
+    <content><![CDATA[-1x-1+761+936]]></content>
+   </model-index>
+   <model-index row="108" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="108" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="108" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="108" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="109" column="0" depth="2">
+    <content><![CDATA[AutomaticGainControl]]></content>
+   </model-index>
+   <model-index row="109" column="1" depth="2"/>
+   <model-index row="109" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="109" column="3" depth="2">
+    <content><![CDATA[Label]]></content>
+   </model-index>
+   <model-index row="109" column="4" depth="2">
+    <content><![CDATA[160x31+923+905]]></content>
+   </model-index>
+   <model-index row="109" column="5" depth="2">
+    <content><![CDATA[#6e6462ff]]></content>
+   </model-index>
+   <model-index row="109" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="109" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="109" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="110" column="0" depth="2">
+    <content><![CDATA[untitled146]]></content>
+   </model-index>
+   <model-index row="110" column="1" depth="2"/>
+   <model-index row="110" column="2" depth="2">
+    <content><![CDATA[Kinect.audioAutomaticGainControl]]></content>
+   </model-index>
+   <model-index row="110" column="3" depth="2">
+    <content><![CDATA[Bool]]></content>
+   </model-index>
+   <model-index row="110" column="4" depth="2">
+    <content><![CDATA[-1x-1+925+936]]></content>
+   </model-index>
+   <model-index row="110" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="110" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="110" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="110" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="111" column="0" depth="2">
+    <content><![CDATA[SPEECH]]></content>
+   </model-index>
+   <model-index row="111" column="1" depth="2"/>
+   <model-index row="111" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="111" column="3" depth="2">
+    <content><![CDATA[Label]]></content>
+   </model-index>
+   <model-index row="111" column="4" depth="2">
+    <content><![CDATA[366x31+1107+495]]></content>
+   </model-index>
+   <model-index row="111" column="5" depth="2">
+    <content><![CDATA[#aa0000ff]]></content>
+   </model-index>
+   <model-index row="111" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="111" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="111" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="112" column="0" depth="2">
+    <content><![CDATA[Result]]></content>
+   </model-index>
+   <model-index row="112" column="1" depth="2"/>
+   <model-index row="112" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="112" column="3" depth="2">
+    <content><![CDATA[Label]]></content>
+   </model-index>
+   <model-index row="112" column="4" depth="2">
+    <content><![CDATA[224x31+1245+533]]></content>
+   </model-index>
+   <model-index row="112" column="5" depth="2">
+    <content><![CDATA[#6e6462ff]]></content>
+   </model-index>
+   <model-index row="112" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="112" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="112" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="113" column="0" depth="2">
+    <content><![CDATA[ResultTag]]></content>
+   </model-index>
+   <model-index row="113" column="1" depth="2"/>
+   <model-index row="113" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="113" column="3" depth="2">
+    <content><![CDATA[Label]]></content>
+   </model-index>
+   <model-index row="113" column="4" depth="2">
+    <content><![CDATA[228x31+1243+629]]></content>
+   </model-index>
+   <model-index row="113" column="5" depth="2">
+    <content><![CDATA[#6e6462ff]]></content>
+   </model-index>
+   <model-index row="113" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="113" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="113" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="114" column="0" depth="2">
+    <content><![CDATA[OTHER]]></content>
+   </model-index>
+   <model-index row="114" column="1" depth="2"/>
+   <model-index row="114" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="114" column="3" depth="2">
+    <content><![CDATA[Label]]></content>
+   </model-index>
+   <model-index row="114" column="4" depth="2">
+    <content><![CDATA[275x39+441+493]]></content>
+   </model-index>
+   <model-index row="114" column="5" depth="2">
+    <content><![CDATA[#aa0000ff]]></content>
+   </model-index>
+   <model-index row="114" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="114" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="114" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="115" column="0" depth="2">
+    <content><![CDATA[FPS]]></content>
+   </model-index>
+   <model-index row="115" column="1" depth="2"/>
+   <model-index row="115" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="115" column="3" depth="2">
+    <content><![CDATA[Label]]></content>
+   </model-index>
+   <model-index row="115" column="4" depth="2">
+    <content><![CDATA[269x31+441+537]]></content>
+   </model-index>
+   <model-index row="115" column="5" depth="2">
+    <content><![CDATA[#6e6462ff]]></content>
+   </model-index>
+   <model-index row="115" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="115" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="115" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="116" column="0" depth="2">
+    <content><![CDATA[Process time]]></content>
+   </model-index>
+   <model-index row="116" column="1" depth="2"/>
+   <model-index row="116" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="116" column="3" depth="2">
+    <content><![CDATA[Label]]></content>
+   </model-index>
+   <model-index row="116" column="4" depth="2">
+    <content><![CDATA[271x31+441+629]]></content>
+   </model-index>
+   <model-index row="116" column="5" depth="2">
+    <content><![CDATA[#6e6462ff]]></content>
+   </model-index>
+   <model-index row="116" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="116" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="116" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="117" column="0" depth="2">
+    <content><![CDATA[Pause]]></content>
+   </model-index>
+   <model-index row="117" column="1" depth="2"/>
+   <model-index row="117" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="117" column="3" depth="2">
+    <content><![CDATA[Label]]></content>
+   </model-index>
+   <model-index row="117" column="4" depth="2">
+    <content><![CDATA[145x31+763+537]]></content>
+   </model-index>
+   <model-index row="117" column="5" depth="2">
+    <content><![CDATA[#6e6462ff]]></content>
+   </model-index>
+   <model-index row="117" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="117" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="117" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="118" column="0" depth="2">
+    <content><![CDATA[START]]></content>
+   </model-index>
+   <model-index row="118" column="1" depth="2"/>
+   <model-index row="118" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="118" column="3" depth="2">
+    <content><![CDATA[Button]]></content>
+   </model-index>
+   <model-index row="118" column="4" depth="2">
+    <content><![CDATA[144x46+764+675]]></content>
+   </model-index>
+   <model-index row="118" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="118" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="118" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Joystick Button Bound" type="int">-1</var>
+    <var name="Key Bound" type="QKeySequence"></var>
+    <var name="ReClick Behavior" type="glab::GLabStringChoice*">0</var>
+    <var name="Toggle Mode" type="bool">false</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="118" column="8" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="OnPush" type="QString">// OnPush script.</var>
+    <var name="OnRelease" type="QString">// OnRelease script.
+
+Kinect.audioRecordStart(&quot;record_audio.wav&quot;);</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="119" column="0" depth="2">
+    <content><![CDATA[STOP]]></content>
+   </model-index>
+   <model-index row="119" column="1" depth="2"/>
+   <model-index row="119" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="119" column="3" depth="2">
+    <content><![CDATA[Button]]></content>
+   </model-index>
+   <model-index row="119" column="4" depth="2">
+    <content><![CDATA[141x46+763+709]]></content>
+   </model-index>
+   <model-index row="119" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="119" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="119" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Joystick Button Bound" type="int">-1</var>
+    <var name="Key Bound" type="QKeySequence"></var>
+    <var name="ReClick Behavior" type="glab::GLabStringChoice*">0</var>
+    <var name="Toggle Mode" type="bool">false</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="119" column="8" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="OnPush" type="QString">// OnPush script.</var>
+    <var name="OnRelease" type="QString">// OnRelease script.
+
+Kinect.audioRecordStop;</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="120" column="0" depth="2">
+    <content><![CDATA[RECORD]]></content>
+   </model-index>
+   <model-index row="120" column="1" depth="2"/>
+   <model-index row="120" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="120" column="3" depth="2">
+    <content><![CDATA[Label]]></content>
+   </model-index>
+   <model-index row="120" column="4" depth="2">
+    <content><![CDATA[146x31+764+626]]></content>
+   </model-index>
+   <model-index row="120" column="5" depth="2">
+    <content><![CDATA[#6e6462ff]]></content>
+   </model-index>
+   <model-index row="120" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="120" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="120" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="121" column="0" depth="2">
+    <content><![CDATA[untitled254]]></content>
+   </model-index>
+   <model-index row="121" column="1" depth="2"/>
+   <model-index row="121" column="2" depth="2">
+    <content><![CDATA[Kinect.speechConfidence]]></content>
+   </model-index>
+   <model-index row="121" column="3" depth="2">
+    <content><![CDATA[Float]]></content>
+   </model-index>
+   <model-index row="121" column="4" depth="2">
+    <content><![CDATA[345x69+1118+753]]></content>
+   </model-index>
+   <model-index row="121" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="121" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="121" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Joystick axis" type="int">-1</var>
+    <var name="Joystick update period (ms)" type="int">0</var>
+    <var name="Use joystick" type="bool">false</var>
+    <var name="decimals" type="int">2</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="121" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="122" column="0" depth="2">
+    <content><![CDATA[untitled255]]></content>
+   </model-index>
+   <model-index row="122" column="1" depth="2"/>
+   <model-index row="122" column="2" depth="2">
+    <content><![CDATA[Kinect.speechConfidenceThreshold]]></content>
+   </model-index>
+   <model-index row="122" column="3" depth="2">
+    <content><![CDATA[Float]]></content>
+   </model-index>
+   <model-index row="122" column="4" depth="2">
+    <content><![CDATA[342x69+1120+870]]></content>
+   </model-index>
+   <model-index row="122" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="122" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="122" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Joystick axis" type="int">-1</var>
+    <var name="Joystick update period (ms)" type="int">0</var>
+    <var name="Use joystick" type="bool">false</var>
+    <var name="decimals" type="int">2</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="122" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="123" column="0" depth="2">
+    <content><![CDATA[Confidence]]></content>
+   </model-index>
+   <model-index row="123" column="1" depth="2"/>
+   <model-index row="123" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="123" column="3" depth="2">
+    <content><![CDATA[Label]]></content>
+   </model-index>
+   <model-index row="123" column="4" depth="2">
+    <content><![CDATA[354x31+1115+721]]></content>
+   </model-index>
+   <model-index row="123" column="5" depth="2">
+    <content><![CDATA[#6e6462ff]]></content>
+   </model-index>
+   <model-index row="123" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="123" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="123" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="124" column="0" depth="2">
+    <content><![CDATA[Confidence threshold]]></content>
+   </model-index>
+   <model-index row="124" column="1" depth="2"/>
+   <model-index row="124" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="124" column="3" depth="2">
+    <content><![CDATA[Label]]></content>
+   </model-index>
+   <model-index row="124" column="4" depth="2">
+    <content><![CDATA[343x31+1118+833]]></content>
+   </model-index>
+   <model-index row="124" column="5" depth="2">
+    <content><![CDATA[#6e6462ff]]></content>
+   </model-index>
+   <model-index row="124" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="124" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="124" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="125" column="0" depth="2">
+    <content><![CDATA[untitled262]]></content>
+   </model-index>
+   <model-index row="125" column="1" depth="2"/>
+   <model-index row="125" column="2" depth="2">
+    <content><![CDATA[Kinect.tilt]]></content>
+   </model-index>
+   <model-index row="125" column="3" depth="2">
+    <content><![CDATA[Float]]></content>
+   </model-index>
+   <model-index row="125" column="4" depth="2">
+    <content><![CDATA[264x69+449+746]]></content>
+   </model-index>
+   <model-index row="125" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="125" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="125" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Joystick axis" type="int">-1</var>
+    <var name="Joystick update period (ms)" type="int">0</var>
+    <var name="Use joystick" type="bool">false</var>
+    <var name="decimals" type="int">2</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="125" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="126" column="0" depth="2">
+    <content><![CDATA[Tilt angle]]></content>
+   </model-index>
+   <model-index row="126" column="1" depth="2"/>
+   <model-index row="126" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="126" column="3" depth="2">
+    <content><![CDATA[Label]]></content>
+   </model-index>
+   <model-index row="126" column="4" depth="2">
+    <content><![CDATA[268x31+440+702]]></content>
+   </model-index>
+   <model-index row="126" column="5" depth="2">
+    <content><![CDATA[#6e6462ff]]></content>
+   </model-index>
+   <model-index row="126" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="126" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="126" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="127" column="0" depth="2">
+    <content><![CDATA[Pause]]></content>
+   </model-index>
+   <model-index row="127" column="1" depth="2"/>
+   <model-index row="127" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="127" column="3" depth="2">
+    <content><![CDATA[Label]]></content>
+   </model-index>
+   <model-index row="127" column="4" depth="2">
+    <content><![CDATA[121x31+1109+630]]></content>
+   </model-index>
+   <model-index row="127" column="5" depth="2">
+    <content><![CDATA[#6e6462ff]]></content>
+   </model-index>
+   <model-index row="127" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="127" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="127" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="128" column="0" depth="2">
+    <content><![CDATA[ON]]></content>
+   </model-index>
+   <model-index row="128" column="1" depth="2"/>
+   <model-index row="128" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="128" column="3" depth="2">
+    <content><![CDATA[Button]]></content>
+   </model-index>
+   <model-index row="128" column="4" depth="2">
+    <content><![CDATA[67x46+763+572]]></content>
+   </model-index>
+   <model-index row="128" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="128" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="128" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Joystick Button Bound" type="int">-1</var>
+    <var name="Key Bound" type="QKeySequence"></var>
+    <var name="ReClick Behavior" type="glab::GLabStringChoice*">0</var>
+    <var name="Toggle Mode" type="bool">false</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="128" column="8" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="OnPush" type="QString">// OnPush script.</var>
+    <var name="OnRelease" type="QString">// OnRelease script.
+
+Kinect.audioPause(true);</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="129" column="0" depth="2">
+    <content><![CDATA[OFF]]></content>
+   </model-index>
+   <model-index row="129" column="1" depth="2"/>
+   <model-index row="129" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="129" column="3" depth="2">
+    <content><![CDATA[Button]]></content>
+   </model-index>
+   <model-index row="129" column="4" depth="2">
+    <content><![CDATA[75x46+831+572]]></content>
+   </model-index>
+   <model-index row="129" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="129" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="129" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Joystick Button Bound" type="int">-1</var>
+    <var name="Key Bound" type="QKeySequence"></var>
+    <var name="ReClick Behavior" type="glab::GLabStringChoice*">0</var>
+    <var name="Toggle Mode" type="bool">false</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="129" column="8" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="OnPush" type="QString">// OnPush script.</var>
+    <var name="OnRelease" type="QString">// OnRelease script.
+
+Kinect.audioPause(false);</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="130" column="0" depth="2">
+    <content><![CDATA[Is listening?]]></content>
+   </model-index>
+   <model-index row="130" column="1" depth="2"/>
+   <model-index row="130" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="130" column="3" depth="2">
+    <content><![CDATA[Label]]></content>
+   </model-index>
+   <model-index row="130" column="4" depth="2">
+    <content><![CDATA[131x31+1110+533]]></content>
+   </model-index>
+   <model-index row="130" column="5" depth="2">
+    <content><![CDATA[#6e6462ff]]></content>
+   </model-index>
+   <model-index row="130" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="130" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="130" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="131" column="0" depth="2">
+    <content><![CDATA[untitled275]]></content>
+   </model-index>
+   <model-index row="131" column="1" depth="2"/>
+   <model-index row="131" column="2" depth="2">
+    <content><![CDATA[Kinect.speechIsListening]]></content>
+   </model-index>
+   <model-index row="131" column="3" depth="2">
+    <content><![CDATA[Bool]]></content>
+   </model-index>
+   <model-index row="131" column="4" depth="2">
+    <content><![CDATA[160x59+1101+568]]></content>
+   </model-index>
+   <model-index row="131" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="131" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="131" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="131" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="132" column="0" depth="2">
+    <content><![CDATA[untitled278]]></content>
+   </model-index>
+   <model-index row="132" column="1" depth="2"/>
+   <model-index row="132" column="2" depth="2">
+    <content><![CDATA[Kinect.interRightActive]]></content>
+   </model-index>
+   <model-index row="132" column="3" depth="2">
+    <content><![CDATA[Float]]></content>
+   </model-index>
+   <model-index row="132" column="4" depth="2">
+    <content><![CDATA[169x69+1639+460]]></content>
+   </model-index>
+   <model-index row="132" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="132" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="132" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Joystick axis" type="int">-1</var>
+    <var name="Joystick update period (ms)" type="int">0</var>
+    <var name="Use joystick" type="bool">false</var>
+    <var name="decimals" type="int">0</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="132" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="133" column="0" depth="2">
+    <content><![CDATA[untitled279]]></content>
+   </model-index>
+   <model-index row="133" column="1" depth="2"/>
+   <model-index row="133" column="2" depth="2">
+    <content><![CDATA[Kinect.interLeftInteractive]]></content>
+   </model-index>
+   <model-index row="133" column="3" depth="2">
+    <content><![CDATA[Float]]></content>
+   </model-index>
+   <model-index row="133" column="4" depth="2">
+    <content><![CDATA[169x69+1485+484]]></content>
+   </model-index>
+   <model-index row="133" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="133" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="133" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Joystick axis" type="int">-1</var>
+    <var name="Joystick update period (ms)" type="int">0</var>
+    <var name="Use joystick" type="bool">false</var>
+    <var name="decimals" type="int">0</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="133" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="134" column="0" depth="2">
+    <content><![CDATA[untitled280]]></content>
+   </model-index>
+   <model-index row="134" column="1" depth="2"/>
+   <model-index row="134" column="2" depth="2">
+    <content><![CDATA[Kinect.interRightPressed]]></content>
+   </model-index>
+   <model-index row="134" column="3" depth="2">
+    <content><![CDATA[Float]]></content>
+   </model-index>
+   <model-index row="134" column="4" depth="2">
+    <content><![CDATA[169x69+1640+511]]></content>
+   </model-index>
+   <model-index row="134" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="134" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="134" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Joystick axis" type="int">-1</var>
+    <var name="Joystick update period (ms)" type="int">0</var>
+    <var name="Use joystick" type="bool">false</var>
+    <var name="decimals" type="int">0</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="134" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="135" column="0" depth="2">
+    <content><![CDATA[untitled281]]></content>
+   </model-index>
+   <model-index row="135" column="1" depth="2"/>
+   <model-index row="135" column="2" depth="2">
+    <content><![CDATA[Kinect.interLeftPressed]]></content>
+   </model-index>
+   <model-index row="135" column="3" depth="2">
+    <content><![CDATA[Float]]></content>
+   </model-index>
+   <model-index row="135" column="4" depth="2">
+    <content><![CDATA[169x69+1486+506]]></content>
+   </model-index>
+   <model-index row="135" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="135" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="135" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Joystick axis" type="int">-1</var>
+    <var name="Joystick update period (ms)" type="int">0</var>
+    <var name="Use joystick" type="bool">false</var>
+    <var name="decimals" type="int">0</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="135" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="136" column="0" depth="2">
+    <content><![CDATA[untitled282]]></content>
+   </model-index>
+   <model-index row="136" column="1" depth="2"/>
+   <model-index row="136" column="2" depth="2">
+    <content><![CDATA[Kinect.interImage]]></content>
+   </model-index>
+   <model-index row="136" column="3" depth="2">
+    <content><![CDATA[Image]]></content>
+   </model-index>
+   <model-index row="136" column="4" depth="2">
+    <content><![CDATA[313x241+1485+40]]></content>
+   </model-index>
+   <model-index row="136" column="5" depth="2">
+    <content><![CDATA[#6e6462ff]]></content>
+   </model-index>
+   <model-index row="136" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="136" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="136" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="137" column="0" depth="2">
+    <content><![CDATA[untitled283]]></content>
+   </model-index>
+   <model-index row="137" column="1" depth="2"/>
+   <model-index row="137" column="2" depth="2">
+    <content><![CDATA[Kinect.interLeftEvent]]></content>
+   </model-index>
+   <model-index row="137" column="3" depth="2">
+    <content><![CDATA[Float]]></content>
+   </model-index>
+   <model-index row="137" column="4" depth="2">
+    <content><![CDATA[169x69+1482+598]]></content>
+   </model-index>
+   <model-index row="137" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="137" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="137" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Joystick axis" type="int">-1</var>
+    <var name="Joystick update period (ms)" type="int">0</var>
+    <var name="Use joystick" type="bool">false</var>
+    <var name="decimals" type="int">0</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="137" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="138" column="0" depth="2">
+    <content><![CDATA[untitled284]]></content>
+   </model-index>
+   <model-index row="138" column="1" depth="2"/>
+   <model-index row="138" column="2" depth="2">
+    <content><![CDATA[Kinect.interRightEvent]]></content>
+   </model-index>
+   <model-index row="138" column="3" depth="2">
+    <content><![CDATA[Float]]></content>
+   </model-index>
+   <model-index row="138" column="4" depth="2">
+    <content><![CDATA[169x69+1635+597]]></content>
+   </model-index>
+   <model-index row="138" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="138" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="138" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Joystick axis" type="int">-1</var>
+    <var name="Joystick update period (ms)" type="int">0</var>
+    <var name="Use joystick" type="bool">false</var>
+    <var name="decimals" type="int">0</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="138" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="139" column="0" depth="2">
+    <content><![CDATA[untitled285]]></content>
+   </model-index>
+   <model-index row="139" column="1" depth="2"/>
+   <model-index row="139" column="2" depth="2">
+    <content><![CDATA[Kinect.interLeftPress]]></content>
+   </model-index>
+   <model-index row="139" column="3" depth="2">
+    <content><![CDATA[Float]]></content>
+   </model-index>
+   <model-index row="139" column="4" depth="2">
+    <content><![CDATA[169x69+1482+619]]></content>
+   </model-index>
+   <model-index row="139" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="139" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="139" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Joystick axis" type="int">-1</var>
+    <var name="Joystick update period (ms)" type="int">0</var>
+    <var name="Use joystick" type="bool">false</var>
+    <var name="decimals" type="int">0</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="139" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="140" column="0" depth="2">
+    <content><![CDATA[untitled286]]></content>
+   </model-index>
+   <model-index row="140" column="1" depth="2"/>
+   <model-index row="140" column="2" depth="2">
+    <content><![CDATA[Kinect.interRightPress]]></content>
+   </model-index>
+   <model-index row="140" column="3" depth="2">
+    <content><![CDATA[Float]]></content>
+   </model-index>
+   <model-index row="140" column="4" depth="2">
+    <content><![CDATA[169x69+1634+622]]></content>
+   </model-index>
+   <model-index row="140" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="140" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="140" column="7" depth="2">
+    <content><![CDATA[
+<map>
+    <var name="Joystick axis" type="int">-1</var>
+    <var name="Joystick update period (ms)" type="int">0</var>
+    <var name="Use joystick" type="bool">false</var>
+    <var name="decimals" type="int">0</var>
+</map>]]></content>
+   </model-index>
+   <model-index row="140" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="141" column="0" depth="2">
+    <content><![CDATA[INTERACTIVE]]></content>
+   </model-index>
+   <model-index row="141" column="1" depth="2"/>
+   <model-index row="141" column="2" depth="2">
+    <content><![CDATA[]]></content>
+   </model-index>
+   <model-index row="141" column="3" depth="2">
+    <content><![CDATA[Label]]></content>
+   </model-index>
+   <model-index row="141" column="4" depth="2">
+    <content><![CDATA[322x43+1478+16]]></content>
+   </model-index>
+   <model-index row="141" column="5" depth="2">
+    <content><![CDATA[#aa0000ff]]></content>
+   </model-index>
+   <model-index row="141" column="6" depth="2">
+    <content><![CDATA[#e9e7e7ff]]></content>
+   </model-index>
+   <model-index row="141" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="141" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="142" column="0" depth="2">
+    <content><![CDATA[untitled296]]></content>
+   </model-index>
+   <model-index row="142" column="1" depth="2"/>
+   <model-index row="142" column="2" depth="2">
+    <content><![CDATA[Kinect.speechPause]]></content>
+   </model-index>
+   <model-index row="142" column="3" depth="2">
+    <content><![CDATA[Bool]]></content>
+   </model-index>
+   <model-index row="142" column="4" depth="2">
+    <content><![CDATA[158x59+1109+663]]></content>
+   </model-index>
+   <model-index row="142" column="5" depth="2">
+    <content><![CDATA[#00000000]]></content>
+   </model-index>
+   <model-index row="142" column="6" depth="2">
+    <content><![CDATA[#000000ff]]></content>
+   </model-index>
+   <model-index row="142" column="7" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+   <model-index row="142" column="8" depth="2">
+    <content><![CDATA[
+<map/>]]></content>
+   </model-index>
+  </model-index>
+  <model-index row="0" column="1" depth="1"/>
+  <model-index row="0" column="2" depth="1"/>
+  <model-index row="0" column="3" depth="1"/>
+  <model-index row="0" column="4" depth="1"/>
+  <model-index row="0" column="5" depth="1"/>
+  <model-index row="0" column="6" depth="1"/>
+  <model-index row="0" column="7" depth="1"/>
+  <model-index row="0" column="8" depth="1"/>
+  <model-index row="1" column="0" depth="1"/>
+  <model-index row="1" column="1" depth="1">
+   <content><![CDATA[
+<map>
+    <var name="Author" type="QString">Unknown</var>
+    <var name="Background" type="QColor">#6e6462ff</var>
+    <var name="CoScript" type="QString"></var>
+    <var name="DecoScript" type="QString"></var>
+    <var name="Foreground" type="QColor">#e9e7e7ff</var>
+    <var name="GridColor" type="QColor">#000000ff</var>
+    <var name="GridSize" type="int">0</var>
+    <var name="LayoutColor" type="QColor">#000000ff</var>
+    <var name="LayoutGeom" type="QRectF">1800x1000+0+0</var>
+    <var name="LayoutImage" type="QImage"></var>
+    <var name="LayoutImageMode" type="qt_ext::background::ImageMode">None</var>
+</map>]]></content>
+  </model-index>
+  <model-index row="1" column="2" depth="1"/>
+  <model-index row="1" column="3" depth="1"/>
+  <model-index row="1" column="4" depth="1"/>
+  <model-index row="1" column="5" depth="1"/>
+  <model-index row="1" column="6" depth="1"/>
+  <model-index row="1" column="7" depth="1"/>
+  <model-index row="1" column="8" depth="1"/>
+ </model-index>
+ <model-index row="0" column="1" depth="0"/>
+ <model-index row="0" column="2" depth="0"/>
+ <model-index row="0" column="3" depth="0"/>
+ <model-index row="0" column="4" depth="0"/>
+ <model-index row="0" column="5" depth="0"/>
+ <model-index row="0" column="6" depth="0"/>
+ <model-index row="0" column="7" depth="0"/>
+ <model-index row="0" column="8" depth="0"/>
+</ulablayout>

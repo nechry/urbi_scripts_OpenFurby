@@ -1,0 +1,1064 @@
+/*
+* Definitions of network functions
+*
+*
+*  Author: Jan Kedzierski
+*  Date: 29.09.2015
+*  Ver: 6.3
+*/
+
+do(Global) {
+    
+  function LoadNetwork{
+    echo(" ");
+    echo("INFO: Loading Network...");
+    try{
+
+      //
+      // CHECK IF PASSWORD FILE EXIST
+      searchFile(_loginPasswordDir);
+
+      robot.addComponent("network");
+    ///////////////////////////////////////////
+    //
+    // T e x t T o o l   2
+    //
+    ///////////////////////////////////////////
+      if (_En_UTextToolNetwork) {
+	echo("INFO: UTextTool 2 loading...");
+	if (!hasSlot(_UObjN_UTextTool)) loadModule(_uObjectsDir+_UObjN_UTextTool);
+	var Global.TextTool2=UTextTool.new();
+	TextTool2.encodingMode="translit";
+      };
+    ///////////////////////////////////////////
+    //
+    // B R O W S E R
+    //
+    ///////////////////////////////////////////
+      if (_En_UBrowser) {
+	echo("INFO: UBrowser loading...");
+	if (!hasSlot(_UObjN_UBrowser)) loadModule(_uObjectsDir+_UObjN_UBrowser);
+	var Global.Browser=UBrowser.new();
+	Browser.userAgent="Mozilla/5.0 (iPhone; CPU iPhone OS 5_0 like Mac OS X) AppleWebKit/534.46 (KHTML, like Gecko) Version/5.1 Mobile/9A334 Safari/7534.48.3";
+			   
+	
+	Global.Browser.addProto(Interface);    
+	robot.network.addDevice("browser", Global.Browser);
+	
+    ///////////////////////////////////////////
+    //
+    // W E A T H E R
+    //
+    ///////////////////////////////////////////
+    
+	robot.network.addComponent("weather");
+	
+	UVar.new(Global,"_locationCity");
+	UVar.new(Global,"_locationRegion");
+	UVar.new(Global,"_locationCountry");
+	
+	UVar.new(Global,"_unitsTemperature");
+	UVar.new(Global,"_unitsDistance");
+	UVar.new(Global,"_unitsPressure");
+	UVar.new(Global,"_unitsSpeed");
+	
+	UVar.new(Global,"_windChill");
+	UVar.new(Global,"_windDirection");
+	UVar.new(Global,"_windSpeed");
+	
+	UVar.new(Global,"_atmosphereHumidity");
+	UVar.new(Global,"_atmosphereVisibility");
+	UVar.new(Global,"_atmospherePressure");
+	UVar.new(Global,"_atmosphereRising");
+	
+	UVar.new(Global,"_astronomySunrise");
+	UVar.new(Global,"_astronomySunset");
+	
+	UVar.new(Global,"_conditionText");
+	UVar.new(Global,"_conditionCode");
+	UVar.new(Global,"_conditionTemperature");
+	
+	UVar.new(Global,"_forecast1");
+	UVar.new(Global,"_forecast2");
+	UVar.new(Global,"_forecast3");
+	UVar.new(Global,"_forecast4");
+	UVar.new(Global,"_forecast5");
+	
+	robot.network.weather.addComponent("location");
+	Global.getSlot("_locationCity").copy(robot.network.weather.location,"city");
+	Global.getSlot("_locationRegion").copy(robot.network.weather.location,"region");
+	Global.getSlot("_locationCountry").copy(robot.network.weather.location,"country");
+	
+	robot.network.weather.addComponent("units");
+	Global.getSlot("_unitsTemperature").copy(robot.network.weather.units,"temperature");
+	Global.getSlot("_unitsDistance").copy(robot.network.weather.units,"distance");
+	Global.getSlot("_unitsPressure").copy(robot.network.weather.units,"pressure");
+	Global.getSlot("_unitsSpeed").copy(robot.network.weather.units,"speed");
+	
+	robot.network.weather.addComponent("wind");
+	Global.getSlot("_windChill").copy(robot.network.weather.wind,"chill");
+	Global.getSlot("_windDirection").copy(robot.network.weather.wind,"direction");
+	Global.getSlot("_windSpeed").copy(robot.network.weather.wind,"speed");
+	
+	robot.network.weather.addComponent("atmosphere");
+	Global.getSlot("_atmosphereHumidity").copy(robot.network.weather.atmosphere,"humidity");
+	Global.getSlot("_atmosphereVisibility").copy(robot.network.weather.atmosphere,"visibility");
+	Global.getSlot("_atmospherePressure").copy(robot.network.weather.atmosphere,"pressure");
+	Global.getSlot("_atmosphereRising").copy(robot.network.weather.atmosphere,"rising");
+	
+	robot.network.weather.addComponent("astronomy");
+	Global.getSlot("_astronomySunrise").copy(robot.network.weather.astronomy,"sunrise");
+	Global.getSlot("_astronomySunset").copy(robot.network.weather.astronomy,"sunset");
+	
+	robot.network.weather.addComponent("condition");
+	Global.getSlot("_conditionText").copy(robot.network.weather.condition,"text");
+	Global.getSlot("_conditionCode").copy(robot.network.weather.condition,"code");
+	Global.getSlot("_conditionTemperature").copy(robot.network.weather.condition,"temperature");
+	
+	robot.network.weather.addComponent("forecast");
+	Global.getSlot("_forecast1").copy(robot.network.weather.forecast,"day1");
+	Global.getSlot("_forecast2").copy(robot.network.weather.forecast,"day2");
+	Global.getSlot("_forecast3").copy(robot.network.weather.forecast,"day3");
+	Global.getSlot("_forecast4").copy(robot.network.weather.forecast,"day4");
+	Global.getSlot("_forecast5").copy(robot.network.weather.forecast,"day5");
+	 
+	do (robot.network.weather) { 
+	  function Get {call.NetworkGetWeather();};
+	};
+
+	
+    ///////////////////////////////////////////
+    //
+    // N E W S
+    //
+    ///////////////////////////////////////////
+    
+	robot.network.addComponent("news");
+	
+	UVar.new(Global,"_newsCount");
+	UVar.new(Global,"_newsDate");
+	UVar.new(Global,"_newsTitle");
+	UVar.new(Global,"_newsDescription");
+	UVar.new(Global,"_newsCategory");
+	
+	Global.getSlot("_newsCount").copy(robot.network.news,"count");
+	Global.getSlot("_newsDate").copy(robot.network.news,"date");
+	Global.getSlot("_newsTitle").copy(robot.network.news,"title");
+	Global.getSlot("_newsDescription").copy(robot.network.news,"description");
+	Global.getSlot("_newsCategory").copy(robot.network.news,"category");
+    
+
+	do (robot.network.news) { 
+	  function Get(address) {call.NetworkGetNews(address);};
+	};
+    
+	echo("OK: UBrowser added.");
+	
+      };
+      
+    ///////////////////////////////////////////
+    // M A I L 
+    //
+      if (_En_UMail) {
+	echo("INFO: Mail 1 loading...");
+	
+	if (_Mail_module=="UMail_POCO") if (!hasSlot(_UObjN_UMail_POCO)) loadModule(_uObjectsDir+_UObjN_UMail_POCO);
+	if (_Mail_module=="UMail_CURL") if (!hasSlot(_UObjN_UMail_CURL)) loadModule(_uObjectsDir+_UObjN_UMail_CURL);
+	
+	if (!hasSlot("_se")) var Global._se;
+	_se=robot.network.addComponent(Localizer.new("mail"));
+	
+	robot.network.mail["robot"].addComponent("send");
+	robot.network.mail["robot"].addComponent("receive");
+	
+	
+	///////////////////////////////////////////////////////////
+	// Robot mail
+	if (_Mail_module=="UMail_POCO") 
+	      var Global.Mail1=UMail.new(_Mail_SmtpAddr, _Mail_SmtpPort,_Mail_ImapAddr, _Mail_ImapPort,NGetLoginPassword(2),NGetLoginPassword(3),"");
+	if (_Mail_module=="UMail_CURL") 
+	      var Global.Mail1=UMail.new(_Mail_SmtpAddr+":"+_Mail_SmtpPort,_Mail_ImapAddr+":"+_Mail_ImapPort,NGetLoginPassword(2),NGetLoginPassword(3));
+	
+	//Global.Mail1.addProto(Interface); 
+      	
+	
+
+	do(robot.network.mail["robot"])
+	{
+	    function Send() 		{ call.Mail1.Send(); };
+	    function Check() 		{ call.Mail1.Check(); };
+	    function LoadContent(file)	{ call.NLoadText(file);};
+	};
+	
+	if (_Mail_module=="UMail_POCO") do(robot.network.mail["robot"]) {function Receive() 	{ call.Mail1.Receive(); };};
+	if (_Mail_module=="UMail_CURL") do(robot.network.mail["robot"]) {function Receive(ID) 	{ call.Mail1.Receive(ID); }; };
+		
+	do(robot.network.mail["robot"].send)
+	{
+	    function From(value) 	{ call.Mail1.sendFrom(value); };
+	    function To(value) 		{ call.Mail1.sendTo(value); };
+	    function Cc(value) 		{ call.Mail1.sendCc(value); };
+	    function Bcc(value) 	{ call.Mail1.sendBcc(value); };
+	    function Subject(value) 	{ call.Mail1.sendSubject(value); };
+	    function Content(value) 	{ call.Mail1.sendContent(value); };
+	    function Attachment(value) 	{ call.Mail1.sendAttachment(value); };
+	    function AttachmentID(value){ call.Mail1.sendAttachmentID(value); };
+	};
+	
+	do(robot.network.mail["robot"].receive)
+	{
+	    function From 		{ call.Mail1.receiveFrom; };
+	    function To			{ call.Mail1.receiveTo; };
+	    function Cc			{ call.Mail1.receiveCc; };
+	    function Subject 		{ call.Mail1.receiveSubject; };
+	    function Content 		{ call.Mail1.receiveContent; };
+	    function ContentHTML	{ call.Mail1.receiveContentHTML; };
+	    function Attachment 	{ call.Mail1.receiveAttachment; };
+	    
+	};
+	if (_Mail_module=="UMail_POCO") do(robot.network.mail["robot"].receive) {function SaveAttachments(value1, value2) { call.Mail1.SaveAttachments(value1, value2); };};
+	if (_Mail_module=="UMail_CURL") do(robot.network.mail["robot"].receive) {function SaveAttachments(path) 		 { call.Mail1.SaveAttachments(path); };};
+	
+	if (_Mail_module=="UMail_POCO") Mail1.getSlot("receiveNew").copy(robot.network.mail["robot"].receive,"newNo");
+	if (_Mail_module=="UMail_CURL") Mail1.getSlot("receiveID").copy(robot.network.mail["robot"].receive,"ID"); 
+	
+	
+	echo("OK: Mail 1 added.");
+	
+	///////////////////////////////////////////////////////////
+	// User mail
+	
+	echo("INFO: Mail 2 loading...");
+	
+	if (_Mail_module=="UMail_POCO") 
+	    var Global.Mail2=UMail.new(_Mail_SmtpAddr, _Mail_SmtpPort,_Mail_ImapAddr, _Mail_ImapPort,NGetLoginPassword(7),NGetLoginPassword(8),"");
+	if (_Mail_module=="UMail_CURL") 
+	    var Global.Mail2=UMail.new(_Mail_SmtpAddr+":"+_Mail_SmtpPort,_Mail_ImapAddr+":"+_Mail_ImapPort,NGetLoginPassword(7),NGetLoginPassword(8));
+	
+	
+	//Global.Mail2.addProto(Interface);
+	
+	robot.network.mail["user"].addComponent("send");
+	robot.network.mail["user"].addComponent("receive");
+	
+	do(robot.network.mail["user"])
+	{
+	    function Send() 		{ call.Mail2.Send(); };
+	    function Check() 		{ call.Mail2.Check(); };
+	    function LoadContent(file)	{ call.NLoadText(file);};
+	};
+	if (_Mail_module=="UMail_POCO") do(robot.network.mail["user"]) {function Receive() 	{ call.Mail2.Receive();   };};
+	if (_Mail_module=="UMail_CURL") do(robot.network.mail["user"]) {function Receive(ID) 	{ call.Mail2.Receive(ID); };};
+	
+	do(robot.network.mail["user"].send)
+	{
+	    function From(value) 	{ call.Mail2.sendFrom(value); };
+	    function To(value) 		{ call.Mail2.sendTo(value); };
+	    function Cc(value) 		{ call.Mail2.sendCc(value); };
+	    function Bcc(value) 	{ call.Mail2.sendBcc(value); };
+	    function Subject(value) 	{ call.Mail2.sendSubject(value); };
+	    function Content(value) 	{ call.Mail2.sendContent(value); };
+	    function Attachment(value) 	{ call.Mail2.sendAttachment(value); };
+	    function AttachmentID(value){ call.Mail2.sendAttachmentID(value); };
+	};
+	
+	do(robot.network.mail["user"].receive)
+	{
+	    function From 		{ call.Mail2.receiveFrom; };
+	    function To			{ call.Mail2.receiveTo; };
+	    function Cc 		{ call.Mail2.receiveCc; };
+	    function Subject		{ call.Mail2.receiveSubject; };
+	    function Content 		{ call.Mail2.receiveContent; };
+	    function ContentHTML	{ call.Mail2.receiveContentHTML; };
+	    function Attachment 	{ call.Mail2.receiveAttachment; };
+	};
+	if (_Mail_module=="UMail_POCO") do(robot.network.mail["user"].receive) {function SaveAttachments(value1, value2) { call.Mail2.SaveAttachments(value1, value2); };};
+	if (_Mail_module=="UMail_CURL") do(robot.network.mail["user"].receive) {function SaveAttachments(path) 		{ call.Mail2.SaveAttachments(path); };};
+	
+	if (_Mail_module=="UMail_POCO") Mail2.getSlot("receiveNew").copy(robot.network.mail["user"].receive,"newNo");
+	if (_Mail_module=="UMail_CURL") Mail2.getSlot("receiveID").copy(robot.network.mail["user"].receive,"ID");
+	
+	echo("OK: Mail 2 added.");
+      };
+
+    ///////////////////////////////////////////
+    // F A C E B O O K
+    //
+      if (_En_UFacebook) {
+	echo("INFO: Facebook 1 loading...");
+	if (!hasSlot(_UObjN_UFacebook)) loadModule(_uObjectsDir+_UObjN_UFacebook);
+	
+	if (!hasSlot("_se")) var Global._se;
+	_se=robot.network.addComponent(Localizer.new("facebook"));
+
+	
+	///////////////////////////////////////////////////////////
+	// Robot facebook
+	var Global.Facebook1=UFacebook.new(_Facebook_Locale);
+	Global.Facebook1.Login(NGetLoginPassword(12),NGetLoginPassword(13),false);
+	Global.Facebook1.addProto(Interface); 
+      
+	//robot.network.facebook.set("robot", Global.Facebook1);	
+
+	robot.network.facebook["robot"].addComponent("user");
+	Facebook1.getSlot("userID").copy(robot.network.facebook["robot"].user,"ID");
+	Facebook1.getSlot("userName").copy(robot.network.facebook["robot"].user,"name");
+	Facebook1.getSlot("userFirstName").copy(robot.network.facebook["robot"].user,"firstName");
+	Facebook1.getSlot("userLastName").copy(robot.network.facebook["robot"].user,"lastName");
+	Facebook1.getSlot("userGender").copy(robot.network.facebook["robot"].user,"gender");
+	Facebook1.getSlot("userBirthday").copy(robot.network.facebook["robot"].user,"birthday");
+	Facebook1.getSlot("userLocation").copy(robot.network.facebook["robot"].user,"location");
+	Facebook1.getSlot("userEmail").copy(robot.network.facebook["robot"].user,"email");
+	Facebook1.getSlot("userLikeID").copy(robot.network.facebook["robot"].user,"likeID");
+	Facebook1.getSlot("userLikeName").copy(robot.network.facebook["robot"].user,"likeName");
+	Facebook1.getSlot("userLikeCategory").copy(robot.network.facebook["robot"].user,"likeCategory");
+
+	robot.network.facebook["robot"].addComponent("post");
+	Facebook1.getSlot("postID").copy(robot.network.facebook["robot"].post,"ID");
+	Facebook1.getSlot("postFromID").copy(robot.network.facebook["robot"].post,"fromID");
+	Facebook1.getSlot("postFromName").copy(robot.network.facebook["robot"].post,"fromName");
+	Facebook1.getSlot("postMessage").copy(robot.network.facebook["robot"].post,"message");
+	Facebook1.getSlot("postType").copy(robot.network.facebook["robot"].post,"type");
+	Facebook1.getSlot("postStatusType").copy(robot.network.facebook["robot"].post,"statusType");
+	Facebook1.getSlot("postStory").copy(robot.network.facebook["robot"].post,"story");
+	Facebook1.getSlot("postObjectID").copy(robot.network.facebook["robot"].post,"objectID");
+	Facebook1.getSlot("postDescription").copy(robot.network.facebook["robot"].post,"description");
+	Facebook1.getSlot("postCaption").copy(robot.network.facebook["robot"].post,"caption");
+	Facebook1.getSlot("postUpdatedTime").copy(robot.network.facebook["robot"].post,"updatedTime");
+
+	robot.network.facebook["robot"].addComponent("status");
+	Facebook1.getSlot("statusID").copy(robot.network.facebook["robot"].status,"ID");
+	Facebook1.getSlot("statusFromID").copy(robot.network.facebook["robot"].status,"fromID");
+	Facebook1.getSlot("statusFromName").copy(robot.network.facebook["robot"].status,"fromName");
+	Facebook1.getSlot("statusMessage").copy(robot.network.facebook["robot"].status,"message");
+	Facebook1.getSlot("statusUpdatedTime").copy(robot.network.facebook["robot"].status,"updatedTime");
+	
+	robot.network.facebook["robot"].addComponent("album");
+	Facebook1.getSlot("albumID").copy(robot.network.facebook["robot"].album,"ID");
+	Facebook1.getSlot("albumName").copy(robot.network.facebook["robot"].album,"name");
+	Facebook1.getSlot("albumCount").copy(robot.network.facebook["robot"].album,"count");
+	Facebook1.getSlot("albumType").copy(robot.network.facebook["robot"].album,"type");
+	Facebook1.getSlot("albumCanUpload").copy(robot.network.facebook["robot"].album,"canUpload");
+	
+	robot.network.facebook["robot"].addComponent("photo");
+	Facebook1.getSlot("photoID").copy(robot.network.facebook["robot"].photo,"ID");
+	Facebook1.getSlot("photoName").copy(robot.network.facebook["robot"].photo,"name");
+	Facebook1.getSlot("photoSource").copy(robot.network.facebook["robot"].photo,"source");
+	Facebook1.getSlot("photoUpdatedTime").copy(robot.network.facebook["robot"].photo,"updatedTime");
+	
+	robot.network.facebook["robot"].addComponent("notification");
+	Facebook1.getSlot("notifID").copy(robot.network.facebook["robot"].notification,"ID");
+	Facebook1.getSlot("notifFromID").copy(robot.network.facebook["robot"].notification,"fromID");
+	Facebook1.getSlot("notifFromName").copy(robot.network.facebook["robot"].notification,"fromName");
+	Facebook1.getSlot("notifMessage").copy(robot.network.facebook["robot"].notification,"message");
+	Facebook1.getSlot("notifTitle").copy(robot.network.facebook["robot"].notification,"title");
+	Facebook1.getSlot("notifType").copy(robot.network.facebook["robot"].notification,"type");
+	Facebook1.getSlot("notifObjectID").copy(robot.network.facebook["robot"].notification,"objectID");
+	Facebook1.getSlot("notifUpdatedTime").copy(robot.network.facebook["robot"].notification,"updatedTime");
+	
+	robot.network.facebook["robot"].addComponent("message");
+	Facebook1.getSlot("messageConversationID").copy(robot.network.facebook["robot"].message,"conversationID");
+	Facebook1.getSlot("messageFromID").copy(robot.network.facebook["robot"].message,"fromID");
+	Facebook1.getSlot("messageFromName").copy(robot.network.facebook["robot"].message,"fromName");
+	Facebook1.getSlot("messageMessage").copy(robot.network.facebook["robot"].message,"message");
+	Facebook1.getSlot("messageCreatedTime").copy(robot.network.facebook["robot"].message,"createdTime");
+	
+	robot.network.facebook["robot"].addComponent("group");
+	Facebook1.getSlot("groupID").copy(robot.network.facebook["robot"].group,"ID");
+	Facebook1.getSlot("groupName").copy(robot.network.facebook["robot"].group,"name");
+	
+	robot.network.facebook["robot"].addComponent("fri_end");
+	Facebook1.getSlot("friendID").copy(robot.network.facebook["robot"].fri_end,"ID");
+	Facebook1.getSlot("friendName").copy(robot.network.facebook["robot"].fri_end,"name");
+	
+	robot.network.facebook["robot"].addComponent("event");
+	Facebook1.getSlot("eventID").copy(robot.network.facebook["robot"].event,"ID");
+	Facebook1.getSlot("eventName").copy(robot.network.facebook["robot"].event,"name");
+	Facebook1.getSlot("eventLocation").copy(robot.network.facebook["robot"].event,"location");
+	Facebook1.getSlot("eventStartTime").copy(robot.network.facebook["robot"].event,"startTime");
+	Facebook1.getSlot("eventEndTime").copy(robot.network.facebook["robot"].event,"endTime");
+	Facebook1.getSlot("eventDescription").copy(robot.network.facebook["robot"].event,"description");
+	
+	robot.network.facebook["robot"].addComponent("like");
+	Facebook1.getSlot("likeFromID").copy(robot.network.facebook["robot"].like,"fromID");
+	Facebook1.getSlot("likeFromName").copy(robot.network.facebook["robot"].like,"fromName");
+	
+	robot.network.facebook["robot"].addComponent("comment");
+	Facebook1.getSlot("commentFromID").copy(robot.network.facebook["robot"].comment,"fromID");
+	Facebook1.getSlot("commentFromName").copy(robot.network.facebook["robot"].comment,"fromName");
+	Facebook1.getSlot("commentMessage").copy(robot.network.facebook["robot"].comment,"message");
+	
+	do(robot.network.facebook["robot"])
+	{
+	    function Login(user, password) 		{ call.Facebook1.Login(user, password, false); };
+	    function DownloadContent(link, path) 	{ call.Facebook1.DownloadContent(link, path); };
+	};
+	
+	do(robot.network.facebook["robot"].user)
+	{
+	    function Get() 				{ call.Facebook1.GetUser("me"); };
+	    function GetLikes() 			{ call.Facebook1.GetUserLikes("me"); };
+	};
+	
+	do(robot.network.facebook["robot"].post)
+	{
+	    function GetPosts() 			{ call.Facebook1.GetPosts("me", -1, "posts"); };
+	    function PutPost(message) 			{ call.Facebook1.PutPost("me",message); };
+	    function GetFeed() 				{ call.Facebook1.GetPosts("me", -1, "feed"); };
+	    function GetHome() 				{ call.Facebook1.GetPosts("me", -1, "home"); };
+	};
+	
+	do(robot.network.facebook["robot"].status)
+	{
+	    function Get() 				{ call.Facebook1.GetStatuses("me",-1); };
+	};
+	
+	do(robot.network.facebook["robot"].album)
+	{
+	    function Get() 				{ call.Facebook1.GetAlbums("me"); };
+	};
+	
+	do(robot.network.facebook["robot"].photo)
+	{
+	    function Get(album_id) 			{ call.Facebook2.GetPhotos(album_id); };
+	    function Put(album_id, name, source) 	{ call.Facebook1.PutPhoto(album_id, name, source); };
+	    function PostOnTimeline(message,photo) 	{ call.FacebookPostPhoto("robot",message,photo); };
+	};
+	
+	do(robot.network.facebook["robot"].notification)
+	{
+	    function Get() 				{ call.Facebook1.GetNotifications("me"); };
+	    function Clear() 				{ call.Facebook1.ClearNotifications("me"); };
+	};
+	
+	do(robot.network.facebook["robot"].message)
+	{
+	    function GetUnread() 			{ call.Facebook1.GetMessages("me","unread"); };
+	    function GetUnseen() 			{ call.Facebook1.GetMessages("me","unseen"); };
+	};
+	
+	do(robot.network.facebook["robot"].group)
+	{
+	    function Get() 				{ call.Facebook1.GetGroups("me"); };
+	};
+	
+	do(robot.network.facebook["robot"].fri_end)
+	{
+	    function Get() 				{ call.Facebook1.GetFriends("me"); };
+	};
+	
+	do(robot.network.facebook["robot"].event)
+	{
+	    function Get() 				{ call.Facebook1.GetEvents("me"); };
+	};
+	
+	do(robot.network.facebook["robot"].like)
+	{
+	    function Get(object_id) 			{ call.Facebook1.GetLikes(object_id); };
+	    function Put(object_id) 			{ call.Facebook1.PutLike(object_id); };
+	};
+	
+	do(robot.network.facebook["robot"].comment)
+	{
+	    function Get() 				{ call.Facebook1.GetComments(object_id); };
+	    function GetFromNotifications() 		{ call.FacebookGetCommentsFromNotifications("robot"); };
+	    function Put(object_id, message) 		{ call.Facebook1.PutComment(object_id, message); };
+	};
+	
+	echo("OK: Facebook 1 added.");
+	
+	///////////////////////////////////////////////////////////
+	// User facebook
+	
+	echo("INFO: Facebook 2 loading...");
+	
+	var Global.Facebook2=UFacebook.new(_Facebook_Locale);
+	Global.Facebook2.Login(NGetLoginPassword(17),NGetLoginPassword(18),false);
+	Global.Facebook2.addProto(Interface); 
+	
+	robot.network.facebook["user"].addComponent("user");
+	Facebook2.getSlot("userID").copy(robot.network.facebook["user"].user,"ID");
+	Facebook2.getSlot("userName").copy(robot.network.facebook["user"].user,"name");
+	Facebook2.getSlot("userFirstName").copy(robot.network.facebook["user"].user,"firstName");
+	Facebook2.getSlot("userLastName").copy(robot.network.facebook["user"].user,"lastName");
+	Facebook2.getSlot("userGender").copy(robot.network.facebook["user"].user,"gender");
+	Facebook2.getSlot("userBirthday").copy(robot.network.facebook["user"].user,"birthday");
+	Facebook2.getSlot("userLocation").copy(robot.network.facebook["user"].user,"location");
+	Facebook2.getSlot("userEmail").copy(robot.network.facebook["user"].user,"email");
+	Facebook2.getSlot("userLikeID").copy(robot.network.facebook["user"].user,"likeID");
+	Facebook2.getSlot("userLikeName").copy(robot.network.facebook["user"].user,"likeName");
+	Facebook2.getSlot("userLikeCategory").copy(robot.network.facebook["user"].user,"likeCategory");
+	
+	robot.network.facebook["user"].addComponent("post");
+	Facebook2.getSlot("postID").copy(robot.network.facebook["user"].post,"ID");
+	Facebook2.getSlot("postFromID").copy(robot.network.facebook["user"].post,"fromID");
+	Facebook2.getSlot("postFromName").copy(robot.network.facebook["user"].post,"fromName");
+	Facebook2.getSlot("postMessage").copy(robot.network.facebook["user"].post,"message");
+	Facebook2.getSlot("postType").copy(robot.network.facebook["user"].post,"type");
+	Facebook2.getSlot("postStatusType").copy(robot.network.facebook["user"].post,"statusType");
+	Facebook2.getSlot("postStory").copy(robot.network.facebook["user"].post,"story");
+	Facebook2.getSlot("postObjectID").copy(robot.network.facebook["user"].post,"objectID");
+	Facebook2.getSlot("postDescription").copy(robot.network.facebook["user"].post,"description");
+	Facebook2.getSlot("postCaption").copy(robot.network.facebook["user"].post,"caption");
+	Facebook2.getSlot("postUpdatedTime").copy(robot.network.facebook["user"].post,"updatedTime");
+	
+	robot.network.facebook["user"].addComponent("status");
+	Facebook2.getSlot("statusID").copy(robot.network.facebook["user"].status,"ID");
+	Facebook2.getSlot("statusFromID").copy(robot.network.facebook["user"].status,"fromID");
+	Facebook2.getSlot("statusFromName").copy(robot.network.facebook["user"].status,"fromName");
+	Facebook2.getSlot("statusMessage").copy(robot.network.facebook["user"].status,"message");
+	Facebook2.getSlot("statusUpdatedTime").copy(robot.network.facebook["user"].status,"updatedTime");
+	
+	robot.network.facebook["user"].addComponent("album");
+	Facebook2.getSlot("albumID").copy(robot.network.facebook["user"].album,"ID");
+	Facebook2.getSlot("albumName").copy(robot.network.facebook["user"].album,"name");
+	Facebook2.getSlot("albumCount").copy(robot.network.facebook["user"].album,"count");
+	Facebook2.getSlot("albumType").copy(robot.network.facebook["user"].album,"type");
+	Facebook2.getSlot("albumCanUpload").copy(robot.network.facebook["user"].album,"canUpload");
+	
+	robot.network.facebook["user"].addComponent("photo");
+	Facebook2.getSlot("photoID").copy(robot.network.facebook["user"].photo,"ID");
+	Facebook2.getSlot("photoName").copy(robot.network.facebook["user"].photo,"name");
+	Facebook2.getSlot("photoSource").copy(robot.network.facebook["user"].photo,"source");
+	Facebook2.getSlot("photoUpdatedTime").copy(robot.network.facebook["user"].photo,"updatedTime");
+	
+	robot.network.facebook["user"].addComponent("notification");
+	Facebook2.getSlot("notifID").copy(robot.network.facebook["user"].notification,"ID");
+	Facebook2.getSlot("notifFromID").copy(robot.network.facebook["user"].notification,"fromID");
+	Facebook2.getSlot("notifFromName").copy(robot.network.facebook["user"].notification,"fromName");
+	Facebook2.getSlot("notifMessage").copy(robot.network.facebook["user"].notification,"message");
+	Facebook2.getSlot("notifTitle").copy(robot.network.facebook["user"].notification,"title");
+	Facebook2.getSlot("notifType").copy(robot.network.facebook["user"].notification,"type");
+	Facebook2.getSlot("notifObjectID").copy(robot.network.facebook["user"].notification,"objectID");
+	Facebook2.getSlot("notifUpdatedTime").copy(robot.network.facebook["user"].notification,"updatedTime");
+	
+	robot.network.facebook["user"].addComponent("message");
+	Facebook2.getSlot("messageConversationID").copy(robot.network.facebook["user"].message,"conversationID");
+	Facebook2.getSlot("messageFromID").copy(robot.network.facebook["user"].message,"fromID");
+	Facebook2.getSlot("messageFromName").copy(robot.network.facebook["user"].message,"fromName");
+	Facebook2.getSlot("messageMessage").copy(robot.network.facebook["user"].message,"message");
+	Facebook2.getSlot("messageCreatedTime").copy(robot.network.facebook["user"].message,"createdTime");
+
+	robot.network.facebook["user"].addComponent("group");
+	Facebook2.getSlot("groupID").copy(robot.network.facebook["user"].group,"ID");
+	Facebook2.getSlot("groupName").copy(robot.network.facebook["user"].group,"name");
+	
+	robot.network.facebook["user"].addComponent("fri_end");
+	Facebook2.getSlot("friendID").copy(robot.network.facebook["user"].fri_end,"ID");
+	Facebook2.getSlot("friendName").copy(robot.network.facebook["user"].fri_end,"name");
+	
+	robot.network.facebook["user"].addComponent("event");
+	Facebook2.getSlot("eventID").copy(robot.network.facebook["user"].event,"ID");
+	Facebook2.getSlot("eventName").copy(robot.network.facebook["user"].event,"name");
+	Facebook2.getSlot("eventLocation").copy(robot.network.facebook["user"].event,"location");
+	Facebook2.getSlot("eventStartTime").copy(robot.network.facebook["user"].event,"startTime");
+	Facebook2.getSlot("eventEndTime").copy(robot.network.facebook["user"].event,"endTime");
+	Facebook2.getSlot("eventDescription").copy(robot.network.facebook["user"].event,"description");
+	
+	robot.network.facebook["user"].addComponent("like");
+	Facebook2.getSlot("likeFromID").copy(robot.network.facebook["user"].like,"fromID");
+	Facebook2.getSlot("likeFromName").copy(robot.network.facebook["user"].like,"fromName");
+	
+	robot.network.facebook["user"].addComponent("comment");
+	Facebook2.getSlot("commentFromID").copy(robot.network.facebook["user"].comment,"fromID");
+	Facebook2.getSlot("commentFromName").copy(robot.network.facebook["user"].comment,"fromName");
+	Facebook2.getSlot("commentMessage").copy(robot.network.facebook["user"].comment,"message");
+	
+	do(robot.network.facebook["user"])
+	{
+	    function Login(user, password) 		{ call.Facebook2.Login(user, password, false); };
+	    function DownloadContent(link, path) 	{ call.Facebook2.DownloadContent(link, path); };
+	};
+	
+	do(robot.network.facebook["user"].user)
+	{
+	    function Get() 				{ call.Facebook2.GetUser("me"); };
+	};
+	
+	do(robot.network.facebook["user"].post)
+	{
+	    function GetPosts() 			{ call.Facebook2.GetPosts("me", -1, "posts"); };
+	    function PutPost(message) 			{ call.Facebook1.PutPost("me",message); };
+	    function GetFeed() 				{ call.Facebook2.GetPosts("me", -1, "feed"); };
+	    function GetHome() 				{ call.Facebook2.GetPosts("me", -1, "home"); };
+	};
+	
+	do(robot.network.facebook["user"].status)
+	{
+	    function Get() 				{ call.Facebook2.GetStatuses("me",-1); };
+	};
+	
+	do(robot.network.facebook["user"].album)
+	{
+	    function Get() 				{ call.Facebook2.GetAlbums("me"); };
+	};
+	
+	do(robot.network.facebook["user"].photo)
+	{
+	    function Get(album_id) 			{ call.Facebook2.GetPhotos(album_id); };
+	    function Put(album_id, name, source) 	{ call.Facebook2.PutPhoto(album_id, name, source); };
+	    function PostOnTimeline(message,photo) 	{ call.FacebookPostPhoto("user",message,photo); };
+	};
+	
+	do(robot.network.facebook["user"].notification)
+	{
+	    function Get() 				{ call.Facebook2.GetNotifications("me"); };
+	    function Clear() 				{ call.Facebook2.ClearNotifications("me"); };
+	};
+	
+	do(robot.network.facebook["user"].message)
+	{
+	    function GetUnread() 			{ call.Facebook2.GetMessages("me","unread"); };
+	    function GetUnseen() 			{ call.Facebook2.GetMessages("me","unseen"); };
+	};
+	
+	do(robot.network.facebook["user"].group)
+	{
+	    function Get() 				{ call.Facebook2.GetGroups("me"); };
+	};
+	
+	do(robot.network.facebook["user"].fri_end)
+	{
+	    function Get() 				{ call.Facebook2.GetFriends("me"); };
+	};
+	
+	do(robot.network.facebook["user"].event)
+	{
+	    function Get() 				{ call.Facebook2.GetEvents("me"); };
+	};
+	
+	do(robot.network.facebook["user"].like)
+	{
+	    function Get(object_id) 			{ call.Facebook2.GetLikes(object_id); };
+	    function Put(object_id) 			{ call.Facebook2.PutLike(object_id); };
+	};
+	
+	do(robot.network.facebook["user"].comment)
+	{
+	    function Get(object_id) 			{ call.Facebook2.GetComments(object_id); };
+	    function GetFromNotifications() 		{ call.FacebookGetCommentsFromNotifications("user"); };
+	    function Put(object_id, message) 		{ call.Facebook2.PutComment(object_id, message); };
+	};
+	
+	
+	echo("OK: Facebook 2 added.");
+	
+      };
+      
+
+    ///////////////////////////////////////////
+    // U G C A L E N D A R (Contacts)
+    //
+      if (_En_UGCalendar) {
+	echo("INFO: Google Calendar 1 loading...");
+	if (!hasSlot(_UObjN_UGCalendar)) loadModule(_uObjectsDir+_UObjN_UGCalendar);
+	
+	if (!hasSlot("_se")) var Global._se;
+	_se=robot.network.addComponent(Localizer.new("gcalendar"));
+	
+	
+	///////////////////////////////////////////////////////////
+	// User Google Calendar
+	
+	var Global.GCalendar1=UGCalendar.new();
+	detach({  
+	  Global.GCalendar1.Login(NGetLoginPassword(22),NGetLoginPassword(23));
+	  }),
+	
+	_se=robot.network.gcalendar["user"].addComponent("calendar");	
+	_se=robot.network.gcalendar["user"].addComponent("event");	
+	
+	GCalendar1.getSlot("calendarID").copy(robot.network.gcalendar["user"].calendar,"ID");
+	GCalendar1.getSlot("calendarSummary").copy(robot.network.gcalendar["user"].calendar,"summary");
+	GCalendar1.getSlot("calendarDescription").copy(robot.network.gcalendar["user"].calendar,"description");
+	GCalendar1.getSlot("calendarLocation").copy(robot.network.gcalendar["user"].calendar,"location");
+	GCalendar1.getSlot("calendarTimeZone").copy(robot.network.gcalendar["user"].calendar,"timeZone");
+	
+	GCalendar1.getSlot("eventID").copy(robot.network.gcalendar["user"].event,"ID");
+	GCalendar1.getSlot("eventSummary").copy(robot.network.gcalendar["user"].event,"summary");
+	GCalendar1.getSlot("eventDescription").copy(robot.network.gcalendar["user"].event,"description");
+	GCalendar1.getSlot("eventLocation").copy(robot.network.gcalendar["user"].event,"location");
+	GCalendar1.getSlot("eventStartTime").copy(robot.network.gcalendar["user"].event,"startTime");
+	GCalendar1.getSlot("eventEndTime").copy(robot.network.gcalendar["user"].event,"endTime");
+
+	do(robot.network.gcalendar["user"].calendar)
+	{
+	  function Get() 					{ call.GCalendar1.GetCalendars() ; };
+	};
+
+	do(robot.network.gcalendar["user"].event)
+	{
+	  function Get(calendar_ID,from_date,to_date) 		{ call.GCalendar1.GetEvents(calendar_ID,from_date,to_date);};
+	  function Set(calendar_ID, summary, location, start_time, end_time, email, popup, sms) 
+								{ call.GCalendar1.SetEvent(calendar_ID,summary,location,start_time,end_time, email, popup, sms);};
+	  //
+	  function GetFromCalendarName(calendar_name,start_time, end_time) 	
+								{ call.GCalendarGetEvents("user",calendar_name,start_time, end_time); };
+	  function GetFromToday(calendar_name) 			{ call.GCalendarGetEventsFromToday("user",calendar_name); };
+	  function GetFromNow(calendar_name) 			{ call.GCalendarGetEventsFromNow("user",calendar_name); };
+	  function GetForToday(calendar_name) 			{ call.GCalendarGetEventsForToday("user",calendar_name); };
+	  function GetForTodayFromNow(calendar_name) 		{ call.GCalendarGetEventsForTodayFromNow("user",calendar_name); };
+	};
+	
+	
+	//////////////////////
+	// Contacts
+		
+	if (!hasSlot("_se")) var Global._se;
+	_se=robot.network.addComponent(Localizer.new("gcontact"));
+	_se=robot.network.gcontact["user"].addComponent("group");
+	_se=robot.network.gcontact["user"].addComponent("contact");
+	
+	GCalendar1.getSlot("contactGroupID").copy(robot.network.gcontact["user"].group,"ID");
+	GCalendar1.getSlot("contactGroupTitle").copy(robot.network.gcontact["user"].group,"title");
+	
+	GCalendar1.getSlot("contactID").copy(robot.network.gcontact["user"].contact,"ID");
+	GCalendar1.getSlot("contactTitle").copy(robot.network.gcontact["user"].contact,"title");
+	GCalendar1.getSlot("contactEmail").copy(robot.network.gcontact["user"].contact,"email");
+	GCalendar1.getSlot("contactPhone").copy(robot.network.gcontact["user"].contact,"phone");
+	
+	do(robot.network.gcontact["user"].group)
+	{
+	  function Get()  			{ call.GCalendar1.GetContactGroups()  ; };
+	};
+	
+	do(robot.network.gcontact["user"].contact)
+	{
+	  function Get(group_ID) 		{ call.GCalendar1.GetContacts(group_ID);};
+	  function GetFromGroupName(group_name) { call.GCalendarGetContactsFromGroupName("user",group_name);};
+	};
+	echo("OK: Google Calendar 1 added.");
+	
+	
+      };
+		
+      do(robot.network)
+      {
+	function GetDayOfTheWeek(date_in) 		{ call.NetworkGetDayOfTheWeek(date_in); };
+      };
+	
+      
+      echo("OK: Network loaded.");
+      echo(" ");
+      return true;
+    }catch(var e){
+      echo("ERROR: %s" % e.message);
+      return false;
+    };
+  }|{};
+  
+  ///////////////////////////////////////////
+  // W E A T H E R
+  //
+  
+  function NetworkGetWeather(){
+    try{
+      var ret = robot.network.browser.Go("http://weather.yahooapis.com/forecastrss?w="+_Weather_location+"&u="+_Weather_scale);
+      if (!ret) return false;
+
+      robot.network.weather.location.city = robot.network.browser.GetAtributesByPath("/rss/channel/yweather:location")[0][1];
+      robot.network.weather.location.region = robot.network.browser.GetAtributesByPath("/rss/channel/yweather:location")[1][1];
+      robot.network.weather.location.country = robot.network.browser.GetAtributesByPath("/rss/channel/yweather:location")[2][1];
+	  
+      robot.network.weather.units.temperature = robot.network.browser.GetAtributesByPath("/rss/channel/yweather:units")[0][1];
+      robot.network.weather.units.distance = robot.network.browser.GetAtributesByPath("/rss/channel/yweather:units")[1][1];
+      robot.network.weather.units.pressure = robot.network.browser.GetAtributesByPath("/rss/channel/yweather:units")[2][1];
+      robot.network.weather.units.speed = robot.network.browser.GetAtributesByPath("/rss/channel/yweather:units")[3][1];
+	  
+      robot.network.weather.wind.chill = robot.network.browser.GetAtributesByPath("/rss/channel/yweather:wind")[0][1].asFloat;
+      robot.network.weather.wind.direction = robot.network.browser.GetAtributesByPath("/rss/channel/yweather:wind")[1][1].asFloat;
+      robot.network.weather.wind.speed = robot.network.browser.GetAtributesByPath("/rss/channel/yweather:wind")[2][1].asFloat;
+	  
+      robot.network.weather.atmosphere.humidity = robot.network.browser.GetAtributesByPath("/rss/channel/yweather:atmosphere")[0][1].asFloat;
+      robot.network.weather.atmosphere.visibility = robot.network.browser.GetAtributesByPath("/rss/channel/yweather:atmosphere")[1][1].asFloat;
+      robot.network.weather.atmosphere.pressure = robot.network.browser.GetAtributesByPath("/rss/channel/yweather:atmosphere")[2][1].asFloat;
+      var tmp_atm = robot.network.browser.GetAtributesByPath("/rss/channel/yweather:atmosphere")[3][1].asFloat;
+      if (tmp_atm == 0) robot.network.weather.atmosphere.rising = "steady";
+      if (tmp_atm == 1) robot.network.weather.atmosphere.rising = "rising";
+      if (tmp_atm == 2) robot.network.weather.atmosphere.rising = "falling";
+	  
+      robot.network.weather.astronomy.sunrise = robot.network.browser.GetAtributesByPath("/rss/channel/yweather:astronomy")[0][1];
+      robot.network.weather.astronomy.sunset = robot.network.browser.GetAtributesByPath("/rss/channel/yweather:astronomy")[1][1];
+      
+      robot.network.weather.condition.text = robot.network.browser.GetAtributesByPath("/rss/channel/item/yweather:condition")[0][1];
+      robot.network.weather.condition.code = robot.network.browser.GetAtributesByPath("/rss/channel/item/yweather:condition")[1][1].asFloat;
+      robot.network.weather.condition.temperature = robot.network.browser.GetAtributesByPath("/rss/channel/item/yweather:condition")[2][1].asFloat;
+	  
+      var tmp_for = robot.network.browser.GetAtributesByPath("/rss/channel/item/yweather:forecast[0]");
+      robot.network.weather.forecast.day1 = [tmp_for[0][1],tmp_for[1][1],tmp_for[2][1].asFloat,tmp_for[3][1].asFloat,tmp_for[4][1],tmp_for[5][1].asFloat];
+      tmp_for = robot.network.browser.GetAtributesByPath("/rss/channel/item/yweather:forecast[1]");
+      robot.network.weather.forecast.day2 = [tmp_for[0][1],tmp_for[1][1],tmp_for[2][1].asFloat,tmp_for[3][1].asFloat,tmp_for[4][1],tmp_for[5][1].asFloat];
+      tmp_for = robot.network.browser.GetAtributesByPath("/rss/channel/item/yweather:forecast[2]");
+      robot.network.weather.forecast.day3 = [tmp_for[0][1],tmp_for[1][1],tmp_for[2][1].asFloat,tmp_for[3][1].asFloat,tmp_for[4][1],tmp_for[5][1].asFloat];
+      tmp_for = robot.network.browser.GetAtributesByPath("/rss/channel/item/yweather:forecast[3]");
+      robot.network.weather.forecast.day4 = [tmp_for[0][1],tmp_for[1][1],tmp_for[2][1].asFloat,tmp_for[3][1].asFloat,tmp_for[4][1],tmp_for[5][1].asFloat];
+      tmp_for = robot.network.browser.GetAtributesByPath("/rss/channel/item/yweather:forecast[4]");
+      robot.network.weather.forecast.day5 = [tmp_for[0][1],tmp_for[1][1],tmp_for[2][1].asFloat,tmp_for[3][1].asFloat,tmp_for[4][1],tmp_for[5][1].asFloat];
+	  
+      return true;
+    }catch(var e){
+      echo("ERROR: %s" % e.message);
+      return false;
+    };
+  }|{}; 
+
+  ///////////////////////////////////////////
+  // N E W S
+  //  
+  
+  function NetworkGetNews(address){
+    try{
+      var ret = robot.network.browser.Go(address);
+      if (!ret) return false;
+
+      var tmp_count = robot.network.browser.FindPosition("item",["-1"]).size;
+      robot.network.news.count = tmp_count;
+      robot.network.news.date = [];
+      robot.network.news.title = [];
+      robot.network.news.description = [];
+      robot.network.news.category = [];
+      
+      for (var i=0;i<tmp_count;i++){
+	if (robot.network.browser.GetTextByPath("/rss/channel/item["+i+"]/description").size>0){
+	  robot.network.news.date << robot.network.browser.GetTextByPath("/rss/channel/item["+i+"]/pubDate");
+	  robot.network.news.title << robot.network.browser.GetTextByPath("/rss/channel/item["+i+"]/title");
+	  
+	  if (_En_UTextToolNetwork)
+	    robot.network.news.description << TextTool2.RemoveHTML(robot.network.browser.GetTextByPath("/rss/channel/item["+i+"]/description"))
+	  else
+	    robot.network.news.description << robot.network.browser.GetTextByPath("/rss/channel/item["+i+"]/description");
+	    
+	  robot.network.news.category << robot.network.browser.GetTextByPath("/rss/channel/item["+i+"]/category");
+	  
+	};
+      };
+      return true;
+    }catch(var e){
+      echo("ERROR: %s" % e.message);
+      return false;
+    };
+  }|{}; 
+
+  ///////////////////////////////////////////
+  // F A C E B O O K
+  //  
+  
+  function FacebookPostPhoto(loc,message,photo){
+    try{
+      if(loc=="robot"){
+	robot.network.facebook["robot"].album.Get();
+	for(var i = 0; i<robot.network.facebook["robot"].album.name.size; i++)
+	  if (robot.network.facebook["robot"].album.name[i]==_Facebook_Main_Album_Name)
+	    return robot.network.facebook["robot"].photo.Put(robot.network.facebook["robot"].album.ID[i],message,photo);
+      };
+  
+      if(loc=="user"){
+	robot.network.facebook["user"].album.Get();
+	for(var i = 0; i<robot.network.facebook["user"].album.name.size; i++)
+	  if (robot.network.facebook["user"].album.name[i]==_Facebook_Main_Album_Name)
+	    return robot.network.facebook["user"].photo.Put(robot.network.facebook["user"].album.ID[i],message,photo);
+      };
+      
+      return false;
+    }catch(var e){
+      echo("ERROR: %s" % e.message);
+      return false;
+    };
+  }|{}; 
+  
+  
+  
+    
+  function FacebookGetCommentsFromNotifications(loc){
+    var ret = [];
+    try{
+      if(loc=="robot"){
+	for (var ID:robot.network.facebook["robot"].notification.objectID) {
+	  if (ID!="") {
+	    if (robot.network.facebook["robot"].comment.Get(ID)) ret << robot.network.facebook["robot"].comment.message;
+	  }
+	};
+      };
+      if(loc=="user"){
+	for (var ID:robot.network.facebook["user"].notification.objectID) {
+	  if (ID!="") {
+	    if (robot.network.facebook["user"].comment.Get(ID)) ret << robot.network.facebook["user"].comment.message;
+	  };
+	};
+      };
+  
+      
+      return ret;
+    }catch(var e){
+      echo("ERROR: %s" % e.message);
+      return ret;
+    };
+  }|{}; 
+
+  ///////////////////////////////////////////
+  // G O O G L E    C A L E N D A R 
+  //  
+  
+  function GCalendarGetEvents(loc,calendar_name, start_time, end_time){
+    try{
+      if(loc=="robot"){
+      };
+  
+      if(loc=="user"){
+	robot.network.gcalendar["user"].calendar.Get();
+	for(var i = 0; i < robot.network.gcalendar["user"].calendar.ID.size; i++)
+	  if (robot.network.gcalendar["user"].calendar.summary[i]==calendar_name)
+	    return robot.network.gcalendar["user"].event.Get(robot.network.gcalendar["user"].calendar.ID[i],start_time, end_time);
+      };
+      
+      return false;
+    }catch(var e){
+      echo("ERROR: %s" % e.message);
+      return false;
+    };
+  }|{}; 
+    
+  
+  
+  function GCalendarGetEventsFromToday(loc,calendar_name){
+    try{
+      if(loc=="robot"){
+      };
+  
+      if(loc=="user"){
+	robot.network.gcalendar["user"].calendar.GetC();
+	for(var i = 0; i<robot.network.gcalendar["user"].calendar.ID.size; i++)
+	  if (robot.network.gcalendar["user"].calendar.summary[i]==calendar_name)
+	    return robot.network.gcalendar["user"].event.Get(robot.network.gcalendar["user"].calendar.ID[i],Date.now.asString.split(".")[0].split(" ")[0],"");
+      };
+      
+      return false;
+    }catch(var e){
+      echo("ERROR: %s" % e.message);
+      return false;
+    };
+  }|{}; 
+  
+  
+  function GCalendarGetEventsFromNow(loc,calendar_name){
+    try{
+      if(loc=="robot"){
+      };
+  
+      if(loc=="user"){
+	robot.network.gcalendar["user"].calendar.Get();
+	for(var i = 0; i<robot.network.gcalendar["user"].calendar.ID.size; i++)
+	  if (robot.network.gcalendar["user"].calendar.summary[i]==calendar_name)
+	    return robot.network.gcalendar["user"].event.Get(robot.network.gcalendar["user"].calendar.ID[i],Date.now.asString.split(".")[0],"");
+      };
+      
+      return false;
+    }catch(var e){
+      echo("ERROR: %s" % e.message);
+      return false;
+    };
+  }|{}; 
+  
+  
+  
+  
+  function GCalendarGetEventsForToday(loc,calendar_name){
+    try{
+      if(loc=="robot"){
+      };
+  
+      if(loc=="user"){
+	robot.network.gcalendar["user"].calendar.Get();
+	for(var i = 0; i < robot.network.gcalendar["user"].calendar.ID.size; i++)
+	  if (robot.network.gcalendar["user"].calendar.summary[i]==calendar_name)
+	    return robot.network.gcalendar["user"].event.Get(robot.network.gcalendar["user"].calendar.ID[i],Date.now.asString.split(".")[0].split(" ")[0]+" 00:00:00",Date.now.asString.split(".")[0].split(" ")[0]+" 23:59:59");
+      };
+      
+      return false;
+    }catch(var e){
+      echo("ERROR: %s" % e.message);
+      return false;
+    };
+  }|{}; 
+  
+  
+  function GCalendarGetEventsForTodayFromNow(loc,calendar_name){
+    try{
+      if(loc=="robot"){
+      };
+  
+      if(loc=="user"){
+	robot.network.gcalendar["user"].calendar.Get();
+	for(var i = 0; i < robot.network.gcalendar["user"].calendar.ID.size; i++)
+	  if (robot.network.gcalendar["user"].calendar.summary[i]==calendar_name)
+	    return robot.network.gcalendar["user"].event.Get(robot.network.gcalendar["user"].calendar.ID[i],Date.now.asString.split(".")[0],Date.now.asString.split(".")[0].split(" ")[0]+" 23:59:59");
+      };
+      
+      return false;
+    }catch(var e){
+      echo("ERROR: %s" % e.message);
+      return false;
+    };
+  }|{}; 
+
+  
+  /////// 
+  // CONTACTS
+
+  
+  function GCalendarGetContactsFromGroupName(loc,group_name) {
+    try{
+      if(loc=="robot"){
+      };
+  
+      if(loc=="user"){
+	robot.network.gcontact["user"].group.Get();
+	
+	for(var i = 0; i < robot.network.gcontact["user"].group.ID.size; i++)
+	  if (robot.network.gcontact["user"].group.title[i]==group_name)
+	    return robot.network.gcontact["user"].contact.Get(robot.network.gcontact["user"].group.ID[i]);
+      };
+      
+      return false;
+    }catch(var e){
+      echo("ERROR: %s" % e.message);
+      return false;
+    };
+  }|{}; 
+  
+  
+  ///////////////////////////////////////////
+  // O T H E R
+  //
+ function NGetLoginPassword(line){
+    try{
+      var content = TextTool2.ReadFromFile(_loginPasswordDir);
+      return content[line].replace("\r","");
+    }catch(var e){
+      echo("ERROR: %s" % e.message);
+      return false;
+    };
+  }|{}; 
+
+ function NLoadText(file){
+    try{
+      var tmp = TextTool2.ReadFromFile(_uFilesDir+"mailTemplates/"+file);
+      var all = "";
+      for (var i=0;i<tmp.size();i++) all = all + tmp[i];
+      return all;
+    }catch(var e){
+      echo("ERROR: %s" % e.message);
+      return false;
+    };
+  }|{}; 
+  
+  function NetworkGetDayOfTheWeek(date_in){
+
+    return TextTool2.DayOfTheWeek(date_in);
+
+  }|{}; 
+  
+};
+
+
+

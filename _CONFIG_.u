@@ -1,0 +1,339 @@
+/*
+* CONFIG file
+*
+*  Author: Jan Kedzierski
+*  Date: 06.12.2015
+*  Ver: 1.0 (Furby special edition)
+*
+  "I can assemble anything that enters my head, but on the other hand not everything enters it."
+								Microx "Robots' Fables" by S. Lem
+*
+*/
+
+do (Global) {
+
+  ////////////////////////////////////////////////////////
+  //
+  //	R O B O T   S T R U C T U R E
+  //
+  ////////////////////////////////////////////////////////
+  // Robot structure.
+  // Possible elements: "Audio","Video","ML","Network",
+  //                    "Appraisal","Emotions","Remote"
+  //			"Furby"
+  //
+  var _RobotStructure =["Furby"];
+  // 
+  ////////////////////////////////////////////////////////
+  //
+  //	A U D I O   C O N F I G U R A T I O N
+  //
+  ////////////////////////////////////////////////////////
+  // ENABLE MODULES
+  var _En_UPlayer	 	= false;	// simple wav file player
+  var _En_UPlayerNext	 	= true;		// advanced audio player/recorder
+  var _En_USpeech	 	= true;		// speech synthesis (MSP or SAPI)
+  var _En_URecog	 	= false;	// speech recognition (MSP or SAPI)
+  var _En_UKinectAudio		= false;	// enable kinect device auditory features (sound recording, voice detection, speech recognition)
+  var _En_UTextToolAudio	= false; 	// enable text tool module, it helps to get rid of text encoding mess for ex. Text-to-Speech input
+  var _En_UMP3			= false; 	// enable mp3 converter
+  //////////////////////////////////////////////////////
+  // SPEECH SYNTHESIS SETTINGS
+  // Choose speech synthesies parameters
+  var _Speech_module		= "USpeech_SAPI";// Possible speech synthesis modules:		"USpeech_MSP", "USpeech_SAPI"
+  var _Speech_volume		= 35;		// Set the speech volume
+  var _Speech_param		= [0];   
+						// For now [EN, PL, PT]
+						// Choose proper voises from all available voices 
+						// (use robot.audio.speech.availableVoices;)
+   //
+   ////////////////////////////////////////////////////
+   // SPEECH RECOGNITION SETTINGS
+   // choose sound recorder module
+  var _Recog_module		= "URecog_SAPI";// Possible speech recognition modules:		"UKinect", "URecog_MSP", "URecog_SAPI"
+  var _Recog_param		= 0;		// Set recognizer number from all available recognizers (languages)
+						// (use robot.audio.recognition.availableRecognizers; 
+  var _Recog_input		= 0;		// Set number of record input, 
+						// (use robot.audio.recognition.availableInputs; 
+  //						// !! ONLY WITH "URecog_MSP", "URecog_SAPI" !!
+  //
+   //
+   ////////////////////////////////////////////////////
+   // AUDIO PLAYER/RECORDER SETTINGS
+   // choose sound recorder module
+  var _Record_module		= "UPlayerNext";// Possible record modules:	"UKinect", "UPlayerNext"
+  // Choose sound player module
+  var _Player_module		= "UPlayerNext";// Possible player modules:	"UPlayer", "UPlayerNext"
+  // Set all audio inputs/outputs levels - available with UPlayerNext module only
+  var _PlayerNext_MasterVolume		= 100;	// Master playback volume in %
+  var _PlayerNext_PlayerVolume		= 60;	// Universal player volume in %
+  var _PlayerNext_MusicPlayerVolume	= 15;	// Music player volume in %
+  var _PlayerNext_MicRecordLevel	= 30;	// Microphone input level in %
+  var _PlayerNext_KinectRecordLevel	= 80;	// Kinect mic array input level in%
+  //
+  ////////////////////////////////////////////////////////
+  //
+  //	V I D E O   C O N F I G U R A T I O N
+  //
+  ////////////////////////////////////////////////////////
+  // ENABLE MODULES
+  var _En_UCamera		= true;		// camera device (set flip image below if necessary) 
+  var _En_UKinectOpenNI		= false;	// kinect device and all provided features: depth, detect person... for OpenNI 1.x
+  var _En_UKinectOpenNI2	= false;	// kinect device and all provided features: depth, detect person... for OpenNI 2.x
+  var _En_UKinectVideo		= false; 	// kinect device and all provided features: skeleton, face, audio, speech...
+  var _En_UObjectDetector 	= false;	// object (face) detector, set image source below
+  var _En_UColorDetector 	= false;	// color detector, set image source below
+  var _En_UMoveDetector 	= false;	// move detector, set image source below
+  var _En_UFacet		= false;	// face features detector, set image source below
+  var _En_UImageTool		= false;	// image tools, for internal use (robot competition, functions, etc.)
+  var _En_UImageDisplay		= true;		// image display module to show image in the simple window
+  //
+  ////////////////////////////////////////////////////////
+  // CAMERA SETTINGS
+  var _Camera_flip			= 0; 	  // flip device (image)
+						  // Possible options: 0 - 0 deg, 1 - 90 deg, 2 - 180 deg, 3 - 270 deg
+  var _Camera_index			= 1; 	  // set number of choosen camera (0 - integrated if you have one, 1 - robot one,...)
+  //
+  ////////////////////////////////////////////////////////
+  // KINECT SETTINGS
+  var _Kinect_Offset			= [0,-0.25,0,0,20];
+							// [x,y,z,yaw,pitch] - kinect offest to the eyes in [m,deg]
+							// pitch offset moves Kinect mechanism
+  var _Kinect_FaceTrackingEnable	= false;	// true or false, due to significant CPU consumption, anytime you can pause/resume...
+  var _Kinect_InteractionEnable		= false;	// true or false
+  var _Kinect_DepthNearMode		= true;		// false - OFF, true - ON (avilable with Kinect for Windows only)
+  var _Kinect_SkeletonTrackingMode 	= 0; 		// Possible options: 	0 - full body, 1 - upper body (seat mode),
+  var _Kinect_SkeletonChooserMode	= 5;		// Possible options: 
+							// 0 - default (new skeleton gives new tracking candidate),
+							// 1 - track the closest skeleton,
+							// 2 - track two closest skeletons,
+							// 3 - track the one skeleton and keep it,
+							// 4 - track two skeletons and keep them,
+							// 5 - track the most active skeleton,
+							// 6 - track two most active skeletons,
+  //
+  ////////////////////////////////////////////////////////
+  // DETECTORS MODULES
+  // choose sources of detectors and their parameters
+  var _ObjectDetector_source	= "camera";			// Possible source:	"kinect" or "camera"
+  var _ObjectDetector_multi	= true;				// Possible mode
+								// false - detect only one face (nearest)
+								// true - detect many faces
+  var _Color1Detector_color	= [0,10,160,255,140,255];	// Set color value [fromR,fromG,fromB,toR,toG,toB]
+  var _Color1Detector_source	= "camera";			// Possible source:	"kinect" or "camera"
+  var _Color2Detector_color	= [75,132,160,255,80,255];	// Set color value [fromR,fromG,fromB,toR,toG,toB]
+  var _Color2Detector_source	= "camera";			// Possible source: 	"kinect" or "camera"
+  var _Color3Detector_color	= [150,170,160,255,140,255];	// Set color value [fromR,fromG,fromB,toR,toG,toB]
+  var _Color3Detector_source	= "camera";			// Possible source: 	"kinect" or "camera"
+  var _Color4Detector_color	= [30,43,240,255,180,255];	// Set color value [fromR,fromG,fromB,toR,toG,toB]
+  var _Color4Detector_source	= "camera";			// Possible source: 	"kinect" or "camera"
+  var _MoveDetector_source	= "camera";			// Possible source:	"kinect" or "camera"
+  var _MoveDetector_frameBuffer	= 4;				// Number of cyclic frame buffer used for motion detection (depend on FPS)
+  var _MoveDetector_duration	= 0.4;				// Time window for analysis (in seconds)
+  var _MoveDetector_smooth	= 21;				// Region smooth filter parameter (default 31) 
+								// ATTENTION! it must be odd value. 
+								// Set smaller value for small image (higher scale)
+  var _FacetDetector_source	= "camera";			// Possible source "kinect" or "camera"
+  //
+  ////////////////////////////////////////////////////////
+  // IMAGE DISPLAY SETTINGS
+  // set a vector of image window names
+  // leave empty [] if you don't want to use any
+  // currently, the maximum number of windows is 4
+  var _ImageDisplayWindows	= ["Window 1","Window 2"];
+ 
+  //
+  ////////////////////////////////////////////////////////
+  //
+  //	F U R B Y   C O N F I G U R A T I O N
+  //
+  //////////////////////////////////////////////////////// 
+  // ENABLE MODULES
+  
+  var _En_DynamixelFurby 		= true;			// enable Dynamixel servos module for Furby
+  var _Dyn_FindServosFurby	  	= false;  		// Possible modes: true or false  
+								// true - check all servos aviability
+								// false - add servos without aviability checking (faster)
+  // Set port name
+  var _com_furby 			= "COM3";		// Furby serial port name
+
+  //
+  // Components: [q1 (body position), q2 (display), q3 (tail & mouth), s1 (top), s2 (left), s3 (back), s4 (right), s5 (bottom)]
+  //
+  // Furby components IDs (motors and touch sensors) 
+  var _Furby_IDs 			= [1,2,3,4,5,6,7,8];
+  //
+  // Drivers ratios for translating Dynamixel units to real
+  var _Furby_DynamixelRatio 		= 1;
+  //
+  //
+  ////////////////////////////////////////////////////////
+  //
+  // 	(ML) M A C H I N E   L E A R N I N G   
+  //
+  ////////////////////////////////////////////////////////
+  // ENABLE MODULES
+  var _En_UKNearestML 		= true; 	// enable K nearest algorithm module
+  var _En_UEigenfaces 		= true; 	// enable eigenfaces algorithm module
+  //
+  ////////////////////////////////////////////////////////
+  //
+  // 	 N E T W O R K     
+  //
+  ////////////////////////////////////////////////////////
+  // ENABLE MODULES
+  var _En_UBrowser 		= true; 	// enable http browser
+  var _En_UMail 		= true; 	// enable mail module
+  var _En_UFacebook 		= false; 	// enable facebook module
+  var _En_UGCalendar		= false; 	// enable Google Calendar module
+  var _En_UTextToolNetwork	= true; 	// enable text tool module, it helps to 
+						// remove html markups or get rid of 
+						// text encoding mess
+  //
+  ////////////////////////////////////////////////////////
+  // MAIL SETTINGS
+  var _Mail_module		= "UMail_CURL";			// Set module type, possible options: "UMail_POCO", "UMail_CURL"
+  var _Mail_SmtpAddr 		= "smtp://smtp.gmail.com"; 	// SMTP address
+  var _Mail_SmtpPort		= 587;				// SMTP port
+  var _Mail_ImapAddr		= "imaps://imap.gmail.com";	// IMAP address
+  var _Mail_ImapPort		= 993;				// IMAP port
+  var _Mail_PopAddr		= "pop.gmail.com";		// POP3 address
+  var _Mail_PopPort		= 995;				// POP3 port
+  //
+  ////////////////////////////////////////////////////////
+  // FACEBOOK SETTINGS
+  var _Facebook_Locale 	   	= "en_US"; 		// set Facebook locale to receive all messages in your language
+  var _Facebook_Main_Album_Name	= "Timeline photos"; 	// set default photo album name
+  //
+  ////////////////////////////////////////////////////////
+  // GOOGLE (CALENDAR+CONTACTS) SETTINGS
+  var _GCalendar_Calendar_Name 	   = "Calendar name"; 	// set user calendar name
+  // Google Contacts
+  var _GCalendar_Contact_GroupName = "Group name"; 	// set user contact list
+  //
+  ///////////////////////////////////////////////////////
+  // WEATHER SETTINGS
+  // set location (WOEID number) for weather forecast
+  var _Weather_location		= "12591161"; //Wroclaw	// set location (WOEID number) for weather forecast
+  var _Weather_scale		= "f";			// set C/F temperature units
+  //
+  ////////////////////////////////////////////////////////
+  //
+  // 	 A P P R A I S A L    
+  //
+  ////////////////////////////////////////////////////////
+  // ENABLE MODULES
+  var _En_UWordNet 		= true; 	// enable WordNet
+  var _En_USentiWordNet 	= true; 	// enable SentiWordNet
+  var _En_UAnew 		= true; 	// enable Anew
+  // 
+  ////////////////////////////////////////////////////////
+  //
+  // 	 E M O T I O N S
+  //
+  ////////////////////////////////////////////////////////
+  // ENABLE MODULES
+  var _En_UPAD 			= false; 	// enable PAD emotion model
+  var _En_UKNearestEmot		= false; 	// enable K nearest algorithm for emotion classify
+  var _En_UWASABI		= true; 	// enable UWASABI module
+  // 
+  var _WASABI_RobotPersonality	= "EMYS";	// robot personality file name
+  //
+  ////////////////////////////////////////////////////////
+  //
+  //	R E M O T E
+  //
+  ////////////////////////////////////////////////////////
+  // ENABLE MODULES
+  var _En_UJoystick	 	= false;	// enable joystick module to remote control
+  var _En_UKeyboard	 	= false;	// enable joystick module to remote control
+  //
+  ////////////////////////////////////////////////////////
+  // JOYSTICK SETTINGS
+  var _Joystick_ActionFile 	= ""; 		// Set the file name of your joystick configuration.
+  //
+  ////////////////////////////////////////////////////////
+  // KEYBOARD SETTINGS
+  var _Keyboard_ActionFile 	= "MyKeys.u"; 	// Set the file name of your keyboard configuration.
+  //
+  ////////////////////////////////////////////////////////
+  //
+  //	 C O M P E T E N C Y  L A Y E R   F I L E S
+  //
+  ////////////////////////////////////////////////////////
+  // Start up file:
+  // load your own uFiles ["file1.u","file2.u"], set [] if not
+  //
+  var _CompetencyManagerFiles 	= [];
+  //
+  ////////////////////////////////////////////////////////
+  //
+  //	 F S M   F I L E 
+  //
+  ////////////////////////////////////////////////////////
+  // Start up file:
+  // load your own FSM "fsm.u", set "" if not
+  //
+  var _FSMFile 	= "";
+  //  
+  ////////////////////////////////////////////////////////
+  //
+  // 	P A T H S
+  //
+  ////////////////////////////////////////////////////////
+  // Set the paths to all robot urbi files 
+  var _uObjectsDir = "";				// path to UObjects place
+  var _uFilesDir = "../urbi_scripts/"; 			// path to all urbi scripts directory
+  //
+  // Passwords
+  var _loginPasswordDir	= _uFilesDir+"passwords.txt";	// path to the all login passwords
+  // 
+  ////////////////////////////////////////////////////////
+  //
+  // 	L O G G I N G
+  //
+  ////////////////////////////////////////////////////////
+  // Set the paths to all robot urbi files 
+  var _logLevel = 0;
+  var _logFileName = "My_Log.csv";
+  ////////////////////////////////////////////////////////
+  //
+  // 	M O D U L E   N A M E S - DO NOT MODIFY THIS SECTION!!!
+  // 
+  ////////////////////////////////////////////////////////
+  var _UObjN_UPlayer		= "UPlayer";
+  var _UObjN_UPlayerNext	= "UPlayerNext";
+  var _UObjN_USpeech_MSP	= "USpeech_MSP";
+  var _UObjN_USpeech_SAPI	= "USpeech_SAPI";
+  var _UObjN_URecog_MSP		= "URecog_MSP";
+  var _UObjN_URecog_SAPI	= "URecog_SAPI";
+  var _UObjN_UDynamixel		= "Dynamixel";
+  var _UObjN_UARIA		= "UAria";
+  var _UObjN_UCamera		= "UCamera";
+  var _UObjN_UObjectDetector	= "UObjectDetector";
+  var _UObjN_UColorDetection	= "UColorDetection";
+  var _UObjN_UMoveDetection	= "UMoveDetection";
+  var _UObjN_UFacebook		= "UFacebook";
+  var _UObjN_UGCalendar		= "UGCalendar";
+  var _UObjN_UFacet		= "UFacet";
+  var _UObjN_UJoystick		= "UJoystick";
+  var _UObjN_UKeyboard		= "UKeyboard";
+  var _UObjN_UKinectOpenNI	= "UKinectOpenNI";
+  var _UObjN_UKinectOpenNI2	= "UKinectOpenNI2";
+  var _UObjN_UKinect		= "UKinect";
+  var _UObjN_UImageTool		= "UImageTool";
+  var _UObjN_UImageDisplay	= "UImageDisplay";
+  var _UObjN_UKNearest		= "uknearest";
+  var _UObjN_UEigenfaces	= "UEigenfaces";
+  var _UObjN_UBrowser		= "UBrowser";
+  var _UObjN_UMail_POCO		= "UMail_POCO";
+  var _UObjN_UMail_CURL		= "UMail_CURL";
+  var _UObjN_USentiWordNet	= "USentiWordNet";
+  var _UObjN_UAnew		= "UAnew";
+  var _UObjN_UWordNet		= "UWordNet";
+  var _UObjN_UPAD		= "UPAD";
+  var _UObjN_UTextTool		= "UTextTool";
+  var _UObjN_UWASABI		= "UWASABI";
+  var _UObjN_UMP3		= "UMP3";
+  //
+};

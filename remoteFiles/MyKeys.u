@@ -1,0 +1,20 @@
+/*
+* Initialize KeyboardActions
+*
+*
+*  Authors: Jan Kedzierski, Paweł Kaczmarek
+*  Date: 07.04.2015
+*  Ver: 0.1
+*/
+
+
+//Definition of KEYS assigned to robot emotions
+if (!hasSlot("keyHappy")) var Global.keyHappy="a";	
+if (!hasSlot("keySad")) var Global.keySad="b";	
+if (!hasSlot("keyFear")) var Global.keyFear="c";	
+if (!hasSlot("keyDisgust")) var Global.keyDisgust="d";	
+if (!hasSlot("keySurprise")) var Global.keySurprise="e";	
+if (!hasSlot("keyAngry")) var Global.keyAngry="f";	
+
+//Information weather robot should speak during expressing emotions
+if (!hasSlot("keySpeaking")) var Global.keySpeaking=1;	

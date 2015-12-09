@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<grammar version="1.0" xml:lang="pl-PL" root="rootYesNoRule" tag-format="semantics/1.0-literals" xmlns="http://www.w3.org/2001/06/grammar">
+
+	<rule id="rootYesNoRule">
+		<one-of>
+			<item><ruleref uri="#Yes"/></item>
+			<item><ruleref uri="#No"/></item>
+			<item><ruleref uri="#Repeat"/></item>
+		</one-of>
+	</rule>
+
+
+    <rule id="Yes" scope="private">
+        <tag>YES</tag>
+        <one-of>
+          <item>tak</item>
+          <item></item>
+        </one-of>
+        <one-of>
+          <item></item>
+          <item>masz rację</item>
+          <item>proszę</item>
+          <item>oczywiście</item>
+          <item>jak najbardziej</item>
+          <item>jasne</item>
+          <item>pewnie</item>
+          <item>dawaj</item>
+          <item>okej</item>
+        </one-of>
+    </rule>
+
+		
+    <rule id="No" scope="private">
+        <tag>NO</tag>
+        <one-of>
+          <item>nie</item>
+          <item></item>
+          <item>niestety</item>
+        </one-of>
+        <one-of>
+          <item></item>
+          <item>masz racji</item>
+          <item>nie</item>
+          <item>napewno nie</item>
+          <item>dziękuję</item>
+          <item>daj spokój</item>
+          <item>kończ</item>
+          <item>skończ</item>
+          <item>wystarczy</item>
+        </one-of>
+    </rule>
+	
+    <rule id="Repeat" scope="private">
+        <tag>REPEAT</tag>
+        <one-of>
+          <item>jeszcze raz</item>
+          <item>jeszcze raz proszę</item>
+          <item>co powiedziałeś</item>
+          <item>o co pytasz</item>
+          <item>słucham</item>
+          <item>powtórz</item>
+          <item>powtórz proszę</item>
+        </one-of>
+    </rule>
+	
+	
+</grammar>

@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<grammar version="1.0" xml:lang="pl-PL" root="rootWaitColorRule" tag-format="semantics/1.0-literals" xmlns="http://www.w3.org/2001/06/grammar">
+	<rule id="rootWaitColorRule">
+		<one-of>
+			<item><ruleref uri="#Color"/></item>
+		</one-of>
+	</rule>
+ 
+    <rule id="Color" scope="private">
+        <one-of>
+			<item>to jest koloru</item>
+			<item>to jest kolor</item>
+			<item>to jest</item>
+			<item>to ma</item>
+        </one-of>
+        <one-of>
+			<item>jasno</item>
+			<item>jasny</item>
+			<item>ciemno</item>
+			<item>ciemny</item>
+			<item></item>
+        </one-of>
+        <item><ruleref uri="#ColorList"/></item>
+        <one-of>
+			<item>kolor</item>
+			<item></item>
+        </one-of>
+    </rule>	
+	
+	
+	<rule id="ColorList" scope="private">
+        <one-of>
+			<item>biały<tag>COLOR WHITE</tag></item>
+			<item>szary<tag>COLOR GREY</tag></item>
+			<item>czarny<tag>COLOR BLACK</tag></item>
+			<item>czerwony<tag>COLOR RED</tag></item>
+			<item>żółty<tag>COLOR YELLOW</tag></item>
+			<item>zielony<tag>COLOR GREEN</tag></item>
+			<item>niebieski<tag>COLOR BLUE</tag></item>
+			<item>fioletowy<tag>COLOR VIOLET</tag></item>
+			<item>pomarańczowy<tag>COLOR ORANGE</tag></item>
+			<item>brązowy<tag>COLOR BROWN</tag></item>
+			<item>różowy<tag>COLOR PINK</tag></item>
+			<item>granatowy<tag>COLOR NAVYBLUE</tag></item>
+			<item>purpurowy<tag>COLOR PURPLE</tag></item>
+			<item>ekri<tag>COLOR ECRU</tag></item>
+			<item>łososiowy<tag>COLOR SALMON</tag></item>
+			<item>cielisty<tag>COLOR FLESH</tag></item>
+			<item>błękitny<tag>COLOR AZURE</tag></item>
+			<item>oliwkowy<tag>COLOR OLIVE</tag></item>
+			<item>seledynowy<tag>COLOR AQUAMARINE</tag></item>
+			<item>turkusowy<tag>COLOR TURQUOISE</tag></item>
+			<item>grafitowy<tag>COLOR GRAPHITE</tag></item>
+			
+			<item>białe<tag>COLOR WHITE</tag></item>
+			<item>szare<tag>COLOR GREY</tag></item>
+			<item>czarne<tag>COLOR BLACK</tag></item>
+			<item>czerwone<tag>COLOR RED</tag></item>
+			<item>żółte<tag>COLOR YELLOW</tag></item>
+			<item>zielone<tag>COLOR GREEN</tag></item>
+			<item>niebieskie<tag>COLOR BLUE</tag></item>
+			<item>fioletowe<tag>COLOR VIOLET</tag></item>
+			<item>pomarańczowe<tag>COLOR ORANGE</tag></item>
+			<item>brązowe<tag>COLOR BROWN</tag></item>
+			<item>różowe<tag>COLOR PINK</tag></item>
+			<item>granatowe<tag>COLOR NAVYBLUE</tag></item>
+			<item>purpurowe<tag>COLOR PURPLE</tag></item>
+			<item>ekri<tag>COLOR ECRU</tag></item>
+			<item>łososiowe<tag>COLOR SALMON</tag></item>
+			<item>cieliste<tag>COLOR FLESH</tag></item>
+			<item>błękitne<tag>COLOR AZURE</tag></item>
+			<item>oliwkowe<tag>COLOR OLIVE</tag></item>
+			<item>seledynowe<tag>COLOR AQUAMARINE</tag></item>
+			<item>turkusowe<tag>COLOR TURQUOISE</tag></item>
+			<item>grafitowe<tag>COLOR GRAPHITE</tag></item>
+			
+			<item>białego<tag>COLOR WHITE</tag></item>
+			<item>szarego<tag>COLOR GREY</tag></item>
+			<item>czarnego<tag>COLOR BLACK</tag></item>
+			<item>czerwonego<tag>COLOR RED</tag></item>
+			<item>żółtego<tag>COLOR YELLOW</tag></item>
+			<item>zielonego<tag>COLOR GREEN</tag></item>
+			<item>niebieskiego<tag>COLOR BLUE</tag></item>
+			<item>fioletowego<tag>COLOR VIOLET</tag></item>
+			<item>pomarańczowego<tag>COLOR ORANGE</tag></item>
+			<item>brązowego<tag>COLOR BROWN</tag></item>
+			<item>różowego<tag>COLOR PINK</tag></item>
+			<item>granatowego<tag>COLOR NAVYBLUE</tag></item>
+			<item>purpurowego<tag>COLOR PURPLE</tag></item>
+			<item>ekri<tag>COLOR ECRU</tag></item>
+			<item>łososiowego<tag>COLOR SALMON</tag></item>
+			<item>cielistego<tag>COLOR FLESH</tag></item>
+			<item>błękitnego<tag>COLOR AZURE</tag></item>
+			<item>oliwkowego<tag>COLOR OLIVE</tag></item>
+			<item>seledynowego<tag>COLOR AQUAMARINE</tag></item>
+			<item>turkusowego<tag>COLOR TURQUOISE</tag></item>
+			<item>grafitowego<tag>COLOR GRAPHITE</tag></item>
+        </one-of>
+    </rule>	
+	
+</grammar>

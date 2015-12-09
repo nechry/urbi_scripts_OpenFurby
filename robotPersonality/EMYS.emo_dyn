@@ -1,0 +1,8 @@
+xTens 10 # spring constant for valence of emotions (25)
+yTens 5 # spring constant for valence of mood (10)
+slope 1000 # factor of mutual interaction of emotion and mood
+mass 10000 # mass of the point of reference
+xReg 5 # x-region for boredom
+yReg 5 # y-region for boredom
+boredom 3 # time-factor for boredom
+prevalence 0 # prevalence for the mood

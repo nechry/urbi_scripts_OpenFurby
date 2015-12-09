@@ -1,0 +1,152 @@
+/*
+* Initialize Mobile
+*
+*
+*  Author: Jan Kedzierski
+*  Date: 20.10.2012
+*  Ver: 1.1
+*/
+
+
+do(Global) {
+
+  echo("INFO: Loading Platform... ");
+      
+  function LoadARIA{	
+      try{
+	if (!hasSlot(_UObjN_UARIA)) loadModule(_uObjectsDir+_UObjN_UARIA);
+	var Global.Aria=UAria.new();
+	
+    
+	/////////////////////////////////////////////////////////////////////////////////////
+	// position
+	/////////////////////////////////////////////////////////////////////////////////////
+	robot.body.addComponent("odometry");
+	do(robot.body.odometry)
+	{
+	      function x() { call.Aria.getX(); };
+	      function y() { call.Aria.getY(); };
+	      function yaw() { call.Aria.getTheta();};
+	};
+
+	/////////////////////////////////////////////////////////////////////////////////////
+	// speeds
+	/////////////////////////////////////////////////////////////////////////////////////
+	UVar.new(Global,"speedTrans");
+	&speedTrans.owned=true;
+	&speedTrans.notifyAccess( closure() {&speedTrans.writeOwned(Aria.getTransSpeed); });
+	&speedTrans.notifyChangeOwned( closure() {Aria.setTransSpeed(&speedTrans.val);});
+
+	UVar.new(Global,"speedRot");
+	&speedRot.owned=true;
+	&speedRot.notifyAccess( closure() {&speedRot.writeOwned(Aria.getRotSpeed); });
+	&speedRot.notifyChangeOwned( closure() {Aria.setRotSpeed(&speedRot.val);});
+
+	robot.body.addComponent("x");
+	Global.getSlot("speedTrans").copy(robot.body.x,"speed");
+	robot.body.addComponent("yaw");
+	Global.getSlot("speedRot").copy(robot.body.yaw,"speed");	
+	
+	
+	do(robot.body)
+	{
+	  function stop() { Aria.stop();};
+	};
+
+       
+	/////////////////////////////////////////////////////////////////////////////////////
+	// battery
+	/////////////////////////////////////////////////////////////////////////////////////
+	UVar.new(Global,"batteryVal");
+	&batteryVal.notifyAccess( closure() {batteryVal=Aria.getBattery(); });
+	robot.body.addComponent("battery");
+	Global.getSlot("batteryVal").copy(robot.body.battery,"voltage"); 
+	do(robot.body.battery) {
+	    voltage->rangemin=32;
+	    voltage->rangemax=42;
+	};
+
+	/////////////////////////////////////////////////////////////////////////////////////
+	// bumpers
+	/////////////////////////////////////////////////////////////////////////////////////
+	UVar.new(Global,"bumpersVal");
+	bumpersVal=[];
+	&bumpersVal.notifyAccess( closure() {bumpersVal=Aria.getBumpers(); });
+	robot.body.addComponent("bumpers");
+	Global.getSlot("bumpersVal").copy(robot.body.bumpers,"val");
+    
+
+	Aria.addDefaultArgument("-rp "+_com_robot);
+	if (!Aria.robotConnection(true)) {
+	  echo("ERROR: Could not connect to simulator or robot via serial port "+_com_robot);
+	  return false;
+	} else {
+	  do(robot.body.x)
+	  {
+	      speed->rangemin = -Aria.getTransVelMax();
+	      speed->rangemax = +Aria.getTransVelMax();
+	  };
+     
+	  do(robot.body.yaw)
+	  {
+	      speed->rangemin = -Aria.getRotVelMax();
+	      speed->rangemax = +Aria.getRotVelMax();
+	  };
+	  
+	  echo("INFO: ARIA connected to robot or simulator.");
+	};
+	  
+	if (_En_ARIA_Sonars){
+	  /////////////////////////////////////////////////////////////////////////////////////
+	  // sonar
+	  /////////////////////////////////////////////////////////////////////////////////////
+	  UVar.new(Global,"sonarsVal");
+	  sonarsVal=[];
+	  &sonarsVal.notifyAccess( closure() {sonarsVal=Aria.getSonars(); });
+	  robot.body.addComponent("sonar");
+	  Global.getSlot("sonarsVal").copy(robot.body.sonar,"val");    
+	  do(robot.body.sonar)
+	  {
+	      function getClosest(start,end) { call.Aria.getSonarsPolar(start,end); };
+	  };
+	  Aria.sonarConnection(true);
+	
+	  echo("INFO: ARIA sonars enabled.");
+	};
+	  
+	if (_En_ARIA_Laser){
+	
+	  echo("INFO: ARIA connecting to laser...");
+	  /////////////////////////////////////////////////////////////////////////////////////
+	  // laser
+	  /////////////////////////////////////////////////////////////////////////////////////
+	  UVar.new(Global,"laserVal");
+	  laserVal=[];
+	  &laserVal.notifyAccess( closure() {laserVal=Aria.getLaser(); });
+	  robot.body.addComponent("laser");
+	  Global.getSlot("laserVal").copy(robot.body.laser,"val");	
+	  do(robot.body.laser)
+	  {
+	      function getClosest(start,end) { call.Aria.getLaserPolar(start,end); };
+	  };
+	  
+	  Aria.addDefaultArgument("-connectLaser -laserType "+_ARIA_LaserType+" -laserPortType serial -laserPort "+_com_laser+" -laserStartingBaud " + _ARIA_LaserStartingBaud);
+	  if (!Aria.laserConnection(true)) {
+	    echo("ERROR: Could not connect to laser via serial port "+_com_laser);
+	    return false;
+	  };
+	  Aria.laserSetup(_ARIA_LaserStart,_ARIA_LaserEnd ,0 ,_ARIA_Flipped); 
+	  echo("INFO: Laser connected.");
+	};
+	
+      }catch(var e){
+	echo("ERROR: %s" % e.message);
+	return false;
+      };
+      return true;
+  };
+
+   echo("OK: Platform loaded."); 
+};
+
+///

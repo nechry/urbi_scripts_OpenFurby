@@ -1,0 +1,142 @@
+//////////////////////////////////////////////////
+//
+// Examples pack
+// ver 1.1
+// date: 01.10.2015
+//
+//////////////////////////////////////////////////
+//
+
+// Ex. 2.1 - display image from camera
+
+// run video system in background
+t:robot.video.Run,
+// display image form cammera in the display window 1
+t:loop{
+   robot.video.display[0].show(robot.video.camera.image);
+   sleep(30ms);
+},
+
+// or if using also Kinect
+// display image form cammera and Kinect device
+t:loop{
+   robot.video.display[0].show(robot.video.camera.image);
+   robot.video.display[1].show(robot.video.kinect.colorImage);
+   sleep(30ms);
+},
+
+
+// Ex. 2.2 - add detector to the video path
+
+// Go to the _CONFIG_.u file and turn on UObjectDetector
+// var _En_UObjectDetector 	= true;	
+// turn on UImageTool
+// var _En_UImageTool		= true;
+// and restart URBI.
+
+// run video system in background
+t:robot.video.Run,
+// turn on object recognition
+robot.video.objectDetector.enable = true;
+// display image form cammera in the display window 1
+t:loop{
+   robot.video.display[0].show(robot.video.camera.image);
+   robot.video.display[1].show(robot.video.objectDetector.image);
+   sleep(30ms);
+},
+
+
+// Ex. 2.3 - follow face by EMYS head
+
+// Use config settings same as Ex 2.2
+//
+// run video system in background
+t:robot.video.Run,
+// turn on object recognition
+robot.video.objectDetector.enable = true;
+
+var x = 0;
+var y = 0;
+
+// follow face
+faceTracking: loop
+{
+    if (robot.video.objectDetector.visible) {
+	x += ((160 - robot.video.objectDetector.x[0]-robot.video.objectDetector.objectWidth[0]/2)/5) &
+	y += ((140 - robot.video.objectDetector.y[0]-robot.video.objectDetector.objectHeight[0])/5);
+	robot.body.neck.head.MoveAt(x, y, 0.8); 
+    };
+},
+
+
+// Ex. 2.4 - add another detector to the video path
+
+// Use config settings same as Ex 2.2
+// and enable UMoveDetector additionaly
+// var _En_UMoveDetector 	= true;	
+
+// run video system in background
+t:robot.video.Run,
+// turn on object recognition
+robot.video.moveDetector.enable = true;
+// display image form cammera in the display window 1
+t:loop{
+   robot.video.display[0].show(robot.video.camera.image);
+   robot.video.display[1].show(robot.video.moveDetector.image);
+   sleep(30ms);
+},
+
+
+
+// Ex. 2.5 - kinect skeleton detection
+
+// Go to the _CONFIG_.u file and turn on UKinectVideo
+// var _En_UKinectVideo		= true; 
+// turn on UImageTool
+// var _En_UImageTool		= true;
+// and restart URBI.
+
+// run video system in background
+t:robot.video.Run,
+// turn on skeleton drawing
+robot.video.kinect.skeletonVisualization = true;
+//
+t:loop{
+   robot.video.display[0].show(robot.video.kinect.colorImage);
+   robot.video.display[1].show(robot.video.kinect.skeletonImage);
+   sleep(30ms);
+},
+
+
+
+// Ex. 2.6 - kinect right hand color detection
+
+// Go to the _CONFIG_.u file and turn on UKinectVideo
+// var _En_UKinectVideo		= true; 
+// turn on UImageTool
+// var _En_UImageTool		= true;
+// and color detector
+// var _En_UColorDetector 	= true;
+// and restart URBI.
+
+// run video system in background
+t:robot.video.Run,
+// turn on skeleton drawing
+robot.video.kinect.skeletonVisualization = true;
+
+// turn on human detector
+robot.video.humanDetector.enable = true;
+//
+t:loop{
+   robot.video.display[0].show(robot.video.kinect.skeletonImage);
+   // get color value to refresh image
+   var tmp = robot.video.humanDetector.hand[right].color.value;
+   robot.video.display[1].show(robot.video.humanDetector.hand[right].color.image);
+   sleep(30ms);
+},
+
+
+// see more examples on the docu page
+// http://lirec.iiar.pwr.edu.pl/~flashdocu
+// Video API:
+// http://lirec.iiar.pwr.edu.pl/~flashdocu/index.php/software/robot-api-structure/video

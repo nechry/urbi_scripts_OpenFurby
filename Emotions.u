@@ -1,0 +1,453 @@
+/*
+*  Initialize emotional model
+*
+*
+*  Author: Jan Kedzierski
+*  Date: 22.04.2015
+*  Ver: 4.4
+*/
+
+
+
+do(Global) 
+{
+
+  function LoadEmotions{
+
+    echo(" ");
+    echo("INFO: Loading Emotions...");
+
+
+    robot.addComponent("emotion");
+
+    try{
+    
+      if (_En_UWASABI) 
+	{
+
+	echo("INFO: Loading WASABI...");
+	
+	if (!hasSlot(_UObjN_UWASABI)) loadModule(_uObjectsDir+_UObjN_UWASABI);
+	var Global.Wasabi = UWasabi.new(_uFilesDir+"robotPersonality/",_WASABI_RobotPersonality);
+	Wasabi.simFreq=30;
+	Wasabi.Start();
+	
+	echo("OK: WASABI added.");
+	
+	
+	Wasabi.getSlot("P").copy(robot.emotion,"P");
+	Wasabi.getSlot("A").copy(robot.emotion,"A");
+	Wasabi.getSlot("D").copy(robot.emotion,"D");
+	Wasabi.getSlot("X").copy(robot.emotion,"X");
+	Wasabi.getSlot("Y").copy(robot.emotion,"Y");
+	Wasabi.getSlot("Z").copy(robot.emotion,"Z");
+	Wasabi.getSlot("emotionProb").copy(robot.emotion,"prob");
+	
+	do(robot.emotion) { 
+	  function Get()			{call.WASABIGetEmotion();};
+	  function GetBoredom()			{call.Wasabi.Z;};
+	  function Reset()			{call.WASABIReset();};
+	  function Impulse(value)		{call.Wasabi.Impulse(value);};
+	  function ImpulseD(value,D)		{call.WASABIImpulseD(value,D);};
+	  function ActivateHope()		{call.Wasabi.ActivateHope();};
+	  function ActivateRelief()		{call.Wasabi.ActivateRelief();};
+	  function ActivateFearsConf()		{call.Wasabi.ActivateFearsConf();};
+	};
+	
+	robot.emotion.addComponent("attractor");
+    
+	do(robot.emotion.attractor) { 
+	  function Weather()			{call.WASABIAttractorWeather();};
+	  function DialogueTimeout()		{call.WASABIAttractorDialogueTimeout();};
+	  function NetworkFailed()		{call.WASABIAttractorNetworkFailed();};
+	  function ClickGesture()		{call.WASABIAttractorClickGesture();};
+	};
+	  
+	var robot.emotion.movingSpeed = 0;
+  
+      }; // UWASABI
+    
+      if (_En_UPAD) 
+      {
+
+	echo("INFO: Loading PAD...");
+	
+	if (!hasSlot(_UObjN_UPAD)) loadModule(_uObjectsDir+_UObjN_UPAD);
+	var Global.PAD = UPAD.new();
+	PAD.setPort("anew",[[4,0,0],[0, 4, 0],[0,0,4]]); 
+	PAD.setPort("sentiwordnet",[[20,0],[0, 1],[0,0]]); 
+	PAD.setPort("weather",[[1,1,0,0],[0,0,1,0],[0,0,0,1]]); 
+	PAD.setPort("main",[[1,0,0],[0,1,0],[0,0,1]]); 
+	PAD.setK(1);
+	PAD.setT1(1);
+	PAD.setT2(0);
+	PAD.setKeepEmotion(false);
+	PAD.setBoredomRatio(0.995);
+	
+	echo("OK: PAD added.");
+	
+	do(robot.emotion) { 
+	  function Get()			{call.PADGetEmotion();};
+	};
+  
+	robot.emotion.addComponent("attractor");
+    
+	do(robot.emotion.attractor) { 
+	  function ANEW()			{call.PADAttractorANEW();};
+	  function SentiWordNet()		{call.PADAttractorSentiWordNet();};
+	  function Weather()			{call.PADAttractorWeather();};
+	  
+	  function ActNeutral(coefficient)	{call.PADAttractorActNeutral(coefficient);};
+	  function ActBored(coefficient)	{call.PADAttractorActBored(coefficient);};
+	  function UserLost()			{call.PADAttractorUserLost();};
+	  function UserFound()			{call.PADAttractorUserFound();};
+	  function GuessYes()			{call.PADAttractorGuessYes();};
+	  function GuessNo()			{call.PADAttractorGuessNo();};
+	  function DialogueTimeout()		{call.PADAttractorDialogueTimeout();};
+	  function Content()			{call.PADAttractorContent();};
+	};
+	
+	var robot.emotion.movingSpeed = 0;
+	
+      }; // UPAD
+      
+      if (_En_UKNearestEmot) 
+      {
+	echo("INFO: UKNearest 2 loading...");
+
+	if (!hasSlot(_UObjN_UKNearest)) loadModule(_uObjectsDir+_UObjN_UKNearest);
+	var Global.KNearest2=UKNearest.new(1);
+	KNearest2.train([-0.7,-0.4, 0.1],"sad3");
+	KNearest2.train([-0.35,-0.2, 0.05],"sad2");
+	KNearest2.train([-0.17,-0.1, 0.025],"sad1");
+	
+	KNearest2.train([-0.7, 0.8, 0.8],"angry3");
+	KNearest2.train([-0.35, 0.4, 0.4],"angry2");
+	KNearest2.train([-0.17, 0.2, 0.2],"angry1");
+	
+	KNearest2.train([-0.8, 0.7,-0.8],"fear3");
+	KNearest2.train([-0.4, 0.35,-0.4],"fear2");
+	KNearest2.train([-0.2, 0.17,-0.2],"fear1");
+	
+	KNearest2.train([ 0.8, 0.3,-0.5],"happy3");
+	KNearest2.train([ 0.4, 0.15,-0.25],"happy2");
+	KNearest2.train([ 0.2, 0.07,-0.125],"happy1");
+	
+	KNearest2.train([-0.3,-0.7,-0.5],"bored3");
+	KNearest2.train([-0.15,-0.35,-0.25],"bored2");
+	KNearest2.train([-0.07,-0.17,-0.125],"bored1");
+	
+	KNearest2.train([ 0.7,-0.6, 0.2],"content3");
+	KNearest2.train([ 0.35,-0.3, 0.1],"content2");
+	KNearest2.train([ 0.17,-0.15, 0.05],"content1");
+	
+	KNearest2.train([ 0.0,0.8, 0.8],"surprise3");
+	KNearest2.train([ 0.0,0.4, 0.4],"surprise2");
+	KNearest2.train([ 0.0,0.2, 0.2],"surprise1");
+	
+	KNearest2.train([ 0.0, 0.0, 0.0],"neutral");
+	
+	echo("OK: UKNearest 2 added.");
+      }; 
+      
+     
+  
+      echo("OK: Emotions loaded.");
+      echo(" ");
+      return true;
+    }catch(var e){
+      echo("ERROR: %s" % e.message);
+      return false;
+    };
+  }|{};
+
+
+  function PADGetEmotion{
+    var _emot = "";
+    var _intens = 0;
+    switch (KNearest2.find(PAD.output,1))
+      {
+	case "neutral": {
+	  _emot = "neutral";
+	  _intens = 0;
+	  robot.emotion.movingSpeed = 0;
+	};
+	
+	case "sad1":  {
+	  _emot = "sad";
+	  _intens = 1;
+	  robot.emotion.movingSpeed = - _intens*2;
+	};
+	case "sad2": {
+	  _emot = "sad";
+	  _intens = 2;
+	  robot.emotion.movingSpeed = - _intens*2;
+	};
+	case "sad3": {
+	  _emot = "sad";
+	  _intens = 3;
+	  robot.emotion.movingSpeed = - _intens*2;
+	};
+	
+	case "angry1": {
+	  _emot = "angry";
+	  _intens = 1;
+	  robot.emotion.movingSpeed = + _intens;
+	};
+	case "angry2":  {
+	  _emot = "angry";
+	  _intens = 2;
+	  robot.emotion.movingSpeed = + _intens;
+	};
+	case "angry3":  {
+	  _emot = "angry";
+	  _intens = 3;
+	  robot.emotion.movingSpeed = + _intens;
+	};
+	
+	case "content1":  {
+	  _emot = "content";
+	  _intens = 1;
+	  robot.emotion.movingSpeed = + _intens;
+	};
+	case "content2": {
+	  _emot = "content";
+	  _intens = 2;
+	  robot.emotion.movingSpeed = + _intens;
+	};
+	case "content3":{
+	  _emot = "content";
+	  _intens = 3;
+	  robot.emotion.movingSpeed = + _intens;
+	};
+	
+	case "fear1":{
+	  _emot = "fear";
+	  _intens = 1;
+	  robot.emotion.movingSpeed = + _intens*3;
+	};
+	case "fear2": {
+	  _emot = "fear";
+	  _intens = 2;
+	  robot.emotion.movingSpeed = + _intens*3;
+	};
+	case "fear3": {
+	  _emot = "fear";
+	  _intens = 3;
+	  robot.emotion.movingSpeed = + _intens*3;
+	};
+	
+	case "happy1": {
+	  _emot = "happy";
+	  _intens = 1;
+	  robot.emotion.movingSpeed = + _intens;
+	};
+	case "happy2": {
+	  _emot = "happy";
+	  _intens = 2;
+	  robot.emotion.movingSpeed = + _intens;
+	};
+	case "happy3": {
+	  _emot = "happy";
+	  _intens = 3;
+	  robot.emotion.movingSpeed = + _intens;
+	};
+	
+	case "bored1": {
+	  _emot = "bored";
+	  _intens = 1;
+	  robot.emotion.movingSpeed = - _intens*3;
+	};
+	case "bored2": {
+	  _emot = "bored";
+	  _intens = 2;
+	  robot.emotion.movingSpeed = - _intens*3;
+	};
+	case "bored3": {
+	  _emot = "bored";
+	  _intens = 3;
+	  robot.emotion.movingSpeed = - _intens*3;
+	};
+	
+	case "surprise1": {
+	  _emot = "surprise";
+	  _intens = 1;
+	  robot.emotion.movingSpeed = + _intens;
+	};
+	case "surprise2": {
+	  _emot = "surprise";
+	  _intens = 2;
+	  robot.emotion.movingSpeed = + _intens;
+	};
+	case "surprise3": {
+	  _emot = "surprise";
+	  _intens = 3;
+	  robot.emotion.movingSpeed = + _intens;
+	};
+      };
+    return [_emot, _intens];
+  }|{};
+  
+  
+  function WASABIGetEmotion{
+    var _emot = Wasabi.emotion;
+    var _prob = Wasabi.emotionProb;
+    var _intens = 0;
+    if ((_prob > 0)&&(_prob < 0.25))  	 _intens = 1;
+    if ((_prob >= 0.25)&&(_prob < 0.5))  _intens = 2;
+    if ((_prob >= 0.5)&&(_prob <= 0.75)) _intens = 3;
+    switch (_emot)
+    {
+      // primary emotions
+      case "happy":robot.emotion.movingSpeed = + _intens;
+      case "sad": robot.emotion.movingSpeed = - _intens*2;
+      case "depressed": robot.emotion.movingSpeed = - _intens*3; // same as sad  
+      case "fearful": robot.emotion.movingSpeed = + _intens*3; // same as fear
+      case "bored": robot.emotion.movingSpeed = - _intens*3;
+      case "annoyed": robot.emotion.movingSpeed = - _intens*3;  // same as bored
+      case "surprised": robot.emotion.movingSpeed = + _intens; // same as surprise
+      case "angry": robot.emotion.movingSpeed = + _intens;
+      case "concentrated":  robot.emotion.movingSpeed = 0;
+      // secondary emotions
+      case "HOPE": robot.emotion.movingSpeed = 0;
+    };
+    return [_emot, _intens];
+  }|{};
+    
+  function WASABIReset{
+    Wasabi.Reset;
+    Wasabi.D=-100|
+    Wasabi.Impulse(10);
+  }|{};
+    
+  function WASABIImpulseD(value,D){
+    Wasabi.D = D|
+    Wasabi.Impulse(value);
+  }|{};
+  
+  function WASABIAttractorWeather(){
+      if (_RobotStructure.has("Network")) {
+      
+	var _temp = robot.network.weather.condition.temperature;
+	var _code = robot.network.weather.condition.code;
+	// fear
+	if ((_code>=0)&&(_code<=4)) robot.emotion.ImpulseD(-100,-100)
+	else if ((_code>=37)&&(_code<=39)) robot.emotion.ImpulseD(-100,-100)
+	// content
+	else if ((_code>=13)&&(_code<=15)) robot.emotion.ImpulseD(100,-100)
+	else if ((_code>=41)&&(_code<=43)) robot.emotion.ImpulseD(-100,100)
+	// sad
+	else if ((_code>=5)&&(_code<=12)) robot.emotion.ImpulseD(-100,100)
+	else if ((_code>=35)&&(_code<=36)) robot.emotion.ImpulseD(-100,100)
+	// only temperature
+	else if (_temp<-5) robot.emotion.ImpulseD(-100,-100)
+	else if (_temp<5) robot.emotion.ImpulseD(-50,-100)
+	else if (_temp<10) robot.emotion.ImpulseD(-50,-100)
+	else if (_temp<20) robot.emotion.ImpulseD(-10,-100)
+	else if (_temp<25) robot.emotion.ImpulseD(50,-100)
+	else if (_temp<30) robot.emotion.ImpulseD(100,-100)
+	else if (_temp<40) robot.emotion.ImpulseD(-100,-100)
+	 
+      };
+  }|{};
+  
+  
+  function WASABIAttractorDialogueTimeout() {
+	robot.emotion.ImpulseD(-100,100);
+  }|{};
+  
+  
+  
+  function WASABIAttractorNetworkFailed() {
+	robot.emotion.ImpulseD(-100,-100);
+  }|{};
+  
+  
+  function WASABIAttractorClickGesture() {
+	robot.emotion.ImpulseD(-40,100);
+  }|{};
+  
+  
+  ////////////////////////////////////////////////////////////////////
+  //
+  /////////////////////////////////////////////////////////////////////
+  
+  function PADAttractorANEW(){
+    if ((_RobotStructure.has("Appraisal"))&&(_En_UAnew)) 
+      PAD.input("anew",[robot.appraisal.anew.pleasure,robot.appraisal.anew.arousal,robot.appraisal.anew.dominance],0.1);
+  }|{};
+   
+  function PADAttractorSentiWordNet(){
+    if ((_RobotStructure.has("Appraisal"))&&(_En_USentiWordNet)) 
+      PAD.input("sentiwordnet",[robot.appraisal.sentiwordnet.emote,0.3],0.1);
+  }|{};
+  
+  function PADAttractorWeather(){
+      if (_RobotStructure.has("Network")) {
+      
+	var _temp = (robot.network.weather.condition.temperature-10)/20;
+	var _code = robot.network.weather.condition.code;
+	// fear
+	if ((_code>=0)&&(_code<=4)) PAD.input("weather",[-0.9,0.1,0.7,-0.8],0.1)
+	else if ((_code>=37)&&(_code<=39)) PAD.input("weather",[-0.9,0.1,0.7,-0.8],0.1)
+	// content
+	else if ((_code>=13)&&(_code<=15)) PAD.input("weather",[0.7,0.1,-0.6,0.2],0.1)
+	else if ((_code>=41)&&(_code<=43)) PAD.input("weather",[0.7,0.1,-0.6,0.2],0.1)
+	// sad
+	else if ((_code>=5)&&(_code<=12)) PAD.input("weather",[-0.7,0.1,-0.4,0.1],0.1)
+	else if ((_code>=35)&&(_code<=36)) PAD.input("weather",[-0.7,0.1,-0.4,0.1],0.1)
+	// only temperature
+	else PAD.input("weather",[0,1*_temp,-0.5,0.15],0.1);
+	 
+       };
+  }|{};
+   
+  function PADAttractorActBored(coefficient){
+    every (1s) {
+      PAD.input("main",[(-0.3)*coefficient,(-0.7)*coefficient,(-0.5)*coefficient],1);
+    };
+  }|{}; 
+
+// NOT USED!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  function PADAttractorActNeutral(coefficient){
+    every (1s) {
+      var _tmp_ = PAD.output;
+      //PAD.input("main",[-_tmp_[0]*coefficient,-_tmp_[1]*coefficient,-_tmp_[2]*coefficient],1);
+    };
+  }|{}; 
+    
+  // sad   [-0.7,-0.4, 0.1]
+  // angry [-0.7, 0.8, 0.8]
+  function PADAttractorUserLost(){
+    PAD.input("main",[-0.7, 0.8, 0.8],0.1);
+    PAD.input("main",[-0.0007,-0.0004, 0.0001],25);
+  }|{};  
+   
+  // happy   [ 0.8, 0.3,-0.5]
+  // content [ 0.7,-0.6, 0.2]
+  function PADAttractorUserFound(){
+    PAD.input("main",[0.4, 0.15,-0.25],0.1);
+    PAD.input("main",[0.0007,-0.0006,0.0002],25);
+  }|{}; 
+     
+  // happy   [ 0.8, 0.3,-0.5]
+  function PADAttractorGuessYes(){
+    PAD.input("main",[0.4, 0.15,-0.25],0.1);
+  }|{}; 
+     
+  // sad   [-0.7,-0.4, 0.1]
+  function PADAttractorGuessNo(){
+    PAD.input("main",[-0.7,-0.4, 0.1],0.1);
+  }|{}; 
+  
+  
+  // angry [-0.7, 0.8, 0.8]
+  function PADAttractorDialogueTimeout(){
+    PAD.input("main",[-0.014, 0.016, 0.016],1);
+  }|{}; 
+  
+  
+
+
+  
+};

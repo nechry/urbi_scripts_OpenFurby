@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<grammar version="1.0" xml:lang="en-US" root="rootRule" tag-format="semantics/1.0-literals" xmlns="http://www.w3.org/2001/06/grammar"> 
+    <rule id="rootRule" scope="public">
+		<one-of>
+			<item><ruleref uri="#News"/></item>
+			<item><ruleref uri="#Back"/></item>
+			<item><ruleref uri="#Repeat"/></item>
+		</one-of>
+    </rule>
+   
+    <rule id="News" scope="private">
+			<one-of>
+				 <item>please</item>
+				 <item>read</item>
+				 <item>check</item>
+				 <item></item>
+			</one-of>  
+			<one-of>
+				 <item>news</item>
+				 <item></item>
+			</one-of>
+			<ruleref uri="#kindNews"/>
+			<one-of>
+				 <item>please</item>
+				 <item></item>
+			</one-of>
+    </rule>
+   
+    <rule id="Back" scope="private">
+			<tag>BACK</tag>
+			<one-of>
+				<item>back</item>	
+				<item>wrong</item>
+				<item>nothing</item>
+				<item>none</item>
+				<item>I don't want to hear any news</item>
+				<item>don't read any news</item>
+			</one-of>
+    </rule>
+   
+    <rule id="kindNews" scope="private">
+      <one-of>
+         <item>general<tag>ALL</tag></item>
+         <item>national<tag>COUNTRY</tag></item>
+         <item>from the country<tag>COUNTRY</tag></item>
+         <item>world<tag>WORLD</tag></item>
+         <item>from the world<tag>WORLD</tag></item>
+         <item>sport<tag>SPORT</tag></item>
+         <item>sports<tag>SPORT</tag></item>
+         <item>science<tag>SCIENCE</tag></item>
+         <item>scientific<tag>SCIENCE</tag></item>
+         <item>new technologies<tag>NEW_TECH</tag></item>
+         <item>technology<tag>NEW_TECH</tag></item>
+         <item>film<tag>MOVIE</tag></item>
+         <item>gossip<tag>RUMORS</tag></item>
+         <item>celebrities<tag>RUMORS</tag></item>
+         <item>interesting facts<tag>CURIOSITIES</tag></item>
+         <item>curiosities<tag>CURIOSITIES</tag></item>
+         <item>TV<tag>TV</tag></item>
+         <item>automotive<tag>AUTOMOTIVE</tag></item>
+         <item>from Wrocław<tag>LOCAL</tag></item>
+         <item>local<tag>LOCAL</tag></item>
+      </one-of>
+    </rule>
+   
+	
+    <rule id="Repeat" scope="private">
+        <tag>REPEAT</tag>
+        <one-of>
+          <item>again</item>
+          <item>again please</item>
+          <item>what did you say</item>
+          <item>what are you asking</item>
+          <item>could you repeat that</item>
+          <item>repeat that please</item>
+          <item>could you repeat that please</item>
+        </one-of>
+    </rule>
+	
+</grammar>
